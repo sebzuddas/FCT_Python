@@ -1,0 +1,6 @@
+# Properties in yaml format
+random.seed: 1
+stop.at: 100
+count.of.agents: 765
+board.size: 30
+threshold: 0.5
