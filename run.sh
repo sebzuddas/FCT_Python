@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 main.py props/model.yaml
+python3 FCT_Model/main.py FCT_Model/props/model.yaml
