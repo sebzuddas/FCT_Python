@@ -4,11 +4,11 @@ from typing import List
 from core.Theory import Theory
 from core.TheoryMediator import TheoryMediator
 
-from SchellingTheory import SchellingTheory
-from SegregationAgent import SegregationAgent
+from FundamentalCauseTheory import FundamentalCauseTheory
+from FCT_Agent import FCT_Agent
 
 # TODO: inherit TheoryMediator
-class SegregationTheoriesMediator(TheoryMediator):
+class SocialTheoriesMediator(TheoryMediator):
 
     # TODO: define the constructor, calling the parent class constructor
     def __init__(self, theory_list:List[Theory]):

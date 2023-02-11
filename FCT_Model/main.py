@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-""" repast4py implementation of the CASCADE MBSSM Tutorial SegregationModel
+""" repast4py implementation of the CASCADE MBSSM Tutorial FCT_Model
 """
 # For return type typehints, which for 3.7+ allows class methods to return the named class
 from __future__ import annotations
@@ -14,7 +14,7 @@ from repast4py import parameters
 import repast4py
 import sys
 
-import SegregationModel
+import FCT_Model
 
 def main():
     # Command line argument parsing
@@ -29,7 +29,7 @@ def main():
         sys.exit(1)
 
     # Construct the Segregation Model
-    model = SegregationModel.SegregationModel(MPI.COMM_WORLD, params)
+    model = FCT_Model.FCT_Model(MPI.COMM_WORLD, params)
 
     # Initialise Agents
     model.init_agents()

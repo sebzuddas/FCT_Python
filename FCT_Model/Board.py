@@ -4,7 +4,7 @@ import sys
 
 from repast4py import space
 import repast4py
-from SegregationAgent import SegregationAgent
+from FCT_Agent import FCT_Agent
 
 from core.StructuralEntity import StructuralEntity
 
@@ -24,14 +24,14 @@ class Board(StructuralEntity):
         count = 0
         # Must use a try-except block in the requested type id has never been present in the context, which throws
         try:
-            count = self.__context.size([SegregationAgent.TYPE])[SegregationAgent.TYPE]
+            count = self.__context.size([FCT_Agent.TYPE])[FCT_Agent.TYPE]
         except KeyError:
             # repast4py.context.size raises a key error if the requested type is not present
             pass
         
         if count > 0:
             total_satisfaction = 0
-            for agent in self.__context.agents(agent_type=SegregationAgent.TYPE):
+            for agent in self.__context.agents(agent_type=FCT_Agent.TYPE):
                 total_satisfaction += int(agent.get_satisfied_status())
             avg_satisfaction = total_satisfaction / count
         self.__avg_satisfaction = avg_satisfaction

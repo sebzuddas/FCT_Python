@@ -6,10 +6,10 @@ import repast4py
 from core.MicroAgent import MicroAgent
 
 # TODO: Inherit MicroAgent
-class SegregationAgent(MicroAgent):
+class FCT_Agent(MicroAgent):
     TYPE = 1
     def __init__(self, id:int, rank:int, agent_type:int, threshold:float, space):
-        super().__init__(id=id, type=SegregationAgent.TYPE, rank=rank)
+        super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
         # TODO: define 3 variables: the type of the agent, the satisfied status, the threshold
         self.__agent_type: int = agent_type
@@ -48,12 +48,12 @@ class SegregationAgent(MicroAgent):
         self.space.move(self, random_location)
 
     def save(self) -> Tuple:
-        """ Save the state of this SegregationAgent as a Tuple.
+        """ Save the state of this FCT_Agent as a Tuple.
         
-        Used to move SegregationAgent between Ranks in Repast4py.
-        This is analogous to SegregationAgentPackage::serialize int he RepastHPC implementation
+        Used to move FCT_Agent between Ranks in Repast4py.
+        This is analogous to FCT_AgentPackage::serialize int he RepastHPC implementation
 
         Returns:
-            The saved state of this SegregationAgent
+            The saved state of this FCT_Agent
         """
         return (self._id, self._mediator, self.__agent_type, self.__is_satisfied, self.__threshold, self.space)

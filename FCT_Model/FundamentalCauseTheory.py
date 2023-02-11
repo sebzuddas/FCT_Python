@@ -6,7 +6,7 @@ from repast4py import space
 import repast4py
 
 # TODO: inherit Theory
-class SchellingTheory(Theory):
+class FundamentalCauseTheory(Theory):
 
     def __init__(self, context, space):
         self.context = context

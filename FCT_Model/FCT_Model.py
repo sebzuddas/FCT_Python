@@ -8,11 +8,11 @@ import repast4py
 from core.Model import Model
 
 from Board import Board
-from SegregationAgent import SegregationAgent
-from SchellingTheory import SchellingTheory
-from SegregationTheoriesMediator import SegregationTheoriesMediator
+from FCT_Agent import FCT_Agent
+from FundamentalCauseTheory import FundamentalCauseTheory
+from SocialTheoriesMediator import SocialTheoriesMediator
 
-class SegregationModel(Model):
+class FCT_Model(Model):
 
     def __init__(self, comm, params: Dict):
         self.__comm = comm
@@ -79,12 +79,12 @@ class SegregationModel(Model):
         self._runner: repast4py.schedule.SharedScheduleRunner = repast4py.schedule.init_schedule_runner(self.__comm)
 
     def do_situational_mechanisms(self):
-        for agent in self.__context.agents(SegregationAgent.TYPE, count=self.__count_of_agents, shuffle=True):
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doSituation for each agent
             agent.do_situation()
     
     def do_action_mechanisms(self):
-        for agent in self.__context.agents(SegregationAgent.TYPE, count=self.__count_of_agents, shuffle=True):
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doAction for each agent
             agent.do_action()
 
@@ -145,13 +145,13 @@ class SegregationModel(Model):
 
             # TODO: init at the micro level: agent, theory, theory mediator
             # create agent object
-            agent = SegregationAgent(i, self.__rank, agent_type, self.__threshold, self.__discrete_space)
+            agent = FCT_Agent(i, self.__rank, agent_type, self.__threshold, self.__discrete_space)
 
             # create theory object
-            theory = SchellingTheory(self.__context, self.__discrete_space)
+            theory = FundamentalCauseTheory(self.__context, self.__discrete_space)
 
             # create mediator object
-            mediator = SegregationTheoriesMediator([theory])
+            mediator = SocialTheoriesMediator([theory])
 
             # connect agent with the mediator
             agent.set_mediator(mediator)
