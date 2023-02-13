@@ -1,6 +1,15 @@
 """
 Main file for managing the different experiments that will be run on the FCT_Model
 
+Types of experiments:
+#TODO: create some experiments
+1. LHS
+2. Different social networks 
+3. Inclusion of another social theory with the mediator class?
+4. Testing and verifying FCT
+
+
+
 Sebastiano Zuddas
 """
 
