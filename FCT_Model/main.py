@@ -23,16 +23,26 @@ def main():
     params = repast4py.parameters.init_params(args.parameters_file, args.parameters)
 
     # If multiple MPI ranks have been used, terminate with an error message
+
     if (MPI.COMM_WORLD.Get_size() > 1):
         if MPI.COMM_WORLD.Get_rank() == 0:
             print(f"Error: This tutorial only supports use of a single MPI rank ({MPI.COMM_WORLD.Get_size()} requested).", file=sys.stderr)
         sys.exit(1)
 
-    # Construct the Segregation Model
-    model = FCT_Model.FCT_Model(MPI.COMM_WORLD, params)
+    # Construct the FCT Model
+    model = FCT_Model.FCT_Model(MPI.COMM_WORLD, params)# 
 
     # Initialise Agents
     model.init_agents()
+
+    #TODO network
+    #model.init_network()
+
+    #TODO environment
+    #model.init_environment()
+
+    #TODO event generator
+    #model.init_event_generator()
 
     # Initialise the Schedule
     model.init_schedule()

@@ -92,7 +92,8 @@ class FCT_Model(Model):
         # TODO: call doTransformation of the Board structural entity
         self.__board.do_transformation()
     
-    # TODO: define a function to perform actions every tick
+    #TODO: define a function to perform actions every tick
+    #TODO: Make sure that the do_per_tick function works on a per week basis. 
     def do_per_tick(self):
         # TODO: call three mechanisms in the correct order
         self.do_situational_mechanisms()
@@ -162,7 +163,7 @@ class FCT_Model(Model):
             self.__discrete_space.move(agent, initial_location)
 
         # print the initial state of the board
-        self.__board.print_board_to_screen()     
+        self.__board.print_board_to_screen()
 
     def run(self):
         self._runner.execute()
