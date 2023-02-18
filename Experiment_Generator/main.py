@@ -50,4 +50,3 @@ for i in range(len(sample)):# over '100' samples
         props_dict_vals_list[j] = int(sample[i][j]*10)*props_dict_reference[j]
         with open('FCT_Model/props/test_LHS/test_'+str(i)+'.yaml', 'w') as f:
             yaml.dump(dict(zip(props_dict_key_list, props_dict_vals_list)), f)
-
