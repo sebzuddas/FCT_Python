@@ -4,3 +4,6 @@ stop.at: 100
 count.of.agents: 765
 board.size: 50
 threshold: 0.5
+#added parameters
+max.age: 80
+min.age: 14

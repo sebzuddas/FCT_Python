@@ -9,7 +9,7 @@ import repast4py
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int,   ):
+    def __init__(self, context, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int, space):
         self.context = context
         self.space = space
 

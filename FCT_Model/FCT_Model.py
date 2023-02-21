@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Dict, Tuple, List
 import pathlib
 
-from repast4py import context, schedule
+from repast4py import context, schedule, random
 import repast4py
 
 from core.Model import Model
@@ -21,14 +21,22 @@ class FCT_Model(Model):
 
         self.__rank:int = self.__comm.Get_rank()
 
-        # Model parameters
+        # Model parameters that initialise the model 
         self.__props = params
         self.__stop_at:int = self.__props["stop.at"] if "stop.at" in params else 0
         self.__count_of_agents:int = self.__props["count.of.agents"] if "count.of.agents" in params else 0
         self.__board_size:int = self.__props["board.size"] if "board.size" in params else 0
         self.__threshold:float = self.__props["threshold"] if "threshold" in params else 0
-
         
+        
+        #Added params
+        self.__min_age: int = self.__props["min.age"] if "min.age" in params else 0
+        self.__max_age: int = self.__props["max.age"] if "max.age" in params else 0
+        self.__random_seed:int = self.__props["random.seed"] if "random.seed" in params else 0
+
+        repast4py.random.init(rng_seed=self.__random_seed)# initialise pseudo-random number generator with the random seed from the props
+        
+        """
         #TODO Include other model parameters including 
             #TODO Distribution of agents that are wealthy
             #TODO Distribution of agents that are well connected 
@@ -37,8 +45,7 @@ class FCT_Model(Model):
             #TODO Distribution of agents that are have a strong social infuence
                 #TODO How to include this in the network?
             #TODO Distribution of agents that have easy access to healthcare
-
-
+        """
     	# Validate that the board size contains at least one more cell than the count of agents, so that movement can occur.
         if self.__count_of_agents >= (self.__board_size * self.__board_size):
             raise Exception(f"Invalid Configuration: count.of.agents ({self.__count_of_agents}) must be less than board.size * board.size ({self.__board_size * self.__board_size})")
@@ -145,6 +152,44 @@ class FCT_Model(Model):
                 y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
                 initial_location = repast4py.space.DiscretePoint(x_rand, y_rand)
 
+
+            #############################################################################
+            #FCT level parameters
+            #Create a random integer between 1 and 5 to put agents in the deprivation quintile
+            #TODO see if theres a way to put this in a distribution
+            #TODO see if theres a way to include params
+            deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
+
+            #Create a random float between *FIND BOUNDS* to determine agent drinking behaviour
+            #TODO find numbers from jens model
+            mean_weekly_units_rand = float(repast4py.random.default_rng.integers(0, 1300)/10)
+
+            #Create a random integer between 1-3 to represent :
+            #1. low education (maybe they can decode 33% of the time)
+            #2. medium education (decode 66% of the time)
+            #3. high education (decode 99% of the time)
+            # levels among the agent population. 
+            education_rand = repast4py.random.default_rng.integers(1, 3)
+
+            #Create a random integer between 1-5 to represent personal wealth
+            personal_wealth_rand = repast4py.random.default_rng.integers(1, 5)
+
+
+
+            #############################################################################
+            #Agent level parameters
+
+            #Create a random generator for generating men/women
+            sex_rand = bool(repast4py.random.default_rng.integers(0, 1))
+            
+            #Create a random number generator for assigning age
+            #TODO set appropriate age ranges
+            #TODO get age ranges from props file 
+            age_rand = repast4py.random.default_rng.integers(self.__min_age, self.__max_age)
+            
+            #Create a random generator for drinking status boolean
+            drinking_status_rand = bool(repast4py.random.default_rng.integers(0, 1))
+
             # assign the first N agents to type 0 then the rest to type 1
             # agent_id = (i, self.__rank, 0)
             # This is the agents type / group in the schelling model, not the repast4py Agent.type 
@@ -158,15 +203,17 @@ class FCT_Model(Model):
 
             # TODO: init at the micro level: agent, theory, theory mediator
             # create agent object
-            agent = FCT_Agent(i, self.__rank, agent_type, self.__threshold, self.__discrete_space)
+            #def __init__(self, id:int, rank:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: bool,  space):
+            agent = FCT_Agent(i, self.__rank, agent_type, self.__threshold, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
 
             # create theory object
-            theory = FundamentalCauseTheory(self.__context, self.__discrete_space)
+            #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int):
+            theory = FundamentalCauseTheory(self.__context,  deprivation_quintile_rand, mean_weekly_units_rand, education_rand, personal_wealth_rand, self.__discrete_space)
 
             # create mediator object
             mediator = SocialTheoriesMediator([theory])
 
-            # connect agent with the mediator
+            # connect the individual agent with its mediator
             agent.set_mediator(mediator)
             mediator.set_agent(agent)
 
