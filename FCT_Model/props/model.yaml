@@ -2,5 +2,5 @@
 random.seed: 1
 stop.at: 100
 count.of.agents: 765
-board.size: 30
+board.size: 50
 threshold: 0.5

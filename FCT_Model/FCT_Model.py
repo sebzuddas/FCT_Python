@@ -27,6 +27,8 @@ class FCT_Model(Model):
         self.__count_of_agents:int = self.__props["count.of.agents"] if "count.of.agents" in params else 0
         self.__board_size:int = self.__props["board.size"] if "board.size" in params else 0
         self.__threshold:float = self.__props["threshold"] if "threshold" in params else 0
+
+        
         #TODO Include other model parameters including 
             #TODO Distribution of agents that are wealthy
             #TODO Distribution of agents that are well connected 

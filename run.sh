@@ -43,6 +43,12 @@ NC='\033[0m' # No Colour
   #TODO Look into error handling
 #TODO 
 
+
+
+function helpfunc (){
+    echo "does helpfunc work"
+}
+
 ## ----- Program ----- ##
 while (( $# > 0 ))
 do
@@ -64,16 +70,12 @@ do
         ;;
     -r|--run)
       echo "Running Model..."
+      python3 FCT_Model/main.py FCT_Model/props/model.yaml
+
+      echo -e "${GREEN} Model run successfully! \n ${NC} Generating outputs..."      
       
-        python3 FCT_Model/main.py FCT_Model/props/model.yaml
-
-      echo -e "${GREEN} Model run successfully! \n ${NC} Generating outputs..."
+      python3 Data_Processing/main.py
       
-      
-      Python3 Data_Processing/main.py
-
-
-
       ;;
     -*|--*)
         echo -e "${RED}Invalid option: ${NC}'$opt'" 
@@ -86,6 +88,10 @@ do
         ;;
    esac
 done
+
+
+
+
 
 
 
