@@ -8,15 +8,33 @@ import repast4py
 # TODO: inherit Theory
 class FundamentalCauseTheory(Theory):
 
-    def __init__(self, context, space):
+    #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
+    def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int,   ):
         self.context = context
         self.space = space
+
+        #TODO: Why are these not being worked out here?
+        ## FCT level parameters/attributes
+        self.__deprivation_quintile: int = deprivation_quintile
+        
+        self.__mean_weekly_units: float = mean_weekly_units
+        self.__education: int = education
+        self.__personal_wealth: int = personal_wealth
+        
+
+        #TODO these two theory level parameters are determined by other classes. How to manage?
+        self.__social_connections: int
+        self.__age_group: int 
+
         # TODO: define a variable satisfaction status
         self.__is_satisfied:bool = False
         # TODO: define a variable for moving decision
         self.__moving_intention:bool = False
 
-    def do_situation(self):
+    def do_situation(self):# function for the situational mechanisms
+        """
+        In this case, the situational mechanisms are the codes passed onto the agents to decode. 
+        """
         center = self.space.get_location(self._agent)
         # Count similar agents in the local 2D grid moore neighbourhood
         similar_count = 0
@@ -26,6 +44,8 @@ class FundamentalCauseTheory(Theory):
         local_bounds = self.space.get_local_bounds()
         xmax = local_bounds.xmin + local_bounds.xextent
         ymax = local_bounds.ymin + local_bounds.yextent
+        
+        
         for rel_loc in rel_neighbourhood:
             other_loc = repast4py.space.DiscretePoint(center.x + rel_loc[0], center.y + rel_loc[1])
             # Check the relative loc is in bounds

@@ -28,9 +28,21 @@ class FCT_Model(Model):
         self.__board_size:int = self.__props["board.size"] if "board.size" in params else 0
         self.__threshold:float = self.__props["threshold"] if "threshold" in params else 0
 
+        
+        #TODO Include other model parameters including 
+            #TODO Distribution of agents that are wealthy
+            #TODO Distribution of agents that are well connected 
+                #TODO Then make this influence social network
+            #TODO Distribution of agents that are well educated
+            #TODO Distribution of agents that are have a strong social infuence
+                #TODO How to include this in the network?
+            #TODO Distribution of agents that have easy access to healthcare
+
+
     	# Validate that the board size contains at least one more cell than the count of agents, so that movement can occur.
         if self.__count_of_agents >= (self.__board_size * self.__board_size):
             raise Exception(f"Invalid Configuration: count.of.agents ({self.__count_of_agents}) must be less than board.size * board.size ({self.__board_size * self.__board_size})")
+
 
         if self.__rank == 0:
             # Repast4py does not include a clear repast::properties::writeToSVFile, so this code block is equivalent

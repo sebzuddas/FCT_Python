@@ -1,3 +1,16 @@
+"""
+List of todos
+#TODO: change from Schelling to FCT relevant stuff
+#TODO: store change in deprivation quintile for each agents - make it a dataclass?
+#TODO: 
+
+List of bugs
+
+List of 
+
+
+"""
+
 from __future__ import annotations
 from typing import Dict, Tuple, List
 
@@ -8,13 +21,20 @@ from core.MicroAgent import MicroAgent
 # TODO: Inherit MicroAgent
 class FCT_Agent(MicroAgent):
     TYPE = 1
-    def __init__(self, id:int, rank:int, agent_type:int, threshold:float, space):
+    def __init__(self, id:int, rank:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: bool,  space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
         # TODO: define 3 variables: the type of the agent, the satisfied status, the threshold
         self.__agent_type: int = agent_type
         self.__is_satisfied: bool = False
         self.__threshold: float = threshold
+        
+        
+        self.sex = sex
+        self.age = age
+        self.drinking_status = drinking_status
+        
+        
 
         self.space = space
 
