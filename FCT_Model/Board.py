@@ -168,7 +168,7 @@ class Board(StructuralEntity):
                     if agent.get_agent_type() == 0:
                         row += "X"
                     elif agent.get_agent_type() == 1:
-                        row += "."
+                        row += "O"
             row += "|"
             print(row)
         print("-" * (board_size_x + 2))

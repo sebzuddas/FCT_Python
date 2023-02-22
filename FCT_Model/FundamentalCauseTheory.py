@@ -31,6 +31,14 @@ class FundamentalCauseTheory(Theory):
         # TODO: define a variable for moving decision
         self.__moving_intention:bool = False
 
+
+    ######################################################
+    #individual agent-level situational mechanism methods
+
+    def communicate_event():
+        print("communicate_event_test")
+
+
     def do_situation(self):# function for the situational mechanisms
         """
         In this case, the situational mechanisms are the codes passed onto the agents to decode. 
@@ -64,11 +72,43 @@ class FundamentalCauseTheory(Theory):
             similarity_percentage = similar_count / neighbour_count
         threshold = self._agent.get_threshold()
         self.__is_satisfied = similarity_percentage >= threshold
-    
-    # TODO: override do_action()
-    def do_action(self):
+
+
+
+
+
+    ######################################################
+    #individual agent-level action mechanism methods
+    #
+    def moving_intention(self):
         # TODO: if not satisfied, moving intention =True else =False
         self.__moving_intention = not self.__is_satisfied
+
+    def attempt_dq_change(self):
+        print("attempt dq change: %d" % self.__deprivation_quintile)
+
+    def calculate_resources(self):
+        print("calculate resources test")
+
+    def strategy_multiplier(self):
+        #TODO: finish strat multiplier
+        test_multiplier = float(self.__education + self.__deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
+        #print("calculate strategy multiplier test: %d" % test_multiplier)
+        return test_multiplier
+
+
+
+    # TODO: override do_action()
+    def do_action(self):
+        
+        self.moving_intention()
+        self.attempt_dq_change()
+        self.strategy_multiplier()
+
+        print(" strategy multiplier test: %d" % self.strategy_multiplier())
+
+
+
 
     def get_satisfied_status(self) -> bool:
         return self.__is_satisfied
