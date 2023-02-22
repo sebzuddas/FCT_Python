@@ -11,6 +11,14 @@ class Theory(metaclass=ABCMeta):
 
     def set_agent(self, agent:MicroAgent):
         self._agent = agent
+    
+
+    """
+    The @abstractmethod decorator is used to indicate that a method is
+    abstract and must be implemented by any concrete subclass of the abstract class.
+    An abstract method is a method that is declared in the abstract class but
+    does not have an implementation
+    """
 
     @abstractmethod
     def do_situation(self):

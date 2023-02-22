@@ -2,6 +2,8 @@ from __future__ import annotations
 from typing import Dict, Tuple, List
 from core.Theory import Theory
 
+
+
 from repast4py import space
 import repast4py
 
@@ -30,6 +32,7 @@ class FundamentalCauseTheory(Theory):
         self.__is_satisfied:bool = False
         # TODO: define a variable for moving decision
         self.__moving_intention:bool = False
+        self.strategy_multiplier: float
 
 
     ######################################################
@@ -42,6 +45,7 @@ class FundamentalCauseTheory(Theory):
     def do_situation(self):# function for the situational mechanisms
         """
         In this case, the situational mechanisms are the codes passed onto the agents to decode. 
+        They need to get information from the 'state' and try to decode this information.
         """
         center = self.space.get_location(self._agent)
         # Count similar agents in the local 2D grid moore neighbourhood
@@ -90,11 +94,11 @@ class FundamentalCauseTheory(Theory):
     def calculate_resources(self):
         print("calculate resources test")
 
-    def strategy_multiplier(self):
+    def calculate_strategy_multiplier(self):
         #TODO: finish strat multiplier
-        test_multiplier = float(self.__education + self.__deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
-        #print("calculate strategy multiplier test: %d" % test_multiplier)
-        return test_multiplier
+        self.strategy_multiplier = float(self.__education + self.__deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
+        return self.strategy_multiplier
+
 
 
 
@@ -103,9 +107,9 @@ class FundamentalCauseTheory(Theory):
         
         self.moving_intention()
         self.attempt_dq_change()
-        self.strategy_multiplier()
-
-        print(" strategy multiplier test: %d" % self.strategy_multiplier())
+        self.calculate_strategy_multiplier()
+        
+        print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
 
 
 

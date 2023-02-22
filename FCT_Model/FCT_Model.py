@@ -148,13 +148,14 @@ class FCT_Model(Model):
             # TODO: call doAction for each agent
             agent.do_action()
 
+
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
         self.__board.do_transformation()
     
     #TODO: define a function to perform actions every tick
     #TODO: Make sure that the do_per_tick function works on a per week basis. 
-    def do_per_tick(self):
+    def do_per_tick(self):# do these things every week. 
         # TODO: call three mechanisms in the correct order
         self.do_situational_mechanisms()
         self.do_action_mechanisms()
@@ -171,8 +172,18 @@ class FCT_Model(Model):
                 self.__board.print_board_to_screen()
             
             # stop when all agents are satisfied
-            if self.__board.get_avg_satisfaction() == 1:
-                self._runner.stop()
+            # if self.__board.get_avg_satisfaction() == 1:
+            #     self._runner.stop()
+    
+    def do_per_month(self):
+        print('Do this per month')
+        
+
+    def do_per_year(self):
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
+            # age the agents yearly
+            agent.age_agent()
+
     
     def init_agents(self):
         count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
@@ -264,8 +275,6 @@ class FCT_Model(Model):
         # print the initial state of the board
         self.__board.print_board_to_screen()
 
-
-
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
@@ -277,10 +286,18 @@ class FCT_Model(Model):
         self._runner.execute()
 
     def init_schedule(self):
-        # schedule actions every tick
+        # schedule actions every week
         self._runner.schedule_repeating_event(1, 1, self.do_per_tick)
+        
+        # schedule actions every month
+        self._runner.schedule_repeating_event(1, 4, self.do_per_month)
+
+        # schedule actions every year
+        self._runner.schedule_repeating_event(1, 52, self.do_per_year)
+
         # schedule stopping condition at max tick
         self._runner.schedule_stop(self.__stop_at)
         
         #Datalogging
-        self._runner.schedule_repeating_event(1, 10, self.log_agents)
+        self._runner.schedule_repeating_event(1, 4, self.log_agents)
+

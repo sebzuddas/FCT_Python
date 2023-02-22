@@ -22,8 +22,8 @@ user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python' # set path t
 tabular_data_path = '/outputs/tabular_logger_out.csv'
 tabular_df = pd.read_csv(user_path+tabular_data_path)
 #print(tabular_df.dtypes)
-tabular_df['sex'] = tabular_df['sex'].astype(int)
-tabular_df = tabular_df.drop(columns=['agent_id'])
+#tabular_df['sex'] = tabular_df['sex'].astype(int)
+tabular_df = tabular_df.drop(columns=['agent_id', 'sex'])
 
 tabular_scatter = px.scatter(tabular_df)
 tabular_scatter.show()
