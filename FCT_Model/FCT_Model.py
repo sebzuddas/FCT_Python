@@ -177,14 +177,17 @@ class FCT_Model(Model):
     
     def do_per_month(self):
         print('Do this per month')
-        
 
     def do_per_year(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # age the agents yearly
             agent.age_agent()
+            # calculate the probability of death every year
+            # agent.calculate_death_probability()
+            agent.calculate_resources()
 
-    
+
+
     def init_agents(self):
         count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
         count_type_1:int = int(self.__count_of_agents  - count_type_0)
@@ -203,7 +206,6 @@ class FCT_Model(Model):
                 x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
                 y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
                 initial_location = repast4py.space.DiscretePoint(x_rand, y_rand)
-
 
             #############################################################################
             #FCT level parameters
@@ -300,4 +302,3 @@ class FCT_Model(Model):
         
         #Datalogging
         self._runner.schedule_repeating_event(1, 4, self.log_agents)
-

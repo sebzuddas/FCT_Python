@@ -21,32 +21,21 @@ Sebastiano Zuddas
 ### Imports
 from scipy.stats.qmc import LatinHypercube
 import yaml
+import experiments
+
 
 ### Variable Declaration
 sample_number = 100 # number of experiments
 
 props_file_location = "/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/test.yaml"
 
-with open(props_file_location) as f:
-    props_file = yaml.safe_load(f)
 
-engine = LatinHypercube(len(props_file))
-sample = engine.random(sample_number)
-
+# make a python main function for the experiment generator
+def main():
+    experiments.create_yaml_file(sample_number, props_file_location, target_folder='FCT_Model/props/test_LHS')
 
 
-props_dict_key_list = list(props_file) #dictionary key to index the props file. 
-props_dict_vals_list = list(props_file.values())
-props_dict_reference = list(props_file.values())
-props_dict_vals_list[0] = sample[0][0]
-# print(props_dict_vals_list)
-# print(props_dict_list[0])
-# print(props_dict_list)
+    
+    if __name__ == "__main__":
+    main()
 
-for i in range(len(sample)):# over '100' samples
-    # print(sample)
-    # print(test_num)
-    for j in range(len(sample[i])):
-        props_dict_vals_list[j] = int(sample[i][j]*10)*props_dict_reference[j]
-        with open('FCT_Model/props/test_LHS/test_'+str(i)+'.yaml', 'w') as f:
-            yaml.dump(dict(zip(props_dict_key_list, props_dict_vals_list)), f)

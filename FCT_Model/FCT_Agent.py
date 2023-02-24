@@ -50,7 +50,7 @@ class FCT_Agent(MicroAgent):
         self.__is_satisfied = satisfied_status
 
     def move(self):
-            #move to a random empty position:
+        #move to a random empty position:
         # get this agents location
         location = self.space.get_location(self)
         # get the bounds of the environment

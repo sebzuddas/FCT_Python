@@ -89,6 +89,10 @@ class FundamentalCauseTheory(Theory):
         self.__moving_intention = not self.__is_satisfied
 
     def attempt_dq_change(self):
+        """Using numpy, create a random random probability of changing dq value, and if it is less than the probability, change dq value
+        """
+        
+
         print("attempt dq change: %d" % self.__deprivation_quintile)
 
     def calculate_resources(self):

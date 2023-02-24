@@ -28,4 +28,8 @@ tabular_df = tabular_df.drop(columns=['agent_id', 'sex'])
 tabular_scatter = px.scatter(tabular_df)
 tabular_scatter.show()
 
+    
+
+    
+
 #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/tabular_logger_out.csv
