@@ -6,7 +6,7 @@ from abc import abstractmethod, ABCMeta
 from .MicroAgent import MicroAgent
 from .Theory import Theory
 
-class TheoryMediator(metaclass=ABCMeta):
+class TheoryMediator(metaclass=ABCMeta):# used to define other classes
 
     def __init__(self, theory_list:List[Theory]):
         self._theory_list:List[Theory] = theory_list

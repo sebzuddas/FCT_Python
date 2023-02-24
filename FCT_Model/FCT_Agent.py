@@ -14,6 +14,7 @@ List of
 from __future__ import annotations
 from typing import Dict, Tuple, List
 
+
 import repast4py
 
 from core.MicroAgent import MicroAgent
@@ -29,13 +30,10 @@ class FCT_Agent(MicroAgent):
         self.__is_satisfied: bool = False
         self.__threshold: float = threshold
         
-        
         self.sex = sex
         self.age = age
         self.drinking_status = drinking_status
-        
-        
-
+    
         self.space = space
 
     # This has been renamed to differentiate from the TYPE which is part of Repast4Py's 
@@ -51,9 +49,8 @@ class FCT_Agent(MicroAgent):
     def set_satisfied_status(self, satisfied_status:bool):
         self.__is_satisfied = satisfied_status
 
-    # TODO: define move() function
     def move(self):
-        # TODO: move to a random empty position
+        #move to a random empty position:
         # get this agents location
         location = self.space.get_location(self)
         # get the bounds of the environment
@@ -65,7 +62,11 @@ class FCT_Agent(MicroAgent):
         while self.space.get_num_agents(random_location) != 0:
             random_location = self.space.get_random_local_pt(rng)
         # Move to the new location
-        self.space.move(self, random_location)
+        self.space.move(self, random_location)    
+
+    def age_agent(self):
+        self.age += 1
+    
 
     def save(self) -> Tuple:
         """ Save the state of this FCT_Agent as a Tuple.
