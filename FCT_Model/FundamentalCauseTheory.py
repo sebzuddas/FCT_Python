@@ -110,10 +110,10 @@ class FundamentalCauseTheory(Theory):
     def do_action(self):
         
         self.moving_intention()
-        self.attempt_dq_change()
-        self.calculate_strategy_multiplier()
+        #self.attempt_dq_change()
+        #self.calculate_strategy_multiplier()
         
-        print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
+        #print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
 
 
 

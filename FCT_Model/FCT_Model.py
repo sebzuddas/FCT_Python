@@ -168,7 +168,7 @@ class FCT_Model(Model):
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
             # print board at the end (tick=mStopAt) or when all agents are satisfied (100% satisfaction)
-            if current_tick == self.__stop_at or self.__board.get_avg_satisfaction() == 1:
+            if current_tick == self.__stop_at:#or self.__board.get_avg_satisfaction() == 1
                 self.__board.print_board_to_screen()
             
             # stop when all agents are satisfied
@@ -184,8 +184,7 @@ class FCT_Model(Model):
             agent.age_agent()
             # calculate the probability of death every year
             # agent.calculate_death_probability()
-            agent.calculate_resources()
-
+            # agent.calculate_resources()
 
 
     def init_agents(self):
