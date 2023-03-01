@@ -6,6 +6,7 @@ Main file for processing the outputted data from the FCT_Model
 import pandas as pd
 import plotly.express as px
 
+#/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/tabular_logger_out.csv
 user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python' # set path to your repo
 
 
@@ -18,18 +19,19 @@ user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python' # set path t
 
 
 
-###############
-tabular_data_path = '/outputs/tabular_logger_out.csv'
-tabular_df = pd.read_csv(user_path+tabular_data_path)
-#print(tabular_df.dtypes)
-#tabular_df['sex'] = tabular_df['sex'].astype(int)
-tabular_df = tabular_df.drop(columns=['agent_id', 'sex'])
+def main():
+    ###############
+    tabular_data_path = '/outputs/tabular_logger_out.csv'
+    tabular_df = pd.read_csv(user_path+tabular_data_path)
+    #print(tabular_df.dtypes)
+    #tabular_df['sex'] = tabular_df['sex'].astype(int)
+    tabular_df = tabular_df.drop(columns=['agent_id', 'sex'])
 
-tabular_scatter = px.scatter(tabular_df)
-tabular_scatter.show()
+    tabular_scatter = px.scatter(tabular_df)
+    tabular_scatter.show()
 
-    
 
-    
 
-#/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/tabular_logger_out.csv
+
+if __name__ == "__main__":
+    main()
