@@ -11,13 +11,13 @@ import repast4py
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int, space):
+    def __init__(self, context, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, space):
         self.context = context
         self.space = space
 
         #TODO: Why are these not being worked out here?
         ## FCT level parameters/attributes
-        self.__deprivation_quintile: int = deprivation_quintile
+        self.deprivation_quintile: int = deprivation_quintile
         
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
@@ -25,14 +25,23 @@ class FundamentalCauseTheory(Theory):
         
 
         #TODO these two theory level parameters are determined by other classes. How to manage?
-        self.__social_connections: int
-        self.__age_group: int 
+        self.__social_connections: int = social_connections
+        self.__age_group: int
 
         # TODO: define a variable satisfaction status
         self.__is_satisfied:bool = False
         # TODO: define a variable for moving decision
         self.__moving_intention:bool = False
         self.strategy_multiplier: float
+        #self.deprivation_probability_dict: dict {'1': [0.02, 0.012, 0.01, 0.008, 0.005], '2': [0.013, 0.011, 0.009, 0.008, 0.008], '3': [0.01, 0.009, 0.009, 0.009, 0.007], '4': [0.01, 0.01, 0.009, 0.009, 0.009], '5': [0.007, 0.011, 0.008, 0.01, 0.016]}
+
+        self.deprivation_probability_list: float [[0.02, 0.012, 0.01, 0.008, 0.005], [0.013, 0.011, 0.009, 0.008, 0.008],[0.01, 0.009, 0.009, 0.009, 0.007], [0.01, 0.01, 0.009, 0.009, 0.009],[0.007, 0.011, 0.008, 0.01, 0.016]]
+
+
+        #self.deprivation_probability_dict = {1: {0.02, 0.012, 0.01, 0.008, 0.005}, 2: {0.013, 0.011, 0.009, 0.008, 0.008}, 3: {0.01, 0.009, 0.009, 0.009, 0.007}, 4: {0.01, 0.01, 0.009, 0.009, 0.009}, 5: {0.007, 0.011, 0.008, 0.01, 0.016}}
+
+        
+        #float = {1: {0.02, 0.012, 0.01, 0.008, 0.005}, 2: {0.013, 0.011, 0.009, 0.008, 0.008}, 3: {0.01, 0.009, 0.009, 0.009, 0.007}, 4: {0.01, 0.01, 0.009, 0.009, 0.009}, 5: {0.007, 0.011, 0.008, 0.01, 0.016}}
 
 
     ######################################################
@@ -93,14 +102,14 @@ class FundamentalCauseTheory(Theory):
         """
         
 
-        print("attempt dq change: %d" % self.__deprivation_quintile)
+        print("attempt dq change: %d" % self.deprivation_quintile)
 
     def calculate_resources(self):
         print("calculate resources test")
 
     def calculate_strategy_multiplier(self):
         #TODO: finish strat multiplier
-        self.strategy_multiplier = float(self.__education + self.__deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
+        self.strategy_multiplier = float(self.__education + self.deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
         return self.strategy_multiplier
 
 

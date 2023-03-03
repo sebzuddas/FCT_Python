@@ -8,7 +8,11 @@ from FCT_Agent import FCT_Agent
 
 from core.StructuralEntity import StructuralEntity
 
-# TODO: inherit StructuralEntity
+import colorama
+import emojis
+
+
+# This is where the social structures go. Here is where the network is implemented. 
 class Board(StructuralEntity):
 
     def __init__(self, context, discrete_space):
@@ -18,6 +22,9 @@ class Board(StructuralEntity):
 	    # TODO: define 2 variables for satisfaction and segregation index
         self.__avg_satisfaction: float = 0.0
         self.__segregation_index: float = 0.0
+        self.__deprivation_quiltile: int = 0
+        self.__deprivation_move_up_probability: float = [0.0, 0.0, 0.0, 0.0, 0.0]
+        self.__deprivation_move_down_probability: float = [0.0, 0.0, 0.0, 0.0, 0.0]
 
     def __update_avg_satisfaction(self):
         avg_satisfaction = 0.0
@@ -36,8 +43,8 @@ class Board(StructuralEntity):
             avg_satisfaction = total_satisfaction / count
         self.__avg_satisfaction = avg_satisfaction
         
-
     def __update_segregation_index(self):
+
         """Calculate the segregation index / index of dissimilarity, using a window_size of 5. 
         
             D = \frac{1}{2}\sum_{i=1}^{N}\left|\frac{a_i}{A} - \frac{b_i}{B}\right|
@@ -131,11 +138,31 @@ class Board(StructuralEntity):
 
         self.__segregation_index = segregationIndex / 2.0
 
+    def __update_deprivation_quintile(self):
+        #TODO: deprivation quintile update method
+
+        for agent in self.__context.agents():
+            print(agent.id)
+            
+
+        for agent in self.__context.agents():
+            print(agent.deprivation_quintile)
+        # HOW TO GET THEORY PARAMS?!?!
+
+            
+        pass
+
+
+    def update_social_network(self):
+        #TODO implement social network updating procedure. 
+        pass
+
     # TODO: override do_transformation();
     def do_transformation(self):
         # TODO: transformational mechanisms: update avg satisfaction and segregation index
         self.__update_avg_satisfaction()
         self.__update_segregation_index()
+        self.__update_deprivation_quintile()
 
     def get_avg_satisfaction(self) -> float:
         return self.__avg_satisfaction
@@ -160,15 +187,15 @@ class Board(StructuralEntity):
                     print(f"More than 1 agent per cell at {x}, {y}", file=sys.stderr)
                 # If there are no agents, output an empty space
                 if agent_count_at_point == 0:
-                    row += " "
+                    row += "_"
                 else: 
                     # If there is an agent, get the first agent at the location
                     agent = self.__discrete_space.get_agent(point)
                     # Add the appropriate character to the string row
                     if agent.get_agent_type() == 0:
-                        row += "X"
+                        row += emojis.encode(":red_circle:") #Previously X
                     elif agent.get_agent_type() == 1:
-                        row += "O"
+                        row += emojis.encode(":large_blue_circle:") #Previously Y
             row += "|"
             print(row)
         print("-" * (board_size_x + 2))

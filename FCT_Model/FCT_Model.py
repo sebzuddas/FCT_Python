@@ -77,6 +77,9 @@ class FCT_Model(Model):
             occupancy=repast4py.space.OccupancyType.Multiple, 
             buffer_size=2, 
             comm=self.__comm)
+        
+
+        #self.__deprivation_probability_dict: float = {1: {0.02, 0.012, 0.01, 0.008, 0.005}, 2: {0.013, 0.011, 0.009, 0.008, 0.008}, 3: {0.01, 0.009, 0.009, 0.009, 0.007}, 4: {0.01, 0.01, 0.009, 0.009, 0.009}, 5: {0.007, 0.011, 0.008, 0.01, 0.016}}
 
         # Output the Rank, and Bounds to match RepastHPC
         local_bounds = self.__discrete_space.get_local_bounds()
@@ -106,6 +109,7 @@ class FCT_Model(Model):
         # loggers += logging.create_loggers(self.meet_log, op=MPI.MIN, names={'min_meets': 'min'}, rank=rank)
         # loggers += logging.create_loggers(self.meet_log, op=MPI.MAX, names={'max_meets': 'max'}, rank=rank)
         # self.data_set = logging.ReducingDataSet(loggers, MPI.COMM_WORLD, params['meet_log_file'])
+
 
 
         ###########
@@ -152,6 +156,7 @@ class FCT_Model(Model):
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
         self.__board.do_transformation()
+        
     
     #TODO: define a function to perform actions every tick
     #TODO: Make sure that the do_per_tick function works on a per week basis. 
@@ -241,6 +246,9 @@ class FCT_Model(Model):
             #Create a random generator for drinking status boolean
             drinking_status_rand = bool(repast4py.random.default_rng.integers(0, 1))
 
+            #deprivation_probability_dict = float {1: {0.02, 0.012, 0.01, 0.008, 0.005}, 2: {0.013, 0.011, 0.009, 0.008, 0.008}, 3: {0.01, 0.009, 0.009, 0.009, 0.007}, 4: {0.01, 0.01, 0.009, 0.009, 0.009}, 5: {0.007, 0.011, 0.008, 0.01, 0.016}}
+
+
             #TODO: understand this section of code
             # assign the first N agents to type 0 then the rest to type 1
             # agent_id = (i, self.__rank, 0)
@@ -259,8 +267,8 @@ class FCT_Model(Model):
             agent = FCT_Agent(i, self.__rank, agent_type, self.__threshold, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
 
             # create theory object
-            #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int):
-            theory = FundamentalCauseTheory(self.__context,  deprivation_quintile_rand, mean_weekly_units_rand, education_rand, personal_wealth_rand, self.__discrete_space)
+            #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int): #############^ this var is a placeholder for social connections
+            theory = FundamentalCauseTheory(self.__context,  deprivation_quintile_rand, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1,  self.__discrete_space)
 
             # create mediator object
             mediator = SocialTheoriesMediator([theory])
