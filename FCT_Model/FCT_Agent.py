@@ -6,16 +6,17 @@ List of todos
 
 List of bugs
 
-List of 
-
+List of questions
 
 """
 
 from __future__ import annotations
 from typing import Dict, Tuple, List
 
-
 import repast4py
+
+from numpy import random
+
 
 from core.MicroAgent import MicroAgent
 
@@ -29,16 +30,20 @@ class FCT_Agent(MicroAgent):
         self.__agent_type: int = agent_type
         self.__is_satisfied: bool = False
         self.__threshold: float = threshold
+        self.__rank: int = rank
         
         self.sex = sex
         self.age = age
         self.drinking_status = drinking_status
-    
         self.space = space
+        self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
 
     # This has been renamed to differentiate from the TYPE which is part of Repast4Py's 
     def get_agent_type(self) -> int:
         return self.__agent_type
+    
+    def get_agent_id(self) -> int:
+        return self._id
 
     def get_satisfied_status(self) -> bool:
         return self.__is_satisfied
@@ -49,13 +54,26 @@ class FCT_Agent(MicroAgent):
     def set_satisfied_status(self, satisfied_status:bool):
         self.__is_satisfied = satisfied_status
 
+    def get_rank(self):
+        return self.__rank
+    
+    def set_rank(self, rank):
+        self.__rank = rank
+
+    def generate_binary_string(n):
+        # Generate a random number with n bits
+        number = random.getrandbits(n)
+        # Convert the number to binary
+        binary_string = format(number, '0b')
+        return binary_string
+
     def move(self):
         #move to a random empty position:
         # get this agents location
         location = self.space.get_location(self)
         # get the bounds of the environment
         local_bounds = self.space.get_local_bounds()
-        # find a random empty position.
+        # find a ranm empty position.
         # Note this will loop forever if the board is full (but this should be prevented by an early check)
         rng = repast4py.random.default_rng
         random_location = self.space.get_random_local_pt(rng)
@@ -78,3 +96,7 @@ class FCT_Agent(MicroAgent):
             The saved state of this FCT_Agent
         """
         return (self._id, self._mediator, self.__agent_type, self.__is_satisfied, self.__threshold, self.space)
+    
+    def update(self, data:bool):
+        """ to restore the agent after it has change ranks"""
+        pass

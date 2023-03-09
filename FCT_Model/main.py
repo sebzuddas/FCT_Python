@@ -22,15 +22,17 @@ def main():
     args = parser.parse_args()
     params = repast4py.parameters.init_params(args.parameters_file, args.parameters)
 
+    
     # If multiple MPI ranks have been used, terminate with an error message
-
     if (MPI.COMM_WORLD.Get_size() > 1):
         if MPI.COMM_WORLD.Get_rank() == 0:
             print(f"Error: This tutorial only supports use of a single MPI rank ({MPI.COMM_WORLD.Get_size()} requested).", file=sys.stderr)
         sys.exit(1)
-
+    
     # Construct the FCT Model
+    params["rankCount"] = 5
     model = FCT_Model.FCT_Model(MPI.COMM_WORLD, params)# 
+    print(MPI.COMM_WORLD.size)
 
     # Initialise Agents
     model.init_agents()

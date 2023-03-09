@@ -9,3 +9,4 @@ max.age: 80
 min.age: 14
 tabular.logger: "outputs/tabular_logger_out.csv"
 #reduce.type.logger: "outputs/reduce_type_logger.csv"
+rankCount: 5

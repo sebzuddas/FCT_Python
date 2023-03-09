@@ -1,10 +1,13 @@
 from __future__ import annotations
 from typing import Dict, Tuple, List
 import sys
-
+from numpy import random
+import numpy as np
+from pyprobs import Probability as pr
 from repast4py import space
 import repast4py
 from FCT_Agent import FCT_Agent
+from mpi4py import MPI
 
 from core.StructuralEntity import StructuralEntity
 
@@ -25,6 +28,10 @@ class Board(StructuralEntity):
         self.__deprivation_quiltile: int = 0
         self.__deprivation_move_up_probability: float = [0.0, 0.0, 0.0, 0.0, 0.0]
         self.__deprivation_move_down_probability: float = [0.0, 0.0, 0.0, 0.0, 0.0]
+        # self.deprivation_probability_list: float [[0.02, 0.012, 0.01, 0.008, 0.005], [0.013, 0.011, 0.009, 0.008, 0.008],[0.01, 0.009, 0.009, 0.009, 0.007], [0.01, 0.01, 0.009, 0.009, 0.009],[0.007, 0.011, 0.008, 0.01, 0.016]]
+        # self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
+        
+
 
     def __update_avg_satisfaction(self):
         avg_satisfaction = 0.0
@@ -138,31 +145,85 @@ class Board(StructuralEntity):
 
         self.__segregation_index = segregationIndex / 2.0
 
-    def __update_deprivation_quintile(self):
+    def __update_deprivation_quintile(self, deprivation_probability_list):
         #TODO: deprivation quintile update method
+        swap_total = [0] * 1000
+        print("number of agents:", self.__context.size())
+        
+        #print("number of on rank 0:", self.__context.size("FCT_Agent",0))
+        #go through all agents and get their porobability for swapping up or down
+        for agent in self.__context.agents(FCT_Agent.TYPE, shuffle=True):
+            if agent.age <=30 and pr.prob(deprivation_probability_list[agent.get_rank()][0]) == True:# get agents that can swap and are less than 30
+                swap_total.append([agent.get_rank(), agent.id, "UP"])
+                
+            elif agent.age > 30 and pr.prob(deprivation_probability_list[agent.get_rank()][1]) == True:# get agents that can swap and are greater than 30
+                swap_total.append([agent.get_rank(), agent.id, "DOWN"])
+                pass
+        #sort swap array by object rank
+        swap_total = [x for x in swap_total if isinstance(x, list)]# remove 0s 
+        swap_total = sorted(swap_total, key=lambda x: x[0])# sort by rank
+        #print(swap_total)
+        #get number of agents that want to swap up and down
+        swap_up = [x for x in swap_total if x[2] == "UP"]
+        swap_down = [x for x in swap_total if x[2] == "DOWN"]
+        print(len(swap_up), len(swap_down))
+        
+        
 
-        for agent in self.__context.agents():
-            print(agent.id)
-            
+        if len(swap_up) > len(swap_down):
+            # Repeat the last element in swap_down until the lengths match
+            swap_down += [swap_down[-1]] * (len(swap_up) - len(swap_down))
 
-        for agent in self.__context.agents():
-            print(agent.deprivation_quintile)
-        # HOW TO GET THEORY PARAMS?!?!
+        # Pair up swap_up with swap_down
+        swap_pairs = list(zip(swap_up, swap_down))
+        #print((swap_pairs))
 
-            
+        for agent in self.__context.agents(FCT_Agent.TYPE, shuffle=True):
+            for i in range(len(swap_pairs)):
+            #print the agents ID and current rank that are swapping
+                for j in range(len(swap_pairs[i])):
+
+                    agent_1_id = swap_pairs[i][0][1]
+                    agent_2_id = swap_pairs[i][1][1]
+
+                    agent_1_rank = swap_pairs[i][0][0]
+                    agent_2_rank = swap_pairs[i][1][0]
+
+                    if agent.id == agent_1_id:
+                        agent.set_rank(agent_2_rank)
+
+                    if agent.id == agent_2_id:
+                        agent.set_rank(agent_1_rank)
+
+
+
+                # if agent.id == swap_pairs[i]:
+                #     print("old rank:", agent.id, agent.get_rank())
+                #     agent.set_rank(swap_pairs[i][1][0])
+                #     print("new rank:", agent.id, agent.get_rank())
+
+                # if agent.id == swap_pairs[i][1][1]:
+                    
+                #     print("old rank:", agent.id, agent.get_rank())
+                #     agent.set_rank(swap_pairs[i][0][0])
+                #     print("new rank:", agent.id, agent.get_rank())
+            #swap the agents rank
+            #print(agent.get_rank())
+            #print agents old
+                
+        #print(swap_total)
         pass
-
 
     def update_social_network(self):
         #TODO implement social network updating procedure. 
         pass
 
     # TODO: override do_transformation();
-    def do_transformation(self):
+    def call_transformation(self):
         # TODO: transformational mechanisms: update avg satisfaction and segregation index
         self.__update_avg_satisfaction()
         self.__update_segregation_index()
-        self.__update_deprivation_quintile()
+        self.__update_deprivation_quintile(deprivation_probability_list=[[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]])
 
     def get_avg_satisfaction(self) -> float:
         return self.__avg_satisfaction

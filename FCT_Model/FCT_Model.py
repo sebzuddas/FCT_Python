@@ -20,9 +20,6 @@ from SocialTheoriesMediator import SocialTheoriesMediator
 #     strategy_multiplier: int = 0
 #     deprivation_quintile: int = 0
 
-
-
-
 class FCT_Model(Model):
 
     def __init__(self, comm, params: Dict):
@@ -31,6 +28,8 @@ class FCT_Model(Model):
         self.__context:repast4py.context.SharedContext = repast4py.context.SharedContext(comm)
 
         self.__rank:int = self.__comm.Get_rank()
+        #self.__rank:int = 5
+        
 
         # Model parameters that initialise the model 
         self.__props = params
@@ -77,10 +76,8 @@ class FCT_Model(Model):
             occupancy=repast4py.space.OccupancyType.Multiple, 
             buffer_size=2, 
             comm=self.__comm)
-        
 
         #self.__deprivation_probability_dict: float = {1: {0.02, 0.012, 0.01, 0.008, 0.005}, 2: {0.013, 0.011, 0.009, 0.008, 0.008}, 3: {0.01, 0.009, 0.009, 0.009, 0.007}, 4: {0.01, 0.01, 0.009, 0.009, 0.009}, 5: {0.007, 0.011, 0.008, 0.01, 0.016}}
-
         # Output the Rank, and Bounds to match RepastHPC
         local_bounds = self.__discrete_space.get_local_bounds()
         print(f"RANK {self.__rank} BOUNDS Point[{local_bounds.xmin}, {local_bounds.ymin}] Point[{local_bounds.xextent}, {local_bounds.yextent}]")
@@ -109,7 +106,6 @@ class FCT_Model(Model):
         # loggers += logging.create_loggers(self.meet_log, op=MPI.MIN, names={'min_meets': 'min'}, rank=rank)
         # loggers += logging.create_loggers(self.meet_log, op=MPI.MAX, names={'max_meets': 'max'}, rank=rank)
         # self.data_set = logging.ReducingDataSet(loggers, MPI.COMM_WORLD, params['meet_log_file'])
-
 
 
         ###########
@@ -145,19 +141,18 @@ class FCT_Model(Model):
     def do_situational_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doSituation for each agent
-            agent.do_situation()
+            agent.call_situation()
     
     def do_action_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doAction for each agent
-            agent.do_action()
-
+            agent.call_action()
+            #agent.communicate_event()
 
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
-        self.__board.do_transformation()
-        
-    
+        self.__board.call_transformation()
+
     #TODO: define a function to perform actions every tick
     #TODO: Make sure that the do_per_tick function works on a per week basis. 
     def do_per_tick(self):# do these things every week. 
@@ -191,16 +186,14 @@ class FCT_Model(Model):
             # agent.calculate_death_probability()
             # agent.calculate_resources()
 
-
     def init_agents(self):
         count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
         count_type_1:int = int(self.__count_of_agents  - count_type_0)
-        
+
         local_bounds = self.__discrete_space.get_local_bounds()
 
         for i in range(self.__count_of_agents):
             # Agent start with a random location
-            
             # Note: repast's default_rng (i.e. numpy) rng integers is [low, high), i.e. high is exclusive 
             x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
             y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
@@ -248,7 +241,6 @@ class FCT_Model(Model):
 
             #deprivation_probability_dict = float {1: {0.02, 0.012, 0.01, 0.008, 0.005}, 2: {0.013, 0.011, 0.009, 0.008, 0.008}, 3: {0.01, 0.009, 0.009, 0.009, 0.007}, 4: {0.01, 0.01, 0.009, 0.009, 0.009}, 5: {0.007, 0.011, 0.008, 0.01, 0.016}}
 
-
             #TODO: understand this section of code
             # assign the first N agents to type 0 then the rest to type 1
             # agent_id = (i, self.__rank, 0)
@@ -264,11 +256,12 @@ class FCT_Model(Model):
             # TODO: init at the micro level: agent, theory, theory mediator
             # create agent object
             #def __init__(self, id:int, rank:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: bool,  space):
-            agent = FCT_Agent(i, self.__rank, agent_type, self.__threshold, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
+            agent = FCT_Agent(i, deprivation_quintile_rand, agent_type, self.__threshold, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
+            #######################^Rank
 
             # create theory object
             #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int): #############^ this var is a placeholder for social connections
-            theory = FundamentalCauseTheory(self.__context,  deprivation_quintile_rand, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1,  self.__discrete_space)
+            theory = FundamentalCauseTheory(self.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1,  self.__discrete_space)
 
             # create mediator object
             mediator = SocialTheoriesMediator([theory])
