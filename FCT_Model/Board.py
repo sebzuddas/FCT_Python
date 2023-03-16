@@ -86,17 +86,17 @@ class Board(StructuralEntity):
                     # Get the first agent at the location
                     agent = self.__discrete_space.get_agent(point)
                     # Print the appropriate character
-                    if agent.get_agent_type() == 0:
+                    if agent.get_agent_sex() == 0:
                         count_type0 += 1
-                    elif agent.get_agent_type() == 1:
+                    elif agent.get_agent_sex() == 1:
                         count_type1 += 1
 
         # sweep areas (defined by window size)
         segregationIndex = 0.0
         while True:
             # determine window coordinates: (x0,y0) to (x1,y1)
-            x1 = x0 + window_size - 1;
-            y1 = y0 + window_size - 1;
+            x1 = x0 + window_size - 1
+            y1 = y0 + window_size - 1
 
             # cap if out of range
             if x1 > max_x:
@@ -120,9 +120,9 @@ class Board(StructuralEntity):
                         # Get the first agent at the location
                         agent = self.__discrete_space.get_agent(point)
                         # Print the appropriate character
-                        if agent.get_agent_type() == 0:
+                        if agent.get_agent_sex() == 0:
                             local_count_type0 += 1
-                        elif agent.get_agent_type() == 1:
+                        elif agent.get_agent_sex() == 1:
                             local_count_type1 += 1
 
             # add to segregation index
@@ -146,29 +146,39 @@ class Board(StructuralEntity):
         self.__segregation_index = segregationIndex / 2.0
 
     def __update_deprivation_quintile(self, deprivation_probability_list):
-        #TODO: deprivation quintile update method
-        swap_total = [0] * 1000
-        print("number of agents:", self.__context.size())
-        
+        swap_total = []
         #print("number of on rank 0:", self.__context.size("FCT_Agent",0))
         #go through all agents and get their porobability for swapping up or down
         for agent in self.__context.agents(FCT_Agent.TYPE, shuffle=True):
-            if agent.age <=30 and pr.prob(deprivation_probability_list[agent.get_rank()][0]) == True:# get agents that can swap and are less than 30
-                swap_total.append([agent.get_rank(), agent.id, "UP"])
+            
+            #TODO: why does this return false?
+
+            #print(agent.get_age() <=30 and pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][0]) == True)
+            #print(agent.get_age()<=30)
+            #print(agent.get_age() > 30 and pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][1]) == True)
+            #TODO: implement age?
+
+            if pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][0]) == True:# get agents that can swap and are less than 30
+                swap_total.append([agent.get_deprivation_quintile(), agent.id, "UP"])
                 
-            elif agent.age > 30 and pr.prob(deprivation_probability_list[agent.get_rank()][1]) == True:# get agents that can swap and are greater than 30
-                swap_total.append([agent.get_rank(), agent.id, "DOWN"])
+                
+            elif pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][1]) == True:# get agents that can swap and are greater than 30
+                swap_total.append([agent.get_deprivation_quintile(), agent.id, "DOWN"])
+
+            else:
                 pass
+            
+                
+
         #sort swap array by object rank
-        swap_total = [x for x in swap_total if isinstance(x, list)]# remove 0s 
-        swap_total = sorted(swap_total, key=lambda x: x[0])# sort by rank
-        #print(swap_total)
-        #get number of agents that want to swap up and down
+        #swap_total = [x for x in swap_total if isinstance(x, list)]# remove 0s 
+        #swap_total = sorted(swap_total, key=lambda x: x[0])# sort by dq
+
         swap_up = [x for x in swap_total if x[2] == "UP"]
         swap_down = [x for x in swap_total if x[2] == "DOWN"]
-        print(len(swap_up), len(swap_down))
-        
-        
+        # print(swap_up)
+        # print(swap_down)
+        # print(len(swap_up), len(swap_down))
 
         if len(swap_up) > len(swap_down):
             # Repeat the last element in swap_down until the lengths match
@@ -176,43 +186,35 @@ class Board(StructuralEntity):
 
         # Pair up swap_up with swap_down
         swap_pairs = list(zip(swap_up, swap_down))
-        #print((swap_pairs))
 
-        for agent in self.__context.agents(FCT_Agent.TYPE, shuffle=True):
-            for i in range(len(swap_pairs)):
-            #print the agents ID and current rank that are swapping
-                for j in range(len(swap_pairs[i])):
+        #swap the pairs ensuring that the two 
+        #print one element of swap_pairs
+        #print(swap_pairs)
 
-                    agent_1_id = swap_pairs[i][0][1]
-                    agent_2_id = swap_pairs[i][1][1]
+        #print(len(swap_pairs))
+        
 
-                    agent_1_rank = swap_pairs[i][0][0]
-                    agent_2_rank = swap_pairs[i][1][0]
+        
+        for i in range(len(swap_pairs)):
 
-                    if agent.id == agent_1_id:
-                        agent.set_rank(agent_2_rank)
+            agent_1_id = swap_pairs[i][0][1]
+            agent_2_id = swap_pairs[i][1][1]
 
-                    if agent.id == agent_2_id:
-                        agent.set_rank(agent_1_rank)
+            agent_1_dq = swap_pairs[i][0][0]
+            agent_2_dq = swap_pairs[i][1][0]
 
+            print('swap pair: ', agent_1_id, agent_2_id)
+            print(swap_pairs)
 
+            for agent in self.__context.agents(FCT_Agent.TYPE):
+                if agent.id == agent_1_id:
+                    #print('agent1ID: ', agent.id,' currentDQ: ', agent.get_deprivation_quintile(),' subsequentDQ: ', agent_2_dq)
+                    agent.set_deprivation_quintile(agent_2_dq)
 
-                # if agent.id == swap_pairs[i]:
-                #     print("old rank:", agent.id, agent.get_rank())
-                #     agent.set_rank(swap_pairs[i][1][0])
-                #     print("new rank:", agent.id, agent.get_rank())
-
-                # if agent.id == swap_pairs[i][1][1]:
-                    
-                #     print("old rank:", agent.id, agent.get_rank())
-                #     agent.set_rank(swap_pairs[i][0][0])
-                #     print("new rank:", agent.id, agent.get_rank())
-            #swap the agents rank
-            #print(agent.get_rank())
-            #print agents old
-                
-        #print(swap_total)
-        pass
+            for agent in self.__context.agents(FCT_Agent.TYPE):
+                if agent.id == agent_2_id:
+                    #print('agent2ID: ', agent.id,' currentDQ: ', agent.get_deprivation_quintile(),' subsequentDQ: ', agent_1_dq)
+                    agent.set_deprivation_quintile(agent_1_dq)
 
     def update_social_network(self):
         #TODO implement social network updating procedure. 
@@ -252,10 +254,12 @@ class Board(StructuralEntity):
                 else: 
                     # If there is an agent, get the first agent at the location
                     agent = self.__discrete_space.get_agent(point)
+                    print(agent)
+                    print(agent.get_agent_sex())
                     # Add the appropriate character to the string row
-                    if agent.get_agent_type() == 0:
+                    if agent.get_agent_sex() == 0:
                         row += emojis.encode(":red_circle:") #Previously X
-                    elif agent.get_agent_type() == 1:
+                    elif agent.get_agent_sex() == 1:
                         row += emojis.encode(":large_blue_circle:") #Previously Y
             row += "|"
             print(row)

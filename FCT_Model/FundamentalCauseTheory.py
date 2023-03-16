@@ -9,9 +9,10 @@ import repast4py
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context, mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, space):
+    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
         self.context = context
         self.space = space
+        self.__social_influence: int = social_influence
 
         #TODO: Why are these not being worked out here?
         ## FCT level parameters/attributes
@@ -19,6 +20,7 @@ class FundamentalCauseTheory(Theory):
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth
+
         
 
         #TODO these two theory level parameters are determined by other classes. How to manage?
@@ -40,6 +42,8 @@ class FundamentalCauseTheory(Theory):
     #individual agent-level situational mechanism methods
 
     def communicate_event(self):
+
+        
         print("communicate_event_test")
 
     def do_situation(self):# function for the situational mechanisms
@@ -67,15 +71,12 @@ class FundamentalCauseTheory(Theory):
                 if other_agent is not None:
                     neighbour_count += 1
                     # TODO: increase the count if 2 agents are the same type
-                    if other_agent.get_agent_type() == self._agent.get_agent_type():
+                    if other_agent.get_agent_sex() == self._agent.get_agent_sex():
                         similar_count += 1
 
-        # TODO: if similarity >= threshold, update satisfaction
-        similarity_percentage = 0.0
-        if neighbour_count > 0:
-            similarity_percentage = similar_count / neighbour_count
-        threshold = self._agent.get_threshold()
-        self.__is_satisfied = similarity_percentage >= threshold
+        # TODO: Change the satisfied status
+        
+        self.__is_satisfied = True
 
 
     ######################################################
@@ -84,33 +85,24 @@ class FundamentalCauseTheory(Theory):
     def moving_intention(self):
         # TODO: if not satisfied, moving intention =True else =False
         self.__moving_intention = not self.__is_satisfied
-
-    def dq_change_intention(self):
         
-        """
-        Using numpy, create a random random probability of changing dq value, and if it is less than the probability, change dq value
-        """
-
-        print("attempt dq change: %d" % self.deprivation_quintile)
-
-        
-
-
 
     def calculate_resources(self):
         print("calculate resources test")
 
     def calculate_strategy_multiplier(self):
         #TODO: finish strat multiplier
-        self.strategy_multiplier = float(self.__education + self.deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
+        self.strategy_multiplier = float(self.__education + self.__deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
         return self.strategy_multiplier
+    
 
 
     # TODO: override do_action()
     def do_action(self):
         
         self.moving_intention()
-        #self.attempt_dq_change()
+
+
         #self.calculate_strategy_multiplier()
         
         #print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())

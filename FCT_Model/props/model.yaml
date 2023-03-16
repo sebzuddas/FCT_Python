@@ -5,8 +5,11 @@ count.of.agents: 765
 board.size: 50
 threshold: 0.5
 #added parameters
-max.age: 80
-min.age: 14
+max.age: 60
+min.age: 18
 tabular.logger: "outputs/tabular_logger_out.csv"
 #reduce.type.logger: "outputs/reduce_type_logger.csv"
-rankCount: 5
+network.file: "FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt"
+#rankCount: 5
+area.file: "FCT_Model/props/area/DQ_areas.csv"
+agent.props.file: "FCT_Model/props/agents/agent_props.json"

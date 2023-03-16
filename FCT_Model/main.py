@@ -16,13 +16,15 @@ import sys
 
 import FCT_Model
 
+import SocialNetwork as sn
+
 def main():
     # Command line argument parsing
     parser = repast4py.parameters.create_args_parser()
     args = parser.parse_args()
     params = repast4py.parameters.init_params(args.parameters_file, args.parameters)
 
-    
+
     # If multiple MPI ranks have been used, terminate with an error message
     if (MPI.COMM_WORLD.Get_size() > 1):
         if MPI.COMM_WORLD.Get_rank() == 0:
@@ -30,11 +32,17 @@ def main():
         sys.exit(1)
     
     # Construct the FCT Model
-    params["rankCount"] = 5
+    
     model = FCT_Model.FCT_Model(MPI.COMM_WORLD, params)# 
-    print(MPI.COMM_WORLD.size)
 
+    sn.generate_network_file("FCT_Model/props/network/FCT_network.txt", MPI.COMM_WORLD.size, params.get('count.of.agents'))
+
+    #sn.generate_DQ_areas(params.get('area.file'), params.get('board.size'), params.get('board.size'))
+    #sn.test_fcn()
     # Initialise Agents
+
+    sn.generate_agent_json_file(params.get("count.of.agents"), params.get("agent.props.file"), sn.generate_agent_distributions(0))
+
     model.init_agents()
 
     #TODO network
