@@ -1,20 +1,25 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Aims and Objectives}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Aims}{2}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Objectives}{2}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Core Objectives}{2}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Stretch Goals}{2}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}Literature Review \& Work Done}{3}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Alcohol Harm Paradox}{3}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Fundamental Cause Theory}{4}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Agent-based Models in Public Health}{5}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Work Done}{6}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}ODD}{6}{subsection.3.4.1}%
-\contentsline {subsubsection}{Overview}{6}{subsubsection*.21}%
-\contentsline {subsection}{\numberline {3.4.2}Software Design}{6}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Experiment Conceptualisation}{6}{subsection.3.4.3}%
-\contentsline {chapter}{\numberline {4}Project Management \& Self Review}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Gantt Chart \& Amendments}{8}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Self-Review}{8}{section.4.2}%
-\contentsline {chapter}{Appendices}{9}{section*.26}%
-\contentsline {chapter}{\numberline {A}Gantt Chart Amendments}{10}{appendix.a.A}%
+\contentsline {section}{\numberline {1.1}Aims and Objectives}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Aims}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objectives}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Core Objectives}{2}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Stretch Goals}{2}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Work Done}{2}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}ODD}{2}{subsection.1.3.4}%
+\contentsline {subsubsection}{Overview}{3}{subsubsection*.13}%
+\contentsline {subsection}{\numberline {1.3.5}Software Design}{3}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Experiment Conceptualisation}{3}{subsection.1.3.6}%
+\contentsline {section}{\numberline {1.4}Project Management \& Self Review}{5}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Gantt Chart \& Amendments}{5}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Self-Review}{5}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Literature Review}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Alcohol Harm Paradox}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Fundamental Cause Theory}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Agent-based Models}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Relevance to Public Health}{8}{subsection.2.3.1}%
+\contentsline {chapter}{\numberline {3}Development \& Methods}{10}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Results}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Discussion}{12}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusions}{13}{chapter.6}%
+\contentsline {chapter}{Appendices}{14}{section*.31}%
+\contentsline {chapter}{\numberline {A}Gantt Chart Amendments}{15}{appendix.a.A}%

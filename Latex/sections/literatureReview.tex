@@ -1,4 +1,6 @@
-\chapter{Literature Review \& Work Done}
+\chapter{Literature Review}
+
+\todo[options]{Lit rev( range of possible methods to be used. Supports the deicisions that you make. Gaps in state of the art. Shortcomings of existing methods. Be critical of literature. [discuss systems modelling approaches]. Consider the clarity of ideas.  Clear structures → targeted writing. }
 
 %\todo{Analyse, synthesize critically evaluate}
 
@@ -46,7 +48,7 @@ Boyd et al.~\cite{Boyd2021} note that \ac{FCT} is not apparent in \ac{AHP} liter
 %\todo{when mentioning SES mention IMD quintiles and their purpose}
 
 
-\section{Agent-based Models in Public Health}
+\section{Agent-based Models}
 
 \todo{Agent Rules}
 \todo{MBSSM (8 pages)}
@@ -55,6 +57,7 @@ Boyd et al.~\cite{Boyd2021} note that \ac{FCT} is not apparent in \ac{AHP} liter
 \todo{describe rules}
 \todo{describe other methods with which to attack this problem ie what other ways apart from abm}
 
+\subsection{Relevance to Public Health}
 
 
 
@@ -72,69 +75,3 @@ Summarising, there is a clear gap in the \ac{AHP} literature, which has failed i
 %\todo{bridging between theory and own work. Jen developed abm, used mbssm, look at reproducing the conceptual model, }
 
 %\todo{mbssm will be worth more pages in the dissertation (approx 2) }
-
-
-
-
-
-%Recently alcohol policy in Scotland... minimum unit pricing... derived from ABM SAPM... 
-
-%The purpose of this dissertation is to develop and build an \ac{ABM} to see whether it is feasible to firstly see if FCT is a reasonable theory to understand AHP, but also to lay the groundwork for further development of the model to be enhanced. 
-
-\section{Work Done}
-
-
-
-
-\subsection{ODD}
-
-The \ac{ODD} protocol is a standard protocol used to describe how a particular \ac{ABM} works \cite{oddOrigin}. Boyd produced an \ac{ABM} to analyse whether \ac{FCT} could describe the \ac{AHP} \cite{BoydphD}. This dissertation takes inspiration from Boyd's work and seeks to replicate and extend the model, and explore the fundamental behaviours. The full \ac{ODD} will be given in the final dissertation; the initial overview and design is given below.
-
-\subsubsection{Overview}
-The model proposed takes mechanisms present in \ac{FCT} and looks to explore the model output space with the intention of model exploration. The agents in the model live in an environment determined by a \ac{DQ}. The agents are exposed to alcohol harm through drinking at a rate linked to their individual propensity to drink. The event generator periodically broadcasts events to a random number of agents events that help agents avoid alcohol harms. The level to which agents can decode the information is in part determined by \ac{FCT}-related parameters. Events are stored by the agent and each tick the agent will attempt to solve an event they've not yet solved. Agents have the capacity to share a successful adaptation to the event information with an agent within their social network once per tick. 
-
-\subsection{Software Design}
-\ac{UML} is an approach to software design which presents many benefits in the development of \ac{ABM}s \cite{UMLABM}. Class diagrams, which are used to describe the behaviour of and relationship between entities in a model, are said to be among the most important model to design in the development of \ac{ABM}s \cite{UMLABM}. Figure \ref{fig:fctUML} shows the current \ac{UML} diagram that follows the \ac{MBSSM} framework but re-contextualises the example model given in the paper to account for only \ac{FCT} in terms of social theories. There has been an extension to the \ac{MBSSM} example with the inclusion of a social network and environment classes, and the exclusion of mediator classes. Further details will be discussed in the final dissertation.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\linewidth]{figures/Class Diagram FYP December.png}
-\caption{A class diagram of the proposed ABM}
-\label{fig:fctUML}
-\end{figure}
-
-
-% \subsection{Relevant Equations on Mechanisms of Action}
-% \begin{figure}[h]
-% \centering
-% \includegraphics[scale=0.5]{USFD_Academic-_Report_LaTeX-Template/figures/ABM Diagram Single Year.png}
-% \caption{An example graph}
-% \label{fig:x cubed graph}
-% \end{figure}
-
-
-\subsection{Experiment Conceptualisation}
-
-Table \ref{tab:experiments} shows a number of experiment concepts that has been reduced in the interest of keeping within the report requirements. The most important experiment that will be conducted is parameter space exploration through \ac{LHS}, a technique used to generate a set of parameters for this purpose. This is intended to demonstrate the general behaviour of the model and give insight into expected and unexpected behaviours. Other experiments, such as those related to \ac{FCT} and \ac{AHP} give credibility to the model. Finally, an interesting experiment would be to look at which \ac{FCT}-related parameters lead to the gratest harm, giving scope for further research and potential development for the model.  
-
-\begin{table}[H]
-\centering
-\begin{tabular}{||p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}||}
- \hline
-    Experiment & Method & Expected Impact \\[0.5ex] 
- \hline\hline
-  Exploration of the parameter space. & Using \ac{LHS}. & Demonstrate general model behaviour. \\ 
-  \hline
-  Can \ac{FCT} be shown?  & Preventability shifts,  manipulated preventability. & Validation of \ac{FCT} working in the model. \\
-  
-  \hline
-  Can \ac{AHP} be shown? & Changing the extremities of available community and individual resources & Further evidence that \ac{AHP} can be explained through \ac{FCT}. \\
-  \hline
-  
-  Which \ac{FCT} parameters relate most to alcohol harm? & Test extremities of each \ac{FCT} parameter. & A certain combination of parameters will lead to the most harm for all individuals. \\ [1ex] 
- \hline
-\end{tabular}
-\caption{Table showing initial experiment concepts.}
-\label{tab:experiments}
-\end{table}
-
