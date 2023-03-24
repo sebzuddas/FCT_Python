@@ -165,7 +165,6 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list]):
     with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
         updated_network_file.writelines(updated_lines)
 
-
 def generate_agent_distributions(type):
 
     dict = {"age": [], "drinking_status": []}
