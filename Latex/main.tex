@@ -13,6 +13,11 @@
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 \usepackage[sort&compress]{natbib}
 
+\usepackage{tikz}
+\usepackage{pgfplots}\pgfplotsset{compat=1.9}
+
+
+
 
 
 \begin{document}
@@ -46,13 +51,12 @@ Semester 1, 2022
 
 \include{sections/listOfAcronyms.tex}
 \mainmatter
-
-
 \input{sections/introduction.tex}
-\input{sections/aimsAndObjectives.tex}
 \input{sections/literatureReview.tex}
-\input{sections/projectManagement.tex}
-%\input{sections/selfReview.tex}
+\input{sections/methods.tex}
+\input{sections/results.tex}
+\input{sections/discussion.tex}
+\input{sections/conclusions}
 
 % -------------------------------------------------------------------
 % Bibliography
@@ -60,7 +64,6 @@ Semester 1, 2022
 
 \bibliographystyle{ieeetr} 
 \bibliography{FinalBib} 
-
 
 % -------------------------------------------------------------------
 % Appendices
