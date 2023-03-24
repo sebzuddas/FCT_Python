@@ -207,13 +207,22 @@ class FCT_Model(Model):
         #(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
         #print(self.__discrete_space)
 
+
+        # Create the agents
+
         read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
 
-        for agent in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-            agent.set_space(self.__discrete_space)
+        for agents in (self.__context.agents()):
+            agents.set_space(self.__discrete_space)
+            print(agents.get_agent_id(), self.__discrete_space)
+
+        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
+        #     agents.set_space(self.__discrete_space)
+        #     print(agents.get_agent_id(), self.__discrete_space)
+
         
-        for agent in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-            print(agent.get_id(), agent.get_space())
+        for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
+            print(agents.get_agent_id(), self.__discrete_space)
         
         """
         for i in range(self.__count_of_agents):

@@ -43,7 +43,7 @@ class FCT_Agent(MicroAgent):
     #Agent Getters
 
     def get_agent_id(self) -> int:
-        return self._id
+        return self.id
     
     def get_agent_rank(self) -> int:
         return self._rank
