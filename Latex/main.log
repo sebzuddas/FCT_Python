@@ -1,0 +1,1706 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.19)  24 MAR 2023 15:59
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/sebastianozuddas/Programming/Python/FCT_Python/Latex/main
+(/Users/sebastianozuddas/Programming/Python/FCT_Python/Latex/main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count194
+\Gm@cntv=\count195
+\c@Gm@tempcnt=\count196
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks17
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count197
+\c@@ppsavesec=\count198
+\c@@ppsaveapp=\count199
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count266
+\l__pdf_internal_box=\box50
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count267
+\l__lipsum_a_int=\count268
+\l__lipsum_b_int=\count269
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen149
+\captionmargin=\dimen150
+\caption@leftmargin=\dimen151
+\caption@rightmargin=\dimen152
+\caption@width=\dimen153
+\caption@indent=\dimen154
+\caption@parindent=\dimen155
+\caption@hangindent=\dimen156
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count270
+\c@continuedfloat=\count271
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count272
+\float@exts=\toks18
+\float@box=\box51
+\@float@everytoks=\toks19
+\@floatcapt=\box52
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen157
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen158
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count273
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count274
+\leftroot@=\count275
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count276
+\DOTSCASE@=\count277
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+\big@size=\dimen159
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count278
+\c@MaxMatrixCols=\count279
+\dotsspace@=\muskip16
+\c@parentequation=\count280
+\dspbrk@lvl=\count281
+\tag@help=\toks21
+\row@=\count282
+\column@=\count283
+\maxfields@=\count284
+\andhelp@=\toks22
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
+\@envbody=\toks23
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+\c@subfigure=\count285
+\c@subtable=\count286
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2021/06/04 v1.1.5 Todonotes source and documentation.
+Package: todonotes 2021/06/04
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
+)
+\XKV@depth=\count287
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks27
+\pgfutil@tempdima=\dimen166
+\pgfutil@tempdimb=\dimen167
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box55
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks28
+\pgfkeys@temptoks=\toks29
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks30
+))
+\pgf@x=\dimen168
+\pgf@y=\dimen169
+\pgf@xa=\dimen170
+\pgf@ya=\dimen171
+\pgf@xb=\dimen172
+\pgf@yb=\dimen173
+\pgf@xc=\dimen174
+\pgf@yc=\dimen175
+\pgf@xd=\dimen176
+\pgf@yd=\dimen177
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count288
+\c@pgf@countb=\count289
+\c@pgf@countc=\count290
+\c@pgf@countd=\count291
+\t@pgf@toka=\toks31
+\t@pgf@tokb=\toks32
+\t@pgf@tokc=\toks33
+\pgf@sys@id@count=\count292
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count293
+\pgfsyssoftpath@bigbuffer@items=\count294
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen178
+\pgfmath@count=\count295
+\pgfmath@box=\box56
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count296
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen179
+\pgf@picmaxx=\dimen180
+\pgf@picminy=\dimen181
+\pgf@picmaxy=\dimen182
+\pgf@pathminx=\dimen183
+\pgf@pathmaxx=\dimen184
+\pgf@pathminy=\dimen185
+\pgf@pathmaxy=\dimen186
+\pgf@xx=\dimen187
+\pgf@xy=\dimen188
+\pgf@yx=\dimen189
+\pgf@yy=\dimen190
+\pgf@zx=\dimen191
+\pgf@zy=\dimen192
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen193
+\pgf@path@lasty=\dimen194
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen195
+\pgf@shorten@start@additional=\dimen196
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box57
+\pgf@hbox=\box58
+\pgf@layerbox@main=\box59
+\pgf@picture@serial@count=\count297
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen197
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen198
+\pgf@pt@y=\dimen199
+\pgf@pt@temp=\dimen256
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen257
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen258
+\pgf@sys@shading@range@num=\count298
+\pgf@shadingcount=\count299
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box60
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box61
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen259
+\pgf@nodesepend=\dimen260
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen261
+\pgffor@skip=\dimen262
+\pgffor@stack=\toks37
+\pgffor@toks=\toks38
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count300
+\pgfplotmarksize=\dimen263
+)
+\tikz@lastx=\dimen264
+\tikz@lasty=\dimen265
+\tikz@lastxsaved=\dimen266
+\tikz@lastysaved=\dimen267
+\tikz@lastmovetox=\dimen268
+\tikz@lastmovetoy=\dimen269
+\tikzleveldistance=\dimen270
+\tikzsiblingdistance=\dimen271
+\tikz@figbox=\box62
+\tikz@figbox@bg=\box63
+\tikz@tempbox=\box64
+\tikz@tempbox@bg=\box65
+\tikztreelevel=\count301
+\tikznumberofchildren=\count302
+\tikznumberofcurrentchild=\count303
+\tikz@fig@count=\count304
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count305
+\pgfmatrixcurrentcolumn=\count306
+\pgf@matrix@numberofcolumns=\count307
+)
+\tikz@expandcount=\count308
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count309
+\calc@Bcount=\count310
+\calc@Adimen=\dimen272
+\calc@Bdimen=\dimen273
+\calc@Askip=\skip52
+\calc@Bskip=\skip53
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count311
+\calc@Cskip=\skip54
+)
+\c@@todonotes@numberoftodonotes=\count312
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+\c@dirtytalk@qdepth=\count313
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen274
+\ar@mcellbox=\box66
+\extrarowheight=\dimen275
+\NC@list=\toks39
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box67
+)
+\TX@col@width=\dimen276
+\TX@old@table=\dimen277
+\TX@old@col=\dimen278
+\TX@target=\dimen279
+\TX@delta=\dimen280
+\TX@cols=\count314
+\TX@ftn=\toks40
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/acronym/acronym.sty
+Package: acronym 2020/04/17 v1.47 Support for acronyms (Tobias Oetiker)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count315
+\decimalpart=\count316
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
+\AC@clearlist=\toks41
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box68
+\beforetitleunit=\skip57
+\aftertitleunit=\skip58
+\ttl@plus=\dimen281
+\ttl@minus=\dimen282
+\ttl@toksa=\toks42
+\titlewidth=\dimen283
+\titlewidthlast=\dimen284
+\titlewidthfirst=\dimen285
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen286
+\Hy@linkcounter=\count317
+\Hy@pagecounter=\count318
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count319
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count320
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen287
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count321
+\Field@Width=\dimen288
+\Fld@charsize=\dimen289
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring ON on input line 6045.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count322
+\c@Item=\count323
+\c@Hfootnote=\count324
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count325
+\c@bookmark@seq@number=\count326
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+)
+\Hy@SectionHShift=\skip59
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip60
+\bibsep=\skip61
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count327
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(86.72377pt, 440.84746pt, 86.72377pt)
+* v-part:(T,H,B)=(86.72377pt, 621.52245pt, 86.72377pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=440.84746pt
+* \textheight=621.52245pt
+* \oddsidemargin=14.45378pt
+* \evensidemargin=14.45378pt
+* \topmargin=-17.42001pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=62.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count328
+\scratchdimen=\dimen290
+\scratchbox=\box69
+\nofMPsegments=\count329
+\nofMParguments=\count330
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count331
+\MPscratchDim=\dimen291
+\MPnumerator=\count332
+\makeMPintoPDFobject=\count333
+\everyMPtoPDFconversion=\toks44
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 18.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count334
+)
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+<images/Circular UoS Logo.png, id=7, 481.8pt x 481.8pt>
+File: images/Circular UoS Logo.png Graphic file (type png)
+<use images/Circular UoS Logo.png>
+Package pdftex.def Info: images/Circular UoS Logo.png  used on input line 35.
+(pdftex.def)             Requested size: 142.26378pt x 142.26208pt.
+
+
+/Users/sebastianozuddas/Programming/Python/FCT_Python/Latex/main.tex:36: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \\
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1
+
+
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/Circular UoS Logo.png>]
+\openout2 = `sections/listOfAcronyms.aux'.
+
+ (./sections/listOfAcronyms.tex
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4 \listoffigures
+                   [1
+
+
+]
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [2
+
+]
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [3
+
+]) [4] (./sections/introduction.tex
+Chapter 1.
+
+Package natbib Warning: Citation `WHOGlobalStatusReportFull' on page 1 undefined on input line 5.
+
+
+Package natbib Warning: Citation `WHOGlobalStatusReportFull' on page 1 undefined on input line 6.
+
+
+Package natbib Warning: Citation `lancetAlcoholEditorial' on page 1 undefined on input line 6.
+
+
+Package natbib Warning: Citation `fullAlcoholHarms' on page 1 undefined on input line 8.
+
+
+Package natbib Warning: Citation `alcoholRiskThresholds' on page 1 undefined on input line 8.
+
+
+Package natbib Warning: Citation `noDrinkvsSomeDrink' on page 1 undefined on input line 8.
+
+Package acronym Info: Label `acro:AHP' newly defined as it shall be overridden
+although it is yet undefined on input line 12.
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 12.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 12.
+
+Package acronym Info: Label `acro:SES' newly defined as it shall be overridden
+although it is yet undefined on input line 12.
+
+Package acronym Warning: Acronym `SES' is not defined on input line 12.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 12.
+
+
+Package natbib Warning: Citation `unravellingAHP' on page 1 undefined on input line 12.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 12.
+
+
+Package natbib Warning: Citation `WHOGlobalStatusReportFull' on page 1 undefined on input line 12.
+
+
+Package natbib Warning: Citation `lancetAlcoholEditorial' on page 1 undefined on input line 12.
+
+
+Package natbib Warning: Citation `englandAlcohol2021' on page 1 undefined on input line 12.
+
+
+Package natbib Warning: Citation `scotlandAlcohol2022' on page 1 undefined on input line 12.
+
+
+Package natbib Warning: Citation `ahp2016' on page 1 undefined on input line 12.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 13.
+
+
+Package natbib Warning: Citation `ahpInterventions' on page 1 undefined on input line 13.
+
+
+Package natbib Warning: Citation `csHealthDisparities' on page 1 undefined on input line 13.
+
+
+Package natbib Warning: Citation `sdhInterventions' on page 1 undefined on input line 13.
+
+
+Package natbib Warning: Citation `FCTorigin' on page 1 undefined on input line 13.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+Package acronym Info: Label `acro:FCT' newly defined as it shall be overridden
+although it is yet undefined on input line 14.
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 14.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 14.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 14.
+
+
+Package natbib Warning: Citation `FCTorigin' on page 1 undefined on input line 14.
+
+
+Package natbib Warning: Citation `Boyd2021' on page 1 undefined on input line 14.
+
+Package acronym Info: Label `acro:ABM' newly defined as it shall be overridden
+although it is yet undefined on input line 16.
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 16.
+
+
+Package natbib Warning: Citation `covidABM' on page 1 undefined on input line 16.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 16.
+
+
+Package natbib Warning: Citation `scopingReview' on page 1 undefined on input line 16.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 16.
+
+) (./sections/aimsAndObjectives.tex [1
+
+
+
+
+]
+Chapter 2.
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 10.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 10.
+
+Package acronym Info: Label `acro:UML' newly defined as it shall be overridden
+although it is yet undefined on input line 11.
+
+Package acronym Warning: Acronym `UML' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `UML' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `UML' is not defined on input line 12.
+
+Package acronym Info: Label `acro:RHPC' newly defined as it shall be overridden
+although it is yet undefined on input line 12.
+
+Package acronym Warning: Acronym `RHPC' is not defined on input line 12.
+
+
+Package acronym Warning: Acronym `RHPC' is not defined on input line 12.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 14.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 14.
+
+./sections/aimsAndObjectives.tex:17: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.17 \hline
+           
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+
+ []
+
+
+./sections/aimsAndObjectives.tex:20: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \\
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./sections/aimsAndObjectives.tex:21: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21     \item
+               Critically appraise the \ac{ABM} as an adequate representatio...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 21.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 21.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 21.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 22.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 22.
+
+) (./sections/literatureReview.tex [2
+
+]
+Chapter 3.
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 7.
+
+
+Package natbib Warning: Citation `ahpOrigin' on page 3 undefined on input line 7.
+
+
+Package natbib Warning: Citation `primateSocialDeterminants' on page 3 undefined on input line 7.
+
+
+Package natbib Warning: Citation `Krieger1997' on page 3 undefined on input line 7.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 7.
+
+Package acronym Info: Label `acro:WHO' newly defined as it shall be overridden
+although it is yet undefined on input line 9.
+
+Package acronym Warning: Acronym `WHO' is not defined on input line 9.
+
+
+Package acronym Warning: Acronym `WHO' is not defined on input line 9.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 9.
+
+
+Package natbib Warning: Citation `WHOGlobalStatusReportFull' on page 3 undefined on input line 9.
+
+
+Package acronym Warning: Acronym `WHO' is not defined on input line 9.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 9.
+
+
+Package natbib Warning: Citation `WHOGlobalStatusReportFull' on page 3 undefined on input line 9.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 9.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 11.
+
+
+Package natbib Warning: Citation `Boyd2022' on page 3 undefined on input line 11.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 11.
+
+
+Package natbib Warning: Citation `scotlandAlcohol2022' on page 3 undefined on input line 11.
+
+
+Package natbib Warning: Citation `ahpInterventions' on page 3 undefined on input line 11.
+
+
+Package natbib Warning: Citation `ahp2016' on page 3 undefined on input line 11.
+
+
+Package natbib Warning: Citation `ahpWhatNext' on page 3 undefined on input line 11.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+
+Package natbib Warning: Citation `ahp2016' on page 3 undefined on input line 13.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+
+Package natbib Warning: Citation `ahpInterventions' on page 3 undefined on input line 13.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 13.
+
+[3
+
+]
+
+Package acronym Warning: Acronym `SES' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 16.
+
+
+Package natbib Warning: Citation `inverseCareLaw' on page 4 undefined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 18.
+
+
+Package natbib Warning: Citation `csHealthDisparities' on page 4 undefined on input line 18.
+
+
+Package natbib Warning: Citation `Boyd2021' on page 4 undefined on input line 18.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 18.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 18.
+
+
+Package natbib Warning: Citation `Boyd2021' on page 4 undefined on input line 18.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 31.
+
+
+Package natbib Warning: Citation `FCTorigin' on page 4 undefined on input line 31.
+
+Package acronym Info: Label `acro:AUD' newly defined as it shall be overridden
+although it is yet undefined on input line 31.
+
+Package acronym Warning: Acronym `AUD' is not defined on input line 31.
+
+
+Package acronym Warning: Acronym `AUD' is not defined on input line 31.
+
+
+Package acronym Warning: Acronym `AUD' is not defined on input line 31.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 33.
+
+
+Package natbib Warning: Citation `fctRetro' on page 4 undefined on input line 33.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 33.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 33.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 34.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 38.
+
+
+Package natbib Warning: Citation `fctNeighbourhoods' on page 4 undefined on input line 38.
+
+
+Package natbib Warning: Citation `fctStressors' on page 4 undefined on input line 38.
+
+
+Package natbib Warning: Citation `fctLungCancerUS' on page 4 undefined on input line 38.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 38.
+
+
+Package natbib Warning: Citation `fctLungCancerUS' on page 4 undefined on input line 38.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 38.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 38.
+
+
+Package natbib Warning: Citation `liverDiseaseList' on page 4 undefined on input line 38.
+
+
+Package natbib Warning: Citation `Boyd2021' on page 4 undefined on input line 40.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 40.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 40.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 40.
+
+
+Package natbib Warning: Citation `FCTorigin' on page 4 undefined on input line 40.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 40.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 40.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 40.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 40.
+
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 51.
+[4]
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 61.
+
+
+Package natbib Warning: Citation `abmEpstein' on page 5 undefined on input line 61.
+
+
+Package natbib Warning: Citation `abmGeneral' on page 5 undefined on input line 61.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 61.
+
+
+Package natbib Warning: Citation `schelling' on page 5 undefined on input line 61.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 61.
+
+
+Package natbib Warning: Citation `covidABM' on page 5 undefined on input line 61.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 63.
+
+
+Package natbib Warning: Citation `scopingReview' on page 5 undefined on input line 63.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 63.
+
+
+Package natbib Warning: Citation `collegeABMCLD' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmCollegeConsumption' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmYoungAus' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmNetLogo' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmBinge' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmAlcoholTaxation' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmDutchAdults' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmEcologicalNiche' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmTradingHours' on page 5 undefined on input line 63.
+
+
+Package natbib Warning: Citation `abmPublicTransport' on page 5 undefined on input line 63.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 64.
+
+
+Package natbib Warning: Citation `abmVenueLock' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmPublicTransport' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmAlcoholCrime' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmSimARC' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmEcologicalNiche' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmTradingHours' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmRiskBehaviourDev' on page 5 undefined on input line 64.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 64.
+
+
+Package natbib Warning: Citation `collegeABMCLD' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmVenueLock' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmPublicTransport' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmNetLogo' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmPolicyInterventions' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmAlcoholTaxation' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `collegeABMCLD' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmRiskBehaviourDev' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmYoungAus' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmCollegeConsumption' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmAlcoholCrime' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmBinge' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmSimARC' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmDutchAdults' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 5 undefined on input line 64.
+
+
+Package natbib Warning: Citation `abmEcologicalNiche' on page 5 undefined on input line 64.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 64.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 66.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 66.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 66.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 66.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 66.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 68.
+
+
+Package natbib Warning: Citation `MBSSM' on page 5 undefined on input line 68.
+
+Package acronym Info: Label `acro:MBSSM' newly defined as it shall be overridden
+although it is yet undefined on input line 68.
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 68.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 68.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 68.
+
+Package acronym Info: Label `acro:MUP' newly defined as it shall be overridden
+although it is yet undefined on input line 68.
+
+Package acronym Warning: Acronym `MUP' is not defined on input line 68.
+
+
+Package acronym Warning: Acronym `MUP' is not defined on input line 68.
+
+
+Package natbib Warning: Citation `mbssmCommentary' on page 5 undefined on input line 68.
+
+
+Package natbib Warning: Citation `scotlandMUP' on page 5 undefined on input line 68.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 68.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 68.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 68.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 68.
+
+
+Package natbib Warning: Citation `Boyd2022' on page 5 undefined on input line 68.
+
+
+Package natbib Warning: Citation `sipherIntro' on page 5 undefined on input line 68.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 70.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 70.
+
+Package acronym Info: Label `acro:ODD' newly defined as it shall be overridden
+although it is yet undefined on input line 91.
+
+Package acronym Warning: Acronym `ODD' is not defined on input line 91.
+
+
+Package acronym Warning: Acronym `ODD' is not defined on input line 91.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 91.
+
+
+Package natbib Warning: Citation `oddOrigin' on page 5 undefined on input line 91.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 91.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 91.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 91.
+
+
+Package natbib Warning: Citation `BoydphD' on page 5 undefined on input line 91.
+
+
+Package acronym Warning: Acronym `ODD' is not defined on input line 91.
+
+[5]
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 94.
+
+Package acronym Info: Label `acro:DQ' newly defined as it shall be overridden
+although it is yet undefined on input line 94.
+
+Package acronym Warning: Acronym `DQ' is not defined on input line 94.
+
+
+Package acronym Warning: Acronym `DQ' is not defined on input line 94.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 94.
+
+
+Package acronym Warning: Acronym `UML' is not defined on input line 97.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 97.
+
+
+Package natbib Warning: Citation `UMLABM' on page 6 undefined on input line 97.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 97.
+
+
+Package natbib Warning: Citation `UMLABM' on page 6 undefined on input line 97.
+
+
+LaTeX Warning: Reference `fig:fctUML' on page 6 undefined on input line 97.
+
+
+Package acronym Warning: Acronym `UML' is not defined on input line 97.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 97.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 97.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 97.
+
+<figures/Class Diagram FYP December.png, id=95, 3011.25pt x 2658.93375pt>
+File: figures/Class Diagram FYP December.png Graphic file (type png)
+<use figures/Class Diagram FYP December.png>
+Package pdftex.def Info: figures/Class Diagram FYP December.png  used on input line 101.
+(pdftex.def)             Requested size: 440.84746pt x 389.24786pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `tab:experiments' on page 6 undefined on input line 118.
+
+Package acronym Info: Label `acro:LHS' newly defined as it shall be overridden
+although it is yet undefined on input line 118.
+
+Package acronym Warning: Acronym `LHS' is not defined on input line 118.
+
+
+Package acronym Warning: Acronym `LHS' is not defined on input line 118.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 118.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 118.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 118.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 122.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 122.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+Package acronym Warning: Acronym `LHS' is not defined on input line 126.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 128.
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 128--128
+[]|\OT1/cmr/m/n/10.95 Preventability shifts, ma-
+ []
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 128.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 131.
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 131--131
+[]|\OT1/cmr/m/n/10.95 Changing the ex-trem-i-ties
+ []
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 131.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 131.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[]|\OT1/cmr/m/n/10.95 Further ev-i-dence that
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 131--132
+[][] \OT1/cmr/m/n/10.95 can be ex-plained
+ []
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 134.
+
+
+Underfull \hbox (badness 3219) in paragraph at lines 134--134
+[]|\OT1/cmr/m/n/10.95 Which [][] pa-ram-e-ters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+\OT1/cmr/m/n/10.95 re-late most to al-co-hol
+ []
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 134.
+
+
+Underfull \hbox (badness 3758) in paragraph at lines 134--134
+[]|\OT1/cmr/m/n/10.95 Test ex-trem-i-ties of each
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 134--134
+[]|\OT1/cmr/m/n/10.95 A cer-tain com-bi-na-tion of
+ []
+
+[6] [7 <./figures/Class Diagram FYP December.png>]) (./sections/projectManagement.tex
+Chapter 4.
+
+LaTeX Warning: Reference `fig:S2Gantt' on page 8 undefined on input line 7.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 16.
+
+
+Package acronym Warning: Acronym `RHPC' is not defined on input line 18.
+
+
+Package natbib Warning: Citation `repasthpc' on page 8 undefined on input line 18.
+
+)
+No file main.bbl.
+[8
+
+] [9
+
+
+]
+\openout2 = `sections/Appendix.aux'.
+
+ (./sections/Appendix.tex
+Appendix A.
+<figures/S2Gantt.png, id=130, 1445.4pt x 903.375pt>
+File: figures/S2Gantt.png Graphic file (type png)
+<use figures/S2Gantt.png>
+Package pdftex.def Info: figures/S2Gantt.png  used on input line 5.
+(pdftex.def)             Requested size: 440.84746pt x 275.52208pt.
+) [10
+
+
+ <./figures/S2Gantt.png>]
+
+Package natbib Warning: There were undefined citations.
+
+(./main.aux (./sections/listOfAcronyms.aux) (./sections/Appendix.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  110427F25FD6C0186A6A176A1C0A3EF1;2778.
+ ) 
+Here is how much of TeX's memory you used:
+ 24686 strings out of 478268
+ 460947 string characters out of 5846347
+ 825612 words of memory out of 5000000
+ 42386 multiletter control sequences out of 15000+600000
+ 478636 words of font info for 61 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,11n,94p,1374b,961s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (15 pages, 950981 bytes).
+PDF statistics:
+ 190 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+

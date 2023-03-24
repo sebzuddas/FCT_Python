@@ -40,11 +40,15 @@ class MicroAgent(repast4py.core.Agent, metaclass=ABCMeta):
     def set_mediator(self, mediator: TheoryMediator):
         self._mediator = mediator
     
-    def do_situation(self):
+
+    #TODO: rename to call_situation
+    def call_situation(self):
         if self._mediator is not None:
             self._mediator.mediate_situation()
 
-    def do_action(self):
+
+    #TODO: rename to call_action
+    def call_action(self):
         if self._mediator is not None:
             self._mediator.mediate_action()
 
@@ -60,7 +64,6 @@ class MicroAgent(repast4py.core.Agent, metaclass=ABCMeta):
         return (self._id, self._mediator)
 
 def restore_agent(agent_data:Tuple):
-
     """ 
     Repast4py uses save() and restore_agent to migrate agents between ranks.
     The MBSSM core is only implemented for single-rank simulations, i.e. this method is not implemented.

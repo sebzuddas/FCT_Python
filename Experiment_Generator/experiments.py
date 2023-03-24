@@ -57,3 +57,65 @@ def generate_probability(probability_type):
     elif probability_type == 'chisquare':
         return random.chisquare(1)
 
+def generate_agent_distributions(type):
+
+    dict = {"age": [], "drinking_status": []}
+
+
+    experiment = type
+    match experiment:
+       
+        case 1:# normal population, low drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [0, 2]
+            return dict
+        
+        case 2:# normal population, high drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [2, 4]
+            return dict
+                
+        case 3:# low population, high drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [2, 4]
+            return dict
+        
+        case 4:# low population, normal drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [0, 4]
+            return dict
+            
+        case 5:# low population, low drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [0, 2]
+            return dict
+        
+        case 6:# high population, high drinking status
+            dict["age"] = [40, 80]
+            dict["drinking_status"] = [2, 4]
+            return dict
+        case 7:# high population, normal drinking status
+            dict["age"] = [40, 80]
+            dict["drinking_status"] = [0, 4]
+            return dict
+            
+        case 8:# high population, low drinking status
+            dict["age"] = [40, 40]
+            dict["drinking_status"] = [0, 2]
+            return dict
+
+        case _:# normal population, normal drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [0, 4]
+            return dict
+        
+
+        
+
+#TODO: create a function that generates a distribution for the theory class
+# def generate_theory_distributions(type):
+#     experiment = type
+#     match experiment:
+#         case 1:
+#             pass
+    

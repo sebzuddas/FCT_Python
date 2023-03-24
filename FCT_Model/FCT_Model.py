@@ -3,7 +3,9 @@ from typing import Dict, Tuple, List
 import pathlib
 from dataclasses import dataclass
 
+import json
 from repast4py import context, schedule, random, logging
+from repast4py.network import write_network, read_network
 import repast4py
 
 from core.Model import Model
@@ -20,24 +22,19 @@ from SocialTheoriesMediator import SocialTheoriesMediator
 #     strategy_multiplier: int = 0
 #     deprivation_quintile: int = 0
 
-
-
-
 class FCT_Model(Model):
 
     def __init__(self, comm, params: Dict):
         self.__comm = comm
         # TODO: Define the context for agents
         self.__context:repast4py.context.SharedContext = repast4py.context.SharedContext(comm)
-
         self.__rank:int = self.__comm.Get_rank()
-
+        
         # Model parameters that initialise the model 
         self.__props = params
         self.__stop_at:int = self.__props["stop.at"] if "stop.at" in params else 0
         self.__count_of_agents:int = self.__props["count.of.agents"] if "count.of.agents" in params else 0
         self.__board_size:int = self.__props["board.size"] if "board.size" in params else 0
-        self.__threshold:float = self.__props["threshold"] if "threshold" in params else 0
         
         
         #Added params
@@ -48,6 +45,8 @@ class FCT_Model(Model):
 
         repast4py.random.init(rng_seed=self.__random_seed)# initialise pseudo-random number generator with the random seed from the props
         
+
+        #read_network(params["network.file"], self.__context, create_FCT_agent(i, self.__rank, deprivation_quintile_rand, agent_type, sex_rand, age_rand, drinking_status_rand, self.__discrete_space), FCT_Agent.restore_agent)
         
         """
         #TODO Include other model parameters including 
@@ -62,8 +61,6 @@ class FCT_Model(Model):
     	# Validate that the board size contains at least one more cell than the count of agents, so that movement can occur.
         if self.__count_of_agents >= (self.__board_size * self.__board_size):
             raise Exception(f"Invalid Configuration: count.of.agents ({self.__count_of_agents}) must be less than board.size * board.size ({self.__board_size * self.__board_size})")
-
-        
 
         origin:repast4py.space.DiscretePoint = repast4py.space.DiscretePoint(1,1)
         extent:repast4py.space.DiscretePoint = repast4py.space.DiscretePoint(self.__board_size, self.__board_size)
@@ -98,7 +95,7 @@ class FCT_Model(Model):
         
         # initialize the logging
         ## Tabular Logging
-        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age'])
+        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile'])
         self.log_agents()
         ## Reduce-type Logging
         # self.individual_agent_info = IndividualAgentInfo()
@@ -138,21 +135,24 @@ class FCT_Model(Model):
         # self.meet_log.max_meets = self.meet_log.min_meets = self.meet_log.total_meets = 0
         # self.log_agents()
 
+
+    
+
     def do_situational_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doSituation for each agent
-            agent.do_situation()
+            agent.call_situation()
     
     def do_action_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doAction for each agent
-            agent.do_action()
-
+            agent.call_action()
+            #agent.communicate_event()
 
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
-        self.__board.do_transformation()
-    
+        self.__board.call_transformation()
+
     #TODO: define a function to perform actions every tick
     #TODO: Make sure that the do_per_tick function works on a per week basis. 
     def do_per_tick(self):# do these things every week. 
@@ -168,7 +168,7 @@ class FCT_Model(Model):
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
             # print board at the end (tick=mStopAt) or when all agents are satisfied (100% satisfaction)
-            if current_tick == self.__stop_at or self.__board.get_avg_satisfaction() == 1:
+            if current_tick == self.__stop_at:#or self.__board.get_avg_satisfaction() == 1
                 self.__board.print_board_to_screen()
             
             # stop when all agents are satisfied
@@ -179,24 +179,54 @@ class FCT_Model(Model):
         print('Do this per month')
 
     def do_per_year(self):
-        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
             # age the agents yearly
-            agent.age_agent()
+            age = agent.get_agent_age()
+            age += 1
+            agent.set_agent_age(age)
             # calculate the probability of death every year
             # agent.calculate_death_probability()
-            agent.calculate_resources()
-
+            # agent.calculate_resources()
 
 
     def init_agents(self):
-        count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
-        count_type_1:int = int(self.__count_of_agents  - count_type_0)
+        #count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
+        #count_type_1:int = int(self.__count_of_agents  - count_type_0)
+
+        discrete_space = self.__discrete_space
+        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0))
+
         
         local_bounds = self.__discrete_space.get_local_bounds()
 
+        # deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
+        # sex_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
+        # agent_type_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
+        # age_rand = repast4py.random.default_rng.integers(self.__min_age, self.__max_age)
+        # drinking_status_rand = bool(repast4py.random.default_rng.integers(0, 1))
+        #(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
+        #print(self.__discrete_space)
+
+
+        # Create the agents
+
+        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
+
+        for agents in (self.__context.agents()):
+            agents.set_space(self.__discrete_space)
+            print(agents.get_agent_id(), self.__discrete_space)
+
+        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
+        #     agents.set_space(self.__discrete_space)
+        #     print(agents.get_agent_id(), self.__discrete_space)
+
+        
+        for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
+            print(agents.get_agent_id(), self.__discrete_space)
+        
+        """
         for i in range(self.__count_of_agents):
             # Agent start with a random location
-            
             # Note: repast's default_rng (i.e. numpy) rng integers is [low, high), i.e. high is exclusive 
             x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
             y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
@@ -228,6 +258,9 @@ class FCT_Model(Model):
             #Create a random integer between 1-5 to represent personal wealth
             personal_wealth_rand = repast4py.random.default_rng.integers(1, 5)
 
+            #Create a random integer between 1-10 to represent individual influence
+            social_influence_rand = repast4py.random.default_rng.integers(1, 10)
+
             #############################################################################
             #Agent level parameters
 
@@ -246,22 +279,18 @@ class FCT_Model(Model):
             # assign the first N agents to type 0 then the rest to type 1
             # agent_id = (i, self.__rank, 0)
             # This is the agents type / group in the schelling model, not the repast4py Agent.type 
-            agent_type = 0
-            if count_type_0 > 0:
-                agent_type = 0
-                count_type_0 -= 1
-            else:
-                agent_type = 1
-                count_type_1 -= 1
 
             # TODO: init at the micro level: agent, theory, theory mediator
+            
             # create agent object
-            #def __init__(self, id:int, rank:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: bool,  space):
-            agent = FCT_Agent(i, self.__rank, agent_type, self.__threshold, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
+            #def __init__(self, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: bool,  space):
 
+            agent = create_FCT_agent(i, self.__rank, deprivation_quintile_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
+            #agent = FCT_Agent(i, )
+            
             # create theory object
-            #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int):
-            theory = FundamentalCauseTheory(self.__context,  deprivation_quintile_rand, mean_weekly_units_rand, education_rand, personal_wealth_rand, self.__discrete_space)
+            #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int): #############^ this var is a placeholder for social connections
+            theory = FundamentalCauseTheory(self.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
 
             # create mediator object
             mediator = SocialTheoriesMediator([theory])
@@ -274,20 +303,22 @@ class FCT_Model(Model):
             self.__context.add(agent)
             self.__discrete_space.move(agent, initial_location)
 
+        """
         # print the initial state of the board
         self.__board.print_board_to_screen()
-
+    
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():
-            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age)
+            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile())
         self.agent_logger.write()
 
     def run(self):
         self._runner.execute()
 
     def init_schedule(self):
+
         # schedule actions every week
         self._runner.schedule_repeating_event(1, 1, self.do_per_tick)
         
@@ -302,3 +333,156 @@ class FCT_Model(Model):
         
         #Datalogging
         self._runner.schedule_repeating_event(1, 4, self.log_agents)
+    
+    def init_network(self):
+        pass
+
+#WITH discrete_space
+"""def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space):
+        # TODO: add theory level parameters, mediator, etc
+        # theory = create_Theory
+        # mediator = SocialTheoriesMediator([FundamentalCauseTheory])
+        return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space)
+"""
+
+def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
+        # TODO: add theory level parameters, mediator, etc
+        # theory = create_Theory
+        # mediator = SocialTheoriesMediator([FundamentalCauseTheory])
+        return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
+
+# def create_Theory(model.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
+#     return FundamentalCauseTheory(self.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
+
+def restore_FCT_agent(agent_data):
+    uid = agent_data[0]
+    return FCT_Agent(uid[0], uid[1], uid[2], agent_data[1])
+
+#############################################################################
+#Network Generation
+
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list]):
+    
+    agent_data = []
+    agent_age_lowest = attributes["age"][0]
+    agent_age_highest = attributes["age"][1]
+    agent_drinking_lowest = attributes["drinking_status"][0]
+    agent_drinking_highest = attributes["drinking_status"][1]
+
+    #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
+
+    for i in range(num_agents):
+        ##### random numbers #####
+        sex_rand = int(random.default_rng.choice([0, 1], p=[0.5, 0.5]))
+        age_rand = int(random.default_rng.integers(agent_age_lowest, agent_age_highest))
+        agent_drinking_status = int(random.default_rng.integers(agent_drinking_lowest, agent_drinking_highest))
+        deprivation_quintile_rand = int(random.default_rng.integers(1, 5))# has to stay constant
+
+        agent = {
+            "agent_id": i,
+            "agent_type": 0, # all agents are the same type "FCT_agent"
+            "rank": 0,# agents are all in the same rank
+            "deprivation_quintile": deprivation_quintile_rand,
+            "sex": sex_rand,
+            "age": age_rand,
+            "drinking_status": agent_drinking_status,
+            "space": None
+        }
+
+        agent_data.append(agent)
+
+    with open(filename, 'w') as outfile:
+        json.dump(agent_data, outfile, indent=4)
+    
+    with open(filename, 'r') as infile: 
+        agent_data = json.load(infile)
+
+    updated_lines = []
+    with open('FCT_Model/props/network/connected_watts_strogatz_graph.txt', 'r') as network_file:
+        lines = network_file.readlines()
+        for line in lines:
+
+            if line.startswith('FCT_network'):# at the start of the file 
+                updated_lines.append(line)
+                mode = 0# make amendments to the agents
+                continue# skip the line
+            elif line.startswith('EDGES'):
+                mode = 1
+                updated_lines.append(line)
+                continue
+                
+            if mode == 0:
+                agent_id = int(line.split()[0])    
+                agent_info = next((agent for agent in agent_data if agent['agent_id'] == agent_id), None)
+
+                if agent_info is not None:
+                    # Create a new dictionary without the first three elements
+                    keys_to_remove = list(agent_info.keys())[:3]
+                    updated_agent_info = {key: agent_info[key] for key in agent_info if key not in keys_to_remove}
+
+                    # Convert the dictionary back to a JSON string
+                    updated_agent_info_str = json.dumps(updated_agent_info)
+
+                    line = line.strip() + ' ' + updated_agent_info_str + '\n'
+
+                updated_lines.append(line)
+            elif mode==1:
+                updated_lines.append(line)
+
+    # Write updated lines to a new file
+    with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
+        updated_network_file.writelines(updated_lines)
+
+def generate_agent_distributions(type):
+
+    dict = {"age": [], "drinking_status": []}
+
+
+    experiment = type
+    match experiment:
+       
+        case 1:# normal population, low drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [0, 2]
+            return dict
+        
+        case 2:# normal population, high drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [2, 5]
+            return dict
+                
+        case 3:# low population, high drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [2, 5]
+            return dict
+        
+        case 4:# low population, normal drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [0, 5]
+            return dict
+            
+        case 5:# low population, low drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [0, 2]
+            return dict
+        
+        case 6:# high population, high drinking status
+            dict["age"] = [40, 80]
+            dict["drinking_status"] = [2, 5]
+            return dict
+        case 7:# high population, normal drinking status
+            dict["age"] = [40, 80]
+            dict["drinking_status"] = [0, 5]
+            return dict
+            
+        case 8:# high population, low drinking status
+            dict["age"] = [40, 40]
+            dict["drinking_status"] = [0, 2]
+            return dict
+
+        case _:# normal population, normal drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [0, 5]
+            return dict
+
+

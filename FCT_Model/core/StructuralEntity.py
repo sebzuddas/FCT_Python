@@ -24,7 +24,7 @@ class StructuralEntity(metaclass=ABCMeta):
         return instance
 
     @abstractmethod
-    def do_transformation(self):
+    def call_transformation(self):
         pass
 
 class Theory(metaclass=ABCMeta):

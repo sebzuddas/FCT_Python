@@ -1,0 +1,73 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx, float, subcaption, amssymb, todonotes, dirtytalk}
+\usepackage{tabularx}
+\usepackage[printonlyused,withpage]{acronym}
+\usepackage{titlesec}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage[sort&compress]{natbib}
+
+
+
+\begin{document}
+\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
+\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Table},labelsep=colon,textfont={it}}
+
+\frontmatter
+
+\begin{titlepage}
+
+
+% -------------------------------------------------------------------
+% You need to edit the details here
+% -------------------------------------------------------------------
+
+\begin{center}
+{\LARGE University of Sheffield}\\[1.5cm]
+\linespread{1.2}\huge {\bfseries Complex Systems Modelling of Alcohol-related Health Inequalities}\\[1.5cm]
+\linespread{1}
+\includegraphics[width=5cm]{images/Circular UoS Logo.png}\\[1cm]
+\\
+{\Large Sebastiano Zuddas}\\[1cm]
+{\large \emph{Supervisor:} Professor Robin Purshouse}\\[1cm] % if applicable
+\large Interim Report\\[0.3cm] 
+\textit{in the}\\[0.3cm]
+Department of Automatic Control \& Systems Engineering\\[2cm]
+Semester 1, 2022
+\end{center}
+
+\end{titlepage}
+
+\include{sections/listOfAcronyms.tex}
+\mainmatter
+
+
+\input{sections/introduction.tex}
+\input{sections/aimsAndObjectives.tex}
+\input{sections/literatureReview.tex}
+\input{sections/projectManagement.tex}
+%\input{sections/selfReview.tex}
+
+% -------------------------------------------------------------------
+% Bibliography
+% -------------------------------------------------------------------
+
+\bibliographystyle{ieeetr} 
+\bibliography{FinalBib} 
+
+
+% -------------------------------------------------------------------
+% Appendices
+% -------------------------------------------------------------------
+
+\begin{appendices}
+\include{sections/Appendix}
+\end{appendices}
+
+\end{document}

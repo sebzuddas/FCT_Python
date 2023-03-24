@@ -1,0 +1,4 @@
+#ignore all outputs 
+FCT_Model/outputs/*
+outputs/*
+
