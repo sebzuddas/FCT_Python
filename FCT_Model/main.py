@@ -41,7 +41,7 @@ def main():
     #sn.test_fcn()
     # Initialise Agents
 
-    sn.generate_agent_json_file(params.get("count.of.agents"), params.get("agent.props.file"), sn.generate_agent_distributions(0))
+    #sn.generate_agent_json_file(params.get("count.of.agents"), params.get("agent.props.file"), sn.generate_agent_distributions(0))
 
     model.init_agents()
 

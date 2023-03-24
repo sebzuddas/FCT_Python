@@ -26,19 +26,17 @@ class FCT_Agent(MicroAgent):
     #WITH DISCRETE SPACE
     #def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: int,  space):
 
-    def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int):
+    def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
         self.__is_satisfied: bool = False
         self.__type = type
-        
         self.__rank: int = rank
         self.__deprivation_quintile: int = deprivation_quintile
-        
         self.sex = sex
         self.age = age
         self.drinking_status = drinking_status
-        #self.space = space
+        self.space = space
         #self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
 
     ##################################################################
@@ -52,7 +50,6 @@ class FCT_Agent(MicroAgent):
     
     def get_deprivation_quintile(self) -> int:
         return self.__deprivation_quintile
-
     
     def get_agent_sex(self) -> int:
         return self.sex
@@ -65,6 +62,10 @@ class FCT_Agent(MicroAgent):
     
     def get_satisfied_status(self) -> bool:
         return self.__is_satisfied
+    
+    def get_space(self):
+        return self.space
+    
     
     
     ##################################################################
@@ -81,6 +82,9 @@ class FCT_Agent(MicroAgent):
 
     def set_satisfied_status(self, satisfied_status:bool):
         self.__is_satisfied = satisfied_status
+
+    def set_space(self, space):
+        self.space = space
 
     ####################################################################
     #Agent Methods
@@ -109,15 +113,14 @@ class FCT_Agent(MicroAgent):
         # Move to the new location
         self.space.move(self, random_location)    
 
-    def absolute_risk(self, beta, consumption):
-
+    def absolute_risk(self, beta):
+        consumption = self.get_agent_drinking_status()
         if consumption == 0:
             return 0
         else:
             return beta * consumption
 
 
-    
     ####################################################################
     #Agent Package Methods
     def save(self) -> Tuple:

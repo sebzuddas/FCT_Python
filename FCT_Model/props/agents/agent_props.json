@@ -6,7 +6,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 78,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 1,
@@ -15,7 +16,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 23,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 2,
@@ -24,7 +26,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 44,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 3,
@@ -33,7 +36,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 36,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 4,
@@ -42,7 +46,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 38,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 5,
@@ -51,7 +56,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 22,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 6,
@@ -60,7 +66,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 28,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 7,
@@ -69,7 +76,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 50,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 8,
@@ -78,7 +86,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 51,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 9,
@@ -87,7 +96,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 30,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 10,
@@ -96,7 +106,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 78,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 11,
@@ -105,7 +116,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 75,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 12,
@@ -114,7 +126,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 51,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 13,
@@ -123,7 +136,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 40,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 14,
@@ -132,7 +146,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 72,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 15,
@@ -141,7 +156,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 57,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 16,
@@ -150,7 +166,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 31,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 17,
@@ -159,7 +176,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 34,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 18,
@@ -168,7 +186,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 29,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 19,
@@ -177,7 +196,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 20,
@@ -186,7 +206,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 24,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 21,
@@ -195,7 +216,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 41,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 22,
@@ -204,7 +226,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 44,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 23,
@@ -213,7 +236,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 32,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 24,
@@ -222,7 +246,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 51,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 25,
@@ -231,7 +256,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 40,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 26,
@@ -240,7 +266,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 23,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 27,
@@ -249,7 +276,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 75,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 28,
@@ -258,7 +286,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 26,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 29,
@@ -267,7 +296,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 50,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 30,
@@ -276,7 +306,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 76,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 31,
@@ -285,7 +316,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 65,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 32,
@@ -294,7 +326,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 38,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 33,
@@ -303,7 +336,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 69,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 34,
@@ -312,7 +346,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 78,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 35,
@@ -321,7 +356,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 53,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 36,
@@ -330,7 +366,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 63,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 37,
@@ -339,7 +376,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 49,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 38,
@@ -348,7 +386,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 73,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 39,
@@ -357,7 +396,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 53,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 40,
@@ -366,7 +406,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 76,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 41,
@@ -375,7 +416,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 73,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 42,
@@ -384,7 +426,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 43,
@@ -393,7 +436,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 45,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 44,
@@ -402,7 +446,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 45,
@@ -411,7 +456,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 30,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 46,
@@ -420,7 +466,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 18,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 47,
@@ -429,7 +476,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 68,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 48,
@@ -438,7 +486,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 20,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 49,
@@ -447,7 +496,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 40,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 50,
@@ -456,7 +506,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 51,
@@ -465,7 +516,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 40,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 52,
@@ -474,7 +526,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 64,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 53,
@@ -483,7 +536,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 54,
@@ -492,7 +546,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 76,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 55,
@@ -501,7 +556,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 44,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 56,
@@ -510,7 +566,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 42,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 57,
@@ -519,7 +576,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 35,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 58,
@@ -528,7 +586,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 75,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 59,
@@ -537,7 +596,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 27,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 60,
@@ -546,7 +606,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 75,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 61,
@@ -555,7 +616,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 79,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 62,
@@ -564,7 +626,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 66,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 63,
@@ -573,7 +636,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 20,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 64,
@@ -582,7 +646,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 77,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 65,
@@ -591,7 +656,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 66,
@@ -600,7 +666,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 53,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 67,
@@ -609,7 +676,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 36,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 68,
@@ -618,7 +686,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 77,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 69,
@@ -627,7 +696,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 71,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 70,
@@ -636,7 +706,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 34,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 71,
@@ -645,7 +716,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 62,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 72,
@@ -654,7 +726,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 79,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 73,
@@ -663,7 +736,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 61,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 74,
@@ -672,7 +746,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 42,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 75,
@@ -681,7 +756,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 76,
@@ -690,7 +766,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 77,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 77,
@@ -699,7 +776,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 56,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 78,
@@ -708,7 +786,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 79,
@@ -717,7 +796,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 26,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 80,
@@ -726,7 +806,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 48,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 81,
@@ -735,7 +816,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 78,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 82,
@@ -744,7 +826,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 30,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 83,
@@ -753,7 +836,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 75,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 84,
@@ -762,7 +846,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 26,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 85,
@@ -771,7 +856,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 57,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 86,
@@ -780,7 +866,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 42,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 87,
@@ -789,7 +876,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 22,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 88,
@@ -798,7 +886,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 75,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 89,
@@ -807,7 +896,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 78,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 90,
@@ -816,7 +906,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 25,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 91,
@@ -825,7 +916,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 18,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 92,
@@ -834,7 +926,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 74,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 93,
@@ -843,7 +936,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 71,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 94,
@@ -852,7 +946,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 95,
@@ -861,7 +956,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 67,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 96,
@@ -870,7 +966,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 47,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 97,
@@ -879,7 +976,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 31,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 98,
@@ -888,7 +986,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 28,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 99,
@@ -897,7 +996,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 76,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 100,
@@ -906,7 +1006,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 68,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 101,
@@ -915,7 +1016,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 69,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 102,
@@ -924,7 +1026,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 103,
@@ -933,7 +1036,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 49,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 104,
@@ -942,7 +1046,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 20,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 105,
@@ -951,7 +1056,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 21,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 106,
@@ -960,7 +1066,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 70,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 107,
@@ -969,7 +1076,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 45,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 108,
@@ -978,7 +1086,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 64,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 109,
@@ -987,7 +1096,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 20,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 110,
@@ -996,7 +1106,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 24,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 111,
@@ -1005,7 +1116,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 61,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 112,
@@ -1014,7 +1126,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 31,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 113,
@@ -1023,7 +1136,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 49,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 114,
@@ -1032,7 +1146,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 20,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 115,
@@ -1041,7 +1156,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 64,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 116,
@@ -1050,7 +1166,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 75,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 117,
@@ -1059,7 +1176,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 35,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 118,
@@ -1068,7 +1186,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 26,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 119,
@@ -1077,7 +1196,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 35,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 120,
@@ -1086,7 +1206,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 20,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 121,
@@ -1095,7 +1216,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 61,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 122,
@@ -1104,7 +1226,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 76,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 123,
@@ -1113,7 +1236,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 34,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 124,
@@ -1122,7 +1246,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 55,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 125,
@@ -1131,7 +1256,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 20,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 126,
@@ -1140,7 +1266,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 39,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 127,
@@ -1149,7 +1276,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 47,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 128,
@@ -1158,7 +1286,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 18,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 129,
@@ -1167,7 +1296,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 36,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 130,
@@ -1176,7 +1306,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 36,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 131,
@@ -1185,7 +1316,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 53,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 132,
@@ -1194,7 +1326,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 64,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 133,
@@ -1203,7 +1336,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 60,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 134,
@@ -1212,7 +1346,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 52,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 135,
@@ -1221,7 +1356,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 25,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 136,
@@ -1230,7 +1366,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 73,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 137,
@@ -1239,7 +1376,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 75,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 138,
@@ -1248,7 +1386,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 78,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 139,
@@ -1257,7 +1396,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 52,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 140,
@@ -1266,7 +1406,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 42,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 141,
@@ -1275,7 +1416,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 27,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 142,
@@ -1284,7 +1426,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 57,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 143,
@@ -1293,7 +1436,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 30,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 144,
@@ -1302,7 +1446,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 56,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 145,
@@ -1311,7 +1456,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 66,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 146,
@@ -1320,7 +1466,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 21,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 147,
@@ -1329,7 +1476,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 38,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 148,
@@ -1338,7 +1486,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 57,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 149,
@@ -1347,7 +1496,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 21,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 150,
@@ -1356,7 +1506,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 30,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 151,
@@ -1365,7 +1516,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 40,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 152,
@@ -1374,7 +1526,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 38,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 153,
@@ -1383,7 +1536,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 53,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 154,
@@ -1392,7 +1546,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 67,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 155,
@@ -1401,7 +1556,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 59,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 156,
@@ -1410,7 +1566,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 157,
@@ -1419,7 +1576,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 26,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 158,
@@ -1428,7 +1586,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 53,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 159,
@@ -1437,7 +1596,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 24,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 160,
@@ -1446,7 +1606,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 61,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 161,
@@ -1455,7 +1616,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 50,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 162,
@@ -1464,7 +1626,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 77,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 163,
@@ -1473,7 +1636,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 32,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 164,
@@ -1482,7 +1646,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 75,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 165,
@@ -1491,7 +1656,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 37,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 166,
@@ -1500,7 +1666,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 41,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 167,
@@ -1509,7 +1676,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 76,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 168,
@@ -1518,7 +1686,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 26,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 169,
@@ -1527,7 +1696,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 32,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 170,
@@ -1536,7 +1706,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 40,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 171,
@@ -1545,7 +1716,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 55,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 172,
@@ -1554,7 +1726,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 61,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 173,
@@ -1563,7 +1736,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 45,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 174,
@@ -1572,7 +1746,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 27,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 175,
@@ -1581,7 +1756,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 38,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 176,
@@ -1590,7 +1766,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 65,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 177,
@@ -1599,7 +1776,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 35,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 178,
@@ -1608,7 +1786,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 48,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 179,
@@ -1617,7 +1796,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 25,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 180,
@@ -1626,7 +1806,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 22,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 181,
@@ -1635,7 +1816,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 77,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 182,
@@ -1644,7 +1826,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 45,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 183,
@@ -1653,7 +1836,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 46,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 184,
@@ -1662,7 +1846,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 34,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 185,
@@ -1671,7 +1856,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 48,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 186,
@@ -1680,7 +1866,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 61,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 187,
@@ -1689,7 +1876,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 35,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 188,
@@ -1698,7 +1886,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 56,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 189,
@@ -1707,7 +1896,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 55,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 190,
@@ -1716,7 +1906,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 28,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 191,
@@ -1725,7 +1916,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 64,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 192,
@@ -1734,7 +1926,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 61,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 193,
@@ -1743,7 +1936,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 33,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 194,
@@ -1752,7 +1946,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 41,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 195,
@@ -1761,7 +1956,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 30,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 196,
@@ -1770,7 +1966,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 55,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 197,
@@ -1779,7 +1976,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 46,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 198,
@@ -1788,7 +1986,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 58,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 199,
@@ -1797,7 +1996,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 72,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 200,
@@ -1806,7 +2006,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 56,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 201,
@@ -1815,7 +2016,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 40,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 202,
@@ -1824,7 +2026,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 31,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 203,
@@ -1833,7 +2036,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 69,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 204,
@@ -1842,7 +2046,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 68,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 205,
@@ -1851,7 +2056,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 61,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 206,
@@ -1860,7 +2066,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 32,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 207,
@@ -1869,7 +2076,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 55,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 208,
@@ -1878,7 +2086,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 40,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 209,
@@ -1887,7 +2096,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 32,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 210,
@@ -1896,7 +2106,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 51,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 211,
@@ -1905,7 +2116,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 46,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 212,
@@ -1914,7 +2126,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 49,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 213,
@@ -1923,7 +2136,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 29,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 214,
@@ -1932,7 +2146,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 78,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 215,
@@ -1941,7 +2156,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 60,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 216,
@@ -1950,7 +2166,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 53,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 217,
@@ -1959,7 +2176,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 77,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 218,
@@ -1968,7 +2186,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 57,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 219,
@@ -1977,7 +2196,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 64,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 220,
@@ -1986,7 +2206,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 32,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 221,
@@ -1995,7 +2216,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 60,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 222,
@@ -2004,7 +2226,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 45,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 223,
@@ -2013,7 +2236,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 24,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 224,
@@ -2022,7 +2246,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 30,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 225,
@@ -2031,7 +2256,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 53,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 226,
@@ -2040,7 +2266,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 23,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 227,
@@ -2049,7 +2276,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 44,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 228,
@@ -2058,7 +2286,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 75,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 229,
@@ -2067,7 +2296,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 78,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 230,
@@ -2076,7 +2306,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 51,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 231,
@@ -2085,7 +2316,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 30,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 232,
@@ -2094,7 +2326,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 35,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 233,
@@ -2103,7 +2336,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 45,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 234,
@@ -2112,7 +2346,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 35,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 235,
@@ -2121,7 +2356,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 66,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 236,
@@ -2130,7 +2366,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 23,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 237,
@@ -2139,7 +2376,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 72,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 238,
@@ -2148,7 +2386,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 65,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 239,
@@ -2157,7 +2396,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 51,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 240,
@@ -2166,7 +2406,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 46,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 241,
@@ -2175,7 +2416,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 76,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 242,
@@ -2184,7 +2426,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 23,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 243,
@@ -2193,7 +2436,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 41,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 244,
@@ -2202,7 +2446,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 75,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 245,
@@ -2211,7 +2456,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 41,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 246,
@@ -2220,7 +2466,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 40,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 247,
@@ -2229,7 +2476,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 48,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 248,
@@ -2238,7 +2486,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 249,
@@ -2247,7 +2496,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 75,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 250,
@@ -2256,7 +2506,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 251,
@@ -2265,7 +2516,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 53,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 252,
@@ -2274,7 +2526,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 67,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 253,
@@ -2283,7 +2536,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 38,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 254,
@@ -2292,7 +2546,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 59,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 255,
@@ -2301,7 +2556,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 74,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 256,
@@ -2310,7 +2566,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 69,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 257,
@@ -2319,7 +2576,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 58,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 258,
@@ -2328,7 +2586,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 24,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 259,
@@ -2337,7 +2596,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 70,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 260,
@@ -2346,7 +2606,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 78,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 261,
@@ -2355,7 +2616,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 78,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 262,
@@ -2364,7 +2626,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 76,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 263,
@@ -2373,7 +2636,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 23,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 264,
@@ -2382,7 +2646,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 53,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 265,
@@ -2391,7 +2656,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 32,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 266,
@@ -2400,7 +2666,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 64,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 267,
@@ -2409,7 +2676,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 26,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 268,
@@ -2418,7 +2686,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 79,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 269,
@@ -2427,7 +2696,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 57,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 270,
@@ -2436,7 +2706,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 75,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 271,
@@ -2445,7 +2716,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 39,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 272,
@@ -2454,7 +2726,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 75,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 273,
@@ -2463,7 +2736,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 73,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 274,
@@ -2472,7 +2746,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 22,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 275,
@@ -2481,7 +2756,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 76,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 276,
@@ -2490,7 +2766,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 59,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 277,
@@ -2499,7 +2776,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 51,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 278,
@@ -2508,7 +2786,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 39,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 279,
@@ -2517,7 +2796,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 70,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 280,
@@ -2526,7 +2806,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 79,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 281,
@@ -2535,7 +2816,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 19,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 282,
@@ -2544,7 +2826,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 29,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 283,
@@ -2553,7 +2836,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 60,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 284,
@@ -2562,7 +2846,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 69,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 285,
@@ -2571,7 +2856,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 286,
@@ -2580,7 +2866,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 19,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 287,
@@ -2589,7 +2876,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 70,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 288,
@@ -2598,7 +2886,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 65,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 289,
@@ -2607,7 +2896,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 19,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 290,
@@ -2616,7 +2906,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 45,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 291,
@@ -2625,7 +2916,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 36,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 292,
@@ -2634,7 +2926,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 25,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 293,
@@ -2643,7 +2936,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 46,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 294,
@@ -2652,7 +2946,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 78,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 295,
@@ -2661,7 +2956,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 28,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 296,
@@ -2670,7 +2966,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 21,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 297,
@@ -2679,7 +2976,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 63,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 298,
@@ -2688,7 +2986,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 63,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 299,
@@ -2697,7 +2996,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 57,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 300,
@@ -2706,7 +3006,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 19,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 301,
@@ -2715,7 +3016,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 64,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 302,
@@ -2724,7 +3026,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 74,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 303,
@@ -2733,7 +3036,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 77,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 304,
@@ -2742,7 +3046,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 305,
@@ -2751,7 +3056,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 24,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 306,
@@ -2760,7 +3066,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 36,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 307,
@@ -2769,7 +3076,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 77,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 308,
@@ -2778,7 +3086,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 19,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 309,
@@ -2787,7 +3096,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 50,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 310,
@@ -2796,7 +3106,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 311,
@@ -2805,7 +3116,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 48,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 312,
@@ -2814,7 +3126,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 49,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 313,
@@ -2823,7 +3136,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 18,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 314,
@@ -2832,7 +3146,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 67,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 315,
@@ -2841,7 +3156,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 58,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 316,
@@ -2850,7 +3166,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 317,
@@ -2859,7 +3176,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 71,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 318,
@@ -2868,7 +3186,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 34,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 319,
@@ -2877,7 +3196,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 52,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 320,
@@ -2886,7 +3206,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 61,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 321,
@@ -2895,7 +3216,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 56,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 322,
@@ -2904,7 +3226,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 323,
@@ -2913,7 +3236,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 63,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 324,
@@ -2922,7 +3246,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 325,
@@ -2931,7 +3256,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 74,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 326,
@@ -2940,7 +3266,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 21,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 327,
@@ -2949,7 +3276,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 39,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 328,
@@ -2958,7 +3286,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 45,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 329,
@@ -2967,7 +3296,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 32,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 330,
@@ -2976,7 +3306,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 25,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 331,
@@ -2985,7 +3316,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 65,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 332,
@@ -2994,7 +3326,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 76,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 333,
@@ -3003,7 +3336,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 69,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 334,
@@ -3012,7 +3346,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 18,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 335,
@@ -3021,7 +3356,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 336,
@@ -3030,7 +3366,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 21,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 337,
@@ -3039,7 +3376,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 23,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 338,
@@ -3048,7 +3386,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 34,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 339,
@@ -3057,7 +3396,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 52,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 340,
@@ -3066,7 +3406,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 65,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 341,
@@ -3075,7 +3416,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 36,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 342,
@@ -3084,7 +3426,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 65,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 343,
@@ -3093,7 +3436,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 65,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 344,
@@ -3102,7 +3446,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 79,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 345,
@@ -3111,7 +3456,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 40,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 346,
@@ -3120,7 +3466,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 43,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 347,
@@ -3129,7 +3476,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 58,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 348,
@@ -3138,7 +3486,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 60,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 349,
@@ -3147,7 +3496,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 39,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 350,
@@ -3156,7 +3506,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 31,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 351,
@@ -3165,7 +3516,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 76,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 352,
@@ -3174,7 +3526,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 40,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 353,
@@ -3183,7 +3536,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 71,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 354,
@@ -3192,7 +3546,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 22,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 355,
@@ -3201,7 +3556,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 70,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 356,
@@ -3210,7 +3566,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 43,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 357,
@@ -3219,7 +3576,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 56,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 358,
@@ -3228,7 +3586,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 66,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 359,
@@ -3237,7 +3596,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 32,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 360,
@@ -3246,7 +3606,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 361,
@@ -3255,7 +3616,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 73,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 362,
@@ -3264,7 +3626,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 30,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 363,
@@ -3273,7 +3636,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 55,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 364,
@@ -3282,7 +3646,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 69,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 365,
@@ -3291,7 +3656,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 24,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 366,
@@ -3300,7 +3666,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 45,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 367,
@@ -3309,7 +3676,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 42,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 368,
@@ -3318,7 +3686,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 53,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 369,
@@ -3327,7 +3696,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 71,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 370,
@@ -3336,7 +3706,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 18,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 371,
@@ -3345,7 +3716,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 33,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 372,
@@ -3354,7 +3726,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 71,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 373,
@@ -3363,7 +3736,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 52,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 374,
@@ -3372,7 +3746,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 375,
@@ -3381,7 +3756,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 66,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 376,
@@ -3390,7 +3766,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 57,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 377,
@@ -3399,7 +3776,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 59,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 378,
@@ -3408,7 +3786,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 38,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 379,
@@ -3417,7 +3796,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 53,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 380,
@@ -3426,7 +3806,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 64,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 381,
@@ -3435,7 +3816,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 52,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 382,
@@ -3444,7 +3826,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 70,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 383,
@@ -3453,7 +3836,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 62,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 384,
@@ -3462,7 +3846,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 47,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 385,
@@ -3471,7 +3856,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 33,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 386,
@@ -3480,7 +3866,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 387,
@@ -3489,7 +3876,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 18,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 388,
@@ -3498,7 +3886,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 389,
@@ -3507,7 +3896,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 74,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 390,
@@ -3516,7 +3906,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 77,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 391,
@@ -3525,7 +3916,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 56,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 392,
@@ -3534,7 +3926,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 393,
@@ -3543,7 +3936,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 75,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 394,
@@ -3552,7 +3946,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 33,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 395,
@@ -3561,7 +3956,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 23,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 396,
@@ -3570,7 +3966,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 37,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 397,
@@ -3579,7 +3976,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 36,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 398,
@@ -3588,7 +3986,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 59,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 399,
@@ -3597,7 +3996,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 37,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 400,
@@ -3606,7 +4006,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 26,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 401,
@@ -3615,7 +4016,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 32,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 402,
@@ -3624,7 +4026,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 22,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 403,
@@ -3633,7 +4036,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 41,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 404,
@@ -3642,7 +4046,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 52,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 405,
@@ -3651,7 +4056,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 62,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 406,
@@ -3660,7 +4066,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 31,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 407,
@@ -3669,7 +4076,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 74,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 408,
@@ -3678,7 +4086,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 53,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 409,
@@ -3687,7 +4096,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 42,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 410,
@@ -3696,7 +4106,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 35,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 411,
@@ -3705,7 +4116,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 18,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 412,
@@ -3714,7 +4126,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 25,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 413,
@@ -3723,7 +4136,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 66,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 414,
@@ -3732,7 +4146,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 44,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 415,
@@ -3741,7 +4156,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 68,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 416,
@@ -3750,7 +4166,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 34,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 417,
@@ -3759,7 +4176,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 78,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 418,
@@ -3768,7 +4186,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 28,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 419,
@@ -3777,7 +4196,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 78,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 420,
@@ -3786,7 +4206,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 26,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 421,
@@ -3795,7 +4216,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 20,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 422,
@@ -3804,7 +4226,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 32,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 423,
@@ -3813,7 +4236,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 26,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 424,
@@ -3822,7 +4246,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 37,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 425,
@@ -3831,7 +4256,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 20,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 426,
@@ -3840,7 +4266,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 57,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 427,
@@ -3849,7 +4276,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 72,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 428,
@@ -3858,7 +4286,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 26,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 429,
@@ -3867,7 +4296,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 46,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 430,
@@ -3876,7 +4306,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 64,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 431,
@@ -3885,7 +4316,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 76,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 432,
@@ -3894,7 +4326,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 57,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 433,
@@ -3903,7 +4336,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 70,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 434,
@@ -3912,7 +4346,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 71,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 435,
@@ -3921,7 +4356,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 66,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 436,
@@ -3930,7 +4366,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 437,
@@ -3939,7 +4376,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 32,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 438,
@@ -3948,7 +4386,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 49,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 439,
@@ -3957,7 +4396,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 70,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 440,
@@ -3966,7 +4406,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 79,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 441,
@@ -3975,7 +4416,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 30,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 442,
@@ -3984,7 +4426,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 58,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 443,
@@ -3993,7 +4436,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 20,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 444,
@@ -4002,7 +4446,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 43,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 445,
@@ -4011,7 +4456,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 68,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 446,
@@ -4020,7 +4466,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 71,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 447,
@@ -4029,7 +4476,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 77,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 448,
@@ -4038,7 +4486,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 26,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 449,
@@ -4047,7 +4496,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 37,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 450,
@@ -4056,7 +4506,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 42,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 451,
@@ -4065,7 +4516,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 44,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 452,
@@ -4074,7 +4526,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 26,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 453,
@@ -4083,7 +4536,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 38,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 454,
@@ -4092,7 +4546,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 49,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 455,
@@ -4101,7 +4556,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 51,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 456,
@@ -4110,7 +4566,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 32,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 457,
@@ -4119,7 +4576,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 46,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 458,
@@ -4128,7 +4586,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 57,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 459,
@@ -4137,7 +4596,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 67,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 460,
@@ -4146,7 +4606,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 33,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 461,
@@ -4155,7 +4616,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 44,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 462,
@@ -4164,7 +4626,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 24,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 463,
@@ -4173,7 +4636,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 37,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 464,
@@ -4182,7 +4646,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 39,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 465,
@@ -4191,7 +4656,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 58,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 466,
@@ -4200,7 +4666,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 70,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 467,
@@ -4209,7 +4676,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 44,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 468,
@@ -4218,7 +4686,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 38,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 469,
@@ -4227,7 +4696,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 48,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 470,
@@ -4236,7 +4706,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 52,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 471,
@@ -4245,7 +4716,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 46,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 472,
@@ -4254,7 +4726,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 67,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 473,
@@ -4263,7 +4736,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 20,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 474,
@@ -4272,7 +4746,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 40,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 475,
@@ -4281,7 +4756,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 60,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 476,
@@ -4290,7 +4766,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 47,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 477,
@@ -4299,7 +4776,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 79,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 478,
@@ -4308,7 +4786,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 57,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 479,
@@ -4317,7 +4796,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 68,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 480,
@@ -4326,7 +4806,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 20,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 481,
@@ -4335,7 +4816,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 66,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 482,
@@ -4344,7 +4826,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 44,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 483,
@@ -4353,7 +4836,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 32,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 484,
@@ -4362,7 +4846,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 27,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 485,
@@ -4371,7 +4856,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 70,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 486,
@@ -4380,7 +4866,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 70,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 487,
@@ -4389,7 +4876,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 52,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 488,
@@ -4398,7 +4886,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 30,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 489,
@@ -4407,7 +4896,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 38,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 490,
@@ -4416,7 +4906,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 54,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 491,
@@ -4425,7 +4916,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 49,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 492,
@@ -4434,7 +4926,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 43,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 493,
@@ -4443,7 +4936,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 29,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 494,
@@ -4452,7 +4946,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 41,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 495,
@@ -4461,7 +4956,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 44,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 496,
@@ -4470,7 +4966,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 65,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 497,
@@ -4479,7 +4976,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 498,
@@ -4488,7 +4986,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 44,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 499,
@@ -4497,7 +4996,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 77,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 500,
@@ -4506,7 +5006,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 55,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 501,
@@ -4515,7 +5016,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 18,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 502,
@@ -4524,7 +5026,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 78,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 503,
@@ -4533,7 +5036,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 69,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 504,
@@ -4542,7 +5046,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 44,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 505,
@@ -4551,7 +5056,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 49,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 506,
@@ -4560,7 +5066,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 57,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 507,
@@ -4569,7 +5076,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 30,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 508,
@@ -4578,7 +5086,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 77,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 509,
@@ -4587,7 +5096,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 64,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 510,
@@ -4596,7 +5106,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 63,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 511,
@@ -4605,7 +5116,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 67,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 512,
@@ -4614,7 +5126,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 48,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 513,
@@ -4623,7 +5136,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 27,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 514,
@@ -4632,7 +5146,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 43,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 515,
@@ -4641,7 +5156,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 37,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 516,
@@ -4650,7 +5166,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 59,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 517,
@@ -4659,7 +5176,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 64,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 518,
@@ -4668,7 +5186,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 44,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 519,
@@ -4677,7 +5196,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 58,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 520,
@@ -4686,7 +5206,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 68,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 521,
@@ -4695,7 +5216,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 46,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 522,
@@ -4704,7 +5226,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 74,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 523,
@@ -4713,7 +5236,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 40,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 524,
@@ -4722,7 +5246,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 54,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 525,
@@ -4731,7 +5256,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 526,
@@ -4740,7 +5266,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 29,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 527,
@@ -4749,7 +5276,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 59,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 528,
@@ -4758,7 +5286,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 529,
@@ -4767,7 +5296,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 48,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 530,
@@ -4776,7 +5306,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 75,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 531,
@@ -4785,7 +5316,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 56,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 532,
@@ -4794,7 +5326,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 25,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 533,
@@ -4803,7 +5336,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 25,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 534,
@@ -4812,7 +5346,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 24,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 535,
@@ -4821,7 +5356,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 52,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 536,
@@ -4830,7 +5366,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 26,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 537,
@@ -4839,7 +5376,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 77,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 538,
@@ -4848,7 +5386,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 75,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 539,
@@ -4857,7 +5396,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 21,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 540,
@@ -4866,7 +5406,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 68,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 541,
@@ -4875,7 +5416,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 42,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 542,
@@ -4884,7 +5426,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 41,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 543,
@@ -4893,7 +5436,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 55,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 544,
@@ -4902,7 +5446,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 20,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 545,
@@ -4911,7 +5456,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 70,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 546,
@@ -4920,7 +5466,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 77,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 547,
@@ -4929,7 +5476,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 70,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 548,
@@ -4938,7 +5486,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 44,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 549,
@@ -4947,7 +5496,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 39,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 550,
@@ -4956,7 +5506,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 60,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 551,
@@ -4965,7 +5516,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 552,
@@ -4974,7 +5526,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 40,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 553,
@@ -4983,7 +5536,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 57,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 554,
@@ -4992,7 +5546,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 56,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 555,
@@ -5001,7 +5556,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 77,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 556,
@@ -5010,7 +5566,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 66,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 557,
@@ -5019,7 +5576,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 60,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 558,
@@ -5028,7 +5586,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 69,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 559,
@@ -5037,7 +5596,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 55,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 560,
@@ -5046,7 +5606,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 39,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 561,
@@ -5055,7 +5616,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 73,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 562,
@@ -5064,7 +5626,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 26,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 563,
@@ -5073,7 +5636,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 47,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 564,
@@ -5082,7 +5646,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 73,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 565,
@@ -5091,7 +5656,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 78,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 566,
@@ -5100,7 +5666,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 23,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 567,
@@ -5109,7 +5676,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 24,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 568,
@@ -5118,7 +5686,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 40,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 569,
@@ -5127,7 +5696,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 43,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 570,
@@ -5136,7 +5706,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 73,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 571,
@@ -5145,7 +5716,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 47,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 572,
@@ -5154,7 +5726,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 47,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 573,
@@ -5163,7 +5736,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 21,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 574,
@@ -5172,7 +5746,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 37,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 575,
@@ -5181,7 +5756,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 576,
@@ -5190,7 +5766,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 36,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 577,
@@ -5199,7 +5776,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 26,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 578,
@@ -5208,7 +5786,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 43,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 579,
@@ -5217,7 +5796,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 51,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 580,
@@ -5226,7 +5806,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 19,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 581,
@@ -5235,7 +5816,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 39,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 582,
@@ -5244,7 +5826,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 34,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 583,
@@ -5253,7 +5836,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 44,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 584,
@@ -5262,7 +5846,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 21,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 585,
@@ -5271,7 +5856,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 77,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 586,
@@ -5280,7 +5866,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 61,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 587,
@@ -5289,7 +5876,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 51,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 588,
@@ -5298,7 +5886,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 43,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 589,
@@ -5307,7 +5896,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 62,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 590,
@@ -5316,7 +5906,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 33,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 591,
@@ -5325,7 +5916,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 54,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 592,
@@ -5334,7 +5926,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 42,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 593,
@@ -5343,7 +5936,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 34,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 594,
@@ -5352,7 +5946,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 20,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 595,
@@ -5361,7 +5956,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 61,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 596,
@@ -5370,7 +5966,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 34,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 597,
@@ -5379,7 +5976,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 49,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 598,
@@ -5388,7 +5986,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 57,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 599,
@@ -5397,7 +5996,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 28,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 600,
@@ -5406,7 +6006,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 44,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 601,
@@ -5415,7 +6016,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 31,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 602,
@@ -5424,7 +6026,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 44,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 603,
@@ -5433,7 +6036,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 34,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 604,
@@ -5442,7 +6046,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 58,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 605,
@@ -5451,7 +6056,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 31,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 606,
@@ -5460,7 +6066,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 73,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 607,
@@ -5469,7 +6076,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 33,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 608,
@@ -5478,7 +6086,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 41,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 609,
@@ -5487,7 +6096,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 26,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 610,
@@ -5496,7 +6106,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 58,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 611,
@@ -5505,7 +6116,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 61,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 612,
@@ -5514,7 +6126,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 76,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 613,
@@ -5523,7 +6136,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 60,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 614,
@@ -5532,7 +6146,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 615,
@@ -5541,7 +6156,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 75,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 616,
@@ -5550,7 +6166,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 57,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 617,
@@ -5559,7 +6176,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 33,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 618,
@@ -5568,7 +6186,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 23,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 619,
@@ -5577,7 +6196,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 63,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 620,
@@ -5586,7 +6206,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 45,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 621,
@@ -5595,7 +6216,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 26,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 622,
@@ -5604,7 +6226,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 65,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 623,
@@ -5613,7 +6236,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 71,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 624,
@@ -5622,7 +6246,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 64,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 625,
@@ -5631,7 +6256,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 64,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 626,
@@ -5640,7 +6266,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 72,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 627,
@@ -5649,7 +6276,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 29,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 628,
@@ -5658,7 +6286,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 35,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 629,
@@ -5667,7 +6296,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 34,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 630,
@@ -5676,7 +6306,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 22,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 631,
@@ -5685,7 +6316,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 68,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 632,
@@ -5694,7 +6326,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 75,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 633,
@@ -5703,7 +6336,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 60,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 634,
@@ -5712,7 +6346,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 24,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 635,
@@ -5721,7 +6356,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 44,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 636,
@@ -5730,7 +6366,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 52,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 637,
@@ -5739,7 +6376,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 26,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 638,
@@ -5748,7 +6386,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 57,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 639,
@@ -5757,7 +6396,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 25,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 640,
@@ -5766,7 +6406,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 37,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 641,
@@ -5775,7 +6416,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 29,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 642,
@@ -5784,7 +6426,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 37,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 643,
@@ -5793,7 +6436,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 29,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 644,
@@ -5802,7 +6446,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 47,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 645,
@@ -5811,7 +6456,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 22,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 646,
@@ -5820,7 +6466,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 50,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 647,
@@ -5829,7 +6476,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 21,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 648,
@@ -5838,7 +6486,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 51,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 649,
@@ -5847,7 +6496,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 53,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 650,
@@ -5856,7 +6506,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 49,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 651,
@@ -5865,7 +6516,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 49,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 652,
@@ -5874,7 +6526,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 73,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 653,
@@ -5883,7 +6536,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 61,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 654,
@@ -5892,7 +6546,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 47,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 655,
@@ -5901,7 +6556,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 26,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 656,
@@ -5910,7 +6566,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 657,
@@ -5919,7 +6576,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 46,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 658,
@@ -5928,7 +6586,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 65,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 659,
@@ -5937,7 +6596,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 660,
@@ -5946,7 +6606,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 21,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 661,
@@ -5955,7 +6616,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 61,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 662,
@@ -5964,7 +6626,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 68,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 663,
@@ -5973,7 +6636,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 20,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 664,
@@ -5982,7 +6646,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 53,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 665,
@@ -5991,7 +6656,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 59,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 666,
@@ -6000,7 +6666,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 31,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 667,
@@ -6009,7 +6676,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 28,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 668,
@@ -6018,7 +6686,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 35,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 669,
@@ -6027,7 +6696,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 22,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 670,
@@ -6036,7 +6706,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 63,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 671,
@@ -6045,7 +6716,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 42,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 672,
@@ -6054,7 +6726,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 33,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 673,
@@ -6063,7 +6736,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 44,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 674,
@@ -6072,7 +6746,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 21,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 675,
@@ -6081,7 +6756,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 50,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 676,
@@ -6090,7 +6766,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 23,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 677,
@@ -6099,7 +6776,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 47,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 678,
@@ -6108,7 +6786,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 55,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 679,
@@ -6117,7 +6796,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 29,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 680,
@@ -6126,7 +6806,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 30,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 681,
@@ -6135,7 +6816,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 34,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 682,
@@ -6144,7 +6826,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 36,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 683,
@@ -6153,7 +6836,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 60,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 684,
@@ -6162,7 +6846,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 52,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 685,
@@ -6171,7 +6856,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 79,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 686,
@@ -6180,7 +6866,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 42,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 687,
@@ -6189,7 +6876,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 52,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 688,
@@ -6198,7 +6886,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 53,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 689,
@@ -6207,7 +6896,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 79,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 690,
@@ -6216,7 +6906,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 44,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 691,
@@ -6225,7 +6916,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 33,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 692,
@@ -6234,7 +6926,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 46,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 693,
@@ -6243,7 +6936,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 26,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 694,
@@ -6252,7 +6946,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 62,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 695,
@@ -6261,7 +6956,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 76,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 696,
@@ -6270,7 +6966,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 62,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 697,
@@ -6279,7 +6976,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 61,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 698,
@@ -6288,7 +6986,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 52,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 699,
@@ -6297,7 +6996,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 46,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 700,
@@ -6306,7 +7006,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 55,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 701,
@@ -6315,7 +7016,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 18,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 702,
@@ -6324,7 +7026,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 25,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 703,
@@ -6333,7 +7036,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 77,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 704,
@@ -6342,7 +7046,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 64,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 705,
@@ -6351,7 +7056,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 45,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 706,
@@ -6360,7 +7066,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 707,
@@ -6369,7 +7076,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 34,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 708,
@@ -6378,7 +7086,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 44,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 709,
@@ -6387,7 +7096,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 24,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 710,
@@ -6396,7 +7106,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 62,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 711,
@@ -6405,7 +7116,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 56,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 712,
@@ -6414,7 +7126,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 45,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 713,
@@ -6423,7 +7136,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 46,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 714,
@@ -6432,7 +7146,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 21,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 715,
@@ -6441,7 +7156,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 32,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 716,
@@ -6450,7 +7166,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 51,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 717,
@@ -6459,7 +7176,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 38,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 718,
@@ -6468,7 +7186,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 50,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 719,
@@ -6477,7 +7196,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 69,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 720,
@@ -6486,7 +7206,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 44,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 721,
@@ -6495,7 +7216,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 26,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 722,
@@ -6504,7 +7226,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 48,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 723,
@@ -6513,7 +7236,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 72,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 724,
@@ -6522,7 +7246,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 43,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 725,
@@ -6531,7 +7256,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 52,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 726,
@@ -6540,7 +7266,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 54,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 727,
@@ -6549,7 +7276,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 29,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 728,
@@ -6558,7 +7286,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 23,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 729,
@@ -6567,7 +7296,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 29,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 730,
@@ -6576,7 +7306,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 40,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 731,
@@ -6585,7 +7316,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 52,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 732,
@@ -6594,7 +7326,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 71,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 733,
@@ -6603,7 +7336,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 46,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 734,
@@ -6612,7 +7346,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 55,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 735,
@@ -6621,7 +7356,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 36,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 736,
@@ -6630,7 +7366,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 68,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 737,
@@ -6639,7 +7376,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 64,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 738,
@@ -6648,7 +7386,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 78,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 739,
@@ -6657,7 +7396,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 48,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 740,
@@ -6666,7 +7406,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 46,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 741,
@@ -6675,7 +7416,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 36,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 742,
@@ -6684,7 +7426,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 19,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 743,
@@ -6693,7 +7436,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 50,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 744,
@@ -6702,7 +7446,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 40,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 745,
@@ -6711,7 +7456,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 21,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 746,
@@ -6720,7 +7466,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 28,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 747,
@@ -6729,7 +7476,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 21,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 748,
@@ -6738,7 +7486,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 54,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 749,
@@ -6747,7 +7496,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 41,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 750,
@@ -6756,7 +7506,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 65,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 751,
@@ -6765,7 +7516,8 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 71,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 752,
@@ -6774,7 +7526,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 24,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 753,
@@ -6783,7 +7536,8 @@
         "deprivation_quintile": 4,
         "sex": 1,
         "age": 20,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 754,
@@ -6792,7 +7546,8 @@
         "deprivation_quintile": 3,
         "sex": 0,
         "age": 57,
-        "drinking_status": 3
+        "drinking_status": 3,
+        "space": null
     },
     {
         "agent_id": 755,
@@ -6801,7 +7556,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 74,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 756,
@@ -6810,7 +7566,8 @@
         "deprivation_quintile": 1,
         "sex": 1,
         "age": 34,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 757,
@@ -6819,7 +7576,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 36,
-        "drinking_status": 1
+        "drinking_status": 1,
+        "space": null
     },
     {
         "agent_id": 758,
@@ -6828,7 +7586,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 66,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 759,
@@ -6837,7 +7596,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 41,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 760,
@@ -6846,7 +7606,8 @@
         "deprivation_quintile": 2,
         "sex": 1,
         "age": 22,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 761,
@@ -6855,7 +7616,8 @@
         "deprivation_quintile": 2,
         "sex": 0,
         "age": 24,
-        "drinking_status": 2
+        "drinking_status": 2,
+        "space": null
     },
     {
         "agent_id": 762,
@@ -6864,7 +7626,8 @@
         "deprivation_quintile": 4,
         "sex": 0,
         "age": 39,
-        "drinking_status": 4
+        "drinking_status": 4,
+        "space": null
     },
     {
         "agent_id": 763,
@@ -6873,7 +7636,8 @@
         "deprivation_quintile": 3,
         "sex": 1,
         "age": 46,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     },
     {
         "agent_id": 764,
@@ -6882,6 +7646,7 @@
         "deprivation_quintile": 1,
         "sex": 0,
         "age": 34,
-        "drinking_status": 0
+        "drinking_status": 0,
+        "space": null
     }
 ]
