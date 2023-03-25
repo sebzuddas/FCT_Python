@@ -1,0 +1,85 @@
+\chapter{Model Development}
+
+\section{Overview}
+
+\subsection{Purpose \& Patterns}
+
+\subsection{Entities, State Variables and Scales}
+
+\subsection{Process Overview \& Scheduling}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Design Concepts}
+
+\subsection{Basic Principles}
+\subsubsection{Macro-micro Interaction}
+\todo{discuss the general interaction scheme between social and individual entities}
+\subsubsection{Situational Mechanisms}
+\subsubsection{Action Mechanisms}
+\subsubsection{Transformational Mechanisms}
+\todo{discuss deprivation swap as the key transformational mechanism}
+\todo{discuss how the network doesn't change although it should}
+\subsection{Emergence}
+\todo{discuss the ideal situation of emergence of AHP from FCT modelled through MBSSM}
+\subsection{Adaptation}
+\subsection{Objectives}
+\subsection{Learning}
+\subsection{Prediction}
+\subsection{Sensing}
+\subsection{Interaction}
+\subsection{Stochasticity}
+\subsection{Collectives}
+\subsection{Observation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Details}
+
+\subsection{Initialisation}
+
+\subsubsection{Model}
+
+\subsubsection{Agents}
+
+\subsubsection{Network}
+
+\subsubsection{Board}
+
+\subsection{Situational Mechanisms}
+
+\todo{State intervention mechamnisms}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Action Mechanisms}
+
+\todo{drinking behaviour modelling}
+
+
+\subsubssection{Agent Mortality}
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[domain=0:4]
+
+  \draw[->] (-1, 0) -- (4.2,0) node[right] {$c$};
+  \draw[->] (0,-1) -- (0,4.2) node[above] {$AR(c)$};
+
+  \draw[color=black] (1,0) node[below] {$T$};
+  
+  \draw[scale=1, domain=0:3, smooth, variable=\x, black, postaction={decorate, decoration={markings, mark=at position 0.99 with {\node[above, sloped] {$AR(c) = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
+
+\end{tikzpicture}
+\caption{Absolute risk as a function of consumption. \footnotemark}
+\label{fig:absRisk}
+\end{center}
+\end{figure}
+
+
+Figure \ref{fig:absRisk}\footnotetext{Adapted from Boyd, 2023 \cite{BoydphD}.} demonstrates the absolute risk function used to relate alcohol consumption and agent mortality in the model, and is explained through equation \ref{eq:absRisk}. 
+
+\subsection{Transformational Mechanisms}
+\todo{Transformational Mechanisms}
+\todo{The board}
+\todo{deprivation swap}
+
