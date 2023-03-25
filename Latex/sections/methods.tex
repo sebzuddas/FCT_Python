@@ -8,17 +8,17 @@
   \draw[->] (-1, 0) -- (4.2,0) node[right] {$c$};
   \draw[->] (0,-1) -- (0,4.2) node[above] {$AR(c)$};
 
-  \draw[color=black] plot[id=absRisk, domain=1:4] function{x-1}
-  node[left] {$AR(c) = \beta (c-T)$};
-
   \draw[color=black] (1,0) node[below] {$T$};
+  
+  \draw[scale=1, domain=0:3, smooth, variable=\x, black, postaction={decorate, decoration={markings, mark=at position 0.99 with {\node[above, sloped] {$AR(c) = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
 
 \end{tikzpicture}
-\caption{Absolute risk as a function of consumption}
+\caption{Absolute risk as a function of consumption \cite{}}
 \label{fig:absRisk}
 \end{center}
-
 \end{figure}
+
+
 \todo{reference this from Jens paper}
 The absolute risk of alcohol consumption is used to model mortality in the model, and is explained through equation \ref{eq:absRisk}
 
