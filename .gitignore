@@ -1,4 +1,8 @@
 #ignore all outputs 
 FCT_Model/outputs/*
 outputs/*
+.venv/*
+.python-version
+.vscode/setting.json
+
 

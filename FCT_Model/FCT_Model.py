@@ -211,6 +211,8 @@ class FCT_Model(Model):
         # Create the agents
 
         read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
+        
+        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
 
         for agents in (self.__context.agents()):
             agents.set_space(self.__discrete_space)

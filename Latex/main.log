@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.24)  25 MAR 2023 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.24)  25 MAR 2023 16:44
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1471,186 +1471,145 @@ Package acronym Warning: Acronym `ABM' is not defined on input line 64.
 Package natbib Warning: Citation `covidABM' on page 8 undefined on input line 64.
 
 
-Package acronym Warning: Acronym `ABM' is not defined on input line 66.
+Package acronym Warning: Acronym `ABM' is not defined on input line 68.
 
 
-Package natbib Warning: Citation `scopingReview' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `scopingReview' on page 8 undefined on input line 68.
 
 
-Package acronym Warning: Acronym `ABM' is not defined on input line 66.
+Package acronym Warning: Acronym `ABM' is not defined on input line 68.
 
 
-Package natbib Warning: Citation `collegeABMCLD' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `collegeABMCLD' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmCollegeConsumption' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmCollegeConsumption' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmYoungAus' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmYoungAus' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmNetLogo' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmNetLogo' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmBinge' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmBinge' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmAlcoholTaxation' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmAlcoholTaxation' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmDutchAdults' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmDutchAdults' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmEcologicalNiche' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmEcologicalNiche' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmTradingHours' on page 8 undefined on input line 66.
+Package natbib Warning: Citation `abmTradingHours' on page 8 undefined on input line 68.
 
 
-Package natbib Warning: Citation `abmPublicTransport' on page 8 undefined on input line 66.
-
-
-Package acronym Warning: Acronym `ABM' is not defined on input line 67.
-
-
-Package natbib Warning: Citation `abmVenueLock' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmPublicTransport' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmAlcoholCrime' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmSimARC' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmEcologicalNiche' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmTradingHours' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmRiskBehaviourDev' on page 8 undefined on input line 67.
-
-
-Package acronym Warning: Acronym `ABM' is not defined on input line 67.
-
-
-Package natbib Warning: Citation `collegeABMCLD' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmVenueLock' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmPublicTransport' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmNetLogo' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmPolicyInterventions' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmAlcoholTaxation' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `collegeABMCLD' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmRiskBehaviourDev' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmYoungAus' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmCollegeConsumption' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmAlcoholCrime' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmBinge' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmSimARC' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmDutchAdults' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `abmEcologicalNiche' on page 8 undefined on input line 67.
-
-
-Package acronym Warning: Acronym `ABM' is not defined on input line 67.
+Package natbib Warning: Citation `abmPublicTransport' on page 8 undefined on input line 68.
 
 
 Package acronym Warning: Acronym `ABM' is not defined on input line 69.
 
 
-Package acronym Warning: Acronym `SES' is not defined on input line 69.
+Package natbib Warning: Citation `abmVenueLock' on page 8 undefined on input line 69.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 69.
+Package natbib Warning: Citation `abmPublicTransport' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmAlcoholCrime' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmSimARC' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmEcologicalNiche' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmTradingHours' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmRiskBehaviourDev' on page 8 undefined on input line 69.
 
 
 Package acronym Warning: Acronym `ABM' is not defined on input line 69.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 69.
+Package natbib Warning: Citation `collegeABMCLD' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmVenueLock' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmPublicTransport' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmNetLogo' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmPolicyInterventions' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmAlcoholTaxation' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `collegeABMCLD' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmRiskBehaviourDev' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmYoungAus' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmCollegeConsumption' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmCollegePolicyandMechanisms' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmAlcoholCrime' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmBinge' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmSimARC' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmDutchAdults' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmDrinkingBehaviour' on page 8 undefined on input line 69.
+
+
+Package natbib Warning: Citation `abmEcologicalNiche' on page 8 undefined on input line 69.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 69.
 
 
 Package acronym Warning: Acronym `ABM' is not defined on input line 71.
 
 
-Package natbib Warning: Citation `MBSSM' on page 8 undefined on input line 71.
-
-
-Package acronym Warning: Acronym `MBSSM' is not defined on input line 71.
-
-
-Package acronym Warning: Acronym `MBSSM' is not defined on input line 71.
-
-Package acronym Info: Label `acro:MUP' newly defined as it shall be overridden
-although it is yet undefined on input line 71.
-
-Package acronym Warning: Acronym `MUP' is not defined on input line 71.
-
-
-Package acronym Warning: Acronym `MUP' is not defined on input line 71.
-
-
-Package natbib Warning: Citation `mbssmCommentary' on page 8 undefined on input line 71.
-
-
-Package natbib Warning: Citation `scotlandMUP' on page 8 undefined on input line 71.
-
-
-Package acronym Warning: Acronym `MBSSM' is not defined on input line 71.
-
-
-Package acronym Warning: Acronym `ABM' is not defined on input line 71.
+Package acronym Warning: Acronym `SES' is not defined on input line 71.
 
 
 Package acronym Warning: Acronym `AHP' is not defined on input line 71.
@@ -1659,181 +1618,113 @@ Package acronym Warning: Acronym `AHP' is not defined on input line 71.
 Package acronym Warning: Acronym `ABM' is not defined on input line 71.
 
 
-Package natbib Warning: Citation `Boyd2022' on page 8 undefined on input line 71.
+Package acronym Warning: Acronym `AHP' is not defined on input line 71.
 
 
-Package natbib Warning: Citation `sipherIntro' on page 8 undefined on input line 71.
+LaTeX Warning: Marginpar on page 8 moved.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 73.
+Package acronym Warning: Acronym `ABM' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 73.
+Package natbib Warning: Citation `MBSSM' on page 8 undefined on input line 80.
 
 
-Package acronym Warning: Acronym `FCT' is not defined on input line 73.
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 73.
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 80.
+
+Package acronym Info: Label `acro:MUP' newly defined as it shall be overridden
+although it is yet undefined on input line 80.
+
+Package acronym Warning: Acronym `MUP' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `SES' is not defined on input line 73.
+Package acronym Warning: Acronym `MUP' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `SES' is not defined on input line 73.
+Package natbib Warning: Citation `mbssmCommentary' on page 8 undefined on input line 80.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 73.
+Package natbib Warning: Citation `scotlandMUP' on page 8 undefined on input line 80.
 
 
-Package acronym Warning: Acronym `ABM' is not defined on input line 73.
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `ABM' is not defined on input line 73.
+Package acronym Warning: Acronym `ABM' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `AHP' is not defined on input line 73.
+Package acronym Warning: Acronym `AHP' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `FCT' is not defined on input line 73.
+Package acronym Warning: Acronym `ABM' is not defined on input line 80.
 
 
-Package acronym Warning: Acronym `MBSSM' is not defined on input line 73.
-
-) (./sections/methods.tex [8] [9]
-Chapter 3.
-./sections/methods.tex:13: Dimension too large.
-<to be read again> 
-                   \relax 
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<recently read> \pgfmath@x 
-                           
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<to be read again> 
-                   \relax 
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<recently read> \pgfmath@x 
-                           
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<to be read again> 
-                   \relax 
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<recently read> \pgfmath@x 
-                           
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<to be read again> 
-                   \relax 
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
-
-./sections/methods.tex:13: Dimension too large.
-<recently read> \pgfmath@x 
-                           
-l.13 ... = \beta (c-T)$};}}}] plot ({\x+1}, {\x});
-                                                  
-I can't work with sizes bigger than about 19 feet.
-Continue and I'll use the largest value I can.
+Package natbib Warning: Citation `Boyd2022' on page 8 undefined on input line 80.
 
 
-LaTeX Warning: Reference `eq:absRisk' on page 10 undefined on input line 23.
-
-) (./sections/results.tex [10
-
-]
-Chapter 4.
-) (./sections/discussion.tex [11
-
-]
-Chapter 5.
-) (./sections/conclusions.tex [12
-
-]
-Chapter 6.
-)
-No file main.bbl.
-[13
-
-] [14
+Package natbib Warning: Citation `sipherIntro' on page 8 undefined on input line 80.
 
 
-]
-\openout2 = `sections/Appendix.aux'.
-
- (./sections/Appendix.tex
-Appendix A.
-<figures/S2Gantt.png, id=167, 1445.4pt x 903.375pt>
-File: figures/S2Gantt.png Graphic file (type png)
-<use figures/S2Gantt.png>
-Package pdftex.def Info: figures/S2Gantt.png  used on input line 5.
-(pdftex.def)             Requested size: 440.84746pt x 275.52208pt.
-) [15
+Package acronym Warning: Acronym `AHP' is not defined on input line 82.
 
 
- <./figures/S2Gantt.png>]
-
-Package natbib Warning: There were undefined citations.
-
-(./main.aux (./sections/listOfAcronyms.aux) (./sections/Appendix.aux))
-
-LaTeX Warning: There were undefined references.
+Package acronym Warning: Acronym `AHP' is not defined on input line 82.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Package acronym Warning: Acronym `FCT' is not defined on input line 82.
 
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Package acronym Warning: Acronym `AHP' is not defined on input line 82.
 
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  9244F47AA67E54F33CA19E0F5796539E;3286.
- ) 
+
+Package acronym Warning: Acronym `SES' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `SES' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `ABM' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `AHP' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `FCT' is not defined on input line 82.
+
+
+Package acronym Warning: Acronym `MBSSM' is not defined on input line 82.
+
+[8])
+
+! LaTeX Error: File `Latex/sections/development.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+/Users/sebastianozuddas/Programming/Python/FCT_Python/Latex/main.tex:59: Emergency stop.
+<read *> 
+         
+l.59 \input{Latex/sections/development}
+                                       ^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
 Here is how much of TeX's memory you used:
- 25450 strings out of 476025
- 482411 string characters out of 5790017
- 1884388 words of memory out of 5000000
- 45358 multiletter control sequences out of 15000+600000
+ 25187 strings out of 476025
+ 476872 string characters out of 5790017
+ 1890388 words of memory out of 5000000
+ 45128 multiletter control sequences out of 15000+600000
  522005 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,94p,1374b,1356s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (20 pages, 984730 bytes).
-PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 83 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 99i,11n,94p,1374b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+/Users/sebastianozuddas/Programming/Python/FCT_Python/Latex/main.tex:59:  ==> Fatal error occurred, no output PDF file produced!
