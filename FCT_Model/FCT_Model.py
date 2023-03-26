@@ -194,8 +194,7 @@ class FCT_Model(Model):
         #count_type_1:int = int(self.__count_of_agents  - count_type_0)
 
         discrete_space = self.__discrete_space
-        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0))
-
+        agent_attributes = generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True)
         
         local_bounds = self.__discrete_space.get_local_bounds()
 
@@ -209,103 +208,38 @@ class FCT_Model(Model):
 
 
         # Create the agents
+        #id, type, rank, deprivation_quintile, sex, age, drinking_status, space
 
-        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
+        # for i in range(self.__count_of_agents):
+        #     agent = create_FCT_agent(i, agent_attributes[i]["agent_type"], self.__rank, agent_attributes[i]["deprivation_quintile"], agent_attributes[i]["sex"], agent_attributes[i]["age"],  agent_attributes[i]["drinking_status"], self.__discrete_space)
+        #     self.__context.add(agent)
+            
         
-        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
 
-        for agents in (self.__context.agents()):
-            agents.set_space(self.__discrete_space)
+            
+        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)    
+        
+        for agents in self.__context.agents(count=self.__count_of_agents):
             print(agents.get_agent_id(), self.__discrete_space)
+
+
+        
+        
+
+        # for agents in (self.__context.agents()):
+        #     agents.set_space(self.__discrete_space)
+        #     print(agents.get_agent_id(), self.__discrete_space)
 
         # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
         #     agents.set_space(self.__discrete_space)
         #     print(agents.get_agent_id(), self.__discrete_space)
 
         
-        for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-            print(agents.get_agent_id(), self.__discrete_space)
+        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
+        #     print(agents.get_agent_id(), self.__discrete_space)
         
-        """
-        for i in range(self.__count_of_agents):
-            # Agent start with a random location
-            # Note: repast's default_rng (i.e. numpy) rng integers is [low, high), i.e. high is exclusive 
-            x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
-            y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
-            initial_location = repast4py.space.DiscretePoint(x_rand, y_rand)
-            # Generate new positions until the number of agents at that position is 0. 
-            while self.__discrete_space.get_num_agents(initial_location) != 0: 
-                x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
-                y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
-                initial_location = repast4py.space.DiscretePoint(x_rand, y_rand)
 
-            #############################################################################
-            #FCT level parameters
-            #Create a random integer between 1 and 5 to put agents in the deprivation quintile
-            #TODO see if theres a way to put this in a distribution
-            #TODO see if theres a way to include params
-            deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
-
-            #Create a random float between *FIND BOUNDS* to determine agent drinking behaviour
-            #TODO find numbers from jens model
-            mean_weekly_units_rand = float(repast4py.random.default_rng.integers(0, 1300)/10)
-
-            #Create a random integer between 1-3 to represent :
-            #1. low education (maybe they can decode 33% of the time)
-            #2. medium education (decode 66% of the time)
-            #3. high education (decode 99% of the time)
-            # levels among the agent population. 
-            education_rand = repast4py.random.default_rng.integers(1, 3)
-
-            #Create a random integer between 1-5 to represent personal wealth
-            personal_wealth_rand = repast4py.random.default_rng.integers(1, 5)
-
-            #Create a random integer between 1-10 to represent individual influence
-            social_influence_rand = repast4py.random.default_rng.integers(1, 10)
-
-            #############################################################################
-            #Agent level parameters
-
-            #Create a random generator for generating men/women
-            sex_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-            
-            #Create a random number generator for assigning age
-            #TODO: set appropriate age ranges
-            #TODO: get age ranges from props file 
-            age_rand = repast4py.random.default_rng.integers(self.__min_age, self.__max_age)
-            
-            #Create a random generator for drinking status boolean
-            drinking_status_rand = bool(repast4py.random.default_rng.integers(0, 1))
-
-            #TODO: understand this section of code
-            # assign the first N agents to type 0 then the rest to type 1
-            # agent_id = (i, self.__rank, 0)
-            # This is the agents type / group in the schelling model, not the repast4py Agent.type 
-
-            # TODO: init at the micro level: agent, theory, theory mediator
-            
-            # create agent object
-            #def __init__(self, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: bool,  space):
-
-            agent = create_FCT_agent(i, self.__rank, deprivation_quintile_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
-            #agent = FCT_Agent(i, )
-            
-            # create theory object
-            #def __init__(self, context, space, deprivation_quintile: int, mean_weekly_units:float, education:int, personal_wealth:int): #############^ this var is a placeholder for social connections
-            theory = FundamentalCauseTheory(self.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
-
-            # create mediator object
-            mediator = SocialTheoriesMediator([theory])
-
-            # connect the individual agent with its mediator
-            agent.set_mediator(mediator)
-            mediator.set_agent(agent)
-
-            # Add the agent to the context and discrete space
-            self.__context.add(agent)
-            self.__discrete_space.move(agent, initial_location)
-
-        """
+        
         # print the initial state of the board
         self.__board.print_board_to_screen()
     
@@ -348,6 +282,11 @@ class FCT_Model(Model):
 """
 
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
+        agent = FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
+
+        
+        
+        
         # TODO: add theory level parameters, mediator, etc
         # theory = create_Theory
         # mediator = SocialTheoriesMediator([FundamentalCauseTheory])
@@ -363,7 +302,7 @@ def restore_FCT_agent(agent_data):
 #############################################################################
 #Network Generation
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list]):
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
     
     agent_data = []
     agent_age_lowest = attributes["age"][0]
@@ -382,7 +321,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list]):
 
         agent = {
             "agent_id": i,
-            "agent_type": 0, # all agents are the same type "FCT_agent"
+            "agent_type": 1, # all agents are the same type "FCT_agent"
             "rank": 0,# agents are all in the same rank
             "deprivation_quintile": deprivation_quintile_rand,
             "sex": sex_rand,
@@ -434,6 +373,143 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list]):
     # Write updated lines to a new file
     with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
         updated_network_file.writelines(updated_lines)
+    
+    if get_data:
+        return agent_data
+    
+
+def generate_agent_distributions(type):
+
+    dict = {"age": [], "drinking_status": []}
+
+
+    experiment = type
+    match experiment:
+       
+        case 1:# normal population, low drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [0, 2]
+            return dict
+        
+        case 2:# normal population, high drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [2, 5]
+            return dict
+                
+        case 3:# low population, high drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [2, 5]
+            return dict
+        
+        case 4:# low population, normal drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [0, 5]
+            return dict
+            
+        case 5:# low population, low drinking status
+            dict["age"] = [18, 40]
+            dict["drinking_status"] = [0, 2]
+            return dict
+        
+        case 6:# high population, high drinking status
+            dict["age"] = [40, 80]
+            dict["drinking_status"] = [2, 5]
+            return dict
+        case 7:# high population, normal drinking status
+            dict["age"] = [40, 80]
+            dict["drinking_status"] = [0, 5]
+            return dict
+            
+        case 8:# high population, low drinking status
+            dict["age"] = [40, 40]
+            dict["drinking_status"] = [0, 2]
+            return dict
+
+        case _:# normal population, normal drinking status
+            dict["age"] = [18, 80]
+            dict["drinking_status"] = [0, 5]
+            return dict
+
+
+#############################################################################
+#Theory Parameter Generation
+
+
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
+    
+    agent_data = []
+    agent_age_lowest = attributes["age"][0]
+    agent_age_highest = attributes["age"][1]
+    agent_drinking_lowest = attributes["drinking_status"][0]
+    agent_drinking_highest = attributes["drinking_status"][1]
+
+    #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
+
+    for i in range(num_agents):
+        ##### random numbers #####
+        sex_rand = int(random.default_rng.choice([0, 1], p=[0.5, 0.5]))
+        age_rand = int(random.default_rng.integers(agent_age_lowest, agent_age_highest))
+        agent_drinking_status = int(random.default_rng.integers(agent_drinking_lowest, agent_drinking_highest))
+        deprivation_quintile_rand = int(random.default_rng.integers(1, 5))# has to stay constant
+
+        agent = {
+            "agent_id": i,
+            "agent_type": 1, # all agents are the same type "FCT_agent"
+            "rank": 0,# agents are all in the same rank
+            "deprivation_quintile": deprivation_quintile_rand,
+            "sex": sex_rand,
+            "age": age_rand,
+            "drinking_status": agent_drinking_status,
+            "space": None
+        }
+
+        agent_data.append(agent)
+
+    with open(filename, 'w') as outfile:
+        json.dump(agent_data, outfile, indent=4)
+    
+    with open(filename, 'r') as infile: 
+        agent_data = json.load(infile)
+
+    updated_lines = []
+    with open('FCT_Model/props/network/connected_watts_strogatz_graph.txt', 'r') as network_file:
+        lines = network_file.readlines()
+        for line in lines:
+
+            if line.startswith('FCT_network'):# at the start of the file 
+                updated_lines.append(line)
+                mode = 0# make amendments to the agents
+                continue# skip the line
+            elif line.startswith('EDGES'):
+                mode = 1
+                updated_lines.append(line)
+                continue
+                
+            if mode == 0:
+                agent_id = int(line.split()[0])    
+                agent_info = next((agent for agent in agent_data if agent['agent_id'] == agent_id), None)
+
+                if agent_info is not None:
+                    # Create a new dictionary without the first three elements
+                    keys_to_remove = list(agent_info.keys())[:3]
+                    updated_agent_info = {key: agent_info[key] for key in agent_info if key not in keys_to_remove}
+
+                    # Convert the dictionary back to a JSON string
+                    updated_agent_info_str = json.dumps(updated_agent_info)
+
+                    line = line.strip() + ' ' + updated_agent_info_str + '\n'
+
+                updated_lines.append(line)
+            elif mode==1:
+                updated_lines.append(line)
+
+    # Write updated lines to a new file
+    with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
+        updated_network_file.writelines(updated_lines)
+    
+    if get_data:
+        return agent_data
+    
 
 def generate_agent_distributions(type):
 

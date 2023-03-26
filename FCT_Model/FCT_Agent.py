@@ -26,7 +26,7 @@ class FCT_Agent(MicroAgent):
     #WITH DISCRETE SPACE
     #def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: int,  space):
 
-    def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, space):
+    def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
         self.__is_satisfied: bool = False

@@ -203,8 +203,8 @@ class Board(StructuralEntity):
             agent_1_dq = swap_pairs[i][0][0]
             agent_2_dq = swap_pairs[i][1][0]
 
-            print('swap pair: ', agent_1_id, agent_2_id)
-            print(swap_pairs)
+            # print('swap pair: ', agent_1_id, agent_2_id)
+            # print(swap_pairs)
 
             for agent in self.__context.agents(FCT_Agent.TYPE):
                 if agent.id == agent_1_id:
