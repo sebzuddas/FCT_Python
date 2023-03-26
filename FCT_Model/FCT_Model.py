@@ -501,10 +501,8 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
 def generate_theory_distributions(type):
 
     dict = {"mean_weekly_units": [], "education": [], "personal_wealth": []}
-
-
-    experiment = type
-    match experiment:
+    
+    match type:
        
        #changing weekly units
         case 1:# high consumption, normal education, normal wealth inequality
