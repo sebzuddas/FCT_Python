@@ -496,12 +496,11 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
         theory_data = json.load(infile)
     if get_data:
         return theory_data
-    
 
 def generate_theory_distributions(type):
 
     dict = {"mean_weekly_units": [], "education": [], "personal_wealth": []}
-    
+
     match type:
        
        #changing weekly units
