@@ -21,8 +21,6 @@ class FundamentalCauseTheory(Theory):
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth
 
-        
-
         #TODO these two theory level parameters are determined by other classes. How to manage?
         self.__social_connections: int = social_connections
         self.__age_group: int
