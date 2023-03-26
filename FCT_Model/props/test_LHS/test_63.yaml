@@ -1,5 +1,5 @@
-board.size: 90
-count.of.agents: 0
+board.size: 270
+count.of.agents: 4590
 random.seed: 3
-stop.at: 400
-threshold: 0.5
+stop.at: 200
+threshold: 0.0

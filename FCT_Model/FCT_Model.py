@@ -7,6 +7,7 @@ import json
 from repast4py import context, schedule, random, logging
 from repast4py.network import write_network, read_network
 import repast4py
+import numpy as np
 
 from core.Model import Model
 
@@ -193,10 +194,13 @@ class FCT_Model(Model):
         #count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
         #count_type_1:int = int(self.__count_of_agents  - count_type_0)
 
-        discrete_space = self.__discrete_space
-        agent_attributes = generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True)
-        theory_attributes = generate_theory_json_file
+        
+        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True)
+        theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True)
+        
         local_bounds = self.__discrete_space.get_local_bounds()
+        #print(theory_attributes)
+        exit()
 
         # deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
         # sex_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
@@ -440,31 +444,46 @@ def generate_agent_distributions(type):
 def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
     
     theory_data = []
-    theory_wealth_distribution_type = [""]
-    
-    agent_age_lowest = attributes["age"][0]
-    agent_age_highest = attributes["age"][1]
-    agent_drinking_lowest = attributes["drinking_status"][0]
-    agent_drinking_highest = attributes["drinking_status"][1]
+    theory_wealth_distribution_type = attributes["personal_wealth"][0]
+
+    theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
+    theory_weekly_units_highest = attributes["mean_weekly_units"][1]
+
+    theory_education_lowest = attributes["education"][0]
+    theory_education_highest = attributes["education"][1]
 
 
     #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
 
     for i in range(num_agents):
+        
         ##### random numbers #####
-        # sex_rand = int(random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        # age_rand = int(random.default_rng.integers(agent_age_lowest, agent_age_highest))
-        # agent_drinking_status = int(random.default_rng.integers(agent_drinking_lowest, agent_drinking_highest))
-        # deprivation_quintile_rand = int(random.default_rng.integers(1, 5))# has to stay constant
+        if theory_wealth_distribution_type == "n":
+            # set the wealth to a normal distribution
+            mu, sigma = 2.5, 1 # mean and standard deviation
+            wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
+            print(wealth_distribution_rand)
+
+        elif theory_wealth_distribution_type == "p":
+            # set the wealth to a pareto distribution
+            a,m  = 1, 2 # shape and mode
+            wealth_distribution_rand = float((np.random.default_rng().pareto(a, num_agents) + 1) * m)
+            
+        elif theory_wealth_distribution_type == "u":
+            # set the wealth to a uniform distribution
+            low, high = 0, 5 # lower and upper bounds
+            wealth_distribution_rand = np.random_sample.uniform(low, high, num_agents)
+            
+        weekly_units_rand = int(random.default_rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
+        education_rand = int(random.default_rng.integers(theory_education_lowest, theory_education_highest))
+        
 
         theory = {
-            "agent_id": i,
-            "agent_type": 1, # all agents are the same type "FCT_agent"
-            "rank": 0,# agents are all in the same rank
-            "deprivation_quintile": deprivation_quintile_rand,
-            "sex": sex_rand,
-            "age": age_rand,
-            "drinking_status": agent_drinking_status,
+            "mean_weekly_units": weekly_units_rand/10,
+            "education": education_rand, 
+            "personal_wealth": wealth_distribution_rand,# agents are all in the same rank
+            "social_connections": None,
+            "social_influence": None,
             "space": None
         }
 
@@ -475,45 +494,8 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
     
     with open(filename, 'r') as infile: 
         theory_data = json.load(infile)
-
-    updated_lines = []
-    with open('FCT_Model/props/network/connected_watts_strogatz_graph.txt', 'r') as network_file:
-        lines = network_file.readlines()
-        for line in lines:
-
-            if line.startswith('FCT_network'):# at the start of the file 
-                updated_lines.append(line)
-                mode = 0# make amendments to the agents
-                continue# skip the line
-            elif line.startswith('EDGES'):
-                mode = 1
-                updated_lines.append(line)
-                continue
-                
-            if mode == 0:
-                agent_id = int(line.split()[0])    
-                agent_info = next((agent for agent in agent_data if agent['agent_id'] == agent_id), None)
-
-                if agent_info is not None:
-                    # Create a new dictionary without the first three elements
-                    keys_to_remove = list(agent_info.keys())[:3]
-                    updated_agent_info = {key: agent_info[key] for key in agent_info if key not in keys_to_remove}
-
-                    # Convert the dictionary back to a JSON string
-                    updated_agent_info_str = json.dumps(updated_agent_info)
-
-                    line = line.strip() + ' ' + updated_agent_info_str + '\n'
-
-                updated_lines.append(line)
-            elif mode==1:
-                updated_lines.append(line)
-
-    # Write updated lines to a new file
-    with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
-        updated_network_file.writelines(updated_lines)
-    
     if get_data:
-        return agent_data
+        return theory_data
     
 
 def generate_theory_distributions(type):
@@ -528,135 +510,135 @@ def generate_theory_distributions(type):
         case 1:# high consumption, normal education, normal wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 2:# normal consumption, normal education, high wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 3:# normal consumption, high education, normal wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 4:# normal consumption, normal education, low wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 5:# normal consumption, low education, normal wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 6:# low consumption, normal education, normal wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 7:# normal consumption, high education, high wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 8:# high consumption, normal education, high wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 9:# high consumption, high education, normal wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 10:# normal consumption, high education, low wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 11:# normal consumption, low education, high wealth inequality
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 12:# high consumption, normal education, low wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 13:# high consumption, low education, normal wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 14:# low consumption, normal education, high wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 15:# low consumption, high education, normal wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "n"
+            dict["personal_wealth"] = ["n"]
             return dict
         case 16:# high consumption, low education, low wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 17:# low consumption, high education, low wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 18:# low consumption, low education, high wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 19:# high consumption, high education, high wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 20:# high consumption, high education, low wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 21:# high consumption, low education, high wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 22:# low consumption, high education, high wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 23:# high consumption, low education, low wealth inequality
             dict["mean_weekly_units"] = [600, 1300]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 24:# low consumption, high education, low wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [2, 3]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case 25:# low consumption, low education, high wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "p"
+            dict["personal_wealth"] = ["p"]
             return dict
         case 26:# low consumption, low education, low wealth inequality
             dict["mean_weekly_units"] = [0, 600]
             dict["education"] = [1, 2]
-            dict["personal_wealth"] = "u"
+            dict["personal_wealth"] = ["u"]
             return dict
         case _:# normal drinking habits, normal education levels, normal wealth distributions
             dict["mean_weekly_units"] = [0, 1300]
             dict["education"] = [1, 3]
-            dict["personal_wealth"] = "n" #uniform wealth distribution
+            dict["personal_wealth"] = ["n"] #uniform wealth distribution
             return dict

@@ -17,6 +17,7 @@ import os
 import click
 import colorama
 import emojis
+import subprocess
 
 colorama.init()
 
@@ -30,27 +31,38 @@ def model():
 def run(**kwargs):
     print(emojis.encode(colorama.Fore.BLUE+"Attempting to run the model :confused: \n"))
     colorama.Fore.RESET  
-    
-
+ 
     try:
-        os.system('python3 FCT_Model/main.py FCT_Model/props/model.yaml')
+        subprocess.run(["python3" ,"FCT_Model/main.py", "FCT_Model/props/model.yaml"], check=True)
         print(emojis.encode(colorama.Fore.GREEN+"Model run successfully! :smirk: \n"))
         
     except(KeyboardInterrupt):
-        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :sad: \n"))
+        print(emojis.encode(colorama.Fore.RED+"You stopped the model running! :unamused: \n "))
     
-    except(EOFError):
-        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :sad: \n"))
-
-    except(ImportError):
-        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :sad: \n"))
+    except subprocess.CalledProcessError as e:
+        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :flushed: \n"))
     
     except(FileNotFoundError):
-        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :sad: \n"))
+        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :unamused: \n"))
 
 
+#for data processing, add something to choose which data processing script to run
+@model.command()
+@click.option('-d/--data', default=False, help='Run the data processing script')
+def data(**kwargs):
+    print(emojis.encode(colorama.Fore.YELLOW+"Attempting to run data processing script:confused: \n"))
+    colorama.Fore.RESET  
+
+
+    try:
+        subprocess.run(["python3" ,"Data_Processing/main.py"], check=True)    
+        print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
     
-
+    except(KeyboardInterrupt):
+        print(emojis.encode(colorama.Fore.RED+"You stopped the script running! :unamused: \n"))
+    
+    except subprocess.CalledProcessError as e:
+        print(emojis.encode(colorama.Fore.RED+"Error: unable to display the graphs! :flushed: \n"))
     
 
 @model.command()

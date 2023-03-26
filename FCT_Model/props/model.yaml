@@ -13,3 +13,4 @@ network.file: "FCT_Model/props/network/connected_watts_strogatz_graph_updated.tx
 #rankCount: 5
 area.file: "FCT_Model/props/area/DQ_areas.csv"
 agent.props.file: "FCT_Model/props/agents/agent_props.json"
+theory.props.file: "FCT_Model/props/agents/theory_props.json"
