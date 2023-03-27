@@ -7,7 +7,9 @@ import json
 from repast4py import context, schedule, random, logging
 from repast4py.network import write_network, read_network
 import repast4py
+
 import numpy as np
+from numpy import *
 
 from core.Model import Model
 
@@ -195,8 +197,8 @@ class FCT_Model(Model):
         #count_type_1:int = int(self.__count_of_agents  - count_type_0)
 
         
-        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True)
-        theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True)
+        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
+        theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
         
         local_bounds = self.__discrete_space.get_local_bounds()
         #print(theory_attributes)
@@ -308,8 +310,8 @@ def restore_FCT_agent(agent_data):
 #############################################################################
 #Network Generation
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
-    
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
+    rng = np.random.default_rng(seed=seed_input)
     agent_data = []
     agent_age_lowest = attributes["age"][0]
     agent_age_highest = attributes["age"][1]
@@ -320,10 +322,10 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
 
     for i in range(num_agents):
         ##### random numbers #####
-        sex_rand = int(random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        age_rand = int(random.default_rng.integers(agent_age_lowest, agent_age_highest))
-        agent_drinking_status = int(random.default_rng.integers(agent_drinking_lowest, agent_drinking_highest))
-        deprivation_quintile_rand = int(random.default_rng.integers(1, 5))# has to stay constant
+        sex_rand = int(rng.choice([0, 1], p=[0.5, 0.5]))
+        age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
+        agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
+        deprivation_quintile_rand = int(rng.integers(1, 5))# has to stay constant
 
         agent = {
             "agent_id": i,
@@ -441,10 +443,11 @@ def generate_agent_distributions(type):
 #Theory Parameter Generation
 
 
-def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
-    
+def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input):
+    rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
     theory_data = []
     theory_wealth_distribution_type = attributes["personal_wealth"][0]
+    theory_wealth_distribution_type = "u"
 
     theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
     theory_weekly_units_highest = attributes["mean_weekly_units"][1]
@@ -461,21 +464,26 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
         if theory_wealth_distribution_type == "n":
             # set the wealth to a normal distribution
             mu, sigma = 2.5, 1 # mean and standard deviation
-            wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
-            print(wealth_distribution_rand)
+            # wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
+            rand = abs(rng.normal(mu, sigma, num_agents))
+            wealth_distribution_rand = round(rand[i], 2)
 
         elif theory_wealth_distribution_type == "p":
             # set the wealth to a pareto distribution
             a,m  = 1, 2 # shape and mode
-            wealth_distribution_rand = float((np.random.default_rng().pareto(a, num_agents) + 1) * m)
+            rand = (rng.pareto(a, num_agents) + 1) * m
+            wealth_distribution_rand = round(rand[i], 2)
             
         elif theory_wealth_distribution_type == "u":
             # set the wealth to a uniform distribution
             low, high = 0, 5 # lower and upper bounds
-            wealth_distribution_rand = np.random_sample.uniform(low, high, num_agents)
+            rand = rng.uniform(low, high, num_agents)
+            wealth_distribution_rand = round(rand[i], 2)
+
+        
             
-        weekly_units_rand = int(random.default_rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
-        education_rand = int(random.default_rng.integers(theory_education_lowest, theory_education_highest))
+        weekly_units_rand = int(rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
+        education_rand = int(rng.integers(theory_education_lowest, theory_education_highest))
         
 
         theory = {
