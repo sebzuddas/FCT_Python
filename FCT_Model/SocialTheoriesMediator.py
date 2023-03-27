@@ -41,4 +41,5 @@ class SocialTheoriesMediator(TheoryMediator):
         # #get the deprivation quintile
         # if self._theory_list[0].get_deprivation_quintile():
         #     self.agent.get_deprivation_quintile()
+    
 

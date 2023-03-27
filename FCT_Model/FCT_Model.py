@@ -202,7 +202,6 @@ class FCT_Model(Model):
         
         local_bounds = self.__discrete_space.get_local_bounds()
         #print(theory_attributes)
-        exit()
 
         # deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
         # sex_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
@@ -224,12 +223,23 @@ class FCT_Model(Model):
 
             
         read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)    
-        
-        for agents in self.__context.agents(count=self.__count_of_agents):
-            print(agents.get_agent_id(), self.__discrete_space)
+        for agent in self.__context.agents(count=self.__count_of_agents):
+            id = agent.get_agent_id()
+            theory = FundamentalCauseTheory(self.__context, theory_attributes[id]["mean_weekly_units"], theory_attributes[id]["education"], theory_attributes[id]["personal_wealth"], theory_attributes[id]["social_connections"], theory_attributes[id]["social_influence"], self.__discrete_space)
+            mediator = SocialTheoriesMediator([theory])
+            mediator.set_agent(agent)
+            
 
 
-        
+
+            
+
+
+
+
+
+
+        exit()
         
 
         # for agents in (self.__context.agents()):
@@ -289,10 +299,8 @@ class FCT_Model(Model):
 
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
         agent = FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
-
-
-
         
+
         
         
         # TODO: add theory level parameters, mediator, etc
@@ -307,6 +315,8 @@ def restore_FCT_agent(agent_data):
     uid = agent_data[0]
     return FCT_Agent(uid[0], uid[1], uid[2], agent_data[1])
 
+
+
 #############################################################################
 #Network Generation
 
@@ -317,8 +327,6 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
     agent_age_highest = attributes["age"][1]
     agent_drinking_lowest = attributes["drinking_status"][0]
     agent_drinking_highest = attributes["drinking_status"][1]
-
-    #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
 
     for i in range(num_agents):
         ##### random numbers #####
@@ -443,7 +451,7 @@ def generate_agent_distributions(type):
 #Theory Parameter Generation
 
 
-def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input):
+def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
     rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
     theory_data = []
     theory_wealth_distribution_type = attributes["personal_wealth"][0]

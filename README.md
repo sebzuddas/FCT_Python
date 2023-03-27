@@ -1,11 +1,12 @@
-# FCT_Python
-An agent based model which looks to explain the alcohol harm paradox through the lens of fundamental cause theory. 
+# The General Ideas
+An agent based model which looks to explain the alcohol harm paradox through fundamental cause theory (FCT). 
 
 ## Alcohol Harm Paradox
-
+The alcohol harm paradox is a phenomenon in which two people who drink the same amount of alcohol over thier lifetimes will experience different alcohol harms based on their socioeconomic background. Individuals lower on the socioeconomic scale experience more alcohol harms when compared to those high on the socioeconomic scale, even when drinking less on average. 
 
 
 ## Fundamental Cause Theory
+Is a social theory that proposes that the fundamental causes of disease can be linked to socioeconomic status. It proposes that the level of education, personal wealth, social connections and social influence are liked to the likelihood of an individual to get succumb to disease.
 
 ## Mechanism-based Social Systems Modelling
 
