@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Dict, Tuple, List
 import pathlib
 from dataclasses import dataclass
+import csv
 
 import json
 from repast4py import context, schedule, random, logging
@@ -142,9 +143,12 @@ class FCT_Model(Model):
     
 
     def do_situational_mechanisms(self):
+
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doSituation for each agent
             agent.call_situation()
+        
+
     
     def do_action_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
@@ -193,71 +197,81 @@ class FCT_Model(Model):
 
 
     def init_agents(self):
-        #count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
-        #count_type_1:int = int(self.__count_of_agents  - count_type_0)
 
-        
         generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
         theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
-        
         local_bounds = self.__discrete_space.get_local_bounds()
-        #print(theory_attributes)
+        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
+        i = 0
 
-        # deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
-        # sex_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        # agent_type_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        # age_rand = repast4py.random.default_rng.integers(self.__min_age, self.__max_age)
-        # drinking_status_rand = bool(repast4py.random.default_rng.integers(0, 1))
-        #(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
-        #print(self.__discrete_space)
-
-
-        # Create the agents
-        #id, type, rank, deprivation_quintile, sex, age, drinking_status, space
-
-        # for i in range(self.__count_of_agents):
-        #     agent = create_FCT_agent(i, agent_attributes[i]["agent_type"], self.__rank, agent_attributes[i]["deprivation_quintile"], agent_attributes[i]["sex"], agent_attributes[i]["age"],  agent_attributes[i]["drinking_status"], self.__discrete_space)
-        #     self.__context.add(agent)
-            
-        
-
-            
-        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)    
         for agent in self.__context.agents(count=self.__count_of_agents):
+
+            dq = agent.get_deprivation_quintile()
+            
+            random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
+            initial_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+          
+            while self.__discrete_space.get_num_agents(initial_location) != 0:
+                random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
+                initial_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+                print(random_dq_point, '\n', initial_location)
+
+            # Move to the new location
+            
+
+
+
+
+
+
+            # while number_in_location > 0:
+            #     random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
+                
+            #     initial_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+            #     number_in_location = self.__discrete_space.get_num_agents(initial_location)
+
+            #     #print("number of agents:",self.__discrete_space.get_num_agents(initial_location),"\ninitial location:", initial_location, '\niteration:', i, )
+            # self.__discrete_space.move(agent, initial_location)    
+            
+            # while number_in_location > 1:
+            #     random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
+            #     initial_location = repast4py.space.DiscretePoint(random_dq_point[0]+i, random_dq_point[1])                    
+            #     i += 1
+            
+            # self.__discrete_space.move(agent, initial_location)    
+            #     number_in_location = self.__discrete_space.get_num_agents(initial_location)
+            
+            # self.__discrete_space.move(agent,initial_location)
+
+            # while number_in_location > 1:
+            #     random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
+            #     initial_location = repast4py.space.DiscretePoint(random_dq_point[0]+i, random_dq_point[1])                    
+            #     i += 1
+            #     self.__discrete_space.move(agent,initial_location)
+            #     number_in_location = self.__discrete_space.get_num_agents(initial_location)
+            
+            # print(number_in_location, initial_location)
+
+
+            
+
+            #     # raise Exception("multiple agents in the same location")
+            #     # x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
+            #     # y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
+            #     # initial_location = repast4py.space.DiscretePoint(x_rand, y_rand)
+
             id = agent.get_agent_id()
             theory = FundamentalCauseTheory(self.__context, theory_attributes[id]["mean_weekly_units"], theory_attributes[id]["education"], theory_attributes[id]["personal_wealth"], theory_attributes[id]["social_connections"], theory_attributes[id]["social_influence"], self.__discrete_space)
             mediator = SocialTheoriesMediator([theory])
+            agent.set_mediator(mediator)
             mediator.set_agent(agent)
-            
-
-
-
-            
-
-
-
-
-
-
-        exit()
-        
-
-        # for agents in (self.__context.agents()):
-        #     agents.set_space(self.__discrete_space)
-        #     print(agents.get_agent_id(), self.__discrete_space)
-
-        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-        #     agents.set_space(self.__discrete_space)
-        #     print(agents.get_agent_id(), self.__discrete_space)
-
-        
-        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-        #     print(agents.get_agent_id(), self.__discrete_space)
-        
+            #TODO: assign agents a location to start on
+            self.__discrete_space.move(agent, initial_location)
 
         
         # print the initial state of the board
         self.__board.print_board_to_screen()
+        exit()
     
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
@@ -333,7 +347,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
         sex_rand = int(rng.choice([0, 1], p=[0.5, 0.5]))
         age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
         agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
-        deprivation_quintile_rand = int(rng.integers(1, 5))# has to stay constant
+        deprivation_quintile_rand = int(rng.integers(0, 5))# has to stay constant
 
         agent = {
             "agent_id": i,
@@ -455,7 +469,6 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
     rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
     theory_data = []
     theory_wealth_distribution_type = attributes["personal_wealth"][0]
-    theory_wealth_distribution_type = "u"
 
     theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
     theory_weekly_units_highest = attributes["mean_weekly_units"][1]
@@ -655,3 +668,54 @@ def generate_theory_distributions(type):
             dict["education"] = [1, 3]
             dict["personal_wealth"] = ["n"] #uniform wealth distribution
             return dict
+
+def get_starting_location(file_location, deprivation_quintile, seed_input):
+        rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
+        #pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
+        match deprivation_quintile:
+            case 0:
+                DQ_1_coords = find_all_cell_coordinates(file_location, '1')
+                pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
+                return (pos_rand)
+            case 1:
+                DQ_2_coords = find_all_cell_coordinates(file_location, '2')
+                pos_rand = np.random.default_rng().choice(DQ_2_coords, replace=False)
+                return (pos_rand)
+            case 2:
+                DQ_3_coords = find_all_cell_coordinates(file_location, '3')
+                pos_rand = np.random.default_rng().choice(DQ_3_coords, replace=False)
+                return (pos_rand)
+            case 3:
+                DQ_4_coords = find_all_cell_coordinates(file_location, '4')
+                pos_rand = np.random.default_rng().choice(DQ_4_coords, replace=False)
+                return (pos_rand)
+            case 4:
+                DQ_5_coords = find_all_cell_coordinates(file_location, '5')
+                pos_rand = np.random.default_rng().choice(DQ_5_coords, replace=False)
+                return (pos_rand)
+            case _:
+                raise ValueError("Deprivation quintile must be between 0 and 4")
+        
+        #print(DQ_1_coords[pos_rand][0], DQ_1_coords[pos_rand][1])
+        #print(len(DQ_1_coords) ,len(DQ_2_coords), len(DQ_3_coords), len(DQ_4_coords), len(DQ_5_coords))
+
+def find_all_cell_coordinates(csv_file, target_value):
+    coordinates = []
+    with open(csv_file, newline='') as f:
+        reader = csv.reader(f)
+        for row_num, row in enumerate(reader):
+            for col_num, cell_value in enumerate(row):
+                if cell_value == target_value:
+                    coordinates.append((row_num, col_num))
+    return coordinates
+
+def get_unique_random_coordinate(coordinates, used_coordinates):
+    available_coordinates = [coord for coord in coordinates if coord not in used_coordinates]
+
+    if not available_coordinates:
+        print("No more unique coordinates available.")
+        return None
+
+    random_coordinate = random.choice(available_coordinates)
+    used_coordinates.add(random_coordinate)
+    return random_coordinate

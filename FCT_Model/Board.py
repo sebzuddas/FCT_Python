@@ -247,20 +247,31 @@ class Board(StructuralEntity):
                 agent_count_at_point = self.__discrete_space.get_num_agents(point)
                 # Print a warning/error to stderr if there is more than 1 agent at a given location
                 if agent_count_at_point > 1:
-                    print(f"More than 1 agent per cell at {x}, {y}", file=sys.stderr)
+                    print(f"Number of agents at {x}, {y}: {agent_count_at_point}", file=sys.stderr)
                 # If there are no agents, output an empty space
                 if agent_count_at_point == 0:
                     row += "_"
                 else: 
                     # If there is an agent, get the first agent at the location
                     agent = self.__discrete_space.get_agent(point)
-                    print(agent)
-                    print(agent.get_agent_sex())
                     # Add the appropriate character to the string row
-                    if agent.get_agent_sex() == 0:
-                        row += emojis.encode(":red_circle:") #Previously X
-                    elif agent.get_agent_sex() == 1:
-                        row += emojis.encode(":large_blue_circle:") #Previously Y
+                    match agent.get_deprivation_quintile():
+                        case 0:
+                            row += emojis.encode(":one:")
+                        
+                        case 1:
+                            row += emojis.encode(":two:")
+
+                        case 2:
+                            row += emojis.encode(":three:")
+
+                        case 3:
+                            row += emojis.encode(":four:")
+                        
+                        case 4:
+                            row += emojis.encode(":five:")
+                    
+
             row += "|"
             print(row)
         print("-" * (board_size_x + 2))

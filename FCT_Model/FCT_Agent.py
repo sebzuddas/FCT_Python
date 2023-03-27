@@ -86,6 +86,7 @@ class FCT_Agent(MicroAgent):
     def set_space(self, space):
         self.space = space
 
+
     ####################################################################
     #Agent Methods
 
@@ -98,13 +99,12 @@ class FCT_Agent(MicroAgent):
 
     def move(self):
         #TODO: restrict movements depending on deprivation quintile
-        
         #move to a random empty position:
         # get this agents location
         location = self.space.get_location(self)
         # get the bounds of the environment
         local_bounds = self.space.get_local_bounds()
-        # find a ranm empty position.
+        # find a random empty position.
         # Note this will loop forever if the board is full (but this should be prevented by an early check)
         rng = repast4py.random.default_rng
         random_location = self.space.get_random_local_pt(rng)

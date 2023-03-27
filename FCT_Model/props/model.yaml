@@ -14,3 +14,4 @@ network.file: "FCT_Model/props/network/connected_watts_strogatz_graph_updated.tx
 area.file: "FCT_Model/props/area/DQ_areas.csv"
 agent.props.file: "FCT_Model/props/agents/agent_props.json"
 theory.props.file: "FCT_Model/props/agents/theory_props.json"
+board.props.file: "FCT_Model/props/area/DQ_areas.csv"
