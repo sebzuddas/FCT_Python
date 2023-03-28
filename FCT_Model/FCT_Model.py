@@ -2,11 +2,15 @@ from __future__ import annotations
 from typing import Dict, Tuple, List
 import pathlib
 from dataclasses import dataclass
+import csv
 
 import json
 from repast4py import context, schedule, random, logging
 from repast4py.network import write_network, read_network
 import repast4py
+
+import numpy as np
+from numpy import *
 
 from core.Model import Model
 
@@ -77,7 +81,7 @@ class FCT_Model(Model):
 
         # Output the Rank, and Bounds to match RepastHPC
         local_bounds = self.__discrete_space.get_local_bounds()
-        print(f"RANK {self.__rank} BOUNDS Point[{local_bounds.xmin}, {local_bounds.ymin}] Point[{local_bounds.xextent}, {local_bounds.yextent}]")
+        print(f"RANK: {self.__rank} \nBOUNDS: from[{local_bounds.xmin}, {local_bounds.ymin}] to[{local_bounds.xextent}, {local_bounds.yextent}]")
         self.__context.add_projection(self.__discrete_space)
 
         # Define the board
@@ -139,9 +143,12 @@ class FCT_Model(Model):
     
 
     def do_situational_mechanisms(self):
+
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doSituation for each agent
             agent.call_situation()
+        
+
     
     def do_action_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
@@ -164,6 +171,7 @@ class FCT_Model(Model):
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
         # Only a single rank outputs the board
+        self.__board.print_board_to_screen()
         if self.__rank == 0:
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
@@ -190,59 +198,43 @@ class FCT_Model(Model):
 
 
     def init_agents(self):
-        #count_type_0:int = int(self.__count_of_agents // 2) # // for integer/floor division
-        #count_type_1:int = int(self.__count_of_agents  - count_type_0)
 
-        discrete_space = self.__discrete_space
-        agent_attributes = generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True)
-        
+        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
+        theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
         local_bounds = self.__discrete_space.get_local_bounds()
+        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
 
-        # deprivation_quintile_rand = repast4py.random.default_rng.integers(1, 5)
-        # sex_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        # agent_type_rand = bool(repast4py.random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        # age_rand = repast4py.random.default_rng.integers(self.__min_age, self.__max_age)
-        # drinking_status_rand = bool(repast4py.random.default_rng.integers(0, 1))
-        #(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)(self.__rank, deprivation_quintile_rand, agent_type_rand, sex_rand, age_rand, drinking_status_rand, self.__discrete_space)
-        #print(self.__discrete_space)
+        rng_agents = np.random.default_rng(seed=self.__random_seed)  # create a default Generator instance
+        #print(self.__context.agents(count=self.__count_of_agents))
 
+        for agent in self.__context.agents(count=self.__count_of_agents):
 
-        # Create the agents
-        #id, type, rank, deprivation_quintile, sex, age, drinking_status, space
+            dq = agent.get_deprivation_quintile()
+            id = agent.get_id()
 
-        # for i in range(self.__count_of_agents):
-        #     agent = create_FCT_agent(i, agent_attributes[i]["agent_type"], self.__rank, agent_attributes[i]["deprivation_quintile"], agent_attributes[i]["sex"], agent_attributes[i]["age"],  agent_attributes[i]["drinking_status"], self.__discrete_space)
-        #     self.__context.add(agent)
-            
-        
+            random_dq_point = get_random_location(self.__props["board.props.file"], dq, id)
+            initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
+          
+            while self.__discrete_space.get_num_agents(initial_location) != 0:
+                random_dq_point = get_random_location(self.__props["board.props.file"], dq, id)
+                initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
+                print(initial_location, '\n', self.__discrete_space.get_num_agents(initial_location))
 
-            
-        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)    
-        
-        for agents in self.__context.agents(count=self.__count_of_agents):
-            print(agents.get_agent_id(), self.__discrete_space)
+            # Move to the new location
+            self.__discrete_space.move(agent, initial_location)
 
 
-        
-        
+            id = agent.get_agent_id()
+            theory = FundamentalCauseTheory(self.__context, theory_attributes[id]["mean_weekly_units"], theory_attributes[id]["education"], theory_attributes[id]["personal_wealth"], theory_attributes[id]["social_connections"], theory_attributes[id]["social_influence"], self.__discrete_space)
+            mediator = SocialTheoriesMediator([theory])
+            agent.set_mediator(mediator)
+            mediator.set_agent(agent)
+            #TODO: assign agents a location to start on
 
-        # for agents in (self.__context.agents()):
-        #     agents.set_space(self.__discrete_space)
-        #     print(agents.get_agent_id(), self.__discrete_space)
-
-        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-        #     agents.set_space(self.__discrete_space)
-        #     print(agents.get_agent_id(), self.__discrete_space)
-
-        
-        # for agents in (self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents)):
-        #     print(agents.get_agent_id(), self.__discrete_space)
-        
-
-        
-        # print the initial state of the board
+            # print the initial state of the board
         self.__board.print_board_to_screen()
-    
+        
+        
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
@@ -283,8 +275,8 @@ class FCT_Model(Model):
 
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
         agent = FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
-
         
+
         
         
         # TODO: add theory level parameters, mediator, etc
@@ -299,25 +291,25 @@ def restore_FCT_agent(agent_data):
     uid = agent_data[0]
     return FCT_Agent(uid[0], uid[1], uid[2], agent_data[1])
 
+
+
 #############################################################################
 #Network Generation
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
-    
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
+    rng = np.random.default_rng(seed=seed_input)
     agent_data = []
     agent_age_lowest = attributes["age"][0]
     agent_age_highest = attributes["age"][1]
     agent_drinking_lowest = attributes["drinking_status"][0]
     agent_drinking_highest = attributes["drinking_status"][1]
 
-    #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
-
     for i in range(num_agents):
         ##### random numbers #####
-        sex_rand = int(random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        age_rand = int(random.default_rng.integers(agent_age_lowest, agent_age_highest))
-        agent_drinking_status = int(random.default_rng.integers(agent_drinking_lowest, agent_drinking_highest))
-        deprivation_quintile_rand = int(random.default_rng.integers(1, 5))# has to stay constant
+        sex_rand = int(rng.choice([0, 1], p=[0.5, 0.5]))
+        age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
+        agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
+        deprivation_quintile_rand = int(rng.integers(0, 5))# has to stay constant
 
         agent = {
             "agent_id": i,
@@ -435,132 +427,257 @@ def generate_agent_distributions(type):
 #Theory Parameter Generation
 
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False):
-    
-    agent_data = []
-    agent_age_lowest = attributes["age"][0]
-    agent_age_highest = attributes["age"][1]
-    agent_drinking_lowest = attributes["drinking_status"][0]
-    agent_drinking_highest = attributes["drinking_status"][1]
+def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
+    rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
+    theory_data = []
+    theory_wealth_distribution_type = attributes["personal_wealth"][0]
+
+    theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
+    theory_weekly_units_highest = attributes["mean_weekly_units"][1]
+
+    theory_education_lowest = attributes["education"][0]
+    theory_education_highest = attributes["education"][1]
+
 
     #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
 
     for i in range(num_agents):
+        
         ##### random numbers #####
-        sex_rand = int(random.default_rng.choice([0, 1], p=[0.5, 0.5]))
-        age_rand = int(random.default_rng.integers(agent_age_lowest, agent_age_highest))
-        agent_drinking_status = int(random.default_rng.integers(agent_drinking_lowest, agent_drinking_highest))
-        deprivation_quintile_rand = int(random.default_rng.integers(1, 5))# has to stay constant
+        if theory_wealth_distribution_type == "n":
+            # set the wealth to a normal distribution
+            mu, sigma = 2.5, 1 # mean and standard deviation
+            # wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
+            rand = abs(rng.normal(mu, sigma, num_agents))
+            wealth_distribution_rand = round(rand[i], 2)
 
-        agent = {
-            "agent_id": i,
-            "agent_type": 1, # all agents are the same type "FCT_agent"
-            "rank": 0,# agents are all in the same rank
-            "deprivation_quintile": deprivation_quintile_rand,
-            "sex": sex_rand,
-            "age": age_rand,
-            "drinking_status": agent_drinking_status,
+        elif theory_wealth_distribution_type == "p":
+            # set the wealth to a pareto distribution
+            a,m  = 1, 2 # shape and mode
+            rand = (rng.pareto(a, num_agents) + 1) * m
+            wealth_distribution_rand = round(rand[i], 2)
+            
+        elif theory_wealth_distribution_type == "u":
+            # set the wealth to a uniform distribution
+            low, high = 0, 5 # lower and upper bounds
+            rand = rng.uniform(low, high, num_agents)
+            wealth_distribution_rand = round(rand[i], 2)
+
+        
+            
+        weekly_units_rand = int(rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
+        education_rand = int(rng.integers(theory_education_lowest, theory_education_highest))
+        
+
+        theory = {
+            "mean_weekly_units": weekly_units_rand/10,
+            "education": education_rand, 
+            "personal_wealth": wealth_distribution_rand,# agents are all in the same rank
+            "social_connections": None,
+            "social_influence": None,
             "space": None
         }
 
-        agent_data.append(agent)
+        theory_data.append(theory)
 
     with open(filename, 'w') as outfile:
-        json.dump(agent_data, outfile, indent=4)
+        json.dump(theory_data, outfile, indent=4)
     
     with open(filename, 'r') as infile: 
-        agent_data = json.load(infile)
-
-    updated_lines = []
-    with open('FCT_Model/props/network/connected_watts_strogatz_graph.txt', 'r') as network_file:
-        lines = network_file.readlines()
-        for line in lines:
-
-            if line.startswith('FCT_network'):# at the start of the file 
-                updated_lines.append(line)
-                mode = 0# make amendments to the agents
-                continue# skip the line
-            elif line.startswith('EDGES'):
-                mode = 1
-                updated_lines.append(line)
-                continue
-                
-            if mode == 0:
-                agent_id = int(line.split()[0])    
-                agent_info = next((agent for agent in agent_data if agent['agent_id'] == agent_id), None)
-
-                if agent_info is not None:
-                    # Create a new dictionary without the first three elements
-                    keys_to_remove = list(agent_info.keys())[:3]
-                    updated_agent_info = {key: agent_info[key] for key in agent_info if key not in keys_to_remove}
-
-                    # Convert the dictionary back to a JSON string
-                    updated_agent_info_str = json.dumps(updated_agent_info)
-
-                    line = line.strip() + ' ' + updated_agent_info_str + '\n'
-
-                updated_lines.append(line)
-            elif mode==1:
-                updated_lines.append(line)
-
-    # Write updated lines to a new file
-    with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
-        updated_network_file.writelines(updated_lines)
-    
+        theory_data = json.load(infile)
     if get_data:
-        return agent_data
-    
+        return theory_data
 
-def generate_agent_distributions(type):
+def generate_theory_distributions(type):
 
-    dict = {"age": [], "drinking_status": []}
+    dict = {"mean_weekly_units": [], "education": [], "personal_wealth": []}
 
-
-    experiment = type
-    match experiment:
+    match type:
        
-        case 1:# normal population, low drinking status
-            dict["age"] = [18, 80]
-            dict["drinking_status"] = [0, 2]
+       #changing weekly units
+        case 1:# high consumption, normal education, normal wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["n"]
             return dict
-        
-        case 2:# normal population, high drinking status
-            dict["age"] = [18, 80]
-            dict["drinking_status"] = [2, 5]
+        case 2:# normal consumption, normal education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["p"]
             return dict
-                
-        case 3:# low population, high drinking status
-            dict["age"] = [18, 40]
-            dict["drinking_status"] = [2, 5]
+        case 3:# normal consumption, high education, normal wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["n"]
             return dict
-        
-        case 4:# low population, normal drinking status
-            dict["age"] = [18, 40]
-            dict["drinking_status"] = [0, 5]
+        case 4:# normal consumption, normal education, low wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["u"]
             return dict
-            
-        case 5:# low population, low drinking status
-            dict["age"] = [18, 40]
-            dict["drinking_status"] = [0, 2]
+        case 5:# normal consumption, low education, normal wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["n"]
             return dict
-        
-        case 6:# high population, high drinking status
-            dict["age"] = [40, 80]
-            dict["drinking_status"] = [2, 5]
+        case 6:# low consumption, normal education, normal wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["n"]
             return dict
-        case 7:# high population, normal drinking status
-            dict["age"] = [40, 80]
-            dict["drinking_status"] = [0, 5]
+        case 7:# normal consumption, high education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["p"]
             return dict
-            
-        case 8:# high population, low drinking status
-            dict["age"] = [40, 40]
-            dict["drinking_status"] = [0, 2]
+        case 8:# high consumption, normal education, high wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 9:# high consumption, high education, normal wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["n"]
+            return dict
+        case 10:# normal consumption, high education, low wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 11:# normal consumption, low education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 12:# high consumption, normal education, low wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 13:# high consumption, low education, normal wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["n"]
+            return dict
+        case 14:# low consumption, normal education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 15:# low consumption, high education, normal wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["n"]
+            return dict
+        case 16:# high consumption, low education, low wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 17:# low consumption, high education, low wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 18:# low consumption, low education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 19:# high consumption, high education, high wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 20:# high consumption, high education, low wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 21:# high consumption, low education, high wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 22:# low consumption, high education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 23:# high consumption, low education, low wealth inequality
+            dict["mean_weekly_units"] = [600, 1300]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 24:# low consumption, high education, low wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [2, 3]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case 25:# low consumption, low education, high wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["p"]
+            return dict
+        case 26:# low consumption, low education, low wealth inequality
+            dict["mean_weekly_units"] = [0, 600]
+            dict["education"] = [1, 2]
+            dict["personal_wealth"] = ["u"]
+            return dict
+        case _:# normal drinking habits, normal education levels, normal wealth distributions
+            dict["mean_weekly_units"] = [0, 1300]
+            dict["education"] = [1, 3]
+            dict["personal_wealth"] = ["n"] #uniform wealth distribution
             return dict
 
-        case _:# normal population, normal drinking status
-            dict["age"] = [18, 80]
-            dict["drinking_status"] = [0, 5]
-            return dict
+def get_random_location(file_location, deprivation_quintile, rng_seed):
+        #rng = np.random.default_rng(seed=rng_seed)  # create a default Generator instance
+        #pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
+        match deprivation_quintile:
+            case 0:
+                DQ_1_coords = find_all_cell_coordinates(file_location, '1')
+                pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
+                return (pos_rand)
+            case 1:
+                DQ_2_coords = find_all_cell_coordinates(file_location, '2')
+                pos_rand = np.random.default_rng().choice(DQ_2_coords, replace=False)
+                return (pos_rand)
+            case 2:
+                DQ_3_coords = find_all_cell_coordinates(file_location, '3')
+                pos_rand = np.random.default_rng().choice(DQ_3_coords, replace=False)
+                return (pos_rand)
+            case 3:
+                DQ_4_coords = find_all_cell_coordinates(file_location, '4')
+                pos_rand = np.random.default_rng().choice(DQ_4_coords, replace=False)
+                return (pos_rand)
+            case 4:
+                DQ_5_coords = find_all_cell_coordinates(file_location, '5')
+                pos_rand = np.random.default_rng().choice(DQ_5_coords, replace=False)
+                return (pos_rand)
+            case _:
+                raise ValueError("Deprivation quintile must be between 0 and 4")
+        
+        #print(DQ_1_coords[pos_rand][0], DQ_1_coords[pos_rand][1])
+        #print(len(DQ_1_coords) ,len(DQ_2_coords), len(DQ_3_coords), len(DQ_4_coords), len(DQ_5_coords))
 
+def find_all_cell_coordinates(csv_file, target_value):
+    coordinates = []
+    with open(csv_file, newline='') as f:
+        reader = csv.reader(f)
+        for row_num, row in enumerate(reader):
+            for col_num, cell_value in enumerate(row):
+                if cell_value == target_value:
+                    coordinates.append((row_num+1, col_num+1))# +1 so that they don't start at 0
+    return coordinates
 
+def get_unique_random_coordinate(coordinates, used_coordinates):
+    available_coordinates = [coord for coord in coordinates if coord not in used_coordinates]
+
+    if not available_coordinates:
+        print("No more unique coordinates available.")
+        return None
+
+    random_coordinate = random.choice(available_coordinates)
+    used_coordinates.add(random_coordinate)
+    return random_coordinate

@@ -21,8 +21,6 @@ class FundamentalCauseTheory(Theory):
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth
 
-        
-
         #TODO these two theory level parameters are determined by other classes. How to manage?
         self.__social_connections: int = social_connections
         self.__age_group: int
@@ -107,9 +105,17 @@ class FundamentalCauseTheory(Theory):
         
         #print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
 
+    #########################################################
+    #Theory Getters
 
     def get_satisfied_status(self) -> bool:
         return self.__is_satisfied
 
     def get_moving_intention(self) -> bool:
         return self.__moving_intention
+    
+    def get_mean_weekly_units(self) -> float:
+        return self.__mean_weekly_units
+
+    #########################################################
+    #Theory Setters

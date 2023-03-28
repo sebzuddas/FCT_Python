@@ -59,6 +59,8 @@ def main():
 
     # Run the model
     model.run()
+    print("Model run complete")
+    exit()
 
 
 # If this file is launched, run the model. 

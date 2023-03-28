@@ -31,7 +31,7 @@ class MicroAgent(repast4py.core.Agent, metaclass=ABCMeta):
         self._mediator = None
 
     def get_id(self):
-        return self._id
+        return self.id
 
     def set(self, current_rank):
         self.current_rank = current_rank
