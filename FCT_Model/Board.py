@@ -220,7 +220,6 @@ class Board(StructuralEntity):
         #TODO implement social network updating procedure. 
         pass
 
-    # TODO: override do_transformation();
     def call_transformation(self):
         # TODO: transformational mechanisms: update avg satisfaction and segregation index
         self.__update_avg_satisfaction()

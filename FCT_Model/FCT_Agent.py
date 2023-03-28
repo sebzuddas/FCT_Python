@@ -17,6 +17,7 @@ import repast4py
 
 import numpy as np
 from numpy import random
+import csv
 
 
 
@@ -99,31 +100,31 @@ class FCT_Agent(MicroAgent):
         return binary_string
 
     def move(self):
-        #TODO: restrict movements depending on deprivation quintile
-        #move to a random empty position:
-        # get this agents location
-        location = self.space.get_location(self)
-        # get the bounds of the environment
-        local_bounds = self.space.get_local_bounds()
-        # find a random empty position.
-        # Note this will loop forever if the board is full (but this should be prevented by an early check)
-        rng = repast4py.random.default_rng
-        random_location = self.space.get_random_local_pt(rng)
-        while self.space.get_num_agents(random_location) != 0:
-            random_location = self.space.get_random_local_pt(rng)
-        # Move to the new location
-        self.space.move(self, random_location)   
-        # dq = self.__deprivation_quintile
-        # random_dq_point = get_random_location(self.__props["board.props.file"], dq)
-        # random_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+        # #TODO: restrict movements depending on deprivation quintile
+        # #move to a random empty position:
+        # # get this agents location
+        # location = self.space.get_location(self)
+        # # get the bounds of the environment
+        # local_bounds = self.space.get_local_bounds()
+        # # find a random empty position.
+        # # Note this will loop forever if the board is full (but this should be prevented by an early check)
+        # rng = repast4py.random.default_rng
+        # random_location = self.space.get_random_local_pt(rng)
+        # while self.space.get_num_agents(random_location) != 0:
+        #     random_location = self.space.get_random_local_pt(rng)
+        # # Move to the new location
+        # self.space.move(self, random_location)   
+
+        dq = self.__deprivation_quintile
+        random_dq_point = get_random_location(dq)
+        random_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
           
-        # while self.__discrete_space.get_num_agents(random_location) != 0:
-        #     random_dq_point = get_random_location(self.__props["board.props.file"], dq)
-        #     random_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
-        #     print(random_location, '\n', self.__discrete_space.get_num_agents(random_location))
-        #     # Move to the new location
-        # self.__discrete_space.move(self, random_location)
-        exit()
+        while self.__discrete_space.get_num_agents(random_location) != 0:
+            random_dq_point = get_random_location(dq)
+            random_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+            print(random_location, '\n', self.__discrete_space.get_num_agents(random_location))
+            # Move to the new location
+        self.__discrete_space.move(self, random_location)
  
 
     def absolute_risk(self, beta):
@@ -178,7 +179,8 @@ def get_random_location(file_location, deprivation_quintile):
             case _:
                 raise ValueError("Deprivation quintile must be between 0 and 4")
 
-def find_all_cell_coordinates(csv_file, target_value):
+def find_all_cell_coordinates(target_value):
+    csv_file = 'FCT_Python/FCT_Model/props/area/DQ_areas.csv'
     coordinates = []
     with open(csv_file, newline='') as f:
         reader = csv.reader(f)
