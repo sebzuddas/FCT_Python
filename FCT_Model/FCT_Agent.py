@@ -15,7 +15,9 @@ from typing import Dict, Tuple, List
 
 import repast4py
 
+import numpy as np
 from numpy import random
+
 
 
 from core.MicroAgent import MicroAgent
@@ -67,7 +69,6 @@ class FCT_Agent(MicroAgent):
         return self.space
     
     
-    
     ##################################################################
     #Agent Setters
 
@@ -89,7 +90,7 @@ class FCT_Agent(MicroAgent):
 
     ####################################################################
     #Agent Methods
-
+    #situational mechanism
     def generate_binary_string(n):
         # Generate a random number with n bits
         number = random.getrandbits(n)
@@ -111,7 +112,19 @@ class FCT_Agent(MicroAgent):
         while self.space.get_num_agents(random_location) != 0:
             random_location = self.space.get_random_local_pt(rng)
         # Move to the new location
-        self.space.move(self, random_location)    
+        self.space.move(self, random_location)   
+        # dq = self.__deprivation_quintile
+        # random_dq_point = get_random_location(self.__props["board.props.file"], dq)
+        # random_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+          
+        # while self.__discrete_space.get_num_agents(random_location) != 0:
+        #     random_dq_point = get_random_location(self.__props["board.props.file"], dq)
+        #     random_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+        #     print(random_location, '\n', self.__discrete_space.get_num_agents(random_location))
+        #     # Move to the new location
+        # self.__discrete_space.move(self, random_location)
+        exit()
+ 
 
     def absolute_risk(self, beta):
         consumption = self.get_agent_drinking_status()
@@ -137,3 +150,40 @@ class FCT_Agent(MicroAgent):
     def update(self, data:bool):
         """ to restore the agent after it has change ranks"""
         pass
+
+def get_random_location(file_location, deprivation_quintile):
+        #rng = np.random.default_rng(seed=rng_seed)  # create a default Generator instance
+        #pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
+        match deprivation_quintile:
+            case 0:
+                DQ_1_coords = find_all_cell_coordinates(file_location, '1')
+                pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
+                return (pos_rand)
+            case 1:
+                DQ_2_coords = find_all_cell_coordinates(file_location, '2')
+                pos_rand = np.random.default_rng().choice(DQ_2_coords, replace=False)
+                return (pos_rand)
+            case 2:
+                DQ_3_coords = find_all_cell_coordinates(file_location, '3')
+                pos_rand = np.random.default_rng().choice(DQ_3_coords, replace=False)
+                return (pos_rand)
+            case 3:
+                DQ_4_coords = find_all_cell_coordinates(file_location, '4')
+                pos_rand = np.random.default_rng().choice(DQ_4_coords, replace=False)
+                return (pos_rand)
+            case 4:
+                DQ_5_coords = find_all_cell_coordinates(file_location, '5')
+                pos_rand = np.random.default_rng().choice(DQ_5_coords, replace=False)
+                return (pos_rand)
+            case _:
+                raise ValueError("Deprivation quintile must be between 0 and 4")
+
+def find_all_cell_coordinates(csv_file, target_value):
+    coordinates = []
+    with open(csv_file, newline='') as f:
+        reader = csv.reader(f)
+        for row_num, row in enumerate(reader):
+            for col_num, cell_value in enumerate(row):
+                if cell_value == target_value:
+                    coordinates.append((row_num, col_num))
+    return coordinates

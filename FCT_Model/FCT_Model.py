@@ -81,7 +81,7 @@ class FCT_Model(Model):
 
         # Output the Rank, and Bounds to match RepastHPC
         local_bounds = self.__discrete_space.get_local_bounds()
-        print(f"RANK {self.__rank} BOUNDS Point[{local_bounds.xmin}, {local_bounds.ymin}] Point[{local_bounds.xextent}, {local_bounds.yextent}]")
+        print(f"RANK: {self.__rank} \nBOUNDS: from[{local_bounds.xmin}, {local_bounds.ymin}] to[{local_bounds.xextent}, {local_bounds.yextent}]")
         self.__context.add_projection(self.__discrete_space)
 
         # Define the board
@@ -171,6 +171,7 @@ class FCT_Model(Model):
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
         # Only a single rank outputs the board
+        self.__board.print_board_to_screen()
         if self.__rank == 0:
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
@@ -202,63 +203,26 @@ class FCT_Model(Model):
         theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
         local_bounds = self.__discrete_space.get_local_bounds()
         read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
-        i = 0
+
+        rng_agents = np.random.default_rng(seed=self.__random_seed)  # create a default Generator instance
+        #print(self.__context.agents(count=self.__count_of_agents))
 
         for agent in self.__context.agents(count=self.__count_of_agents):
 
             dq = agent.get_deprivation_quintile()
-            
-            random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
-            initial_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
+            id = agent.get_id()
+
+            random_dq_point = get_random_location(self.__props["board.props.file"], dq, id)
+            initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
           
             while self.__discrete_space.get_num_agents(initial_location) != 0:
-                random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
-                initial_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
-                print(random_dq_point, '\n', initial_location)
+                random_dq_point = get_random_location(self.__props["board.props.file"], dq, id)
+                initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
+                print(initial_location, '\n', self.__discrete_space.get_num_agents(initial_location))
 
             # Move to the new location
-            
+            self.__discrete_space.move(agent, initial_location)
 
-
-
-
-
-
-            # while number_in_location > 0:
-            #     random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
-                
-            #     initial_location = repast4py.space.DiscretePoint(random_dq_point[0], random_dq_point[1])
-            #     number_in_location = self.__discrete_space.get_num_agents(initial_location)
-
-            #     #print("number of agents:",self.__discrete_space.get_num_agents(initial_location),"\ninitial location:", initial_location, '\niteration:', i, )
-            # self.__discrete_space.move(agent, initial_location)    
-            
-            # while number_in_location > 1:
-            #     random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
-            #     initial_location = repast4py.space.DiscretePoint(random_dq_point[0]+i, random_dq_point[1])                    
-            #     i += 1
-            
-            # self.__discrete_space.move(agent, initial_location)    
-            #     number_in_location = self.__discrete_space.get_num_agents(initial_location)
-            
-            # self.__discrete_space.move(agent,initial_location)
-
-            # while number_in_location > 1:
-            #     random_dq_point = get_starting_location(self.__props["board.props.file"], dq, self.__random_seed)
-            #     initial_location = repast4py.space.DiscretePoint(random_dq_point[0]+i, random_dq_point[1])                    
-            #     i += 1
-            #     self.__discrete_space.move(agent,initial_location)
-            #     number_in_location = self.__discrete_space.get_num_agents(initial_location)
-            
-            # print(number_in_location, initial_location)
-
-
-            
-
-            #     # raise Exception("multiple agents in the same location")
-            #     # x_rand = repast4py.random.default_rng.integers(local_bounds.xmin, local_bounds.xmin + local_bounds.xextent)
-            #     # y_rand = repast4py.random.default_rng.integers(local_bounds.ymin, local_bounds.ymin + local_bounds.yextent)
-            #     # initial_location = repast4py.space.DiscretePoint(x_rand, y_rand)
 
             id = agent.get_agent_id()
             theory = FundamentalCauseTheory(self.__context, theory_attributes[id]["mean_weekly_units"], theory_attributes[id]["education"], theory_attributes[id]["personal_wealth"], theory_attributes[id]["social_connections"], theory_attributes[id]["social_influence"], self.__discrete_space)
@@ -266,13 +230,11 @@ class FCT_Model(Model):
             agent.set_mediator(mediator)
             mediator.set_agent(agent)
             #TODO: assign agents a location to start on
-            self.__discrete_space.move(agent, initial_location)
 
-        
-        # print the initial state of the board
+            # print the initial state of the board
         self.__board.print_board_to_screen()
-        exit()
-    
+        
+        
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
@@ -669,8 +631,8 @@ def generate_theory_distributions(type):
             dict["personal_wealth"] = ["n"] #uniform wealth distribution
             return dict
 
-def get_starting_location(file_location, deprivation_quintile, seed_input):
-        rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
+def get_random_location(file_location, deprivation_quintile, rng_seed):
+        #rng = np.random.default_rng(seed=rng_seed)  # create a default Generator instance
         #pos_rand = np.random.default_rng().choice(DQ_1_coords, replace=False)
         match deprivation_quintile:
             case 0:
@@ -706,7 +668,7 @@ def find_all_cell_coordinates(csv_file, target_value):
         for row_num, row in enumerate(reader):
             for col_num, cell_value in enumerate(row):
                 if cell_value == target_value:
-                    coordinates.append((row_num, col_num))
+                    coordinates.append((row_num+1, col_num+1))# +1 so that they don't start at 0
     return coordinates
 
 def get_unique_random_coordinate(coordinates, used_coordinates):
