@@ -40,6 +40,9 @@ class FCT_Agent(MicroAgent):
         self.age = age
         self.drinking_status = drinking_status
         self.space = space
+        self.death_count = 0
+        # self.death = False
+
         #self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
 
     ##################################################################
@@ -98,6 +101,29 @@ class FCT_Agent(MicroAgent):
         # Convert the number to binary
         binary_string = format(number, '0b')
         return binary_string
+    
+    def drink(self, weekly_units):
+        amount = self.drinking_status*weekly_units
+        # print(amount)
+        return amount
+    
+    def absolute_risk(self, consumption):
+        beta = 1
+        # consumption = self.get_agent_drinking_status()
+        if consumption == 0:
+            #print(consumption)
+            return 0
+        else:
+            #print(beta*consumption)
+            return beta * consumption
+    
+    def kill(self):
+        
+        self.death_count += 1
+        print(self.death_count)
+        self.set_agent_age(18)
+
+        return True
 
     def move(self):
         # #TODO: restrict movements depending on deprivation quintile
@@ -128,12 +154,7 @@ class FCT_Agent(MicroAgent):
             # Move to the new location
         self.space.move(self, random_location)
  
-    def absolute_risk(self, beta):
-        consumption = self.get_agent_drinking_status()
-        if consumption == 0:
-            return 0
-        else:
-            return beta * consumption
+    
 
     ####################################################################
     #Agent Package Methods

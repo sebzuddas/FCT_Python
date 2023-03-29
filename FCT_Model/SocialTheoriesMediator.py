@@ -6,6 +6,8 @@ from core.TheoryMediator import TheoryMediator
 
 from FundamentalCauseTheory import FundamentalCauseTheory
 from FCT_Agent import FCT_Agent
+import numpy as np
+from numpy import random
 
 # TODO: inherit TheoryMediator
 class SocialTheoriesMediator(TheoryMediator):
@@ -35,6 +37,18 @@ class SocialTheoriesMediator(TheoryMediator):
         # TODO: trigger action mechanisms
         self._theory_list[0].do_action()
         self.agent.move()
+
+        consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
+        if consumption > 490:
+            ld_50 = np.random.choice([0, 1])
+            if ld_50 == 1:
+                self.agent.kill()
+                
+
+        self.agent.absolute_risk(consumption)
+
+        
+
 
         # TODO: if the agent intends to move, perform the move action
         if self._theory_list[0].get_moving_intention():

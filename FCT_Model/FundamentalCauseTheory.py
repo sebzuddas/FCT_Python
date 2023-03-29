@@ -9,10 +9,11 @@ import repast4py
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
+    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections, social_influence:int, space):
         self.context = context
         self.space = space
         self.__social_influence: int = social_influence
+        self.__event_list = []
 
         #TODO: Why are these not being worked out here?
         ## FCT level parameters/attributes
@@ -40,9 +41,14 @@ class FundamentalCauseTheory(Theory):
     #individual agent-level situational mechanism methods
 
     def communicate_event(self):
-
         
         print("communicate_event_test")
+
+    def interpret_event(self):
+        print("interpret_event_test")
+
+
+    
 
     def do_situation(self):# function for the situational mechanisms
         """
@@ -59,7 +65,6 @@ class FundamentalCauseTheory(Theory):
         local_bounds = self.space.get_local_bounds()
         xmax = local_bounds.xmin + local_bounds.xextent
         ymax = local_bounds.ymin + local_bounds.yextent
-        
         
         for rel_loc in rel_neighbourhood:
             other_loc = repast4py.space.DiscretePoint(center.x + rel_loc[0], center.y + rel_loc[1])
@@ -91,16 +96,15 @@ class FundamentalCauseTheory(Theory):
 
     def calculate_strategy_multiplier(self):
         #TODO: finish strat multiplier
-        self.strategy_multiplier = float(self.__education + self.__deprivation_quintile + self.__personal_wealth + self.__mean_weekly_units)
+        self.strategy_multiplier = float(self.__education + self.__personal_wealth)
         return self.strategy_multiplier
     
 
 
     # TODO: override do_action()
     def do_action(self):
-        
-        self.moving_intention()
-
+        pass
+        #self.moving_intention()
 
         #self.calculate_strategy_multiplier()
         
@@ -120,3 +124,19 @@ class FundamentalCauseTheory(Theory):
 
     #########################################################
     #Theory Setters
+
+    def set_mean_weekly_units(self, mean_weekly_units: float):
+        self.__mean_weekly_units = mean_weekly_units
+
+    def set_education(self, education: int):
+        self.__education = education
+
+    def set_personal_wealth(self, personal_wealth: int):
+        self.__personal_wealth = personal_wealth
+
+    def set_social_connections(self, social_connections: int):
+        self.__social_connections = social_connections
+
+    def set_social_influence(self, social_influence: int):
+        self.__social_influence = social_influence
+    
