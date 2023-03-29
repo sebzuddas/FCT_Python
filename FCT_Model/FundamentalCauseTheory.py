@@ -46,9 +46,10 @@ class FundamentalCauseTheory(Theory):
 
     def do_situation(self):# function for the situational mechanisms
         """
-        In this case, the situational mechanisms are the codes passed onto the agents to decode. 
+        In this case, the situational mechanisms are the codes passed onto the agents to decode.
         They need to get information from the 'state' and try to decode this information.
         """
+
         center = self.space.get_location(self._agent)
         # Count similar agents in the local 2D grid moore neighbourhood
         similar_count = 0

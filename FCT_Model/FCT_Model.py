@@ -108,7 +108,6 @@ class FCT_Model(Model):
         # loggers += logging.create_loggers(self.meet_log, op=MPI.MAX, names={'max_meets': 'max'}, rank=rank)
         # self.data_set = logging.ReducingDataSet(loggers, MPI.COMM_WORLD, params['meet_log_file'])
 
-
         ###########
         #Predefined output method - records the parameters at the beginning of each run
         if self.__rank == 0:
@@ -164,14 +163,17 @@ class FCT_Model(Model):
     #TODO: Make sure that the do_per_tick function works on a per week basis. 
     def do_per_tick(self):# do these things every week. 
         # TODO: call three mechanisms in the correct order
+        
         self.do_situational_mechanisms()
         self.do_action_mechanisms()
         self.do_transformational_mechanisms()
+        
+        self.__board.print_board_to_screen()
 
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
         # Only a single rank outputs the board
-        self.__board.print_board_to_screen()
+        #self.__board.print_board_to_screen()
         if self.__rank == 0:
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
@@ -196,7 +198,6 @@ class FCT_Model(Model):
             # agent.calculate_death_probability()
             # agent.calculate_resources()
 
-
     def init_agents(self):
 
         generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
@@ -212,13 +213,13 @@ class FCT_Model(Model):
             dq = agent.get_deprivation_quintile()
             id = agent.get_id()
 
-            random_dq_point = get_random_location(self.__props["board.props.file"], dq, id)
+            random_dq_point = get_random_location(self.__props["board.props.file"], dq, self.__random_seed)
             initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
           
             while self.__discrete_space.get_num_agents(initial_location) != 0:
-                random_dq_point = get_random_location(self.__props["board.props.file"], dq, id)
+                random_dq_point = get_random_location(self.__props["board.props.file"], dq, self.__random_seed)
                 initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
-                print(initial_location, '\n', self.__discrete_space.get_num_agents(initial_location))
+                # print(initial_location, '\n', self.__discrete_space.get_num_agents(initial_location))
 
             # Move to the new location
             self.__discrete_space.move(agent, initial_location)
@@ -228,12 +229,13 @@ class FCT_Model(Model):
             theory = FundamentalCauseTheory(self.__context, theory_attributes[id]["mean_weekly_units"], theory_attributes[id]["education"], theory_attributes[id]["personal_wealth"], theory_attributes[id]["social_connections"], theory_attributes[id]["social_influence"], self.__discrete_space)
             mediator = SocialTheoriesMediator([theory])
             agent.set_mediator(mediator)
+            agent.set_space(self.__discrete_space)# place the agent on the discrete space
             mediator.set_agent(agent)
             #TODO: assign agents a location to start on
 
             # print the initial state of the board
         self.__board.print_board_to_screen()
-        
+
         
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 

@@ -167,8 +167,6 @@ class Board(StructuralEntity):
 
             else:
                 pass
-            
-                
 
         #sort swap array by object rank
         #swap_total = [x for x in swap_total if isinstance(x, list)]# remove 0s 
@@ -190,11 +188,8 @@ class Board(StructuralEntity):
         #swap the pairs ensuring that the two 
         #print one element of swap_pairs
         #print(swap_pairs)
-
         #print(len(swap_pairs))
-        
 
-        
         for i in range(len(swap_pairs)):
 
             agent_1_id = swap_pairs[i][0][1]
@@ -244,6 +239,7 @@ class Board(StructuralEntity):
             for x in range(board_origin_x, board_origin_x + board_size_x):
                 point = repast4py.space.DiscretePoint(x, y)
                 agent_count_at_point = self.__discrete_space.get_num_agents(point)
+
                 # Print a warning/error to stderr if there is more than 1 agent at a given location
                 if agent_count_at_point > 1:
                     print(f"Number of agents at {x}, {y}: {agent_count_at_point}", file=sys.stderr)
@@ -257,7 +253,7 @@ class Board(StructuralEntity):
                     match agent.get_deprivation_quintile():
                         case 0:
                             row += emojis.encode(":one:")
-                        
+
                         case 1:
                             row += emojis.encode(":two:")
 

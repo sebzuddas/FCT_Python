@@ -28,18 +28,19 @@ class SocialTheoriesMediator(TheoryMediator):
 
         # TODO: because there is only one theory, pass satisfaction value to the agent
         self.agent.set_satisfied_status(updated_satisfaction)
+        
 
     # TODO override mediate_action()
     def mediate_action(self):
         # TODO: trigger action mechanisms
         self._theory_list[0].do_action()
+        self.agent.move()
 
         # TODO: if the agent intends to move, perform the move action
         if self._theory_list[0].get_moving_intention():
-            self.agent.move()
+            pass
         
         #get the deprivation quintile
         # if self._theory_list[0].get_deprivation_quintile():
         #     self.agent.get_deprivation_quintile()
 
-        
