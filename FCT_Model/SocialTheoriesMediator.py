@@ -43,7 +43,9 @@ class SocialTheoriesMediator(TheoryMediator):
             ld_50 = np.random.choice([0, 1])
             if ld_50 == 1:
                 self.agent.kill()
-                
+        elif(self.agent.get_agent_age()>100):
+            self.agent.kill()
+
 
         self.agent.absolute_risk(consumption)
 
