@@ -24,8 +24,7 @@ class FundamentalCauseTheory(Theory):
 
         #TODO these two theory level parameters are determined by other classes. How to manage?
         self.__social_connections: int = social_connections
-        self.__age_group: int
-
+        self.__social_influence: int = social_influence
         # TODO: define a variable satisfaction status
         self.__is_satisfied:bool = False
         # TODO: define a variable for moving decision
@@ -88,10 +87,6 @@ class FundamentalCauseTheory(Theory):
 
     ######################################################
     #individual agent-level action mechanism methods
-    #
-    def moving_intention(self):
-        # TODO: if not satisfied, moving intention =True else =False
-        self.__moving_intention = not self.__is_satisfied
         
 
     def calculate_resources(self):
@@ -116,9 +111,6 @@ class FundamentalCauseTheory(Theory):
 
     def get_satisfied_status(self) -> bool:
         return self.__is_satisfied
-
-    def get_moving_intention(self) -> bool:
-        return self.__moving_intention
     
     def get_mean_weekly_units(self) -> float:
         return self.__mean_weekly_units
