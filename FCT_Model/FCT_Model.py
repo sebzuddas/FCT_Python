@@ -260,10 +260,21 @@ class FCT_Model(Model):
     
     def init_communicator(self):
         communicator = FCT_Communicator(self.__context, self.__discrete_space, self.__props.get("communicator.max.reach"))
-        
+        binary = 'b'
+        test = communicator.generate_event(binary)
+        print('test: ', test)
+
+        binary = 'h'
+        test = communicator.generate_event(binary)
+        print('test: ', test)
+
+        event_list = communicator.get_event_list()
+        print(event_list)
+        exit()
     
     ############################
     #Loggers
+    
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
@@ -434,7 +445,6 @@ def generate_agent_distributions(type):
 
 #############################################################################
 #Theory Parameter Generation
-
 
 def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
     rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance

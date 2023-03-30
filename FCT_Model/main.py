@@ -44,12 +44,7 @@ def main():
     #sn.generate_agent_json_file(params.get("count.of.agents"), params.get("agent.props.file"), sn.generate_agent_distributions(0))
 
     model.init_agents()
-
-    #TODO network
-    #model.init_network()
-
-    #TODO environment
-    #model.init_environment()
+    model.init_communicator()
 
     #TODO event generator
     #model.init_event_generator()
