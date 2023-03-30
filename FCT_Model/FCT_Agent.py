@@ -120,7 +120,7 @@ class FCT_Agent(MicroAgent):
     def kill(self):
         
         self.death_count += 1
-        print(self.death_count)
+        print(self.death_count, self.age)
         self.set_agent_age(18)
 
         return True

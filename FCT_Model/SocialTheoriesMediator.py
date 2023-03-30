@@ -45,11 +45,7 @@ class SocialTheoriesMediator(TheoryMediator):
                 self.agent.kill()
         elif(self.agent.get_agent_age()>100):
             self.agent.kill()
-
-
         self.agent.absolute_risk(consumption)
-
-        
 
 
         # TODO: if the agent intends to move, perform the move action

@@ -18,6 +18,7 @@ from Board import Board
 from FCT_Agent import FCT_Agent
 from FundamentalCauseTheory import FundamentalCauseTheory
 from SocialTheoriesMediator import SocialTheoriesMediator
+from FCT_Communicator import FCT_Communicator
 
 
 # # Reduce-type Logging Only!
@@ -139,7 +140,8 @@ class FCT_Model(Model):
         # self.log_agents()
 
 
-    
+    ############################
+    #MBSSM Mechanisms
 
     def do_situational_mechanisms(self):
 
@@ -147,8 +149,6 @@ class FCT_Model(Model):
             # TODO: call doSituation for each agent
             agent.call_situation()
         
-
-    
     def do_action_mechanisms(self):
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             # TODO: call doAction for each agent
@@ -159,21 +159,21 @@ class FCT_Model(Model):
         # TODO: call doTransformation of the Board structural entity
         self.__board.call_transformation()
 
-    #TODO: define a function to perform actions every tick
-    #TODO: Make sure that the do_per_tick function works on a per week basis. 
+    def run(self):
+        self._runner.execute()
+    
+    ############################
+    #Schedules to do per different time rates.
     def do_per_tick(self):# do these things every week. 
         # TODO: call three mechanisms in the correct order
         
         self.do_situational_mechanisms()
         self.do_action_mechanisms()
-        self.do_transformational_mechanisms()
-        
-        self.__board.print_board_to_screen()
+        # self.__board.print_board_to_screen()
 
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
         # Only a single rank outputs the board
-        #self.__board.print_board_to_screen()
         if self.__rank == 0:
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
@@ -189,6 +189,7 @@ class FCT_Model(Model):
         print('Do this per month')
 
     def do_per_year(self):
+        self.do_transformational_mechanisms()
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
             # age the agents yearly
             age = agent.get_agent_age()
@@ -197,7 +198,8 @@ class FCT_Model(Model):
             # calculate the probability of death every year
             # agent.calculate_death_probability()
             # agent.calculate_resources()
-
+    ############################
+    #Initialisers
     def init_agents(self):
 
         generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
@@ -236,17 +238,6 @@ class FCT_Model(Model):
             # print the initial state of the board
         self.__board.print_board_to_screen()
 
-        
-    def log_agents(self):
-        #TODO: get theory level parameters for each agent to be logged. 
-        tick = self._runner.schedule.tick
-        for agent in self.__context.agents():
-            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile())
-        self.agent_logger.write()
-
-    def run(self):
-        self._runner.execute()
-
     def init_schedule(self):
 
         # schedule actions every week
@@ -266,6 +257,19 @@ class FCT_Model(Model):
     
     def init_network(self):
         pass
+    
+    def init_communicator(self):
+        communicator = FCT_Communicator(self.__context, self.__discrete_space, self.__props.get("communicator.max.reach"))
+        
+    
+    ############################
+    #Loggers
+    def log_agents(self):
+        #TODO: get theory level parameters for each agent to be logged. 
+        tick = self._runner.schedule.tick
+        for agent in self.__context.agents():
+            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile())
+        self.agent_logger.write()
 
 #WITH discrete_space
 """def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space):
@@ -274,6 +278,9 @@ class FCT_Model(Model):
         # mediator = SocialTheoriesMediator([FundamentalCauseTheory])
         return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space)
 """
+
+############################################
+#Functions outside the class
 
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
         agent = FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)

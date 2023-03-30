@@ -32,7 +32,6 @@ class FundamentalCauseTheory(Theory):
         self.__moving_intention:bool = False
         self.strategy_multiplier: float
         
-        
         #IMD 1 to move down between 16-30 = 0.3 ; IMD 1 to move up between 30+ = 0
         #self.deprivation_probability_dict: dict {'1': [0.02, 0.012, 0.01, 0.008, 0.005], '2': [0.013, 0.011, 0.009, 0.008, 0.008], '3': [0.01, 0.009, 0.009, 0.009, 0.007], '4': [0.01, 0.01, 0.009, 0.009, 0.009], '5': [0.007, 0.011, 0.008, 0.01, 0.016]}
         # self.deprivation_probability_list: float [[0.02, 0.012, 0.01, 0.008, 0.005], [0.013, 0.011, 0.009, 0.008, 0.008],[0.01, 0.009, 0.009, 0.009, 0.007], [0.01, 0.01, 0.009, 0.009, 0.009],[0.007, 0.011, 0.008, 0.01, 0.016]]
@@ -47,8 +46,12 @@ class FundamentalCauseTheory(Theory):
     def interpret_event(self):
         print("interpret_event_test")
 
-
-    
+    def decode_attempt(self):
+        try :
+            print("decode_attempt_test")
+        
+        except:
+            pass    
 
     def do_situation(self):# function for the situational mechanisms
         """
@@ -98,8 +101,6 @@ class FundamentalCauseTheory(Theory):
         #TODO: finish strat multiplier
         self.strategy_multiplier = float(self.__education + self.__personal_wealth)
         return self.strategy_multiplier
-    
-
 
     # TODO: override do_action()
     def do_action(self):

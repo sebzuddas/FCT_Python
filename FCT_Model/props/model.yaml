@@ -1,12 +1,16 @@
 # Properties in yaml format
 random.seed: 1
-stop.at: 10
+stop.at: 100
 count.of.agents: 750
 board.size: 50
 threshold: 0.5
 #added parameters
 max.age: 60
 min.age: 18
+communicator.max.reach: 200
+communicator.min.reach: 50
+#############
+#File locations
 tabular.logger: "outputs/tabular_logger_out.csv"
 #reduce.type.logger: "outputs/reduce_type_logger.csv"
 network.file: "FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt"
