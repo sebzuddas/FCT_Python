@@ -85,9 +85,6 @@ class FCT_Agent(MicroAgent):
     def set_agent_drinking_status(self, drinking_status: bool):
         self.drinking_status = drinking_status
 
-    def set_satisfied_status(self, satisfied_status:bool):
-        self.__is_satisfied = satisfied_status
-
     def set_space(self, space):
         self.space = space
 

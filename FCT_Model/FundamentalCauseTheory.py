@@ -108,9 +108,6 @@ class FundamentalCauseTheory(Theory):
 
     #########################################################
     #Theory Getters
-
-    def get_satisfied_status(self) -> bool:
-        return self.__is_satisfied
     
     def get_mean_weekly_units(self) -> float:
         return self.__mean_weekly_units
