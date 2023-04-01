@@ -20,8 +20,6 @@ class Board(StructuralEntity):
     def __init__(self, context, discrete_space):
         self.__context = context
         self.__discrete_space = discrete_space
-
-	    # TODO: define 2 variables for satisfaction and segregation index
         self.__avg_satisfaction: float = 0.0
         self.__segregation_index: float = 0.0
         self.__deprivation_quiltile: int = 0

@@ -1,15 +1,3 @@
-"""
-List of todos
-#TODO: change from Schelling to FCT relevant stuff
-#TODO: store change in deprivation quintile for each agents - make it a dataclass?
-#TODO: 
-
-List of bugs
-
-List of questions
-
-"""
-
 from __future__ import annotations
 from typing import Dict, Tuple, List
 
@@ -23,7 +11,6 @@ import csv
 
 from core.MicroAgent import MicroAgent
 
-# TODO: Inherit MicroAgent
 class FCT_Agent(MicroAgent):
     TYPE = 1
     #WITH DISCRETE SPACE
@@ -41,6 +28,9 @@ class FCT_Agent(MicroAgent):
         self.drinking_status = drinking_status
         self.space = space
         self.death_count = 0
+        self.received_events = {}
+        self.solved_events = {}
+        self.unsolved_events = {}
         # self.death = False
 
         #self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
@@ -91,13 +81,6 @@ class FCT_Agent(MicroAgent):
 
     ####################################################################
     #Agent Methods
-    #situational mechanism
-    def generate_binary_string(n):
-        # Generate a random number with n bits
-        number = random.getrandbits(n)
-        # Convert the number to binary
-        binary_string = format(number, '0b')
-        return binary_string
     
     def drink(self, weekly_units):
         amount = self.drinking_status*weekly_units
@@ -123,20 +106,6 @@ class FCT_Agent(MicroAgent):
         return True
 
     def move(self):
-        # #TODO: restrict movements depending on deprivation quintile
-        # #move to a random empty position:
-        # # get this agents location
-        # location = self.space.get_location(self)
-        # # get the bounds of the environment
-        # local_bounds = self.space.get_local_bounds()
-        # # find a random empty position.
-        # # Note this will loop forever if the board is full (but this should be prevented by an early check)
-        # rng = repast4py.random.default_rng
-        # random_location = self.space.get_random_local_pt(rng)
-        # while self.space.get_num_agents(random_location) != 0:
-        #     random_location = self.space.get_random_local_pt(rng)
-        # # Move to the new location
-        # self.space.move(self, random_location)   
 
         dq = self.__deprivation_quintile
         random_dq_point = get_random_location(dq)
@@ -151,7 +120,13 @@ class FCT_Agent(MicroAgent):
             # Move to the new location
         self.space.move(self, random_location)
  
-    
+    def interpret_event(self, event):
+        self.received_events[event] = self.received_events.get(event, 0) + 1
+        print(self.received_events, self.get_id())
+
+    def decode_event(self):
+        total_events = sum(self.received_events.values())
+        print(total_events)
 
     ####################################################################
     #Agent Package Methods

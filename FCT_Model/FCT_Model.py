@@ -31,7 +31,6 @@ class FCT_Model(Model):
 
     def __init__(self, comm, params: Dict):
         self.__comm = comm
-        # TODO: Define the context for agents
         self.__context:repast4py.context.SharedContext = repast4py.context.SharedContext(comm)
         self.__rank:int = self.__comm.Get_rank()
         
@@ -46,7 +45,6 @@ class FCT_Model(Model):
         self.__min_age: int = self.__props["min.age"] if "min.age" in params else 0
         self.__max_age: int = self.__props["max.age"] if "max.age" in params else 0
         self.__random_seed:int = self.__props["random.seed"] if "random.seed" in params else 0
-
 
         repast4py.random.init(rng_seed=self.__random_seed)# initialise pseudo-random number generator with the random seed from the props
         
@@ -86,8 +84,10 @@ class FCT_Model(Model):
         self.__context.add_projection(self.__discrete_space)
 
         # Define the board
-        # TODO: init at the macro level: the Board structural entity
         self.__board:Board = Board(self.__context, self.__discrete_space)
+
+        # Define the communicator
+        self.__communicator: FCT_Communicator = FCT_Communicator(self.__context, self.__discrete_space, self.__props.get("communicator.max.reach"))
 
         # Repast4py lacks some of the singletons available in repastHPC, so the runner is a member of the Model class.
         self._runner: repast4py.schedule.SharedScheduleRunner = repast4py.schedule.init_schedule_runner(self.__comm)
@@ -150,11 +150,19 @@ class FCT_Model(Model):
             agent.call_situation()
         
     def do_action_mechanisms(self):
+
+        rng = np.random.default_rng(seed=self.__random_seed)
+
+        if rng.choice([0, 1], p=[0.5, 0.5]) == 1:
+            event = self.__communicator.generate_event('h')
+            #print(event)
+            for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):
+                agent.interpret_event(event)
+
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
-            # TODO: call doAction for each agent
             agent.call_action()
             #agent.communicate_event()
-
+        
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
         self.__board.call_transformation()
@@ -165,8 +173,6 @@ class FCT_Model(Model):
     ############################
     #Schedules to do per different time rates.
     def do_per_tick(self):# do these things every week. 
-        # TODO: call three mechanisms in the correct order
-        
         self.do_situational_mechanisms()
         self.do_action_mechanisms()
         # self.__board.print_board_to_screen()
@@ -190,14 +196,13 @@ class FCT_Model(Model):
 
     def do_per_year(self):
         self.do_transformational_mechanisms()
+
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
             # age the agents yearly
             age = agent.get_agent_age()
             age += 1
             agent.set_agent_age(age)
-            # calculate the probability of death every year
-            # agent.calculate_death_probability()
-            # agent.calculate_resources()
+    
     ############################
     #Initialisers
     def init_agents(self):
@@ -258,19 +263,18 @@ class FCT_Model(Model):
     def init_network(self):
         pass
     
-    def init_communicator(self):
-        communicator = FCT_Communicator(self.__context, self.__discrete_space, self.__props.get("communicator.max.reach"))
-        binary = 'b'
-        test = communicator.generate_event(binary)
-        print('test: ', test)
+    # def init_communicator(self):
+    #     binary = 'b'
+    #     test = communicator.generate_event(binary)
+    #     print('test: ', test)
 
-        binary = 'h'
-        test = communicator.generate_event(binary)
-        print('test: ', test)
+    #     binary = 'h'
+    #     test = communicator.generate_event(binary)
+    #     print('test: ', test)
 
-        event_list = communicator.get_event_list()
-        print(event_list)
-        exit()
+    #     event_list = communicator.get_event_list()
+    #     print(event_list)
+    #     exit()
     
     ############################
     #Loggers
@@ -294,15 +298,7 @@ class FCT_Model(Model):
 #Functions outside the class
 
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
-        agent = FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
-        
-
-        
-        
-        # TODO: add theory level parameters, mediator, etc
-        # theory = create_Theory
-        # mediator = SocialTheoriesMediator([FundamentalCauseTheory])
-        return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
+    return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
 
 # def create_Theory(model.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
 #     return FundamentalCauseTheory(self.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)

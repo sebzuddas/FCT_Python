@@ -27,18 +27,21 @@ class FCT_Communicator(Communicator):
         return binascii.b2a_hex(os.urandom(p))
     
     def generate_event(self, type:str):
-        event_list = self.total_event_list
         match type:
             case "b":
                 event = self.rand_binary(16)
-                self.total_event_list[self.total_event_number] = event
                 self.total_event_number += 1
-                return event
+                self.total_event_list[self.total_event_number] = event
+                event_and_number = (event, self.total_event_number)
+                return event_and_number
+            
             case "h":
                 event = self.rand_hex(16)
-                self.total_event_list[self.total_event_number] = event
                 self.total_event_number += 1
-                return event
+                self.total_event_list[self.total_event_number] = event
+                event_and_number = (event, self.total_event_number)
+                return event_and_number
+            
             case _:
                 print("Invalid event type")
                 raise Exception("Invalid event type inputted to communicator object")
