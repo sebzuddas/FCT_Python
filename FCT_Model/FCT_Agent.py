@@ -62,6 +62,10 @@ class FCT_Agent(MicroAgent):
     def get_space(self):
         return self.space
     
+    def get_random_event(self):
+        
+        return random.choice(list(self.received_events.values()))
+    
     
     ##################################################################
     #Agent Setters
@@ -122,11 +126,11 @@ class FCT_Agent(MicroAgent):
  
     def interpret_event(self, event):
         self.received_events[event] = self.received_events.get(event, 0) + 1
-        print(self.received_events, self.get_id())
+        #print(self.received_events, self.get_id())
 
-    def decode_event(self):
-        total_events = sum(self.received_events.values())
-        print(total_events)
+    # def decode_event(self):
+    #     total_events = sum(self.received_events.values())
+    #     print(total_events)
 
     ####################################################################
     #Agent Package Methods

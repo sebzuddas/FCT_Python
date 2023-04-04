@@ -129,4 +129,6 @@ class FundamentalCauseTheory(Theory):
 
     def set_social_influence(self, social_influence: int):
         self.__social_influence = social_influence
+
+    def set
     
