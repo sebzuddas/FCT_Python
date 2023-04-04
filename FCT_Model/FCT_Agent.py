@@ -4,7 +4,7 @@ from typing import Dict, Tuple, List
 import repast4py
 
 import numpy as np
-from numpy import random
+import random
 import csv
 
 
@@ -13,14 +13,13 @@ from core.MicroAgent import MicroAgent
 
 class FCT_Agent(MicroAgent):
     TYPE = 1
-    #WITH DISCRETE SPACE
     #def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: int,  space):
 
     def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
         self.__is_satisfied: bool = False
-        self.__type = type
+        self.__type: int = type
         self.__rank: int = rank
         self.__deprivation_quintile: int = deprivation_quintile
         self.sex = sex
@@ -28,10 +27,9 @@ class FCT_Agent(MicroAgent):
         self.drinking_status = drinking_status
         self.space = space
         self.death_count = 0
-        self.received_events = {}
-        self.solved_events = {}
-        self.unsolved_events = {}
-        # self.death = False
+        self.received_events = []
+        self.solved_events = []
+        self.unsolved_events = []
 
         #self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
 
@@ -63,10 +61,9 @@ class FCT_Agent(MicroAgent):
         return self.space
     
     def get_random_event(self):
+        if len(self.unsolved_events) != 0:
+            return random.choice(self.unsolved_events)
         
-        return random.choice(list(self.received_events.values()))
-    
-    
     ##################################################################
     #Agent Setters
 
@@ -125,7 +122,9 @@ class FCT_Agent(MicroAgent):
         self.space.move(self, random_location)
  
     def interpret_event(self, event):
-        self.received_events[event] = self.received_events.get(event, 0) + 1
+        self.unsolved_events.append(event)
+        self.received_events.append(event)
+        
         #print(self.received_events, self.get_id())
 
     # def decode_event(self):

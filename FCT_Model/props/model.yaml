@@ -1,6 +1,6 @@
 # Properties in yaml format
 random.seed: 1
-stop.at: 5
+stop.at: 100
 count.of.agents: 750
 board.size: 50
 threshold: 0.5

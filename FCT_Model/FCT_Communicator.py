@@ -29,14 +29,14 @@ class FCT_Communicator(Communicator):
     def generate_event(self, type:str):
         match type:
             case "b":
-                event = self.rand_binary(16)
+                event = self.rand_binary(8)
                 self.total_event_number += 1
                 self.total_event_list[self.total_event_number] = event
                 event_and_number = (event, self.total_event_number)
                 return event_and_number
             
             case "h":
-                event = self.rand_hex(16)
+                event = self.rand_hex(2)
                 self.total_event_number += 1
                 self.total_event_list[self.total_event_number] = event
                 event_and_number = (event, self.total_event_number)

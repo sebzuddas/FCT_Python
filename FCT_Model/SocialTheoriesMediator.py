@@ -27,7 +27,12 @@ class SocialTheoriesMediator(TheoryMediator):
     
     def mediate_action(self):
         # trigger action mechanisms
+        event = self.agent.get_random_event()
+        
+        
+        self._theory_list[0].decode_attempt(event)
         self._theory_list[0].do_action()
+        
         self.agent.move()
 
         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)

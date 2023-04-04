@@ -3,9 +3,8 @@ from typing import Dict, Tuple, List
 from core.Theory import Theory
 from repast4py import space
 import repast4py
+import re
 
-
-# TODO: inherit Theory
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
@@ -15,20 +14,15 @@ class FundamentalCauseTheory(Theory):
         self.__social_influence: int = social_influence
         self.__event_list = []
 
-        #TODO: Why are these not being worked out here?
         ## FCT level parameters/attributes
         
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth
-
-        #TODO these two theory level parameters are determined by other classes. How to manage?
+        #TODO: implement social connections and social influence
         self.__social_connections: int = social_connections
         self.__social_influence: int = social_influence
-        # TODO: define a variable satisfaction status
-        self.__is_satisfied:bool = False
-        # TODO: define a variable for moving decision
-        self.__moving_intention:bool = False
+
         self.strategy_multiplier: float
         
         #IMD 1 to move down between 16-30 = 0.3 ; IMD 1 to move up between 30+ = 0
@@ -45,12 +39,17 @@ class FundamentalCauseTheory(Theory):
     def interpret_event(self):
         print("interpret_event_test")
 
-    def decode_attempt(self):
-        try :
-            print("decode_attempt_test")
-        
-        except:
-            pass    
+    def decode_attempt(self, event):
+        if event == None:
+            pass
+        else:
+            try :
+                event_value = return_decimal(event[0])
+                print(event_value)
+                # print('event: ', event[0], '\ndecimal: ', return_decimal(event[0]), '\nID: ', event[1])
+                pass
+            except:
+                pass
 
     def do_situation(self):# function for the situational mechanisms
         """
@@ -76,7 +75,6 @@ class FundamentalCauseTheory(Theory):
                 other_agent = self.space.get_agent(other_loc)
                 if other_agent is not None:
                     neighbour_count += 1
-                    # TODO: increase the count if 2 agents are the same type
                     if other_agent.get_agent_sex() == self._agent.get_agent_sex():
                         similar_count += 1
 
@@ -100,7 +98,6 @@ class FundamentalCauseTheory(Theory):
     # TODO: override do_action()
     def do_action(self):
         pass
-        #self.moving_intention()
 
         #self.calculate_strategy_multiplier()
         
@@ -130,5 +127,14 @@ class FundamentalCauseTheory(Theory):
     def set_social_influence(self, social_influence: int):
         self.__social_influence = social_influence
 
-    def set
+
+def return_decimal(value):
+    if isinstance(value, bytes):
+        value = value.decode('utf-8')
     
+    if re.match("^[01]+$", value):
+        return int(value, 2)
+    elif re.match("^[0-9a-fA-F]+$", value):
+        return int(value, 16)
+    else:
+        raise ValueError("Not a binary or hex string")

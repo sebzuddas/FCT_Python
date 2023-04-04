@@ -151,17 +151,27 @@ class FCT_Model(Model):
         
     def do_action_mechanisms(self):
 
-        rng = np.random.default_rng(seed=self.__random_seed)
+        #TODO: for implementing different types of events
+        # rng = np.random.default_rng()
+        # event_type = rng.choice([0, 1], p=[1/2, 1/2])
+        # if event_type == 0:
+        #     event = self.__communicator.generate_event('h')
+        # elif event_type == 1:
+        #     event = self.__communicator.generate_event('b')
+        
+        #Events generated based on a probability:
+        
 
-        if rng.choice([0, 1], p=[0.5, 0.5]) == 1:
-            event = self.__communicator.generate_event('h')
-            #print(event)
-            for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):
-                agent.interpret_event(event)
+        event = self.__communicator.generate_event('b')
+
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):
+            agent.interpret_event(event)
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             agent.call_action()
             #agent.communicate_event()
+        
+        
         
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
