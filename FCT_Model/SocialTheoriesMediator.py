@@ -32,9 +32,11 @@ class SocialTheoriesMediator(TheoryMediator):
         
         self._theory_list[0].decode_attempt(event)
         self._theory_list[0].do_action()
-        
+
         self.agent.move()
 
+
+        #TODO: make death a yearly thing
         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
         if consumption > 490:
             ld_50 = np.random.choice([0, 1])
@@ -43,8 +45,5 @@ class SocialTheoriesMediator(TheoryMediator):
         elif(self.agent.get_agent_age()>100):
             self.agent.kill()
         self.agent.absolute_risk(consumption)
-        
-        #get the deprivation quintile
-        # if self._theory_list[0].get_deprivation_quintile():
-        #     self.agent.get_deprivation_quintile()
+
 

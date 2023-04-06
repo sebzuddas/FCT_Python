@@ -1,7 +1,7 @@
 # Properties in yaml format
 random.seed: 1
-stop.at: 100
-count.of.agents: 750
+stop.at: 5
+count.of.agents: 1000
 board.size: 50
 threshold: 0.5
 #added parameters
@@ -9,6 +9,8 @@ max.age: 60
 min.age: 18
 communicator.max.reach: 200
 communicator.min.reach: 50
+
+correlation.parameter: 1
 #############
 #File locations
 tabular.logger: "outputs/tabular_logger_out.csv"

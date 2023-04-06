@@ -36,7 +36,7 @@ class FCT_Communicator(Communicator):
                 return event_and_number
             
             case "h":
-                event = self.rand_hex(2)
+                event = self.rand_hex(1)
                 self.total_event_number += 1
                 self.total_event_list[self.total_event_number] = event
                 event_and_number = (event, self.total_event_number)

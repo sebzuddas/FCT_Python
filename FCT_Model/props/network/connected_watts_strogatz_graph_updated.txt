@@ -749,718 +749,1006 @@ FCT_network 0
 747 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 54, "drinking_status": 0, "space": null}
 748 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 44, "drinking_status": 4, "space": null}
 749 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 29, "drinking_status": 2, "space": null}
+750 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 50, "drinking_status": 2, "space": null}
+751 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 33, "drinking_status": 2, "space": null}
+752 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 57, "drinking_status": 3, "space": null}
+753 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 73, "drinking_status": 0, "space": null}
+754 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 66, "drinking_status": 0, "space": null}
+755 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 69, "drinking_status": 0, "space": null}
+756 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 21, "drinking_status": 2, "space": null}
+757 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 51, "drinking_status": 0, "space": null}
+758 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 49, "drinking_status": 1, "space": null}
+759 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 49, "drinking_status": 0, "space": null}
+760 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 39, "drinking_status": 4, "space": null}
+761 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 76, "drinking_status": 3, "space": null}
+762 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 30, "drinking_status": 3, "space": null}
+763 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 21, "drinking_status": 3, "space": null}
+764 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 61, "drinking_status": 3, "space": null}
+765 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 38, "drinking_status": 4, "space": null}
+766 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 69, "drinking_status": 2, "space": null}
+767 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 56, "drinking_status": 3, "space": null}
+768 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 64, "drinking_status": 1, "space": null}
+769 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 46, "drinking_status": 4, "space": null}
+770 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 70, "drinking_status": 1, "space": null}
+771 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 58, "drinking_status": 1, "space": null}
+772 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 56, "drinking_status": 1, "space": null}
+773 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 22, "drinking_status": 1, "space": null}
+774 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 44, "drinking_status": 3, "space": null}
+775 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 55, "drinking_status": 3, "space": null}
+776 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 74, "drinking_status": 0, "space": null}
+777 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 38, "drinking_status": 3, "space": null}
+778 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 3, "space": null}
+779 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 66, "drinking_status": 1, "space": null}
+780 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 20, "drinking_status": 0, "space": null}
+781 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 51, "drinking_status": 0, "space": null}
+782 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 32, "drinking_status": 2, "space": null}
+783 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 22, "drinking_status": 3, "space": null}
+784 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 74, "drinking_status": 3, "space": null}
+785 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 66, "drinking_status": 3, "space": null}
+786 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 59, "drinking_status": 3, "space": null}
+787 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 64, "drinking_status": 0, "space": null}
+788 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 63, "drinking_status": 3, "space": null}
+789 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 54, "drinking_status": 1, "space": null}
+790 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 72, "drinking_status": 4, "space": null}
+791 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 22, "drinking_status": 1, "space": null}
+792 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 4, "space": null}
+793 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 49, "drinking_status": 1, "space": null}
+794 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 63, "drinking_status": 2, "space": null}
+795 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 72, "drinking_status": 1, "space": null}
+796 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 46, "drinking_status": 2, "space": null}
+797 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 65, "drinking_status": 1, "space": null}
+798 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 34, "drinking_status": 1, "space": null}
+799 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 54, "drinking_status": 2, "space": null}
+800 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 34, "drinking_status": 0, "space": null}
+801 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 24, "drinking_status": 4, "space": null}
+802 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 23, "drinking_status": 2, "space": null}
+803 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 27, "drinking_status": 4, "space": null}
+804 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 61, "drinking_status": 1, "space": null}
+805 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 70, "drinking_status": 0, "space": null}
+806 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 28, "drinking_status": 1, "space": null}
+807 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 41, "drinking_status": 2, "space": null}
+808 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 28, "drinking_status": 0, "space": null}
+809 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 26, "drinking_status": 3, "space": null}
+810 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 56, "drinking_status": 2, "space": null}
+811 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 73, "drinking_status": 0, "space": null}
+812 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 33, "drinking_status": 1, "space": null}
+813 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 57, "drinking_status": 3, "space": null}
+814 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 78, "drinking_status": 2, "space": null}
+815 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 20, "drinking_status": 3, "space": null}
+816 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 26, "drinking_status": 4, "space": null}
+817 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 27, "drinking_status": 0, "space": null}
+818 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 79, "drinking_status": 0, "space": null}
+819 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 70, "drinking_status": 0, "space": null}
+820 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 44, "drinking_status": 0, "space": null}
+821 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 39, "drinking_status": 3, "space": null}
+822 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 76, "drinking_status": 4, "space": null}
+823 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 30, "drinking_status": 0, "space": null}
+824 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 23, "drinking_status": 1, "space": null}
+825 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 37, "drinking_status": 1, "space": null}
+826 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 30, "drinking_status": 1, "space": null}
+827 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 69, "drinking_status": 2, "space": null}
+828 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 60, "drinking_status": 0, "space": null}
+829 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 28, "drinking_status": 2, "space": null}
+830 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 40, "drinking_status": 2, "space": null}
+831 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 29, "drinking_status": 0, "space": null}
+832 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 56, "drinking_status": 1, "space": null}
+833 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 22, "drinking_status": 1, "space": null}
+834 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 49, "drinking_status": 4, "space": null}
+835 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 33, "drinking_status": 1, "space": null}
+836 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 22, "drinking_status": 1, "space": null}
+837 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 51, "drinking_status": 1, "space": null}
+838 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 62, "drinking_status": 1, "space": null}
+839 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 50, "drinking_status": 4, "space": null}
+840 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 20, "drinking_status": 0, "space": null}
+841 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 32, "drinking_status": 4, "space": null}
+842 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 24, "drinking_status": 0, "space": null}
+843 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 1, "space": null}
+844 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 63, "drinking_status": 0, "space": null}
+845 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 3, "space": null}
+846 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 60, "drinking_status": 3, "space": null}
+847 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 31, "drinking_status": 4, "space": null}
+848 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 71, "drinking_status": 0, "space": null}
+849 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 48, "drinking_status": 1, "space": null}
+850 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 55, "drinking_status": 4, "space": null}
+851 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 75, "drinking_status": 3, "space": null}
+852 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 57, "drinking_status": 2, "space": null}
+853 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 75, "drinking_status": 0, "space": null}
+854 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 44, "drinking_status": 2, "space": null}
+855 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 23, "drinking_status": 1, "space": null}
+856 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 25, "drinking_status": 3, "space": null}
+857 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 45, "drinking_status": 1, "space": null}
+858 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 39, "drinking_status": 2, "space": null}
+859 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 0, "space": null}
+860 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 23, "drinking_status": 0, "space": null}
+861 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 25, "drinking_status": 4, "space": null}
+862 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 49, "drinking_status": 4, "space": null}
+863 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 77, "drinking_status": 4, "space": null}
+864 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 0, "space": null}
+865 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 4, "space": null}
+866 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 77, "drinking_status": 2, "space": null}
+867 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 30, "drinking_status": 0, "space": null}
+868 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 18, "drinking_status": 2, "space": null}
+869 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 32, "drinking_status": 0, "space": null}
+870 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 57, "drinking_status": 4, "space": null}
+871 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 59, "drinking_status": 4, "space": null}
+872 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 68, "drinking_status": 3, "space": null}
+873 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 52, "drinking_status": 4, "space": null}
+874 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 68, "drinking_status": 4, "space": null}
+875 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 19, "drinking_status": 0, "space": null}
+876 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 73, "drinking_status": 2, "space": null}
+877 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 79, "drinking_status": 3, "space": null}
+878 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 25, "drinking_status": 4, "space": null}
+879 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 78, "drinking_status": 2, "space": null}
+880 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 67, "drinking_status": 4, "space": null}
+881 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 54, "drinking_status": 2, "space": null}
+882 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 62, "drinking_status": 0, "space": null}
+883 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 58, "drinking_status": 3, "space": null}
+884 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 25, "drinking_status": 1, "space": null}
+885 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 52, "drinking_status": 1, "space": null}
+886 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 20, "drinking_status": 3, "space": null}
+887 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 65, "drinking_status": 4, "space": null}
+888 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 28, "drinking_status": 0, "space": null}
+889 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 35, "drinking_status": 2, "space": null}
+890 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 22, "drinking_status": 1, "space": null}
+891 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 41, "drinking_status": 3, "space": null}
+892 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 75, "drinking_status": 1, "space": null}
+893 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 53, "drinking_status": 4, "space": null}
+894 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 62, "drinking_status": 3, "space": null}
+895 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 52, "drinking_status": 2, "space": null}
+896 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 40, "drinking_status": 4, "space": null}
+897 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 20, "drinking_status": 1, "space": null}
+898 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 61, "drinking_status": 4, "space": null}
+899 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 63, "drinking_status": 0, "space": null}
+900 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 32, "drinking_status": 0, "space": null}
+901 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 37, "drinking_status": 3, "space": null}
+902 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 75, "drinking_status": 4, "space": null}
+903 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 31, "drinking_status": 4, "space": null}
+904 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 69, "drinking_status": 3, "space": null}
+905 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 23, "drinking_status": 1, "space": null}
+906 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 74, "drinking_status": 2, "space": null}
+907 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 74, "drinking_status": 0, "space": null}
+908 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 64, "drinking_status": 2, "space": null}
+909 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 77, "drinking_status": 1, "space": null}
+910 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 28, "drinking_status": 0, "space": null}
+911 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 50, "drinking_status": 2, "space": null}
+912 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 50, "drinking_status": 4, "space": null}
+913 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 68, "drinking_status": 1, "space": null}
+914 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 51, "drinking_status": 1, "space": null}
+915 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 39, "drinking_status": 2, "space": null}
+916 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 21, "drinking_status": 2, "space": null}
+917 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 56, "drinking_status": 3, "space": null}
+918 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 1, "space": null}
+919 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 23, "drinking_status": 1, "space": null}
+920 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 20, "drinking_status": 3, "space": null}
+921 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 67, "drinking_status": 1, "space": null}
+922 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 65, "drinking_status": 2, "space": null}
+923 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 35, "drinking_status": 4, "space": null}
+924 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 2, "space": null}
+925 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 20, "drinking_status": 0, "space": null}
+926 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 25, "drinking_status": 1, "space": null}
+927 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 40, "drinking_status": 3, "space": null}
+928 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 3, "space": null}
+929 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 78, "drinking_status": 3, "space": null}
+930 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 61, "drinking_status": 4, "space": null}
+931 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 46, "drinking_status": 0, "space": null}
+932 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 21, "drinking_status": 3, "space": null}
+933 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 42, "drinking_status": 3, "space": null}
+934 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 73, "drinking_status": 2, "space": null}
+935 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 31, "drinking_status": 4, "space": null}
+936 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 33, "drinking_status": 0, "space": null}
+937 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 43, "drinking_status": 4, "space": null}
+938 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 30, "drinking_status": 4, "space": null}
+939 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 63, "drinking_status": 3, "space": null}
+940 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 55, "drinking_status": 0, "space": null}
+941 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 59, "drinking_status": 0, "space": null}
+942 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 62, "drinking_status": 0, "space": null}
+943 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 42, "drinking_status": 3, "space": null}
+944 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 70, "drinking_status": 0, "space": null}
+945 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 1, "space": null}
+946 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 57, "drinking_status": 2, "space": null}
+947 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 66, "drinking_status": 0, "space": null}
+948 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 56, "drinking_status": 3, "space": null}
+949 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 43, "drinking_status": 0, "space": null}
+950 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 33, "drinking_status": 3, "space": null}
+951 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 19, "drinking_status": 0, "space": null}
+952 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 47, "drinking_status": 1, "space": null}
+953 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 70, "drinking_status": 2, "space": null}
+954 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 47, "drinking_status": 2, "space": null}
+955 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 20, "drinking_status": 1, "space": null}
+956 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 29, "drinking_status": 1, "space": null}
+957 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 36, "drinking_status": 2, "space": null}
+958 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 33, "drinking_status": 3, "space": null}
+959 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 66, "drinking_status": 4, "space": null}
+960 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 67, "drinking_status": 2, "space": null}
+961 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 28, "drinking_status": 1, "space": null}
+962 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 72, "drinking_status": 4, "space": null}
+963 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 56, "drinking_status": 1, "space": null}
+964 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 60, "drinking_status": 1, "space": null}
+965 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 45, "drinking_status": 0, "space": null}
+966 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 63, "drinking_status": 3, "space": null}
+967 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 33, "drinking_status": 1, "space": null}
+968 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 29, "drinking_status": 1, "space": null}
+969 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 53, "drinking_status": 0, "space": null}
+970 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 1, "space": null}
+971 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 58, "drinking_status": 0, "space": null}
+972 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 52, "drinking_status": 4, "space": null}
+973 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 33, "drinking_status": 3, "space": null}
+974 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 52, "drinking_status": 4, "space": null}
+975 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 73, "drinking_status": 0, "space": null}
+976 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 4, "space": null}
+977 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 55, "drinking_status": 2, "space": null}
+978 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 28, "drinking_status": 4, "space": null}
+979 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 72, "drinking_status": 1, "space": null}
+980 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 43, "drinking_status": 2, "space": null}
+981 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 38, "drinking_status": 3, "space": null}
+982 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 21, "drinking_status": 2, "space": null}
+983 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 42, "drinking_status": 0, "space": null}
+984 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 0, "space": null}
+985 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 47, "drinking_status": 4, "space": null}
+986 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 29, "drinking_status": 1, "space": null}
+987 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 38, "drinking_status": 0, "space": null}
+988 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 57, "drinking_status": 1, "space": null}
+989 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 70, "drinking_status": 2, "space": null}
+990 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 44, "drinking_status": 1, "space": null}
+991 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 28, "drinking_status": 2, "space": null}
+992 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 67, "drinking_status": 0, "space": null}
+993 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 50, "drinking_status": 2, "space": null}
+994 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 39, "drinking_status": 1, "space": null}
+995 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 59, "drinking_status": 4, "space": null}
+996 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 22, "drinking_status": 0, "space": null}
+997 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 28, "drinking_status": 0, "space": null}
+998 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 22, "drinking_status": 0, "space": null}
+999 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 68, "drinking_status": 0, "space": null}
 EDGES
 0 1
-1 334
+1 2
 2 3
-3 4
-4 5
-5 65
-5 195
+3 316
+3 202
+3 440
+4 526
+5 6
 6 7
 7 8
 8 9
+8 337
 9 10
 10 11
-11 12
-12 681
-12 656
+11 617
+11 335
+12 13
 13 14
-14 15
-15 16
-16 17
-16 85
-16 338
-16 715
-16 729
-17 184
-18 19
-19 601
-20 21
+14 263
+15 347
+16 410
+17 18
+18 851
+19 20
+20 343
+20 31
 21 22
+21 359
 22 23
 23 24
 24 25
 25 26
 26 27
-27 446
+27 281
 28 29
-29 30
-29 427
+29 825
 30 31
-31 417
-32 478
-32 409
-32 749
-33 34
-33 745
+31 610
+31 952
+32 33
+32 190
+33 725
 34 35
-35 36
+35 175
+35 515
 36 37
-36 81
 37 38
-38 529
-38 382
-39 455
+38 39
+39 40
 40 41
 41 42
-42 43
-42 722
+42 504
 43 44
-43 107
-43 112
 44 45
-45 643
-45 712
-46 674
+45 46
+46 47
 47 48
-48 49
+47 814
+48 245
 49 50
-50 432
-51 203
-52 159
-52 278
-53 225
-54 55
+50 51
+50 402
+51 52
+52 53
+52 927
+53 54
+54 187
 55 56
 56 57
 57 58
-58 201
+58 59
+58 460
 59 60
-60 61
+60 729
+60 948
 61 62
+61 210
 62 63
 63 64
-64 65
-64 706
+64 256
 65 66
-66 724
-67 298
-67 141
+66 273
+66 781
+67 68
+67 569
 68 69
 69 70
 70 71
-71 106
-71 209
-72 73
+71 72
+72 806
 73 74
-74 451
+74 75
 75 76
-76 77
+76 934
+76 212
 77 78
 78 79
-79 80
-80 200
-82 428
-83 446
+78 163
+79 682
+80 81
+81 82
+82 462
+82 149
+83 84
 84 85
+85 86
 86 87
 87 88
+87 647
 88 89
-88 693
-89 90
+89 256
 90 91
 91 92
+91 467
 92 93
-93 355
-94 95
-94 217
-95 638
-96 421
+93 245
+94 446
+94 541
+95 504
+96 773
 97 98
-97 152
 98 99
 99 100
-100 101
-100 590
-101 102
+100 234
+101 287
 102 103
-103 563
-104 105
-104 254
-104 626
+103 104
+104 670
 105 106
-105 705
 106 107
+107 687
+107 707
 108 109
 109 110
-110 111
+110 167
+110 746
 111 112
-113 114
-113 708
-114 115
-115 721
-115 400
+111 445
+111 930
+112 113
+113 450
+114 615
+115 801
 116 117
-116 603
-117 468
-118 119
+117 118
+118 708
 119 120
 120 121
-121 738
-122 123
+121 122
+122 359
+122 406
 123 124
 124 125
-124 636
 125 126
 126 127
-126 337
 127 128
 128 129
-129 130
+129 818
 130 131
 131 132
 132 133
-133 134
+132 458
+133 851
+133 772
 134 135
 135 136
 136 137
 137 138
-138 671
-139 411
-139 568
-139 643
+137 652
+138 139
+139 140
 140 141
-140 662
+141 142
 142 143
-142 201
-142 485
-143 144
-143 441
-144 241
-145 146
-146 648
+143 511
+144 145
+145 275
+146 147
+146 939
 147 148
-148 149
-149 150
-150 231
-151 152
+148 272
+150 151
+151 535
+152 153
 153 154
-154 155
+153 873
+154 404
 155 156
 156 157
-157 573
+157 405
 158 159
 159 160
 160 161
 161 162
 162 163
-163 419
+163 479
 164 165
-164 510
 165 166
-165 302
 166 167
-167 595
+167 168
 168 169
 169 170
-169 182
 170 171
 171 172
-172 376
-173 372
-174 593
-175 501
+171 358
+172 173
+173 174
+174 175
+175 183
 176 177
-176 333
-176 539
 177 178
-178 252
+178 179
 179 180
 180 181
-181 439
+181 300
+182 183
 183 184
-183 588
 184 185
 185 186
-186 187
-187 301
-188 735
-189 575
-189 339
-190 191
+186 818
+186 849
+187 794
+188 809
+189 190
 191 192
 192 193
-193 194
+193 598
 194 195
+195 196
 196 197
 197 198
-198 199
+198 564
 199 200
 200 201
-202 203
-202 214
+200 339
+201 202
 203 204
 204 205
 205 206
-205 343
-206 702
+205 907
+206 207
 207 208
+207 373
 208 209
-209 253
-210 211
-211 549
-212 213
+209 210
+209 551
+211 212
 213 214
-213 419
-215 521
-215 622
-216 730
+214 695
+215 216
+216 217
+217 218
 218 219
-219 289
-220 221
+219 220
+220 504
 221 222
-222 223
-223 224
+221 236
+222 242
+223 693
 224 225
 225 226
 226 227
 227 228
-227 431
-228 243
+228 229
+228 388
 229 230
 230 231
-231 613
-232 233
-233 234
-233 484
+231 232
+231 323
+232 821
+233 437
 234 235
 235 236
-236 237
-236 381
-237 238
+237 870
 238 239
-239 240
+239 607
 240 241
-241 354
+240 581
+241 291
+241 671
 242 243
-243 560
-244 245
+242 521
+243 244
+244 612
 245 246
-246 247
-247 248
+246 861
+247 267
 248 249
 249 250
 250 251
-250 621
+250 710
 251 252
 252 253
+253 254
+254 255
 255 256
+255 694
 256 257
-256 538
 257 258
-258 259
-258 416
-258 582
+258 568
 259 260
+259 408
 260 261
 261 262
-262 263
-263 264
+261 709
+262 610
+262 727
+263 959
 264 265
-265 266
-266 267
-266 596
-267 268
-268 329
+265 698
+266 423
+267 625
+267 865
+268 269
 269 270
+269 929
 270 271
 271 272
-272 273
-272 375
+271 975
+272 436
 273 274
-274 328
+274 712
+274 354
 275 276
-275 472
 276 277
 277 278
+278 581
 279 280
 280 281
 281 282
-282 713
-283 284
+282 283
+283 484
 284 285
 285 286
 286 287
-286 358
-286 388
-287 475
+287 288
+287 651
 288 289
 289 290
+289 560
 290 291
 291 292
 292 293
-292 580
-293 529
-293 401
+292 632
+293 294
+293 650
 294 295
 295 296
 296 297
 297 298
 298 299
 299 300
-300 380
-301 302
+300 301
+301 462
+302 303
 303 304
 304 305
 305 306
 306 307
-306 523
 307 308
 308 309
-309 479
+309 649
 310 311
 311 312
 312 313
+312 451
 313 314
 314 315
 315 316
 316 317
-317 373
-318 319
-319 472
-319 345
+317 318
+318 463
+319 703
 320 321
 321 322
 322 323
-323 324
 324 325
 325 326
 326 327
-327 356
+327 328
 328 329
-329 330
-329 611
+329 805
 330 331
 331 332
+331 848
 332 333
+332 923
+333 334
 334 335
-335 500
-336 431
-340 632
+336 337
+338 339
+340 341
 341 342
 342 343
-342 659
-344 553
-346 347
-347 348
+343 344
+344 752
+345 346
+346 733
+347 573
 348 349
 349 350
 350 351
 351 352
 352 353
-353 354
-354 355
-355 356
+353 695
+355 862
 356 357
 357 358
-359 360
-360 361
+359 970
+360 726
 361 362
-362 363
+362 957
 363 364
 364 365
-365 732
-366 483
-366 736
-367 555
+365 366
+365 645
+366 367
+367 368
 368 369
 369 370
-370 396
-370 541
+369 386
+370 371
 371 372
 372 373
-373 374
-374 398
+373 535
+374 375
+375 376
 376 377
 377 378
 378 379
 379 380
-380 688
+380 381
+381 382
+381 689
+382 844
 383 384
-384 385
-385 386
-386 387
+384 842
+385 891
 387 388
+387 561
 389 390
-390 391
+390 562
+390 601
 391 392
 392 393
 393 394
-394 395
+394 419
+394 612
 395 396
 396 397
-396 487
-397 734
-398 399
+397 398
+398 985
 399 400
-402 403
+399 505
+400 401
+401 402
 403 404
-404 452
+404 405
 405 406
-406 407
 407 408
-408 409
-408 575
-410 411
+409 410
+409 965
+410 749
 411 412
-412 707
+412 413
 413 414
-413 551
-414 415
+414 890
 415 416
+415 860
+416 417
 417 418
 418 419
-420 421
-421 422
-422 423
-423 745
+419 420
+419 646
+420 660
+420 837
+421 949
+422 753
+423 424
 424 425
 425 426
 426 427
-428 502
-429 463
+427 428
+428 699
+428 656
+429 430
 430 431
+431 432
 432 433
-433 697
+433 434
 434 435
-435 436
-435 660
-436 452
+435 627
+435 976
+436 437
 437 438
 438 439
 439 440
-440 441
+441 442
 442 443
 443 444
 444 445
-444 720
-445 446
-446 447
+445 713
+445 764
+446 909
 447 448
 448 449
-448 616
 449 450
+449 962
 450 451
-451 452
+450 520
+450 838
 452 453
 453 454
-454 568
-455 456
+454 455
+455 766
 456 457
-457 458
-458 459
+457 721
 459 460
-460 461
+460 769
 461 462
+461 954
 462 463
 463 464
 464 465
 465 466
 466 467
-467 468
 468 469
+468 858
 469 470
 470 471
 471 472
-471 512
+472 473
 473 474
 474 475
-475 569
+475 919
 476 477
 477 478
-477 654
 478 479
-479 480
 480 481
 481 482
 482 483
-483 484
+483 954
+484 777
+485 486
 486 487
-487 497
-487 733
+487 488
 488 489
 489 490
-490 595
+490 795
+490 653
+490 768
 491 492
 492 493
 493 494
 494 495
 495 496
 496 497
+497 498
 498 499
 499 500
+499 880
 500 501
+500 715
 501 502
-501 668
 502 503
 503 504
-504 505
-505 506
+504 923
 506 507
-506 532
+506 950
 507 508
 508 509
-509 510
-511 532
+509 791
+510 511
+510 828
+511 512
+511 619
+511 793
+512 754
 513 514
-514 515
-515 516
+513 618
+514 825
 516 517
 517 518
 518 519
 519 520
-520 521
-520 526
-521 522
 522 523
+523 524
+523 943
 524 525
+524 625
 525 526
+526 867
 527 528
-528 544
+528 529
 529 530
 530 531
 531 532
-533 590
-534 535
-535 536
+531 749
+532 533
+533 534
+534 611
 536 537
-537 693
+537 538
+538 539
+539 540
 540 541
+541 669
 542 543
 543 544
 544 545
+544 776
+544 795
 545 546
 546 547
-547 548
+547 636
+547 999
 548 549
 549 550
 550 551
 552 553
 553 554
-553 597
+553 640
 554 555
 555 556
 556 557
 557 558
+557 964
 558 559
-559 560
-560 561
-561 562
+559 597
 562 563
 563 564
-564 653
+564 565
 565 566
-566 670
+566 567
 567 568
-569 570
-570 699
-571 585
+568 569
+570 571
+571 572
 572 573
 573 574
 574 575
+575 576
 576 577
-576 725
 577 578
 578 579
 579 580
-581 582
+580 581
+582 583
 583 584
 584 585
 585 586
-586 587
+586 880
 587 588
-589 590
+588 589
+589 927
+590 591
 591 592
 592 593
 593 594
 594 595
 595 596
+596 597
+597 598
 598 599
 599 600
-600 601
-601 602
+600 951
 602 603
-603 710
+602 800
+603 604
 604 605
-605 606
+605 967
 606 607
 607 608
 608 609
 609 610
-610 611
-610 675
-612 613
+611 853
 613 614
 614 615
 615 616
+616 617
 617 618
-618 619
-619 620
-620 621
-623 624
+619 936
+620 727
+621 622
+621 736
+622 623
+623 854
 624 625
-625 626
+626 627
 627 628
 628 629
 629 630
-630 631
+630 937
 631 632
-632 633
 633 634
 634 635
 635 636
+636 637
 637 638
 638 639
 639 640
-640 641
-641 642
+639 981
+641 873
 642 643
+643 644
 644 645
-645 646
-646 647
-647 648
 648 649
+648 684
 649 650
-650 651
-651 652
-652 653
-653 654
+649 748
+654 809
 655 656
-657 679
-657 707
+655 843
+657 658
 658 659
-659 682
-661 733
+659 769
+659 804
+660 661
+661 662
+662 821
 663 664
 664 665
 665 666
 666 667
 667 668
-669 670
+668 669
 670 671
-671 672
 672 673
 673 674
-674 675
-674 743
+674 918
+675 676
 676 677
+676 788
 677 678
 678 679
 679 680
 680 681
 681 682
+682 683
 683 684
-684 685
-685 686
+684 812
+685 742
 686 687
 687 688
 688 689
-689 690
 690 691
-691 692
+691 730
 692 693
-694 695
+693 694
 695 696
 696 697
 697 698
@@ -1471,32 +1759,244 @@ EDGES
 702 703
 703 704
 704 705
-709 710
+705 706
+706 707
+708 709
 711 712
-713 714
+712 713
 714 715
 716 717
 717 718
 718 719
 719 720
+720 721
+720 988
 721 722
+722 723
 723 724
 724 725
+725 726
 726 727
-727 728
-728 729
+728 920
+729 730
 730 731
 731 732
 732 733
+733 979
 734 735
-735 736
+735 775
 737 738
 738 739
 739 740
 740 741
 741 742
 742 743
+743 744
+743 840
 744 745
-746 747
+745 746
 747 748
-748 749
+750 751
+751 752
+751 796
+752 753
+753 754
+754 755
+755 756
+756 757
+757 758
+758 759
+759 760
+760 761
+761 762
+762 763
+763 764
+765 766
+766 767
+767 768
+770 771
+771 772
+773 774
+774 775
+775 776
+777 778
+778 779
+779 780
+780 952
+782 783
+783 784
+784 785
+785 786
+786 787
+787 788
+789 790
+790 791
+791 792
+792 793
+794 795
+795 886
+797 798
+798 799
+799 800
+801 802
+802 803
+803 804
+805 806
+806 807
+807 808
+808 809
+809 810
+810 811
+811 812
+813 814
+815 816
+816 817
+817 818
+818 819
+819 820
+820 821
+821 822
+822 823
+823 824
+824 999
+825 826
+826 827
+827 828
+829 830
+830 831
+831 832
+832 833
+833 834
+834 835
+835 836
+836 837
+839 840
+841 842
+842 843
+844 845
+845 846
+846 847
+847 848
+850 851
+851 852
+852 853
+853 854
+854 855
+855 856
+856 857
+857 858
+859 860
+861 862
+862 863
+863 864
+864 865
+866 867
+867 879
+868 869
+869 870
+870 871
+871 872
+872 873
+874 875
+875 876
+876 877
+877 878
+878 879
+879 880
+881 882
+882 883
+883 884
+884 885
+885 886
+887 888
+888 889
+889 890
+890 891
+891 892
+892 893
+893 894
+894 895
+895 966
+896 897
+897 898
+898 899
+899 900
+900 901
+901 902
+902 903
+903 904
+904 905
+905 959
+906 907
+908 909
+909 910
+910 911
+911 912
+912 913
+913 914
+914 915
+915 916
+916 917
+917 918
+918 919
+919 920
+920 921
+921 922
+922 923
+924 925
+925 926
+926 927
+928 929
+931 932
+932 933
+933 934
+934 935
+935 936
+937 938
+938 939
+940 941
+941 942
+942 943
+944 945
+945 946
+946 947
+947 948
+949 950
+951 952
+953 954
+955 956
+956 957
+957 958
+958 959
+959 960
+960 961
+961 962
+963 964
+966 967
+967 968
+968 969
+969 970
+971 972
+972 973
+973 974
+974 975
+977 978
+978 979
+979 980
+980 981
+982 983
+983 984
+984 985
+985 986
+986 987
+987 988
+989 990
+990 991
+991 992
+992 993
+993 994
+994 995
+995 996
+996 997
+997 998
+998 999

@@ -13,15 +13,27 @@ class FundamentalCauseTheory(Theory):
         self.space = space
         self.__social_influence: int = social_influence
         self.__event_list = []
+        
 
         ## FCT level parameters/attributes
         
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth
-        #TODO: implement social connections and social influence
+        #TODO: implement social connections
+        #TODO: implement social influence
+        #TODO: implement power 
+        #TODO: implement prestige
+        #TODO: construct individuals knowledge from education
+
+        self.knowledge = self.__education/3
+
+
         self.__social_connections: int = social_connections
         self.__social_influence: int = social_influence
+        
+        self.successful_adaptiation = 0
+        self.unsuccessful_adaptiation = 0
 
         self.strategy_multiplier: float
         
@@ -77,11 +89,6 @@ class FundamentalCauseTheory(Theory):
                     neighbour_count += 1
                     if other_agent.get_agent_sex() == self._agent.get_agent_sex():
                         similar_count += 1
-
-        # TODO: Change the satisfied status
-        
-        self.__is_satisfied = True
-
 
     ######################################################
     #individual agent-level action mechanism methods

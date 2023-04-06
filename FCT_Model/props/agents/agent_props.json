@@ -7498,5 +7498,2505 @@
         "age": 29,
         "drinking_status": 2,
         "space": null
+    },
+    {
+        "agent_id": 750,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 50,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 751,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 752,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 57,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 753,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 73,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 754,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 66,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 755,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 69,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 756,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 21,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 757,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 51,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 758,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 49,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 759,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 49,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 760,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 39,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 761,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 76,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 762,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 30,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 763,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 21,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 764,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 61,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 765,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 38,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 766,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 69,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 767,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 56,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 768,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 64,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 769,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 46,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 770,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 70,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 771,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 58,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 772,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 56,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 773,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 22,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 774,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 44,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 775,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 55,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 776,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 74,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 777,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 38,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 778,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 24,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 779,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 66,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 780,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 20,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 781,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 51,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 782,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 32,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 783,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 22,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 784,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 74,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 785,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 66,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 786,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 59,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 787,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 64,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 788,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 63,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 789,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 54,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 790,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 72,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 791,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 22,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 792,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 27,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 793,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 49,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 794,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 63,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 795,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 72,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 796,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 46,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 797,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 65,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 798,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 34,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 799,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 54,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 800,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 34,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 801,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 24,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 802,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 23,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 803,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 27,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 804,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 61,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 805,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 70,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 806,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 807,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 41,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 808,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 28,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 809,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 26,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 810,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 56,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 811,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 73,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 812,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 33,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 813,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 57,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 814,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 78,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 815,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 20,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 816,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 26,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 817,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 27,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 818,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 79,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 819,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 70,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 820,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 44,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 821,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 39,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 822,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 76,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 823,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 30,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 824,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 23,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 825,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 37,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 826,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 30,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 827,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 69,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 828,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 60,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 829,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 830,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 40,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 831,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 29,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 832,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 56,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 833,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 22,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 834,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 49,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 835,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 836,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 22,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 837,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 51,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 838,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 62,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 839,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 50,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 840,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 20,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 841,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 32,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 842,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 24,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 843,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 46,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 844,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 63,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 845,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 33,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 846,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 60,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 847,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 31,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 848,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 71,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 849,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 48,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 850,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 55,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 851,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 75,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 852,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 57,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 853,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 75,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 854,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 44,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 855,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 23,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 856,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 25,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 857,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 45,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 858,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 39,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 859,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 24,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 860,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 23,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 861,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 25,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 862,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 49,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 863,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 77,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 864,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 45,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 865,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 24,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 866,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 77,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 867,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 30,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 868,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 18,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 869,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 32,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 870,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 57,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 871,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 59,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 872,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 68,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 873,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 52,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 874,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 68,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 875,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 19,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 876,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 73,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 877,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 79,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 878,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 25,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 879,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 78,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 880,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 67,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 881,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 54,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 882,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 62,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 883,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 58,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 884,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 25,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 885,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 52,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 886,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 20,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 887,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 65,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 888,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 889,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 35,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 890,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 22,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 891,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 41,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 892,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 75,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 893,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 53,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 894,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 62,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 895,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 52,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 896,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 40,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 897,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 20,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 898,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 61,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 899,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 63,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 900,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 32,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 901,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 37,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 902,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 75,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 903,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 31,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 904,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 69,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 905,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 23,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 906,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 74,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 907,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 74,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 908,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 64,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 909,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 77,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 910,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 911,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 50,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 912,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 50,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 913,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 68,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 914,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 51,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 915,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 39,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 916,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 21,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 917,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 56,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 918,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 33,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 919,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 23,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 920,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 20,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 921,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 67,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 922,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 65,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 923,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 35,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 924,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 45,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 925,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 20,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 926,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 25,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 927,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 40,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 928,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 27,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 929,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 78,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 930,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 61,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 931,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 46,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 932,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 21,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 933,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 42,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 934,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 73,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 935,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 31,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 936,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 937,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 43,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 938,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 30,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 939,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 63,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 940,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 55,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 941,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 59,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 942,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 62,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 943,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 42,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 944,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 70,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 945,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 33,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 946,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 57,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 947,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 66,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 948,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 56,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 949,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 43,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 950,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 951,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 19,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 952,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 47,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 953,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 70,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 954,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 47,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 955,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 20,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 956,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 29,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 957,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 36,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 958,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 959,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 66,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 960,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 67,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 961,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 962,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 72,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 963,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 56,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 964,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 60,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 965,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 45,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 966,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 63,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 967,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 968,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 29,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 969,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 53,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 970,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 21,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 971,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 58,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 972,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 52,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 973,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 33,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 974,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 52,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 975,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 73,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 976,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 33,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 977,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 55,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 978,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 979,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 1,
+        "age": 72,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 980,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 43,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 981,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 38,
+        "drinking_status": 3,
+        "space": null
+    },
+    {
+        "agent_id": 982,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 21,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 983,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 42,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 984,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 79,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 985,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 0,
+        "age": 47,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 986,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 1,
+        "age": 29,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 987,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 38,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 988,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 57,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 989,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 70,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 990,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 44,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 991,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 28,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 992,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 0,
+        "age": 67,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 993,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 1,
+        "age": 50,
+        "drinking_status": 2,
+        "space": null
+    },
+    {
+        "agent_id": 994,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 0,
+        "sex": 0,
+        "age": 39,
+        "drinking_status": 1,
+        "space": null
+    },
+    {
+        "agent_id": 995,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 2,
+        "sex": 0,
+        "age": 59,
+        "drinking_status": 4,
+        "space": null
+    },
+    {
+        "agent_id": 996,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 22,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 997,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 4,
+        "sex": 1,
+        "age": 28,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 998,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 3,
+        "sex": 0,
+        "age": 22,
+        "drinking_status": 0,
+        "space": null
+    },
+    {
+        "agent_id": 999,
+        "agent_type": 1,
+        "rank": 0,
+        "deprivation_quintile": 1,
+        "sex": 1,
+        "age": 68,
+        "drinking_status": 0,
+        "space": null
     }
 ]

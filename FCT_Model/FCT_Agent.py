@@ -89,7 +89,11 @@ class FCT_Agent(MicroAgent):
         return amount
     
     def absolute_risk(self, consumption):
-        beta = 1
+        if self.sex == 0:
+            beta = 0.00101
+        else:
+            beta = 0.00398
+
         # consumption = self.get_agent_drinking_status()
         if consumption == 0:
             #print(consumption)
