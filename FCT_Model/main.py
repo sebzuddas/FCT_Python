@@ -53,7 +53,7 @@ def main():
             bar()
     
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Initialisation Complete! :smile: \n"))
-    time.sleep(1)
+    time.sleep(0.5)
     print(Style.RESET_ALL)
 
     
@@ -64,7 +64,7 @@ def main():
             time.sleep(0.0005)
             bar()
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Network Generated! :smile: \n"))
-    time.sleep(1)
+    time.sleep(0.5)
     print(Style.RESET_ALL)
 
     #############################################
@@ -75,11 +75,12 @@ def main():
             bar()
 
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Network Linked With Theory! :smile: \n"))
-    time.sleep(1)
+    time.sleep(0.5)
     print(Style.RESET_ALL)
 
-
-    exit()
+    print(Back.LIGHTWHITE_EX)
+    print(emojis.encode(colorama.Fore.BLACK+"Model Fully Initialised! 🥰")+Style.RESET_ALL)
+    
 
     
     
@@ -90,17 +91,21 @@ def main():
     # Run the model
     print(Fore.LIGHTCYAN_EX + "Running Model")
     time.sleep(1)
+    model.run()
+    
     
     with alive_bar(params.get("stop.at"), title="Running Model", bar='filling') as bar:
-        for tick in model.run():
-            year = tick // 52
-            month = tick % 52
-            if tick and tick % 52 == 0:
-                print("Year: ", year)
-                print("Month: ", month)
-                print("Week: ", tick)
+        for current_tick in model.do_per_tick():
+
+            # year = tick / 52
+            # month = tick % 52
+            # if tick and tick % 52 == 0:
+            #     print("Year: ", year)
+            #     print("Month: ", month)
+            #     print("Week: ", tick)
             bar()
-    model.run()
+        
+    
     
 
 

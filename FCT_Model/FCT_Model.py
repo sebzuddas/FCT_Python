@@ -187,8 +187,10 @@ class FCT_Model(Model):
         self.__board.call_transformation()
 
     def run(self):
+
         self._runner.execute()
-        yield
+
+        
     
     ############################
     #Schedules to do per different time rates.
@@ -200,6 +202,7 @@ class FCT_Model(Model):
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
         # Only a single rank outputs the board
+        yield current_tick
         if self.__rank == 0:
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
@@ -210,6 +213,7 @@ class FCT_Model(Model):
             # stop when all agents are satisfied
             # if self.__board.get_avg_satisfaction() == 1:
             #     self._runner.stop()
+        
 
     def do_per_month(self):
         print('Do this per month')
@@ -403,7 +407,7 @@ class FCT_Model(Model):
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
             id = agent.get_agent_id()
-            # print(self.__network.num_edges(agent))
+            #print(self.__network.num_edges(agent), agent.get_target_connections())
             #def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
             theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__network.num_edges(agent), self.__theory_attributes[id]["social_influence"], self.__discrete_space)
             mediator = SocialTheoriesMediator([theory])
