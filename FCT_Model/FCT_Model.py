@@ -376,8 +376,8 @@ class FCT_Model(Model):
                             agent_b.append_connections_array(agent_a.get_id())
                             agent_a.append_connections_array(agent_b.get_id())
                             self.__network.add_edge(agent_a, agent_b, weight= rng.integers(1, 10)/10)
-                            print('AgentA', agent_a.get_id(), ' connections: ', self.__network.num_edges(agent_a),  '/', agent_a_target_connections)
-                            print('AgentB', agent_b.get_id(), ' connections: ', self.__network.num_edges(agent_b),  '/', agent_b_target_connections)
+                            # print('AgentA', agent_a.get_id(), ' connections: ', self.__network.num_edges(agent_a),  '/', agent_a_target_connections)
+                            # print('AgentB', agent_b.get_id(), ' connections: ', self.__network.num_edges(agent_b),  '/', agent_b_target_connections)
                             iteration_count += 1
                             agent_a_connections = len(agent_a.get_target_connections_array())
                             
@@ -403,7 +403,9 @@ class FCT_Model(Model):
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
             id = agent.get_agent_id()
-            theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__theory_attributes[id]["social_connections"], self.__theory_attributes[id]["social_influence"], self.__discrete_space)
+            # print(self.__network.num_edges(agent))
+            #def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
+            theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__network.num_edges(agent), self.__theory_attributes[id]["social_influence"], self.__discrete_space)
             mediator = SocialTheoriesMediator([theory])
             agent.set_mediator(mediator)
             

@@ -8,7 +8,7 @@ import re
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections, social_influence:int, space):
+    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
         self.context = context
         self.space = space
         self.__social_influence: int = social_influence

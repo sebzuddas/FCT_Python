@@ -47,7 +47,5 @@ class SocialTheoriesMediator(TheoryMediator):
         self.agent.absolute_risk(consumption)
 
 
-    def return_education(self):
-        return self._theory_list[0].get_education()
 
 

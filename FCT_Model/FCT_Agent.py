@@ -31,7 +31,6 @@ class FCT_Agent(MicroAgent):
         
         self.connections_array = []
 
-
         self.received_events = []
         self.solved_events = []
         self.unsolved_events = []

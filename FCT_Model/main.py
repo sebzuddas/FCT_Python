@@ -49,6 +49,7 @@ def main():
     # Initialise Agents
     with alive_bar(params.get("count.of.agents"), title="Initialising Agents", bar='circles') as bar:
         for agent in model.init_agents():
+            time.sleep(0.0005)
             bar()
     
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Initialisation Complete! :smile: \n"))
@@ -70,6 +71,7 @@ def main():
     # Link Theory
     with alive_bar(params.get("count.of.agents"), title="Linking Agents With Theory", bar='notes') as bar:
         for agent in model.assign_theory():
+            time.sleep(0.0005)
             bar()
 
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Network Linked With Theory! :smile: \n"))
