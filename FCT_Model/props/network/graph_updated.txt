@@ -1,0 +1,2002 @@
+FCT_network 0
+0 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 64, "drinking_status": 4, "target_connections": 11, "space": null}
+1 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 33, "drinking_status": 1, "target_connections": 14, "space": null}
+2 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 33, "drinking_status": 2, "target_connections": 15, "space": null}
+3 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 71, "drinking_status": 3, "target_connections": 15, "space": null}
+4 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 46, "drinking_status": 3, "target_connections": 13, "space": null}
+5 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 78, "drinking_status": 0, "target_connections": 14, "space": null}
+6 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 49, "drinking_status": 1, "target_connections": 17, "space": null}
+7 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 48, "drinking_status": 2, "target_connections": 19, "space": null}
+8 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 23, "drinking_status": 3, "target_connections": 15, "space": null}
+9 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 63, "drinking_status": 0, "target_connections": 19, "space": null}
+10 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 36, "drinking_status": 0, "target_connections": 16, "space": null}
+11 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 40, "drinking_status": 3, "target_connections": 19, "space": null}
+12 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 62, "drinking_status": 2, "target_connections": 14, "space": null}
+13 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 46, "drinking_status": 3, "target_connections": 18, "space": null}
+14 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 67, "drinking_status": 1, "target_connections": 18, "space": null}
+15 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 59, "drinking_status": 2, "target_connections": 17, "space": null}
+16 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 51, "drinking_status": 4, "target_connections": 16, "space": null}
+17 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 72, "drinking_status": 0, "target_connections": 18, "space": null}
+18 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 47, "drinking_status": 0, "target_connections": 18, "space": null}
+19 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 70, "drinking_status": 4, "target_connections": 14, "space": null}
+20 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 0, "target_connections": 16, "space": null}
+21 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 43, "drinking_status": 4, "target_connections": 12, "space": null}
+22 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 60, "drinking_status": 3, "target_connections": 18, "space": null}
+23 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 73, "drinking_status": 0, "target_connections": 14, "space": null}
+24 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 67, "drinking_status": 2, "target_connections": 15, "space": null}
+25 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 48, "drinking_status": 3, "target_connections": 19, "space": null}
+26 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 46, "drinking_status": 4, "target_connections": 16, "space": null}
+27 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 60, "drinking_status": 3, "target_connections": 12, "space": null}
+28 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 37, "drinking_status": 0, "target_connections": 18, "space": null}
+29 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 27, "drinking_status": 1, "target_connections": 13, "space": null}
+30 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 64, "drinking_status": 0, "target_connections": 13, "space": null}
+31 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 57, "drinking_status": 1, "target_connections": 14, "space": null}
+32 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 40, "drinking_status": 3, "target_connections": 13, "space": null}
+33 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 49, "drinking_status": 3, "target_connections": 14, "space": null}
+34 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 37, "drinking_status": 3, "target_connections": 18, "space": null}
+35 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 77, "drinking_status": 2, "target_connections": 11, "space": null}
+36 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 22, "drinking_status": 1, "target_connections": 12, "space": null}
+37 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 73, "drinking_status": 1, "target_connections": 17, "space": null}
+38 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 65, "drinking_status": 0, "target_connections": 13, "space": null}
+39 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 47, "drinking_status": 3, "target_connections": 14, "space": null}
+40 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 4, "target_connections": 17, "space": null}
+41 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 35, "drinking_status": 2, "target_connections": 13, "space": null}
+42 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 20, "drinking_status": 1, "target_connections": 12, "space": null}
+43 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 62, "drinking_status": 1, "target_connections": 15, "space": null}
+44 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 72, "drinking_status": 3, "target_connections": 17, "space": null}
+45 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 62, "drinking_status": 2, "target_connections": 19, "space": null}
+46 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 40, "drinking_status": 2, "target_connections": 10, "space": null}
+47 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 52, "drinking_status": 1, "target_connections": 11, "space": null}
+48 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 35, "drinking_status": 3, "target_connections": 12, "space": null}
+49 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 67, "drinking_status": 2, "target_connections": 11, "space": null}
+50 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 48, "drinking_status": 2, "target_connections": 12, "space": null}
+51 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 67, "drinking_status": 0, "target_connections": 17, "space": null}
+52 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 1, "target_connections": 12, "space": null}
+53 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 54, "drinking_status": 1, "target_connections": 19, "space": null}
+54 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 68, "drinking_status": 3, "target_connections": 15, "space": null}
+55 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 26, "drinking_status": 1, "target_connections": 19, "space": null}
+56 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 19, "drinking_status": 4, "target_connections": 17, "space": null}
+57 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 71, "drinking_status": 3, "target_connections": 13, "space": null}
+58 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 62, "drinking_status": 2, "target_connections": 10, "space": null}
+59 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 55, "drinking_status": 4, "target_connections": 12, "space": null}
+60 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 72, "drinking_status": 2, "target_connections": 12, "space": null}
+61 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 41, "drinking_status": 0, "target_connections": 13, "space": null}
+62 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 42, "drinking_status": 1, "target_connections": 18, "space": null}
+63 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 32, "drinking_status": 4, "target_connections": 16, "space": null}
+64 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 76, "drinking_status": 3, "target_connections": 10, "space": null}
+65 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 46, "drinking_status": 1, "target_connections": 14, "space": null}
+66 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 41, "drinking_status": 1, "target_connections": 15, "space": null}
+67 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 60, "drinking_status": 3, "target_connections": 16, "space": null}
+68 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 29, "drinking_status": 3, "target_connections": 16, "space": null}
+69 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 39, "drinking_status": 3, "target_connections": 12, "space": null}
+70 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 73, "drinking_status": 4, "target_connections": 15, "space": null}
+71 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 22, "drinking_status": 2, "target_connections": 16, "space": null}
+72 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 75, "drinking_status": 0, "target_connections": 16, "space": null}
+73 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 54, "drinking_status": 0, "target_connections": 19, "space": null}
+74 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 59, "drinking_status": 2, "target_connections": 11, "space": null}
+75 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 79, "drinking_status": 1, "target_connections": 11, "space": null}
+76 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 45, "drinking_status": 0, "target_connections": 11, "space": null}
+77 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 38, "drinking_status": 2, "target_connections": 19, "space": null}
+78 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 31, "drinking_status": 3, "target_connections": 16, "space": null}
+79 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 41, "drinking_status": 4, "target_connections": 10, "space": null}
+80 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 58, "drinking_status": 1, "target_connections": 10, "space": null}
+81 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 20, "drinking_status": 1, "target_connections": 12, "space": null}
+82 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 57, "drinking_status": 0, "target_connections": 17, "space": null}
+83 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 21, "drinking_status": 3, "target_connections": 10, "space": null}
+84 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 62, "drinking_status": 3, "target_connections": 11, "space": null}
+85 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 26, "drinking_status": 0, "target_connections": 10, "space": null}
+86 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 41, "drinking_status": 2, "target_connections": 14, "space": null}
+87 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 26, "drinking_status": 1, "target_connections": 10, "space": null}
+88 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 66, "drinking_status": 0, "target_connections": 10, "space": null}
+89 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 67, "drinking_status": 3, "target_connections": 13, "space": null}
+90 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 26, "drinking_status": 1, "target_connections": 13, "space": null}
+91 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 2, "target_connections": 10, "space": null}
+92 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 19, "drinking_status": 3, "target_connections": 11, "space": null}
+93 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 2, "target_connections": 10, "space": null}
+94 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 51, "drinking_status": 3, "target_connections": 10, "space": null}
+95 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 73, "drinking_status": 3, "target_connections": 19, "space": null}
+96 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 49, "drinking_status": 3, "target_connections": 11, "space": null}
+97 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 46, "drinking_status": 0, "target_connections": 19, "space": null}
+98 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 77, "drinking_status": 4, "target_connections": 13, "space": null}
+99 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 44, "drinking_status": 0, "target_connections": 11, "space": null}
+100 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 2, "target_connections": 15, "space": null}
+101 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 38, "drinking_status": 2, "target_connections": 15, "space": null}
+102 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 33, "drinking_status": 2, "target_connections": 18, "space": null}
+103 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 52, "drinking_status": 1, "target_connections": 15, "space": null}
+104 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 43, "drinking_status": 1, "target_connections": 13, "space": null}
+105 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 46, "drinking_status": 3, "target_connections": 15, "space": null}
+106 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 30, "drinking_status": 0, "target_connections": 12, "space": null}
+107 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 59, "drinking_status": 4, "target_connections": 10, "space": null}
+108 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 48, "drinking_status": 0, "target_connections": 16, "space": null}
+109 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 41, "drinking_status": 0, "target_connections": 10, "space": null}
+110 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 69, "drinking_status": 2, "target_connections": 18, "space": null}
+111 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 26, "drinking_status": 1, "target_connections": 18, "space": null}
+112 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 70, "drinking_status": 0, "target_connections": 18, "space": null}
+113 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 67, "drinking_status": 0, "target_connections": 16, "space": null}
+114 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 78, "drinking_status": 1, "target_connections": 14, "space": null}
+115 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 38, "drinking_status": 2, "target_connections": 15, "space": null}
+116 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 43, "drinking_status": 3, "target_connections": 12, "space": null}
+117 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 35, "drinking_status": 2, "target_connections": 13, "space": null}
+118 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 46, "drinking_status": 2, "target_connections": 13, "space": null}
+119 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 64, "drinking_status": 2, "target_connections": 10, "space": null}
+120 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 53, "drinking_status": 0, "target_connections": 18, "space": null}
+121 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 28, "drinking_status": 4, "target_connections": 16, "space": null}
+122 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 38, "drinking_status": 2, "target_connections": 14, "space": null}
+123 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 77, "drinking_status": 1, "target_connections": 16, "space": null}
+124 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 27, "drinking_status": 1, "target_connections": 15, "space": null}
+125 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 78, "drinking_status": 0, "target_connections": 19, "space": null}
+126 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 51, "drinking_status": 4, "target_connections": 13, "space": null}
+127 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 55, "drinking_status": 4, "target_connections": 19, "space": null}
+128 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 58, "drinking_status": 2, "target_connections": 13, "space": null}
+129 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 74, "drinking_status": 1, "target_connections": 11, "space": null}
+130 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 21, "drinking_status": 3, "target_connections": 13, "space": null}
+131 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 75, "drinking_status": 2, "target_connections": 12, "space": null}
+132 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 42, "drinking_status": 2, "target_connections": 12, "space": null}
+133 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 19, "drinking_status": 4, "target_connections": 19, "space": null}
+134 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 79, "drinking_status": 1, "target_connections": 17, "space": null}
+135 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 79, "drinking_status": 1, "target_connections": 15, "space": null}
+136 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 26, "drinking_status": 1, "target_connections": 19, "space": null}
+137 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 59, "drinking_status": 3, "target_connections": 10, "space": null}
+138 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 68, "drinking_status": 1, "target_connections": 19, "space": null}
+139 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 43, "drinking_status": 4, "target_connections": 10, "space": null}
+140 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 48, "drinking_status": 2, "target_connections": 14, "space": null}
+141 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 35, "drinking_status": 1, "target_connections": 15, "space": null}
+142 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 62, "drinking_status": 1, "target_connections": 15, "space": null}
+143 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 27, "drinking_status": 1, "target_connections": 14, "space": null}
+144 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 35, "drinking_status": 4, "target_connections": 16, "space": null}
+145 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 67, "drinking_status": 4, "target_connections": 11, "space": null}
+146 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 19, "drinking_status": 1, "target_connections": 11, "space": null}
+147 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 67, "drinking_status": 2, "target_connections": 11, "space": null}
+148 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 33, "drinking_status": 2, "target_connections": 14, "space": null}
+149 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 56, "drinking_status": 4, "target_connections": 12, "space": null}
+150 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 24, "drinking_status": 4, "target_connections": 11, "space": null}
+151 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 40, "drinking_status": 1, "target_connections": 13, "space": null}
+152 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 39, "drinking_status": 4, "target_connections": 10, "space": null}
+153 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 51, "drinking_status": 3, "target_connections": 13, "space": null}
+154 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 25, "drinking_status": 4, "target_connections": 12, "space": null}
+155 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 62, "drinking_status": 4, "target_connections": 17, "space": null}
+156 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 54, "drinking_status": 3, "target_connections": 18, "space": null}
+157 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 47, "drinking_status": 3, "target_connections": 18, "space": null}
+158 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 56, "drinking_status": 4, "target_connections": 19, "space": null}
+159 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 36, "drinking_status": 1, "target_connections": 14, "space": null}
+160 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 77, "drinking_status": 2, "target_connections": 12, "space": null}
+161 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 53, "drinking_status": 1, "target_connections": 17, "space": null}
+162 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 53, "drinking_status": 0, "target_connections": 13, "space": null}
+163 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 60, "drinking_status": 1, "target_connections": 18, "space": null}
+164 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 24, "drinking_status": 2, "target_connections": 17, "space": null}
+165 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 61, "drinking_status": 4, "target_connections": 11, "space": null}
+166 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 78, "drinking_status": 3, "target_connections": 14, "space": null}
+167 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 24, "drinking_status": 0, "target_connections": 17, "space": null}
+168 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 1, "target_connections": 12, "space": null}
+169 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 56, "drinking_status": 1, "target_connections": 10, "space": null}
+170 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 71, "drinking_status": 1, "target_connections": 17, "space": null}
+171 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 70, "drinking_status": 3, "target_connections": 15, "space": null}
+172 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 68, "drinking_status": 3, "target_connections": 14, "space": null}
+173 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 44, "drinking_status": 2, "target_connections": 18, "space": null}
+174 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 40, "drinking_status": 2, "target_connections": 15, "space": null}
+175 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 26, "drinking_status": 2, "target_connections": 14, "space": null}
+176 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 70, "drinking_status": 3, "target_connections": 13, "space": null}
+177 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 19, "drinking_status": 3, "target_connections": 11, "space": null}
+178 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 60, "drinking_status": 4, "target_connections": 19, "space": null}
+179 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 66, "drinking_status": 0, "target_connections": 18, "space": null}
+180 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 70, "drinking_status": 4, "target_connections": 17, "space": null}
+181 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 67, "drinking_status": 3, "target_connections": 15, "space": null}
+182 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 31, "drinking_status": 2, "target_connections": 12, "space": null}
+183 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 4, "target_connections": 17, "space": null}
+184 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 44, "drinking_status": 4, "target_connections": 13, "space": null}
+185 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 43, "drinking_status": 1, "target_connections": 12, "space": null}
+186 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 35, "drinking_status": 0, "target_connections": 10, "space": null}
+187 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 18, "drinking_status": 0, "target_connections": 18, "space": null}
+188 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 39, "drinking_status": 0, "target_connections": 15, "space": null}
+189 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 51, "drinking_status": 2, "target_connections": 12, "space": null}
+190 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 54, "drinking_status": 4, "target_connections": 13, "space": null}
+191 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 41, "drinking_status": 4, "target_connections": 12, "space": null}
+192 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 2, "target_connections": 17, "space": null}
+193 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 54, "drinking_status": 2, "target_connections": 13, "space": null}
+194 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 72, "drinking_status": 4, "target_connections": 16, "space": null}
+195 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 58, "drinking_status": 3, "target_connections": 18, "space": null}
+196 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 41, "drinking_status": 1, "target_connections": 19, "space": null}
+197 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 70, "drinking_status": 2, "target_connections": 11, "space": null}
+198 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 63, "drinking_status": 1, "target_connections": 16, "space": null}
+199 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 24, "drinking_status": 1, "target_connections": 13, "space": null}
+200 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 78, "drinking_status": 0, "target_connections": 17, "space": null}
+201 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 79, "drinking_status": 1, "target_connections": 11, "space": null}
+202 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 31, "drinking_status": 0, "target_connections": 16, "space": null}
+203 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 35, "drinking_status": 2, "target_connections": 19, "space": null}
+204 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 23, "drinking_status": 4, "target_connections": 19, "space": null}
+205 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 52, "drinking_status": 2, "target_connections": 10, "space": null}
+206 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 54, "drinking_status": 2, "target_connections": 18, "space": null}
+207 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 0, "target_connections": 12, "space": null}
+208 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 69, "drinking_status": 0, "target_connections": 11, "space": null}
+209 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 38, "drinking_status": 3, "target_connections": 18, "space": null}
+210 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 73, "drinking_status": 2, "target_connections": 15, "space": null}
+211 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 19, "drinking_status": 2, "target_connections": 18, "space": null}
+212 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 47, "drinking_status": 2, "target_connections": 10, "space": null}
+213 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 22, "drinking_status": 3, "target_connections": 19, "space": null}
+214 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 73, "drinking_status": 1, "target_connections": 15, "space": null}
+215 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 68, "drinking_status": 0, "target_connections": 15, "space": null}
+216 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 70, "drinking_status": 4, "target_connections": 19, "space": null}
+217 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 1, "target_connections": 11, "space": null}
+218 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 4, "target_connections": 12, "space": null}
+219 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 72, "drinking_status": 3, "target_connections": 12, "space": null}
+220 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 72, "drinking_status": 4, "target_connections": 19, "space": null}
+221 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 53, "drinking_status": 4, "target_connections": 17, "space": null}
+222 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 69, "drinking_status": 1, "target_connections": 19, "space": null}
+223 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 41, "drinking_status": 1, "target_connections": 17, "space": null}
+224 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 37, "drinking_status": 2, "target_connections": 13, "space": null}
+225 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 3, "target_connections": 16, "space": null}
+226 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 40, "drinking_status": 4, "target_connections": 18, "space": null}
+227 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 72, "drinking_status": 2, "target_connections": 17, "space": null}
+228 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 42, "drinking_status": 1, "target_connections": 16, "space": null}
+229 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 42, "drinking_status": 4, "target_connections": 12, "space": null}
+230 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 74, "drinking_status": 3, "target_connections": 17, "space": null}
+231 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 46, "drinking_status": 0, "target_connections": 18, "space": null}
+232 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 30, "drinking_status": 1, "target_connections": 13, "space": null}
+233 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 72, "drinking_status": 4, "target_connections": 10, "space": null}
+234 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 66, "drinking_status": 3, "target_connections": 10, "space": null}
+235 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 27, "drinking_status": 0, "target_connections": 18, "space": null}
+236 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 60, "drinking_status": 1, "target_connections": 17, "space": null}
+237 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 26, "drinking_status": 3, "target_connections": 13, "space": null}
+238 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 20, "drinking_status": 1, "target_connections": 11, "space": null}
+239 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 77, "drinking_status": 4, "target_connections": 18, "space": null}
+240 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 69, "drinking_status": 3, "target_connections": 18, "space": null}
+241 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 51, "drinking_status": 3, "target_connections": 17, "space": null}
+242 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 39, "drinking_status": 0, "target_connections": 17, "space": null}
+243 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 25, "drinking_status": 0, "target_connections": 18, "space": null}
+244 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 42, "drinking_status": 1, "target_connections": 13, "space": null}
+245 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 69, "drinking_status": 2, "target_connections": 11, "space": null}
+246 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 54, "drinking_status": 3, "target_connections": 15, "space": null}
+247 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 64, "drinking_status": 3, "target_connections": 17, "space": null}
+248 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 70, "drinking_status": 2, "target_connections": 18, "space": null}
+249 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 48, "drinking_status": 4, "target_connections": 19, "space": null}
+250 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 55, "drinking_status": 4, "target_connections": 12, "space": null}
+251 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 35, "drinking_status": 4, "target_connections": 10, "space": null}
+252 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 29, "drinking_status": 1, "target_connections": 18, "space": null}
+253 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 39, "drinking_status": 4, "target_connections": 14, "space": null}
+254 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 42, "drinking_status": 4, "target_connections": 10, "space": null}
+255 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 57, "drinking_status": 4, "target_connections": 19, "space": null}
+256 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 4, "target_connections": 12, "space": null}
+257 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 60, "drinking_status": 4, "target_connections": 10, "space": null}
+258 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 33, "drinking_status": 1, "target_connections": 19, "space": null}
+259 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 74, "drinking_status": 1, "target_connections": 18, "space": null}
+260 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 33, "drinking_status": 1, "target_connections": 11, "space": null}
+261 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 59, "drinking_status": 4, "target_connections": 14, "space": null}
+262 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 72, "drinking_status": 4, "target_connections": 13, "space": null}
+263 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 23, "drinking_status": 2, "target_connections": 17, "space": null}
+264 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 28, "drinking_status": 0, "target_connections": 19, "space": null}
+265 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 31, "drinking_status": 0, "target_connections": 18, "space": null}
+266 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 70, "drinking_status": 4, "target_connections": 10, "space": null}
+267 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 68, "drinking_status": 2, "target_connections": 18, "space": null}
+268 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 34, "drinking_status": 0, "target_connections": 19, "space": null}
+269 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 20, "drinking_status": 2, "target_connections": 10, "space": null}
+270 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 58, "drinking_status": 3, "target_connections": 19, "space": null}
+271 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 35, "drinking_status": 2, "target_connections": 12, "space": null}
+272 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 57, "drinking_status": 3, "target_connections": 13, "space": null}
+273 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 46, "drinking_status": 0, "target_connections": 18, "space": null}
+274 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 24, "drinking_status": 1, "target_connections": 16, "space": null}
+275 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 51, "drinking_status": 3, "target_connections": 16, "space": null}
+276 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 27, "drinking_status": 2, "target_connections": 17, "space": null}
+277 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 48, "drinking_status": 3, "target_connections": 18, "space": null}
+278 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 71, "drinking_status": 4, "target_connections": 14, "space": null}
+279 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 0, "target_connections": 12, "space": null}
+280 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 19, "drinking_status": 0, "target_connections": 15, "space": null}
+281 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 32, "drinking_status": 1, "target_connections": 17, "space": null}
+282 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 31, "drinking_status": 4, "target_connections": 13, "space": null}
+283 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 54, "drinking_status": 4, "target_connections": 11, "space": null}
+284 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 76, "drinking_status": 3, "target_connections": 12, "space": null}
+285 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 78, "drinking_status": 1, "target_connections": 10, "space": null}
+286 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 72, "drinking_status": 0, "target_connections": 12, "space": null}
+287 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 38, "drinking_status": 1, "target_connections": 11, "space": null}
+288 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 43, "drinking_status": 3, "target_connections": 13, "space": null}
+289 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 18, "drinking_status": 4, "target_connections": 13, "space": null}
+290 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 71, "drinking_status": 3, "target_connections": 12, "space": null}
+291 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 53, "drinking_status": 2, "target_connections": 19, "space": null}
+292 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 78, "drinking_status": 2, "target_connections": 16, "space": null}
+293 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 32, "drinking_status": 1, "target_connections": 15, "space": null}
+294 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 52, "drinking_status": 3, "target_connections": 11, "space": null}
+295 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 60, "drinking_status": 4, "target_connections": 18, "space": null}
+296 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 70, "drinking_status": 4, "target_connections": 19, "space": null}
+297 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 3, "target_connections": 16, "space": null}
+298 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 77, "drinking_status": 3, "target_connections": 13, "space": null}
+299 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 42, "drinking_status": 2, "target_connections": 11, "space": null}
+300 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 28, "drinking_status": 3, "target_connections": 12, "space": null}
+301 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 27, "drinking_status": 0, "target_connections": 13, "space": null}
+302 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 68, "drinking_status": 2, "target_connections": 19, "space": null}
+303 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 67, "drinking_status": 0, "target_connections": 12, "space": null}
+304 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 4, "target_connections": 13, "space": null}
+305 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 37, "drinking_status": 2, "target_connections": 13, "space": null}
+306 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 70, "drinking_status": 0, "target_connections": 12, "space": null}
+307 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 35, "drinking_status": 3, "target_connections": 15, "space": null}
+308 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 32, "drinking_status": 0, "target_connections": 14, "space": null}
+309 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 38, "drinking_status": 2, "target_connections": 15, "space": null}
+310 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 77, "drinking_status": 4, "target_connections": 19, "space": null}
+311 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 42, "drinking_status": 3, "target_connections": 13, "space": null}
+312 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 77, "drinking_status": 1, "target_connections": 18, "space": null}
+313 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 28, "drinking_status": 2, "target_connections": 18, "space": null}
+314 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 53, "drinking_status": 3, "target_connections": 10, "space": null}
+315 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 63, "drinking_status": 4, "target_connections": 16, "space": null}
+316 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 60, "drinking_status": 2, "target_connections": 17, "space": null}
+317 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 21, "drinking_status": 4, "target_connections": 12, "space": null}
+318 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 52, "drinking_status": 3, "target_connections": 15, "space": null}
+319 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 75, "drinking_status": 1, "target_connections": 13, "space": null}
+320 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 23, "drinking_status": 1, "target_connections": 17, "space": null}
+321 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 61, "drinking_status": 4, "target_connections": 12, "space": null}
+322 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 18, "drinking_status": 4, "target_connections": 12, "space": null}
+323 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 54, "drinking_status": 4, "target_connections": 19, "space": null}
+324 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 40, "drinking_status": 0, "target_connections": 16, "space": null}
+325 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 18, "drinking_status": 1, "target_connections": 19, "space": null}
+326 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 74, "drinking_status": 2, "target_connections": 10, "space": null}
+327 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 50, "drinking_status": 4, "target_connections": 13, "space": null}
+328 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 38, "drinking_status": 3, "target_connections": 12, "space": null}
+329 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 65, "drinking_status": 3, "target_connections": 12, "space": null}
+330 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 55, "drinking_status": 2, "target_connections": 13, "space": null}
+331 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 0, "target_connections": 15, "space": null}
+332 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 20, "drinking_status": 0, "target_connections": 18, "space": null}
+333 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 56, "drinking_status": 2, "target_connections": 19, "space": null}
+334 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 45, "drinking_status": 2, "target_connections": 14, "space": null}
+335 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 65, "drinking_status": 3, "target_connections": 12, "space": null}
+336 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 30, "drinking_status": 2, "target_connections": 16, "space": null}
+337 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 44, "drinking_status": 1, "target_connections": 14, "space": null}
+338 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 47, "drinking_status": 0, "target_connections": 16, "space": null}
+339 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 56, "drinking_status": 4, "target_connections": 16, "space": null}
+340 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 22, "drinking_status": 4, "target_connections": 10, "space": null}
+341 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 61, "drinking_status": 3, "target_connections": 11, "space": null}
+342 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 32, "drinking_status": 4, "target_connections": 13, "space": null}
+343 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 46, "drinking_status": 4, "target_connections": 10, "space": null}
+344 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 41, "drinking_status": 1, "target_connections": 12, "space": null}
+345 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 27, "drinking_status": 2, "target_connections": 19, "space": null}
+346 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 33, "drinking_status": 2, "target_connections": 15, "space": null}
+347 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 27, "drinking_status": 4, "target_connections": 13, "space": null}
+348 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 28, "drinking_status": 3, "target_connections": 19, "space": null}
+349 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 56, "drinking_status": 2, "target_connections": 13, "space": null}
+350 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 79, "drinking_status": 4, "target_connections": 18, "space": null}
+351 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 50, "drinking_status": 4, "target_connections": 17, "space": null}
+352 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 30, "drinking_status": 0, "target_connections": 12, "space": null}
+353 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 41, "drinking_status": 0, "target_connections": 15, "space": null}
+354 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 32, "drinking_status": 3, "target_connections": 16, "space": null}
+355 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 68, "drinking_status": 0, "target_connections": 10, "space": null}
+356 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 44, "drinking_status": 1, "target_connections": 15, "space": null}
+357 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 23, "drinking_status": 1, "target_connections": 13, "space": null}
+358 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 69, "drinking_status": 3, "target_connections": 16, "space": null}
+359 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 49, "drinking_status": 2, "target_connections": 11, "space": null}
+360 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 25, "drinking_status": 4, "target_connections": 15, "space": null}
+361 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 37, "drinking_status": 3, "target_connections": 18, "space": null}
+362 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 53, "drinking_status": 1, "target_connections": 17, "space": null}
+363 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 25, "drinking_status": 1, "target_connections": 15, "space": null}
+364 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 57, "drinking_status": 1, "target_connections": 17, "space": null}
+365 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 48, "drinking_status": 1, "target_connections": 14, "space": null}
+366 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 31, "drinking_status": 3, "target_connections": 17, "space": null}
+367 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 50, "drinking_status": 1, "target_connections": 16, "space": null}
+368 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 31, "drinking_status": 0, "target_connections": 16, "space": null}
+369 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 30, "drinking_status": 3, "target_connections": 15, "space": null}
+370 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 21, "drinking_status": 4, "target_connections": 19, "space": null}
+371 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 69, "drinking_status": 2, "target_connections": 17, "space": null}
+372 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 59, "drinking_status": 4, "target_connections": 12, "space": null}
+373 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 68, "drinking_status": 1, "target_connections": 12, "space": null}
+374 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 51, "drinking_status": 2, "target_connections": 12, "space": null}
+375 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 26, "drinking_status": 4, "target_connections": 19, "space": null}
+376 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 52, "drinking_status": 2, "target_connections": 14, "space": null}
+377 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 70, "drinking_status": 3, "target_connections": 14, "space": null}
+378 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 29, "drinking_status": 3, "target_connections": 12, "space": null}
+379 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 23, "drinking_status": 2, "target_connections": 18, "space": null}
+380 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 79, "drinking_status": 0, "target_connections": 17, "space": null}
+381 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 73, "drinking_status": 2, "target_connections": 14, "space": null}
+382 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 55, "drinking_status": 0, "target_connections": 15, "space": null}
+383 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 41, "drinking_status": 1, "target_connections": 11, "space": null}
+384 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 23, "drinking_status": 2, "target_connections": 13, "space": null}
+385 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 45, "drinking_status": 3, "target_connections": 17, "space": null}
+386 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 78, "drinking_status": 1, "target_connections": 16, "space": null}
+387 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 19, "drinking_status": 4, "target_connections": 16, "space": null}
+388 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 11, "space": null}
+389 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 72, "drinking_status": 3, "target_connections": 19, "space": null}
+390 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 70, "drinking_status": 0, "target_connections": 10, "space": null}
+391 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 48, "drinking_status": 2, "target_connections": 16, "space": null}
+392 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 30, "drinking_status": 4, "target_connections": 19, "space": null}
+393 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 37, "drinking_status": 2, "target_connections": 19, "space": null}
+394 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 59, "drinking_status": 0, "target_connections": 19, "space": null}
+395 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 28, "drinking_status": 0, "target_connections": 13, "space": null}
+396 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 42, "drinking_status": 3, "target_connections": 14, "space": null}
+397 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 44, "drinking_status": 2, "target_connections": 19, "space": null}
+398 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 61, "drinking_status": 0, "target_connections": 11, "space": null}
+399 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 78, "drinking_status": 3, "target_connections": 19, "space": null}
+400 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 59, "drinking_status": 0, "target_connections": 10, "space": null}
+401 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 34, "drinking_status": 0, "target_connections": 16, "space": null}
+402 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 35, "drinking_status": 3, "target_connections": 19, "space": null}
+403 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 20, "drinking_status": 2, "target_connections": 17, "space": null}
+404 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 64, "drinking_status": 0, "target_connections": 11, "space": null}
+405 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 54, "drinking_status": 3, "target_connections": 12, "space": null}
+406 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 73, "drinking_status": 3, "target_connections": 13, "space": null}
+407 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 74, "drinking_status": 0, "target_connections": 14, "space": null}
+408 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 67, "drinking_status": 4, "target_connections": 15, "space": null}
+409 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 75, "drinking_status": 4, "target_connections": 19, "space": null}
+410 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 2, "target_connections": 15, "space": null}
+411 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 41, "drinking_status": 4, "target_connections": 11, "space": null}
+412 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 54, "drinking_status": 3, "target_connections": 17, "space": null}
+413 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 77, "drinking_status": 3, "target_connections": 18, "space": null}
+414 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 39, "drinking_status": 3, "target_connections": 18, "space": null}
+415 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 49, "drinking_status": 2, "target_connections": 10, "space": null}
+416 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 66, "drinking_status": 0, "target_connections": 18, "space": null}
+417 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 47, "drinking_status": 2, "target_connections": 17, "space": null}
+418 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 26, "drinking_status": 4, "target_connections": 14, "space": null}
+419 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 69, "drinking_status": 4, "target_connections": 11, "space": null}
+420 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 23, "drinking_status": 0, "target_connections": 15, "space": null}
+421 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 50, "drinking_status": 4, "target_connections": 14, "space": null}
+422 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 46, "drinking_status": 4, "target_connections": 14, "space": null}
+423 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 44, "drinking_status": 1, "target_connections": 13, "space": null}
+424 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 0, "target_connections": 12, "space": null}
+425 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 23, "drinking_status": 2, "target_connections": 12, "space": null}
+426 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 20, "drinking_status": 2, "target_connections": 13, "space": null}
+427 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 75, "drinking_status": 3, "target_connections": 10, "space": null}
+428 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 25, "drinking_status": 0, "target_connections": 13, "space": null}
+429 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 21, "drinking_status": 3, "target_connections": 17, "space": null}
+430 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 46, "drinking_status": 3, "target_connections": 15, "space": null}
+431 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 39, "drinking_status": 3, "target_connections": 13, "space": null}
+432 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 45, "drinking_status": 0, "target_connections": 19, "space": null}
+433 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 27, "drinking_status": 1, "target_connections": 18, "space": null}
+434 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 74, "drinking_status": 2, "target_connections": 19, "space": null}
+435 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 66, "drinking_status": 2, "target_connections": 14, "space": null}
+436 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 53, "drinking_status": 0, "target_connections": 13, "space": null}
+437 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 18, "drinking_status": 0, "target_connections": 17, "space": null}
+438 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 58, "drinking_status": 3, "target_connections": 19, "space": null}
+439 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 19, "drinking_status": 3, "target_connections": 15, "space": null}
+440 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 41, "drinking_status": 2, "target_connections": 13, "space": null}
+441 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 73, "drinking_status": 2, "target_connections": 16, "space": null}
+442 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 39, "drinking_status": 3, "target_connections": 13, "space": null}
+443 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 49, "drinking_status": 1, "target_connections": 12, "space": null}
+444 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 67, "drinking_status": 1, "target_connections": 16, "space": null}
+445 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 45, "drinking_status": 2, "target_connections": 10, "space": null}
+446 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 41, "drinking_status": 4, "target_connections": 18, "space": null}
+447 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 48, "drinking_status": 0, "target_connections": 19, "space": null}
+448 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 75, "drinking_status": 0, "target_connections": 10, "space": null}
+449 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 61, "drinking_status": 3, "target_connections": 16, "space": null}
+450 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 42, "drinking_status": 3, "target_connections": 15, "space": null}
+451 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 69, "drinking_status": 3, "target_connections": 10, "space": null}
+452 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 30, "drinking_status": 0, "target_connections": 11, "space": null}
+453 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 4, "target_connections": 17, "space": null}
+454 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 21, "drinking_status": 2, "target_connections": 13, "space": null}
+455 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 29, "drinking_status": 1, "target_connections": 10, "space": null}
+456 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 73, "drinking_status": 1, "target_connections": 13, "space": null}
+457 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 30, "drinking_status": 3, "target_connections": 15, "space": null}
+458 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 42, "drinking_status": 0, "target_connections": 12, "space": null}
+459 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 76, "drinking_status": 2, "target_connections": 18, "space": null}
+460 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 60, "drinking_status": 1, "target_connections": 14, "space": null}
+461 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 45, "drinking_status": 1, "target_connections": 17, "space": null}
+462 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 0, "target_connections": 13, "space": null}
+463 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 32, "drinking_status": 1, "target_connections": 15, "space": null}
+464 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 34, "drinking_status": 2, "target_connections": 15, "space": null}
+465 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 58, "drinking_status": 0, "target_connections": 17, "space": null}
+466 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 23, "drinking_status": 1, "target_connections": 14, "space": null}
+467 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 30, "drinking_status": 4, "target_connections": 12, "space": null}
+468 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 37, "drinking_status": 2, "target_connections": 19, "space": null}
+469 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 79, "drinking_status": 1, "target_connections": 13, "space": null}
+470 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 66, "drinking_status": 4, "target_connections": 11, "space": null}
+471 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 55, "drinking_status": 3, "target_connections": 17, "space": null}
+472 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 31, "drinking_status": 2, "target_connections": 14, "space": null}
+473 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 22, "drinking_status": 4, "target_connections": 11, "space": null}
+474 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 31, "drinking_status": 1, "target_connections": 19, "space": null}
+475 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 27, "drinking_status": 2, "target_connections": 12, "space": null}
+476 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 29, "drinking_status": 4, "target_connections": 10, "space": null}
+477 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 23, "drinking_status": 0, "target_connections": 12, "space": null}
+478 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 57, "drinking_status": 0, "target_connections": 17, "space": null}
+479 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 43, "drinking_status": 2, "target_connections": 16, "space": null}
+480 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 23, "drinking_status": 4, "target_connections": 12, "space": null}
+481 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 39, "drinking_status": 1, "target_connections": 17, "space": null}
+482 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 1, "target_connections": 10, "space": null}
+483 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 35, "drinking_status": 0, "target_connections": 13, "space": null}
+484 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 30, "drinking_status": 1, "target_connections": 15, "space": null}
+485 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 65, "drinking_status": 4, "target_connections": 11, "space": null}
+486 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 27, "drinking_status": 0, "target_connections": 15, "space": null}
+487 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 77, "drinking_status": 4, "target_connections": 19, "space": null}
+488 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 28, "drinking_status": 4, "target_connections": 14, "space": null}
+489 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 53, "drinking_status": 0, "target_connections": 18, "space": null}
+490 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 73, "drinking_status": 3, "target_connections": 15, "space": null}
+491 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 42, "drinking_status": 1, "target_connections": 15, "space": null}
+492 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 41, "drinking_status": 0, "target_connections": 18, "space": null}
+493 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 50, "drinking_status": 0, "target_connections": 19, "space": null}
+494 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 37, "drinking_status": 2, "target_connections": 17, "space": null}
+495 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 29, "drinking_status": 1, "target_connections": 11, "space": null}
+496 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 53, "drinking_status": 3, "target_connections": 14, "space": null}
+497 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 40, "drinking_status": 4, "target_connections": 18, "space": null}
+498 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 48, "drinking_status": 4, "target_connections": 19, "space": null}
+499 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 64, "drinking_status": 0, "target_connections": 15, "space": null}
+500 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 52, "drinking_status": 4, "target_connections": 15, "space": null}
+501 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 62, "drinking_status": 3, "target_connections": 10, "space": null}
+502 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 40, "drinking_status": 0, "target_connections": 11, "space": null}
+503 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 79, "drinking_status": 0, "target_connections": 15, "space": null}
+504 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 37, "drinking_status": 2, "target_connections": 10, "space": null}
+505 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 69, "drinking_status": 0, "target_connections": 10, "space": null}
+506 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 30, "drinking_status": 4, "target_connections": 10, "space": null}
+507 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 23, "drinking_status": 0, "target_connections": 15, "space": null}
+508 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 38, "drinking_status": 2, "target_connections": 19, "space": null}
+509 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 68, "drinking_status": 0, "target_connections": 19, "space": null}
+510 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 66, "drinking_status": 2, "target_connections": 14, "space": null}
+511 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 55, "drinking_status": 0, "target_connections": 13, "space": null}
+512 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 72, "drinking_status": 2, "target_connections": 19, "space": null}
+513 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 31, "drinking_status": 1, "target_connections": 16, "space": null}
+514 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 59, "drinking_status": 2, "target_connections": 13, "space": null}
+515 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 65, "drinking_status": 2, "target_connections": 16, "space": null}
+516 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 23, "drinking_status": 1, "target_connections": 10, "space": null}
+517 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 45, "drinking_status": 1, "target_connections": 10, "space": null}
+518 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 63, "drinking_status": 1, "target_connections": 16, "space": null}
+519 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 52, "drinking_status": 1, "target_connections": 17, "space": null}
+520 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 60, "drinking_status": 0, "target_connections": 15, "space": null}
+521 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 44, "drinking_status": 4, "target_connections": 18, "space": null}
+522 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 37, "drinking_status": 4, "target_connections": 11, "space": null}
+523 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 53, "drinking_status": 0, "target_connections": 15, "space": null}
+524 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 35, "drinking_status": 3, "target_connections": 10, "space": null}
+525 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 78, "drinking_status": 1, "target_connections": 17, "space": null}
+526 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 57, "drinking_status": 3, "target_connections": 15, "space": null}
+527 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 79, "drinking_status": 0, "target_connections": 13, "space": null}
+528 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 36, "drinking_status": 3, "target_connections": 16, "space": null}
+529 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 34, "drinking_status": 1, "target_connections": 19, "space": null}
+530 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 43, "drinking_status": 0, "target_connections": 16, "space": null}
+531 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 74, "drinking_status": 4, "target_connections": 15, "space": null}
+532 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 53, "drinking_status": 0, "target_connections": 16, "space": null}
+533 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 68, "drinking_status": 0, "target_connections": 14, "space": null}
+534 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 32, "drinking_status": 4, "target_connections": 11, "space": null}
+535 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 25, "drinking_status": 2, "target_connections": 18, "space": null}
+536 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 63, "drinking_status": 0, "target_connections": 14, "space": null}
+537 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 63, "drinking_status": 2, "target_connections": 18, "space": null}
+538 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 48, "drinking_status": 0, "target_connections": 12, "space": null}
+539 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 26, "drinking_status": 0, "target_connections": 14, "space": null}
+540 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 33, "drinking_status": 0, "target_connections": 10, "space": null}
+541 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 49, "drinking_status": 4, "target_connections": 11, "space": null}
+542 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 77, "drinking_status": 1, "target_connections": 17, "space": null}
+543 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 28, "drinking_status": 3, "target_connections": 17, "space": null}
+544 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 71, "drinking_status": 4, "target_connections": 17, "space": null}
+545 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 77, "drinking_status": 1, "target_connections": 11, "space": null}
+546 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 38, "drinking_status": 1, "target_connections": 12, "space": null}
+547 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 78, "drinking_status": 3, "target_connections": 15, "space": null}
+548 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 29, "drinking_status": 2, "target_connections": 13, "space": null}
+549 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 79, "drinking_status": 3, "target_connections": 12, "space": null}
+550 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 35, "drinking_status": 2, "target_connections": 12, "space": null}
+551 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 28, "drinking_status": 0, "target_connections": 18, "space": null}
+552 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 47, "drinking_status": 3, "target_connections": 12, "space": null}
+553 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 2, "target_connections": 17, "space": null}
+554 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 71, "drinking_status": 1, "target_connections": 19, "space": null}
+555 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 43, "drinking_status": 0, "target_connections": 17, "space": null}
+556 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 67, "drinking_status": 1, "target_connections": 13, "space": null}
+557 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 76, "drinking_status": 2, "target_connections": 16, "space": null}
+558 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 44, "drinking_status": 4, "target_connections": 11, "space": null}
+559 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 26, "drinking_status": 1, "target_connections": 13, "space": null}
+560 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 39, "drinking_status": 4, "target_connections": 15, "space": null}
+561 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 58, "drinking_status": 2, "target_connections": 14, "space": null}
+562 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 79, "drinking_status": 1, "target_connections": 13, "space": null}
+563 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 78, "drinking_status": 0, "target_connections": 10, "space": null}
+564 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 57, "drinking_status": 1, "target_connections": 18, "space": null}
+565 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 70, "drinking_status": 1, "target_connections": 16, "space": null}
+566 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 12, "space": null}
+567 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 31, "drinking_status": 1, "target_connections": 19, "space": null}
+568 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 56, "drinking_status": 0, "target_connections": 19, "space": null}
+569 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 39, "drinking_status": 3, "target_connections": 16, "space": null}
+570 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 33, "drinking_status": 3, "target_connections": 11, "space": null}
+571 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 45, "drinking_status": 2, "target_connections": 14, "space": null}
+572 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 27, "drinking_status": 4, "target_connections": 11, "space": null}
+573 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 72, "drinking_status": 2, "target_connections": 10, "space": null}
+574 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 52, "drinking_status": 1, "target_connections": 14, "space": null}
+575 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 52, "drinking_status": 1, "target_connections": 14, "space": null}
+576 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 74, "drinking_status": 0, "target_connections": 14, "space": null}
+577 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 28, "drinking_status": 4, "target_connections": 15, "space": null}
+578 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 79, "drinking_status": 2, "target_connections": 14, "space": null}
+579 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 47, "drinking_status": 2, "target_connections": 19, "space": null}
+580 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 43, "drinking_status": 4, "target_connections": 15, "space": null}
+581 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 55, "drinking_status": 4, "target_connections": 13, "space": null}
+582 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 40, "drinking_status": 4, "target_connections": 13, "space": null}
+583 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 73, "drinking_status": 0, "target_connections": 14, "space": null}
+584 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 44, "drinking_status": 1, "target_connections": 12, "space": null}
+585 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 44, "drinking_status": 3, "target_connections": 14, "space": null}
+586 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 61, "drinking_status": 4, "target_connections": 16, "space": null}
+587 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 44, "drinking_status": 1, "target_connections": 18, "space": null}
+588 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 64, "drinking_status": 2, "target_connections": 11, "space": null}
+589 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 30, "drinking_status": 1, "target_connections": 13, "space": null}
+590 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 37, "drinking_status": 1, "target_connections": 16, "space": null}
+591 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 19, "space": null}
+592 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 3, "target_connections": 17, "space": null}
+593 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 23, "drinking_status": 4, "target_connections": 11, "space": null}
+594 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 41, "drinking_status": 0, "target_connections": 14, "space": null}
+595 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 61, "drinking_status": 2, "target_connections": 16, "space": null}
+596 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 25, "drinking_status": 4, "target_connections": 15, "space": null}
+597 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 35, "drinking_status": 0, "target_connections": 14, "space": null}
+598 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 47, "drinking_status": 3, "target_connections": 15, "space": null}
+599 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 55, "drinking_status": 4, "target_connections": 10, "space": null}
+600 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 27, "drinking_status": 2, "target_connections": 18, "space": null}
+601 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 64, "drinking_status": 4, "target_connections": 10, "space": null}
+602 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 42, "drinking_status": 3, "target_connections": 19, "space": null}
+603 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 41, "drinking_status": 0, "target_connections": 17, "space": null}
+604 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 57, "drinking_status": 0, "target_connections": 12, "space": null}
+605 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 79, "drinking_status": 0, "target_connections": 19, "space": null}
+606 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 18, "drinking_status": 3, "target_connections": 18, "space": null}
+607 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 70, "drinking_status": 0, "target_connections": 17, "space": null}
+608 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 40, "drinking_status": 3, "target_connections": 11, "space": null}
+609 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 48, "drinking_status": 2, "target_connections": 11, "space": null}
+610 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 32, "drinking_status": 2, "target_connections": 12, "space": null}
+611 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 44, "drinking_status": 1, "target_connections": 15, "space": null}
+612 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 74, "drinking_status": 3, "target_connections": 13, "space": null}
+613 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 32, "drinking_status": 0, "target_connections": 11, "space": null}
+614 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 44, "drinking_status": 3, "target_connections": 16, "space": null}
+615 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 65, "drinking_status": 3, "target_connections": 15, "space": null}
+616 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 2, "target_connections": 11, "space": null}
+617 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 38, "drinking_status": 2, "target_connections": 16, "space": null}
+618 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 42, "drinking_status": 2, "target_connections": 12, "space": null}
+619 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 54, "drinking_status": 4, "target_connections": 13, "space": null}
+620 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 70, "drinking_status": 0, "target_connections": 19, "space": null}
+621 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 20, "drinking_status": 3, "target_connections": 16, "space": null}
+622 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 20, "drinking_status": 2, "target_connections": 10, "space": null}
+623 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 2, "target_connections": 19, "space": null}
+624 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 75, "drinking_status": 0, "target_connections": 16, "space": null}
+625 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 50, "drinking_status": 2, "target_connections": 12, "space": null}
+626 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 0, "target_connections": 15, "space": null}
+627 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 35, "drinking_status": 4, "target_connections": 13, "space": null}
+628 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 26, "drinking_status": 4, "target_connections": 11, "space": null}
+629 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 26, "drinking_status": 3, "target_connections": 19, "space": null}
+630 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 21, "drinking_status": 2, "target_connections": 15, "space": null}
+631 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 22, "drinking_status": 0, "target_connections": 15, "space": null}
+632 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 75, "drinking_status": 2, "target_connections": 16, "space": null}
+633 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 24, "drinking_status": 0, "target_connections": 18, "space": null}
+634 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 41, "drinking_status": 1, "target_connections": 16, "space": null}
+635 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 30, "drinking_status": 3, "target_connections": 10, "space": null}
+636 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 61, "drinking_status": 4, "target_connections": 11, "space": null}
+637 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 68, "drinking_status": 1, "target_connections": 12, "space": null}
+638 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 47, "drinking_status": 3, "target_connections": 15, "space": null}
+639 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 44, "drinking_status": 4, "target_connections": 13, "space": null}
+640 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 64, "drinking_status": 1, "target_connections": 14, "space": null}
+641 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 73, "drinking_status": 1, "target_connections": 16, "space": null}
+642 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 39, "drinking_status": 3, "target_connections": 17, "space": null}
+643 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 2, "target_connections": 13, "space": null}
+644 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 56, "drinking_status": 3, "target_connections": 19, "space": null}
+645 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 44, "drinking_status": 3, "target_connections": 16, "space": null}
+646 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 65, "drinking_status": 3, "target_connections": 11, "space": null}
+647 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 43, "drinking_status": 1, "target_connections": 11, "space": null}
+648 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 36, "drinking_status": 0, "target_connections": 16, "space": null}
+649 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 39, "drinking_status": 0, "target_connections": 18, "space": null}
+650 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 20, "drinking_status": 0, "target_connections": 15, "space": null}
+651 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 2, "target_connections": 10, "space": null}
+652 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 59, "drinking_status": 0, "target_connections": 10, "space": null}
+653 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 66, "drinking_status": 4, "target_connections": 16, "space": null}
+654 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 23, "drinking_status": 1, "target_connections": 11, "space": null}
+655 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 59, "drinking_status": 3, "target_connections": 17, "space": null}
+656 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 27, "drinking_status": 2, "target_connections": 15, "space": null}
+657 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 34, "drinking_status": 2, "target_connections": 12, "space": null}
+658 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 34, "drinking_status": 4, "target_connections": 19, "space": null}
+659 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 47, "drinking_status": 0, "target_connections": 10, "space": null}
+660 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 27, "drinking_status": 4, "target_connections": 15, "space": null}
+661 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 40, "drinking_status": 4, "target_connections": 12, "space": null}
+662 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 40, "drinking_status": 4, "target_connections": 18, "space": null}
+663 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 35, "drinking_status": 1, "target_connections": 14, "space": null}
+664 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 43, "drinking_status": 3, "target_connections": 15, "space": null}
+665 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 34, "drinking_status": 1, "target_connections": 15, "space": null}
+666 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 43, "drinking_status": 1, "target_connections": 12, "space": null}
+667 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 46, "drinking_status": 0, "target_connections": 11, "space": null}
+668 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 3, "target_connections": 14, "space": null}
+669 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 0, "target_connections": 19, "space": null}
+670 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 61, "drinking_status": 1, "target_connections": 18, "space": null}
+671 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 22, "drinking_status": 2, "target_connections": 14, "space": null}
+672 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 40, "drinking_status": 1, "target_connections": 18, "space": null}
+673 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 37, "drinking_status": 4, "target_connections": 10, "space": null}
+674 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 33, "drinking_status": 2, "target_connections": 15, "space": null}
+675 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 56, "drinking_status": 2, "target_connections": 19, "space": null}
+676 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 30, "drinking_status": 1, "target_connections": 14, "space": null}
+677 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 53, "drinking_status": 3, "target_connections": 15, "space": null}
+678 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 39, "drinking_status": 4, "target_connections": 14, "space": null}
+679 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 34, "drinking_status": 2, "target_connections": 15, "space": null}
+680 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 26, "drinking_status": 4, "target_connections": 11, "space": null}
+681 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 30, "drinking_status": 0, "target_connections": 15, "space": null}
+682 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 44, "drinking_status": 4, "target_connections": 14, "space": null}
+683 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 28, "drinking_status": 4, "target_connections": 10, "space": null}
+684 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 44, "drinking_status": 2, "target_connections": 12, "space": null}
+685 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 76, "drinking_status": 4, "target_connections": 11, "space": null}
+686 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 30, "drinking_status": 1, "target_connections": 16, "space": null}
+687 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 74, "drinking_status": 1, "target_connections": 15, "space": null}
+688 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 48, "drinking_status": 3, "target_connections": 12, "space": null}
+689 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 41, "drinking_status": 3, "target_connections": 11, "space": null}
+690 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 60, "drinking_status": 0, "target_connections": 11, "space": null}
+691 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 52, "drinking_status": 3, "target_connections": 16, "space": null}
+692 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 32, "drinking_status": 0, "target_connections": 12, "space": null}
+693 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 75, "drinking_status": 2, "target_connections": 13, "space": null}
+694 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 24, "drinking_status": 0, "target_connections": 19, "space": null}
+695 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 49, "drinking_status": 4, "target_connections": 12, "space": null}
+696 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 37, "drinking_status": 1, "target_connections": 18, "space": null}
+697 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 53, "drinking_status": 2, "target_connections": 19, "space": null}
+698 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 77, "drinking_status": 2, "target_connections": 13, "space": null}
+699 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 45, "drinking_status": 0, "target_connections": 11, "space": null}
+700 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 20, "drinking_status": 0, "target_connections": 12, "space": null}
+701 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 79, "drinking_status": 4, "target_connections": 19, "space": null}
+702 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 31, "drinking_status": 2, "target_connections": 16, "space": null}
+703 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 38, "drinking_status": 0, "target_connections": 10, "space": null}
+704 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 72, "drinking_status": 1, "target_connections": 11, "space": null}
+705 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 60, "drinking_status": 3, "target_connections": 12, "space": null}
+706 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 68, "drinking_status": 1, "target_connections": 14, "space": null}
+707 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 48, "drinking_status": 2, "target_connections": 19, "space": null}
+708 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 49, "drinking_status": 3, "target_connections": 19, "space": null}
+709 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 75, "drinking_status": 2, "target_connections": 16, "space": null}
+710 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 57, "drinking_status": 2, "target_connections": 19, "space": null}
+711 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 21, "drinking_status": 2, "target_connections": 16, "space": null}
+712 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 68, "drinking_status": 0, "target_connections": 13, "space": null}
+713 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 4, "target_connections": 17, "space": null}
+714 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 57, "drinking_status": 0, "target_connections": 11, "space": null}
+715 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 39, "drinking_status": 2, "target_connections": 11, "space": null}
+716 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 29, "drinking_status": 0, "target_connections": 11, "space": null}
+717 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 60, "drinking_status": 0, "target_connections": 18, "space": null}
+718 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 70, "drinking_status": 0, "target_connections": 18, "space": null}
+719 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 47, "drinking_status": 3, "target_connections": 10, "space": null}
+720 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 0, "target_connections": 10, "space": null}
+721 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 69, "drinking_status": 0, "target_connections": 17, "space": null}
+722 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 51, "drinking_status": 0, "target_connections": 10, "space": null}
+723 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 48, "drinking_status": 3, "target_connections": 15, "space": null}
+724 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 49, "drinking_status": 4, "target_connections": 15, "space": null}
+725 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 57, "drinking_status": 4, "target_connections": 16, "space": null}
+726 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 72, "drinking_status": 3, "target_connections": 12, "space": null}
+727 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 18, "drinking_status": 2, "target_connections": 15, "space": null}
+728 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 78, "drinking_status": 0, "target_connections": 19, "space": null}
+729 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 68, "drinking_status": 0, "target_connections": 14, "space": null}
+730 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 73, "drinking_status": 2, "target_connections": 19, "space": null}
+731 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 65, "drinking_status": 4, "target_connections": 18, "space": null}
+732 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 74, "drinking_status": 4, "target_connections": 13, "space": null}
+733 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 23, "drinking_status": 2, "target_connections": 19, "space": null}
+734 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 68, "drinking_status": 2, "target_connections": 10, "space": null}
+735 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 62, "drinking_status": 0, "target_connections": 16, "space": null}
+736 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 67, "drinking_status": 3, "target_connections": 19, "space": null}
+737 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 15, "space": null}
+738 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 3, "target_connections": 17, "space": null}
+739 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 35, "drinking_status": 1, "target_connections": 10, "space": null}
+740 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 28, "drinking_status": 0, "target_connections": 12, "space": null}
+741 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 54, "drinking_status": 2, "target_connections": 13, "space": null}
+742 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 41, "drinking_status": 1, "target_connections": 10, "space": null}
+743 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 68, "drinking_status": 3, "target_connections": 13, "space": null}
+744 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 21, "drinking_status": 4, "target_connections": 15, "space": null}
+745 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 62, "drinking_status": 3, "target_connections": 15, "space": null}
+746 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 43, "drinking_status": 2, "target_connections": 10, "space": null}
+747 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 44, "drinking_status": 0, "target_connections": 12, "space": null}
+748 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 49, "drinking_status": 4, "target_connections": 19, "space": null}
+749 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 30, "drinking_status": 4, "target_connections": 12, "space": null}
+750 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 32, "drinking_status": 0, "target_connections": 13, "space": null}
+751 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 65, "drinking_status": 3, "target_connections": 19, "space": null}
+752 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 77, "drinking_status": 1, "target_connections": 14, "space": null}
+753 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 65, "drinking_status": 3, "target_connections": 17, "space": null}
+754 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 42, "drinking_status": 4, "target_connections": 15, "space": null}
+755 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 74, "drinking_status": 2, "target_connections": 19, "space": null}
+756 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 19, "drinking_status": 4, "target_connections": 19, "space": null}
+757 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 24, "drinking_status": 4, "target_connections": 17, "space": null}
+758 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 49, "drinking_status": 0, "target_connections": 10, "space": null}
+759 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 46, "drinking_status": 3, "target_connections": 11, "space": null}
+760 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 50, "drinking_status": 4, "target_connections": 18, "space": null}
+761 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 32, "drinking_status": 4, "target_connections": 14, "space": null}
+762 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 59, "drinking_status": 1, "target_connections": 12, "space": null}
+763 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 26, "drinking_status": 1, "target_connections": 15, "space": null}
+764 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 52, "drinking_status": 2, "target_connections": 14, "space": null}
+765 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 33, "drinking_status": 1, "target_connections": 10, "space": null}
+766 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 31, "drinking_status": 0, "target_connections": 17, "space": null}
+767 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 68, "drinking_status": 4, "target_connections": 16, "space": null}
+768 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 35, "drinking_status": 1, "target_connections": 14, "space": null}
+769 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 64, "drinking_status": 0, "target_connections": 14, "space": null}
+770 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 45, "drinking_status": 2, "target_connections": 10, "space": null}
+771 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 22, "drinking_status": 1, "target_connections": 14, "space": null}
+772 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 60, "drinking_status": 1, "target_connections": 12, "space": null}
+773 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 25, "drinking_status": 4, "target_connections": 16, "space": null}
+774 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 62, "drinking_status": 3, "target_connections": 16, "space": null}
+775 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 61, "drinking_status": 4, "target_connections": 14, "space": null}
+776 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 22, "drinking_status": 2, "target_connections": 17, "space": null}
+777 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 76, "drinking_status": 1, "target_connections": 10, "space": null}
+778 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 68, "drinking_status": 2, "target_connections": 14, "space": null}
+779 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 51, "drinking_status": 1, "target_connections": 13, "space": null}
+780 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 33, "drinking_status": 0, "target_connections": 14, "space": null}
+781 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 70, "drinking_status": 4, "target_connections": 15, "space": null}
+782 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 46, "drinking_status": 3, "target_connections": 17, "space": null}
+783 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 40, "drinking_status": 2, "target_connections": 10, "space": null}
+784 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 48, "drinking_status": 1, "target_connections": 18, "space": null}
+785 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 62, "drinking_status": 0, "target_connections": 13, "space": null}
+786 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 62, "drinking_status": 2, "target_connections": 14, "space": null}
+787 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 67, "drinking_status": 1, "target_connections": 11, "space": null}
+788 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 38, "drinking_status": 4, "target_connections": 15, "space": null}
+789 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 23, "drinking_status": 1, "target_connections": 11, "space": null}
+790 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 56, "drinking_status": 3, "target_connections": 14, "space": null}
+791 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 18, "drinking_status": 2, "target_connections": 15, "space": null}
+792 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 54, "drinking_status": 0, "target_connections": 18, "space": null}
+793 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 67, "drinking_status": 1, "target_connections": 12, "space": null}
+794 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 55, "drinking_status": 1, "target_connections": 13, "space": null}
+795 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 47, "drinking_status": 2, "target_connections": 10, "space": null}
+796 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 32, "drinking_status": 3, "target_connections": 13, "space": null}
+797 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 40, "drinking_status": 1, "target_connections": 19, "space": null}
+798 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 31, "drinking_status": 4, "target_connections": 17, "space": null}
+799 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 46, "drinking_status": 3, "target_connections": 13, "space": null}
+800 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 67, "drinking_status": 2, "target_connections": 11, "space": null}
+801 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 32, "drinking_status": 2, "target_connections": 14, "space": null}
+802 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 73, "drinking_status": 3, "target_connections": 16, "space": null}
+803 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 70, "drinking_status": 0, "target_connections": 13, "space": null}
+804 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 28, "drinking_status": 4, "target_connections": 10, "space": null}
+805 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 63, "drinking_status": 3, "target_connections": 12, "space": null}
+806 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 31, "drinking_status": 1, "target_connections": 18, "space": null}
+807 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 40, "drinking_status": 2, "target_connections": 17, "space": null}
+808 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 41, "drinking_status": 1, "target_connections": 12, "space": null}
+809 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 24, "drinking_status": 3, "target_connections": 10, "space": null}
+810 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 52, "drinking_status": 4, "target_connections": 12, "space": null}
+811 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 56, "drinking_status": 4, "target_connections": 13, "space": null}
+812 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 46, "drinking_status": 4, "target_connections": 10, "space": null}
+813 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 78, "drinking_status": 1, "target_connections": 19, "space": null}
+814 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 66, "drinking_status": 0, "target_connections": 13, "space": null}
+815 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 28, "drinking_status": 4, "target_connections": 18, "space": null}
+816 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 38, "drinking_status": 0, "target_connections": 13, "space": null}
+817 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 28, "drinking_status": 1, "target_connections": 18, "space": null}
+818 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 34, "drinking_status": 3, "target_connections": 15, "space": null}
+819 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 34, "drinking_status": 0, "target_connections": 18, "space": null}
+820 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 0, "target_connections": 14, "space": null}
+821 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 71, "drinking_status": 1, "target_connections": 18, "space": null}
+822 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 54, "drinking_status": 1, "target_connections": 13, "space": null}
+823 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 34, "drinking_status": 2, "target_connections": 13, "space": null}
+824 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 47, "drinking_status": 2, "target_connections": 18, "space": null}
+825 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 44, "drinking_status": 1, "target_connections": 11, "space": null}
+826 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 51, "drinking_status": 2, "target_connections": 13, "space": null}
+827 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 17, "space": null}
+828 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 54, "drinking_status": 0, "target_connections": 13, "space": null}
+829 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 63, "drinking_status": 1, "target_connections": 14, "space": null}
+830 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 22, "drinking_status": 0, "target_connections": 11, "space": null}
+831 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 24, "drinking_status": 4, "target_connections": 11, "space": null}
+832 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 60, "drinking_status": 4, "target_connections": 15, "space": null}
+833 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 63, "drinking_status": 0, "target_connections": 15, "space": null}
+834 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 63, "drinking_status": 4, "target_connections": 19, "space": null}
+835 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 35, "drinking_status": 4, "target_connections": 13, "space": null}
+836 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 18, "drinking_status": 3, "target_connections": 12, "space": null}
+837 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 51, "drinking_status": 0, "target_connections": 13, "space": null}
+838 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 76, "drinking_status": 4, "target_connections": 10, "space": null}
+839 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 51, "drinking_status": 4, "target_connections": 10, "space": null}
+840 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 50, "drinking_status": 3, "target_connections": 14, "space": null}
+841 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 62, "drinking_status": 2, "target_connections": 13, "space": null}
+842 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 19, "space": null}
+843 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 76, "drinking_status": 0, "target_connections": 10, "space": null}
+844 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 55, "drinking_status": 4, "target_connections": 13, "space": null}
+845 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 44, "drinking_status": 3, "target_connections": 13, "space": null}
+846 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 38, "drinking_status": 3, "target_connections": 18, "space": null}
+847 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 20, "drinking_status": 1, "target_connections": 11, "space": null}
+848 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 59, "drinking_status": 2, "target_connections": 18, "space": null}
+849 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 45, "drinking_status": 4, "target_connections": 12, "space": null}
+850 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 64, "drinking_status": 1, "target_connections": 15, "space": null}
+851 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 21, "drinking_status": 0, "target_connections": 19, "space": null}
+852 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 64, "drinking_status": 3, "target_connections": 17, "space": null}
+853 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 65, "drinking_status": 0, "target_connections": 13, "space": null}
+854 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 29, "drinking_status": 1, "target_connections": 17, "space": null}
+855 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 59, "drinking_status": 0, "target_connections": 18, "space": null}
+856 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 73, "drinking_status": 2, "target_connections": 12, "space": null}
+857 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 61, "drinking_status": 0, "target_connections": 13, "space": null}
+858 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 54, "drinking_status": 3, "target_connections": 17, "space": null}
+859 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 68, "drinking_status": 3, "target_connections": 13, "space": null}
+860 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 38, "drinking_status": 3, "target_connections": 19, "space": null}
+861 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 63, "drinking_status": 3, "target_connections": 11, "space": null}
+862 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 39, "drinking_status": 0, "target_connections": 19, "space": null}
+863 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 36, "drinking_status": 2, "target_connections": 18, "space": null}
+864 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 32, "drinking_status": 1, "target_connections": 16, "space": null}
+865 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 55, "drinking_status": 0, "target_connections": 17, "space": null}
+866 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 23, "drinking_status": 2, "target_connections": 14, "space": null}
+867 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 22, "drinking_status": 3, "target_connections": 15, "space": null}
+868 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 24, "drinking_status": 1, "target_connections": 10, "space": null}
+869 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 59, "drinking_status": 2, "target_connections": 13, "space": null}
+870 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 79, "drinking_status": 2, "target_connections": 15, "space": null}
+871 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 55, "drinking_status": 2, "target_connections": 11, "space": null}
+872 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 57, "drinking_status": 2, "target_connections": 12, "space": null}
+873 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 25, "drinking_status": 1, "target_connections": 18, "space": null}
+874 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 25, "drinking_status": 1, "target_connections": 11, "space": null}
+875 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 22, "drinking_status": 0, "target_connections": 13, "space": null}
+876 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 41, "drinking_status": 2, "target_connections": 11, "space": null}
+877 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 19, "drinking_status": 2, "target_connections": 19, "space": null}
+878 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 27, "drinking_status": 0, "target_connections": 15, "space": null}
+879 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 76, "drinking_status": 0, "target_connections": 15, "space": null}
+880 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 42, "drinking_status": 0, "target_connections": 10, "space": null}
+881 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 30, "drinking_status": 2, "target_connections": 12, "space": null}
+882 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 76, "drinking_status": 1, "target_connections": 18, "space": null}
+883 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 38, "drinking_status": 0, "target_connections": 19, "space": null}
+884 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 64, "drinking_status": 3, "target_connections": 10, "space": null}
+885 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 21, "drinking_status": 3, "target_connections": 18, "space": null}
+886 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 36, "drinking_status": 4, "target_connections": 19, "space": null}
+887 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 54, "drinking_status": 2, "target_connections": 14, "space": null}
+888 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 66, "drinking_status": 3, "target_connections": 18, "space": null}
+889 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 66, "drinking_status": 3, "target_connections": 12, "space": null}
+890 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 49, "drinking_status": 0, "target_connections": 17, "space": null}
+891 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 58, "drinking_status": 2, "target_connections": 15, "space": null}
+892 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 30, "drinking_status": 4, "target_connections": 10, "space": null}
+893 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 60, "drinking_status": 4, "target_connections": 12, "space": null}
+894 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 44, "drinking_status": 2, "target_connections": 15, "space": null}
+895 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 64, "drinking_status": 2, "target_connections": 13, "space": null}
+896 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 58, "drinking_status": 1, "target_connections": 16, "space": null}
+897 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 24, "drinking_status": 4, "target_connections": 13, "space": null}
+898 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 42, "drinking_status": 3, "target_connections": 19, "space": null}
+899 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 21, "drinking_status": 3, "target_connections": 13, "space": null}
+900 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 52, "drinking_status": 2, "target_connections": 16, "space": null}
+901 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 62, "drinking_status": 3, "target_connections": 17, "space": null}
+902 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 42, "drinking_status": 2, "target_connections": 14, "space": null}
+903 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 62, "drinking_status": 2, "target_connections": 16, "space": null}
+904 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 77, "drinking_status": 0, "target_connections": 14, "space": null}
+905 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 73, "drinking_status": 2, "target_connections": 15, "space": null}
+906 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 46, "drinking_status": 4, "target_connections": 18, "space": null}
+907 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 67, "drinking_status": 3, "target_connections": 15, "space": null}
+908 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 79, "drinking_status": 0, "target_connections": 18, "space": null}
+909 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 27, "drinking_status": 0, "target_connections": 15, "space": null}
+910 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 27, "drinking_status": 2, "target_connections": 16, "space": null}
+911 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 33, "drinking_status": 2, "target_connections": 18, "space": null}
+912 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 78, "drinking_status": 1, "target_connections": 11, "space": null}
+913 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 23, "drinking_status": 1, "target_connections": 14, "space": null}
+914 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 26, "drinking_status": 2, "target_connections": 14, "space": null}
+915 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 73, "drinking_status": 4, "target_connections": 15, "space": null}
+916 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 18, "drinking_status": 4, "target_connections": 18, "space": null}
+917 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 45, "drinking_status": 0, "target_connections": 16, "space": null}
+918 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 41, "drinking_status": 1, "target_connections": 16, "space": null}
+919 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 30, "drinking_status": 3, "target_connections": 17, "space": null}
+920 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 74, "drinking_status": 0, "target_connections": 19, "space": null}
+921 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 39, "drinking_status": 3, "target_connections": 17, "space": null}
+922 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 52, "drinking_status": 0, "target_connections": 19, "space": null}
+923 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 70, "drinking_status": 4, "target_connections": 15, "space": null}
+924 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 64, "drinking_status": 0, "target_connections": 10, "space": null}
+925 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 67, "drinking_status": 0, "target_connections": 10, "space": null}
+926 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 49, "drinking_status": 4, "target_connections": 15, "space": null}
+927 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 58, "drinking_status": 4, "target_connections": 10, "space": null}
+928 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 26, "drinking_status": 2, "target_connections": 12, "space": null}
+929 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 46, "drinking_status": 2, "target_connections": 11, "space": null}
+930 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 38, "drinking_status": 0, "target_connections": 10, "space": null}
+931 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 70, "drinking_status": 2, "target_connections": 16, "space": null}
+932 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 63, "drinking_status": 0, "target_connections": 12, "space": null}
+933 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 79, "drinking_status": 2, "target_connections": 13, "space": null}
+934 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 71, "drinking_status": 4, "target_connections": 11, "space": null}
+935 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 45, "drinking_status": 1, "target_connections": 18, "space": null}
+936 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 64, "drinking_status": 3, "target_connections": 14, "space": null}
+937 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 23, "drinking_status": 4, "target_connections": 14, "space": null}
+938 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 64, "drinking_status": 0, "target_connections": 15, "space": null}
+939 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 44, "drinking_status": 2, "target_connections": 17, "space": null}
+940 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 38, "drinking_status": 0, "target_connections": 14, "space": null}
+941 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 50, "drinking_status": 0, "target_connections": 16, "space": null}
+942 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 73, "drinking_status": 0, "target_connections": 14, "space": null}
+943 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 41, "drinking_status": 1, "target_connections": 11, "space": null}
+944 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 63, "drinking_status": 0, "target_connections": 10, "space": null}
+945 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 23, "drinking_status": 1, "target_connections": 14, "space": null}
+946 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 19, "drinking_status": 4, "target_connections": 18, "space": null}
+947 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 24, "drinking_status": 3, "target_connections": 14, "space": null}
+948 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 64, "drinking_status": 3, "target_connections": 11, "space": null}
+949 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 21, "drinking_status": 1, "target_connections": 19, "space": null}
+950 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 67, "drinking_status": 1, "target_connections": 13, "space": null}
+951 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 40, "drinking_status": 0, "target_connections": 10, "space": null}
+952 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 58, "drinking_status": 2, "target_connections": 16, "space": null}
+953 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 38, "drinking_status": 0, "target_connections": 18, "space": null}
+954 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 68, "drinking_status": 4, "target_connections": 11, "space": null}
+955 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 28, "drinking_status": 3, "target_connections": 12, "space": null}
+956 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 68, "drinking_status": 1, "target_connections": 13, "space": null}
+957 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 44, "drinking_status": 1, "target_connections": 16, "space": null}
+958 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 35, "drinking_status": 0, "target_connections": 12, "space": null}
+959 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 36, "drinking_status": 2, "target_connections": 11, "space": null}
+960 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 25, "drinking_status": 2, "target_connections": 18, "space": null}
+961 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 60, "drinking_status": 1, "target_connections": 19, "space": null}
+962 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 65, "drinking_status": 4, "target_connections": 10, "space": null}
+963 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 58, "drinking_status": 2, "target_connections": 18, "space": null}
+964 0 0 {"deprivation_quintile": 1, "sex": 0, "age": 30, "drinking_status": 1, "target_connections": 17, "space": null}
+965 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 20, "drinking_status": 2, "target_connections": 18, "space": null}
+966 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 77, "drinking_status": 2, "target_connections": 18, "space": null}
+967 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 79, "drinking_status": 3, "target_connections": 17, "space": null}
+968 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 53, "drinking_status": 2, "target_connections": 15, "space": null}
+969 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 56, "drinking_status": 4, "target_connections": 16, "space": null}
+970 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 70, "drinking_status": 0, "target_connections": 11, "space": null}
+971 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 50, "drinking_status": 2, "target_connections": 10, "space": null}
+972 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 29, "drinking_status": 1, "target_connections": 16, "space": null}
+973 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 46, "drinking_status": 3, "target_connections": 15, "space": null}
+974 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 20, "drinking_status": 3, "target_connections": 15, "space": null}
+975 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 59, "drinking_status": 0, "target_connections": 16, "space": null}
+976 0 0 {"deprivation_quintile": 3, "sex": 1, "age": 22, "drinking_status": 3, "target_connections": 17, "space": null}
+977 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 71, "drinking_status": 0, "target_connections": 18, "space": null}
+978 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 36, "drinking_status": 2, "target_connections": 14, "space": null}
+979 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 25, "drinking_status": 2, "target_connections": 11, "space": null}
+980 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 41, "drinking_status": 3, "target_connections": 18, "space": null}
+981 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 64, "drinking_status": 4, "target_connections": 19, "space": null}
+982 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 71, "drinking_status": 2, "target_connections": 19, "space": null}
+983 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 46, "drinking_status": 1, "target_connections": 16, "space": null}
+984 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 74, "drinking_status": 1, "target_connections": 13, "space": null}
+985 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 47, "drinking_status": 0, "target_connections": 13, "space": null}
+986 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 37, "drinking_status": 0, "target_connections": 17, "space": null}
+987 0 0 {"deprivation_quintile": 1, "sex": 1, "age": 43, "drinking_status": 0, "target_connections": 13, "space": null}
+988 0 0 {"deprivation_quintile": 3, "sex": 0, "age": 36, "drinking_status": 2, "target_connections": 11, "space": null}
+989 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 43, "drinking_status": 3, "target_connections": 17, "space": null}
+990 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 60, "drinking_status": 3, "target_connections": 18, "space": null}
+991 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 24, "drinking_status": 4, "target_connections": 13, "space": null}
+992 0 0 {"deprivation_quintile": 0, "sex": 0, "age": 78, "drinking_status": 0, "target_connections": 19, "space": null}
+993 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 36, "drinking_status": 3, "target_connections": 13, "space": null}
+994 0 0 {"deprivation_quintile": 2, "sex": 0, "age": 70, "drinking_status": 4, "target_connections": 18, "space": null}
+995 0 0 {"deprivation_quintile": 4, "sex": 1, "age": 57, "drinking_status": 0, "target_connections": 10, "space": null}
+996 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 65, "drinking_status": 0, "target_connections": 18, "space": null}
+997 0 0 {"deprivation_quintile": 0, "sex": 1, "age": 32, "drinking_status": 4, "target_connections": 18, "space": null}
+998 0 0 {"deprivation_quintile": 4, "sex": 0, "age": 49, "drinking_status": 0, "target_connections": 19, "space": null}
+999 0 0 {"deprivation_quintile": 2, "sex": 1, "age": 42, "drinking_status": 0, "target_connections": 10, "space": null}
+EDGES
+0 999
+0 559
+1 2
+2 3
+3 4
+4 5
+5 6
+6 598
+7 8
+8 908
+9 10
+9 627
+10 37
+11 12
+11 28
+11 338
+12 13
+13 14
+14 15
+15 16
+16 17
+16 277
+17 18
+17 748
+18 19
+18 577
+19 20
+19 60
+20 21
+21 22
+22 23
+23 24
+24 297
+24 775
+25 26
+26 27
+26 962
+27 28
+29 30
+30 31
+31 719
+32 33
+32 633
+32 753
+33 34
+33 181
+34 35
+35 36
+36 37
+36 510
+37 38
+37 93
+38 39
+39 40
+40 41
+40 832
+41 42
+42 847
+43 44
+43 705
+44 436
+45 46
+46 47
+46 378
+47 48
+48 49
+49 50
+49 584
+50 51
+51 906
+52 53
+53 54
+54 824
+55 56
+56 57
+56 398
+57 344
+58 59
+58 530
+59 60
+61 535
+62 63
+63 807
+64 65
+64 727
+64 954
+65 66
+66 67
+67 68
+67 598
+68 69
+68 688
+69 70
+69 981
+70 611
+71 124
+72 366
+73 74
+74 114
+74 762
+75 76
+76 77
+77 78
+78 79
+79 80
+80 572
+80 334
+81 82
+81 668
+82 83
+83 937
+84 85
+85 86
+86 87
+87 687
+88 89
+89 562
+90 91
+90 470
+91 92
+91 202
+92 93
+92 792
+94 95
+95 497
+95 799
+96 653
+97 98
+98 99
+99 100
+100 101
+101 102
+102 830
+103 554
+104 270
+105 106
+106 666
+107 108
+107 754
+108 109
+109 110
+110 111
+111 978
+112 977
+113 114
+114 115
+115 116
+116 117
+117 833
+117 517
+118 119
+119 120
+120 121
+121 122
+122 123
+123 124
+124 125
+125 126
+126 127
+127 128
+128 129
+129 545
+130 361
+131 132
+132 133
+133 134
+134 135
+135 136
+136 157
+137 138
+138 139
+139 140
+139 272
+140 141
+141 142
+142 143
+143 144
+144 765
+144 986
+145 146
+145 862
+146 147
+147 148
+147 944
+148 149
+149 150
+150 151
+151 152
+152 153
+153 154
+154 297
+155 156
+156 477
+157 450
+158 159
+158 778
+159 160
+160 161
+161 162
+162 163
+163 164
+164 552
+165 166
+166 167
+167 168
+168 169
+169 170
+170 171
+171 172
+172 173
+173 174
+174 175
+175 482
+176 177
+177 178
+178 179
+178 558
+179 180
+180 181
+182 183
+183 184
+184 185
+185 186
+186 187
+187 825
+188 189
+189 868
+190 191
+191 371
+192 878
+193 194
+194 195
+195 583
+196 197
+197 198
+197 613
+198 834
+199 200
+200 201
+200 893
+201 202
+202 827
+203 204
+204 205
+204 418
+205 881
+206 207
+207 208
+208 209
+209 210
+210 211
+211 212
+212 848
+213 214
+214 215
+215 216
+216 601
+217 218
+218 219
+218 874
+219 220
+220 221
+221 222
+222 764
+223 224
+223 503
+223 594
+224 225
+225 226
+225 437
+226 227
+227 469
+227 735
+228 229
+229 230
+230 231
+231 232
+232 233
+232 377
+233 980
+233 747
+234 235
+235 236
+235 654
+236 644
+237 238
+238 239
+239 753
+240 241
+241 834
+242 243
+243 244
+244 555
+244 934
+245 859
+246 333
+247 970
+248 249
+249 519
+250 729
+251 252
+252 253
+253 418
+253 973
+254 255
+255 256
+256 257
+257 413
+258 259
+258 645
+259 260
+260 261
+261 262
+262 499
+263 264
+264 265
+265 266
+266 267
+267 268
+267 421
+268 269
+269 270
+270 271
+271 272
+273 274
+274 275
+275 276
+276 277
+278 279
+279 280
+280 281
+280 869
+281 943
+282 283
+283 284
+283 644
+284 285
+285 512
+286 287
+287 288
+288 289
+288 504
+289 290
+290 291
+291 355
+292 293
+293 294
+293 800
+294 295
+295 296
+296 297
+296 339
+297 713
+298 299
+299 300
+300 301
+301 302
+302 303
+303 304
+304 305
+305 306
+306 307
+306 829
+307 308
+308 309
+308 673
+309 310
+310 311
+311 312
+312 313
+313 314
+314 315
+315 316
+316 526
+316 373
+317 318
+318 319
+319 320
+320 321
+321 322
+322 387
+323 324
+324 921
+325 326
+326 327
+327 328
+328 329
+329 330
+330 331
+331 332
+332 333
+333 334
+335 336
+335 460
+336 337
+337 338
+337 844
+340 341
+341 342
+342 343
+343 344
+344 345
+345 346
+346 347
+347 939
+348 349
+349 350
+350 351
+351 352
+352 353
+353 442
+354 355
+354 923
+355 356
+356 357
+357 358
+358 359
+359 360
+360 883
+361 362
+362 395
+363 364
+364 365
+365 366
+366 367
+367 368
+367 481
+367 955
+368 369
+369 370
+369 583
+370 371
+370 991
+371 372
+372 373
+372 609
+374 384
+375 376
+376 377
+379 380
+380 381
+381 382
+382 383
+383 384
+384 385
+385 386
+386 387
+387 388
+388 654
+389 390
+390 391
+391 392
+392 393
+392 551
+393 534
+394 823
+395 396
+396 397
+397 398
+397 765
+399 400
+400 401
+401 402
+402 403
+403 404
+404 405
+404 858
+405 406
+406 407
+407 623
+408 409
+408 848
+409 410
+409 830
+410 411
+410 915
+411 412
+412 413
+413 414
+414 415
+415 416
+416 417
+417 418
+419 420
+420 421
+421 674
+422 423
+423 424
+424 425
+425 426
+426 427
+427 428
+428 686
+429 430
+430 431
+431 432
+432 433
+433 434
+434 847
+435 436
+436 474
+438 439
+438 714
+439 440
+440 441
+441 442
+442 443
+443 801
+444 445
+445 446
+446 447
+447 561
+448 628
+449 450
+450 451
+451 452
+452 453
+452 455
+453 587
+454 455
+456 457
+457 617
+457 706
+458 459
+459 460
+460 966
+461 462
+461 700
+462 463
+463 464
+464 465
+464 581
+465 466
+466 730
+467 939
+468 469
+469 470
+469 730
+471 472
+472 473
+473 474
+474 475
+475 476
+476 477
+477 478
+478 479
+479 480
+479 596
+480 481
+482 483
+483 484
+484 668
+485 486
+486 684
+487 488
+488 701
+488 493
+488 918
+489 490
+490 491
+491 538
+492 493
+493 737
+494 495
+495 496
+495 528
+496 497
+497 498
+498 499
+499 500
+500 501
+501 502
+501 912
+502 503
+505 506
+506 701
+506 653
+507 508
+508 509
+508 773
+509 510
+510 623
+511 512
+512 513
+513 514
+514 515
+515 516
+516 517
+518 519
+519 981
+520 521
+520 591
+521 522
+522 523
+523 524
+524 525
+525 526
+526 527
+527 528
+529 530
+531 532
+532 533
+533 534
+534 535
+535 536
+536 537
+537 538
+538 539
+539 540
+540 541
+541 542
+542 543
+543 544
+544 558
+545 546
+546 547
+547 548
+548 549
+549 550
+550 551
+552 553
+553 554
+554 555
+555 721
+556 557
+557 558
+559 560
+560 561
+561 562
+562 563
+562 828
+563 564
+564 565
+565 566
+565 770
+566 567
+566 819
+567 568
+568 569
+569 570
+570 571
+571 572
+572 573
+573 574
+574 866
+575 576
+575 872
+576 577
+578 579
+579 580
+580 581
+582 583
+585 586
+586 587
+587 588
+588 589
+589 590
+590 591
+592 593
+593 594
+595 596
+597 598
+599 600
+600 631
+601 801
+602 603
+602 739
+603 604
+604 605
+605 606
+606 607
+607 608
+607 822
+607 854
+608 609
+610 611
+610 864
+611 612
+612 613
+612 813
+614 615
+615 616
+616 617
+617 618
+618 619
+619 698
+620 621
+620 946
+621 622
+621 650
+622 623
+624 625
+625 626
+626 627
+628 931
+629 630
+630 631
+631 632
+632 633
+634 635
+635 636
+636 637
+637 638
+638 639
+639 640
+640 641
+641 642
+642 643
+643 644
+646 647
+647 648
+648 649
+648 796
+649 650
+649 964
+650 859
+651 652
+652 653
+653 797
+655 705
+656 657
+657 658
+658 659
+659 660
+660 661
+661 957
+662 663
+662 781
+663 664
+664 665
+665 666
+666 667
+667 668
+669 670
+669 835
+670 671
+671 672
+672 673
+675 676
+676 677
+677 678
+678 679
+679 680
+680 681
+681 682
+682 683
+683 684
+684 882
+685 686
+686 687
+687 688
+687 957
+689 690
+690 691
+691 692
+692 693
+693 694
+694 695
+695 696
+696 697
+697 698
+698 699
+699 700
+701 702
+702 703
+703 704
+704 705
+707 708
+708 709
+709 710
+710 711
+711 712
+712 713
+713 714
+715 716
+716 717
+717 718
+717 972
+718 719
+719 720
+720 721
+721 722
+722 723
+723 724
+724 725
+725 726
+726 727
+728 800
+729 730
+731 732
+731 851
+732 733
+733 734
+734 735
+736 737
+738 739
+740 741
+741 742
+742 743
+743 898
+744 745
+745 746
+746 844
+747 870
+749 750
+750 751
+751 752
+752 753
+755 756
+756 757
+757 960
+758 759
+759 760
+760 761
+761 762
+763 764
+764 765
+764 921
+766 767
+767 768
+768 769
+769 770
+771 772
+772 773
+774 775
+776 777
+777 778
+779 780
+780 781
+782 783
+783 784
+784 785
+785 786
+786 787
+787 788
+788 789
+789 790
+790 791
+791 792
+793 794
+794 827
+795 796
+798 799
+801 802
+802 803
+803 804
+804 805
+805 914
+805 975
+806 807
+807 867
+808 809
+809 810
+810 811
+811 812
+812 813
+814 815
+815 816
+816 817
+817 818
+818 819
+820 821
+821 822
+823 824
+824 825
+825 826
+825 985
+826 827
+831 832
+832 876
+833 834
+834 835
+836 837
+837 838
+838 839
+839 840
+840 841
+841 842
+842 843
+843 844
+845 846
+846 847
+847 848
+849 850
+850 851
+852 853
+853 854
+855 856
+856 857
+857 858
+860 861
+861 862
+863 864
+865 866
+866 867
+867 868
+868 869
+871 872
+873 874
+875 876
+877 878
+878 879
+879 880
+880 881
+881 882
+882 883
+883 884
+884 885
+885 886
+886 887
+887 888
+888 889
+889 890
+890 891
+891 892
+892 980
+894 921
+895 896
+896 897
+897 898
+898 899
+899 900
+900 901
+901 902
+902 903
+903 904
+904 905
+905 906
+906 907
+907 908
+908 909
+909 910
+910 911
+911 991
+913 914
+914 915
+916 917
+917 918
+919 920
+920 921
+922 923
+924 925
+925 926
+926 927
+927 928
+928 929
+929 961
+930 931
+931 932
+932 933
+933 934
+935 936
+936 937
+937 938
+938 939
+939 940
+940 941
+941 942
+942 943
+943 944
+945 946
+947 948
+948 949
+949 950
+950 951
+951 952
+952 953
+953 954
+956 957
+958 959
+959 960
+960 961
+961 962
+963 964
+965 966
+967 968
+968 969
+969 970
+970 971
+971 972
+974 975
+976 977
+977 978
+978 979
+979 980
+980 981
+982 983
+983 984
+984 985
+987 988
+988 989
+989 990
+990 991
+992 993
+993 994
+994 995
+995 996
+996 997
+997 998
+998 999

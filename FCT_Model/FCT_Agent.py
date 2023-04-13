@@ -15,7 +15,7 @@ class FCT_Agent(MicroAgent):
     TYPE = 1
     #def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: int,  space):
 
-    def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, space):
+    def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, target_connections: int, space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
         self.__is_satisfied: bool = False
@@ -25,11 +25,17 @@ class FCT_Agent(MicroAgent):
         self.sex = sex
         self.age = age
         self.drinking_status = drinking_status
+        self.target_connections = target_connections
         self.space = space
         self.death_count = 0
+        
+        self.connections_array = []
+
+
         self.received_events = []
         self.solved_events = []
         self.unsolved_events = []
+        
 
         #self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
 
@@ -54,8 +60,11 @@ class FCT_Agent(MicroAgent):
     def get_agent_drinking_status(self) -> bool:
         return self.drinking_status
     
-    def get_satisfied_status(self) -> bool:
-        return self.__is_satisfied
+    def get_target_connections(self) -> int:
+        return self.target_connections
+    
+    def get_target_connections_array(self) -> List[int]:
+        return self.connections_array
     
     def get_space(self):
         return self.space
@@ -75,6 +84,12 @@ class FCT_Agent(MicroAgent):
     
     def set_agent_drinking_status(self, drinking_status: bool):
         self.drinking_status = drinking_status
+
+    def set_target_connections(self, target_connections: int):
+        self.target_connections = target_connections
+
+    def append_connections_array(self, connection: int):
+        self.connections_array.append(connection)
 
     def set_space(self, space):
         self.space = space

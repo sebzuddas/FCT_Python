@@ -115,6 +115,9 @@ class FundamentalCauseTheory(Theory):
     
     def get_mean_weekly_units(self) -> float:
         return self.__mean_weekly_units
+    
+    def get_education(self) -> int:
+        return self.__education
 
     #########################################################
     #Theory Setters

@@ -12,6 +12,10 @@ import repast4py
 import numpy as np
 from numpy import *
 
+from alive_progress import alive_bar
+
+import networkx as nx
+
 from core.Model import Model
 
 from Board import Board
@@ -34,6 +38,7 @@ class FCT_Model(Model):
         self.__context:repast4py.context.SharedContext = repast4py.context.SharedContext(comm)
         self.__rank:int = self.__comm.Get_rank()
         
+        
         # Model parameters that initialise the model 
         self.__props = params
         self.__stop_at:int = self.__props["stop.at"] if "stop.at" in params else 0
@@ -46,11 +51,19 @@ class FCT_Model(Model):
         self.__max_age: int = self.__props["max.age"] if "max.age" in params else 0
         self.__random_seed:int = self.__props["random.seed"] if "random.seed" in params else 0
 
+        self.__theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
+
         repast4py.random.init(rng_seed=self.__random_seed)# initialise pseudo-random number generator with the random seed from the props
         
 
-        #read_network(params["network.file"], self.__context, create_FCT_agent(i, self.__rank, deprivation_quintile_rand, agent_type, sex_rand, age_rand, drinking_status_rand, self.__discrete_space), FCT_Agent.restore_agent)
+        self.__network = repast4py.network.DirectedSharedNetwork('fct_network', self.__comm)
+        g = nx.connected_watts_strogatz_graph(self.__count_of_agents, 2, 0.25)# generate the network
+        fname = "FCT_Model/props/network/graph.txt"
+        write_network(g, 'FCT_network', fname, 1)# write the network to a file
         
+        
+
+        #read_network(params["network.file"], self.__context, create_FCT_agent(i, self.__rank, deprivation_quintile_rand, agent_type, sex_rand, age_rand, drinking_status_rand, self.__discrete_space), FCT_Agent.restore_agent)
         """
         #TODO Include other model parameters including 
             #TODO Distribution of agents that are wealthy
@@ -138,8 +151,6 @@ class FCT_Model(Model):
         # self.data_set.log(0)
         # self.meet_log.max_meets = self.meet_log.min_meets = self.meet_log.total_meets = 0
         # self.log_agents()
-
-
     ############################
     #MBSSM Mechanisms
 
@@ -160,7 +171,7 @@ class FCT_Model(Model):
         #     event = self.__communicator.generate_event('b')
         
         #Events generated based on a probability:
-        
+
 
         event = self.__communicator.generate_event('b')
 
@@ -171,14 +182,13 @@ class FCT_Model(Model):
             agent.call_action()
             #agent.communicate_event()
         
-        
-        
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
         self.__board.call_transformation()
 
     def run(self):
         self._runner.execute()
+        yield
     
     ############################
     #Schedules to do per different time rates.
@@ -200,7 +210,7 @@ class FCT_Model(Model):
             # stop when all agents are satisfied
             # if self.__board.get_avg_satisfaction() == 1:
             #     self._runner.stop()
-    
+
     def do_per_month(self):
         print('Do this per month')
 
@@ -216,19 +226,24 @@ class FCT_Model(Model):
     ############################
     #Initialisers
     def init_agents(self):
-
+        #TODO: add a correlation coefficients
+        # network = read_network(self.__props["network.file.updated"], self.__context, create_FCT_agent, restore_FCT_agent) 
+        # theory_vector = []
+        # rng_agents = np.random.default_rng(seed=self.__random_seed)  # create a default Generator instance
+        
         generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
-        theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
-        local_bounds = self.__discrete_space.get_local_bounds()
-        read_network(self.__props["network.file"], self.__context, create_FCT_agent, restore_FCT_agent)
-
-        rng_agents = np.random.default_rng(seed=self.__random_seed)  # create a default Generator instance
-        #print(self.__context.agents(count=self.__count_of_agents))
+        read_network(self.__props["network.file.updated"], self.__context, create_FCT_agent, restore_FCT_agent) 
 
         for agent in self.__context.agents(count=self.__count_of_agents):
+            
+            agent.set_space(self.__discrete_space)# place the agent on the discrete space
 
             dq = agent.get_deprivation_quintile()
-            id = agent.get_id()
+            # print(repast4py.network.DirectedSharedNetwork.num_edges(self.__network, agent))
+            # print(agent)
+            # print(self.__network.num_edges(agent))
+            # print(self.__network.num_edges(id))
+            
 
             random_dq_point = get_random_location(self.__props["board.props.file"], dq, self.__random_seed)
             initial_location = repast4py.space.DiscretePoint(random_dq_point[1], random_dq_point[0])
@@ -240,17 +255,8 @@ class FCT_Model(Model):
 
             # Move to the new location
             self.__discrete_space.move(agent, initial_location)
-
-
-            id = agent.get_agent_id()
-            theory = FundamentalCauseTheory(self.__context, theory_attributes[id]["mean_weekly_units"], theory_attributes[id]["education"], theory_attributes[id]["personal_wealth"], theory_attributes[id]["social_connections"], theory_attributes[id]["social_influence"], self.__discrete_space)
-            mediator = SocialTheoriesMediator([theory])
-            agent.set_mediator(mediator)
-            agent.set_space(self.__discrete_space)# place the agent on the discrete space
-            mediator.set_agent(agent)
-            #TODO: assign agents a location to start on
-
-            # print the initial state of the board
+            
+            yield
         self.__board.print_board_to_screen()
 
     def init_schedule(self):
@@ -271,20 +277,140 @@ class FCT_Model(Model):
         self._runner.schedule_repeating_event(1, 4, self.log_agents)
     
     def init_network(self):
-        pass
-    
-    # def init_communicator(self):
-    #     binary = 'b'
-    #     test = communicator.generate_event(binary)
-    #     print('test: ', test)
+        for agent_a in self.__context.agents(count=self.__count_of_agents, shuffle=False):
+        
+            rng = np.random.default_rng(seed=self.__random_seed)  # create a default Generator instance
+            agent_a_connection_array = agent_a.get_target_connections_array()
+            agent_a_target_connections = agent_a.get_target_connections()
+            
+            agent_a_connections = len(agent_a_connection_array)
+            iteration_count = 0
+            break_while = False
 
-    #     binary = 'h'
-    #     test = communicator.generate_event(binary)
-    #     print('test: ', test)
+            while agent_a_connections < agent_a_target_connections:
+                
+                # if break_while:
+                #     print('test')
+                #     break
 
-    #     event_list = communicator.get_event_list()
-    #     print(event_list)
-    #     exit()
+                
+                
+                if iteration_count > 10*self.__count_of_agents:#can't find a suitable agent to connect to
+                    break
+
+                agent_b_search_count = 0# to count over searched agents
+                for agent_b in self.__context.agents(count=self.__count_of_agents, shuffle=True):
+
+                    # if iteration_count > self.__count_of_agents:#can't find a suitable agent to connect to
+                    #     break_while = True
+                    #     break
+
+                    agent_a_id = agent_a.get_agent_id()
+                    agent_b_id = agent_b.get_agent_id()
+
+                    agent_b_target_connections = agent_b.get_target_connections()
+                    agent_b_connection_array = agent_b.get_target_connections_array()
+
+                    if agent_b_target_connections == len(agent_a_connection_array): # move onto next agent if the agent is already full
+                        break
+
+                    if agent_a == agent_b:# agent can't link to itself
+                        break
+
+                    # if agent_b_search_count == self.__count_of_agents:#can't find a suitable agent to connect to
+                    #     break
+                    
+
+                    dq_test = rng.integers(0, 100)
+                    dq_test_pass = False
+                    age_test = rng.integers(0, 100)
+                    age_test_pass = False
+                    sex_test = rng.integers(0, 100)
+                    sex_test_pass = False
+                    education_test = rng.integers(0, 100)
+                    education_test_pass = False
+                    drinking_status_test = rng.integers(0, 100)
+                    drinking_status_test_pass = False
+
+
+                    if agent_b.get_id() not in agent_a_connection_array and len(agent_b_connection_array) < agent_b_target_connections:#check agent b isn't in agent A's connection array
+                        # print(agent_a_id, agent_b_id)
+                        # if :#check agent b has space for more connections
+                            
+                        if dq_test <= 25:#25% of connections to be made within deprivation quintile
+                            if agent_b.get_deprivation_quintile() == agent_a.get_deprivation_quintile():
+                                dq_test_pass = True
+                            else:
+                                pass
+                        if age_test <= 82:#82% of connections to be made within age range
+                            if agent_a.get_agent_age() - 5 < agent_b.get_agent_age() and agent_b.get_agent_age() < agent_a.get_agent_age()+5:
+                                age_test_pass = True
+                            else:
+                                pass
+                        if sex_test <= 5:#5% of connections to be made wrt sex
+                                if agent_a.get_agent_sex() == agent_b.get_agent_sex():
+                                    sex_test_pass = True
+                                else:
+                                    pass
+                        if education_test <= 75:#75% of connections to be made wrt education
+                            if self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]:
+                                education_test_pass = True
+                            elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]+1:
+                                education_test_pass = True
+                            elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]-1:
+                                education_test_pass = True
+                            else: 
+                                pass
+                        if drinking_status_test <= 15:#15% of connections to be made wrt drinking status
+                            if agent_a.get_agent_drinking_status() == agent_b.get_agent_drinking_status():
+                                drinking_status_test_pass = True
+                            elif agent_a.get_agent_drinking_status()-1 == agent_b.get_agent_drinking_status():
+                                drinking_status_test_pass = True
+                            elif agent_a.get_agent_drinking_status()+1 == agent_b.get_agent_drinking_status():
+                                drinking_status_test_pass = True
+                            else:
+                                pass
+                        # if dq_test_pass == age_test_pass == sex_test_pass == education_test_pass == drinking_status_test_pass == True:#TODO: amend
+                        if dq_test_pass or age_test_pass or sex_test_pass or drinking_status_test_pass or education_test_pass == True:#TODO: amend
+                            # print(iteration_count)
+                            agent_b.append_connections_array(agent_a.get_id())
+                            agent_a.append_connections_array(agent_b.get_id())
+                            self.__network.add_edge(agent_a, agent_b, weight= rng.integers(1, 10)/10)
+                            print('AgentA', agent_a.get_id(), ' connections: ', self.__network.num_edges(agent_a),  '/', agent_a_target_connections)
+                            print('AgentB', agent_b.get_id(), ' connections: ', self.__network.num_edges(agent_b),  '/', agent_b_target_connections)
+                            iteration_count += 1
+                            agent_a_connections = len(agent_a.get_target_connections_array())
+                            
+                            if agent_a_connections == agent_a_target_connections:
+                                break
+                        
+                        else:
+                            pass
+
+                        # else:
+                        #     pass
+                    else:
+                        pass
+                    agent_a_connections = len(agent_a.get_target_connections_array())
+                    iteration_count += 1
+            
+            
+      
+            yield #for loading bar
+
+    def assign_theory(self):
+        self.__theory_attributes
+        
+        for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
+            id = agent.get_agent_id()
+            theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__theory_attributes[id]["social_connections"], self.__theory_attributes[id]["social_influence"], self.__discrete_space)
+            mediator = SocialTheoriesMediator([theory])
+            agent.set_mediator(mediator)
+            
+            mediator.set_agent(agent)
+            yield
+
+
     
     ############################
     #Loggers
@@ -307,8 +433,8 @@ class FCT_Model(Model):
 ############################################
 #Functions outside the class
 
-def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space):
-    return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, space)
+def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, target_connections, space):
+    return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, target_connections, space)
 
 # def create_Theory(model.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
 #     return FundamentalCauseTheory(self.__context, mean_weekly_units_rand, education_rand, personal_wealth_rand, 1, social_influence_rand, self.__discrete_space)
@@ -336,6 +462,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
         age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
         agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
         deprivation_quintile_rand = int(rng.integers(0, 5))# has to stay constant
+        target_connections_rand = int(rng.integers(10, 20))
 
         agent = {
             "agent_id": i,
@@ -345,6 +472,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
             "sex": sex_rand,
             "age": age_rand,
             "drinking_status": agent_drinking_status,
+            "target_connections": target_connections_rand,
             "space": None
         }
 
@@ -357,7 +485,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
         agent_data = json.load(infile)
 
     updated_lines = []
-    with open('FCT_Model/props/network/connected_watts_strogatz_graph.txt', 'r') as network_file:
+    with open('FCT_Model/props/network/graph.txt', 'r') as network_file:
         lines = network_file.readlines()
         for line in lines:
 
@@ -389,7 +517,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
                 updated_lines.append(line)
 
     # Write updated lines to a new file
-    with open('FCT_Model/props/network/connected_watts_strogatz_graph_updated.txt', 'w') as updated_network_file:
+    with open('FCT_Model/props/network/graph_updated.txt', 'w') as updated_network_file:
         updated_network_file.writelines(updated_lines)
     
     if get_data:
@@ -447,8 +575,7 @@ def generate_agent_distributions(type):
             dict["age"] = [18, 80]
             dict["drinking_status"] = [0, 5]
             return dict
-
-
+    
 #############################################################################
 #Theory Parameter Generation
 
@@ -456,13 +583,10 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
     rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
     theory_data = []
     theory_wealth_distribution_type = attributes["personal_wealth"][0]
-
     theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
     theory_weekly_units_highest = attributes["mean_weekly_units"][1]
-
     theory_education_lowest = attributes["education"][0]
     theory_education_highest = attributes["education"][1]
-
 
     #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
 
@@ -512,6 +636,9 @@ def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list],
         theory_data = json.load(infile)
     if get_data:
         return theory_data
+
+def generate_theory_vector(quintile):
+    pass
 
 def generate_theory_distributions(type):
 
