@@ -13,8 +13,6 @@ from core.MicroAgent import MicroAgent
 
 class FCT_Agent(MicroAgent):
     TYPE = 1
-    #def __init__(self, type:int, id:int, rank:int, deprivation_quintile:int, sex: bool, age: int, drinking_status: int,  space):
-
     def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, target_connections: int, space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
@@ -28,16 +26,12 @@ class FCT_Agent(MicroAgent):
         self.target_connections = target_connections
         self.space = space
         self.death_count = 0
-        
-        self.connections_array = []
 
+        self.connections_array = []
         self.received_events = []
         self.solved_events = []
         self.unsolved_events = []
         
-
-        #self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
-
     ##################################################################
     #Agent Getters
 
@@ -64,6 +58,9 @@ class FCT_Agent(MicroAgent):
     
     def get_target_connections_array(self) -> List[int]:
         return self.connections_array
+    
+    def get_agent_solved_events(self) -> List[int]:
+        return self.solved_events
     
     def get_space(self):
         return self.space
@@ -105,9 +102,9 @@ class FCT_Agent(MicroAgent):
         self.unsolved_events.remove([event, False])
         self.received_events.remove([event, False])
         self.received_events.append([event, True])
-        print('Solved:', self.solved_events)
-        print('Unsolved:', self.unsolved_events)
-        print('All received Events: ', self.received_events)
+        # print('Solved:', self.solved_events)
+        # print('Unsolved:', self.unsolved_events)
+        # print('All received Events: ', self.received_events)
 
 
     ####################################################################
@@ -159,10 +156,6 @@ class FCT_Agent(MicroAgent):
         self.unsolved_events.append([event, False])
         self.received_events.append([event, False])
         #print(self.received_events, self.get_id())
-
-    # def decode_event(self):
-    #     total_events = sum(self.received_events.values())
-    #     print(total_events)
 
     ####################################################################
     #Agent Package Methods

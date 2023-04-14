@@ -21,7 +21,7 @@ class FundamentalCauseTheory(Theory):
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth# money in the bank
-        self.__total_resources: int 
+        self.__total_resources: int
 
         #TODO: implement social influence
         #TODO: implement power 
@@ -71,7 +71,6 @@ class FundamentalCauseTheory(Theory):
 
     ######################################################
     #individual agent-level action mechanism methods
-        
 
     def calculate_resources(self):
         return self.__education + self.__personal_wealth + self.__social_connections#TODO: edit to ensure all FCT parameters are included
@@ -84,8 +83,6 @@ class FundamentalCauseTheory(Theory):
     def do_action(self):
         self.calculate_strategy_multiplier()
         self.calculate_resources()
-
-        
         #print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
 
     #########################################################

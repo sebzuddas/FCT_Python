@@ -40,14 +40,10 @@ class MicroAgent(repast4py.core.Agent, metaclass=ABCMeta):
     def set_mediator(self, mediator: TheoryMediator):
         self._mediator = mediator
     
-
-    #TODO: rename to call_situation
     def call_situation(self):
         if self._mediator is not None:
             self._mediator.mediate_situation()
 
-
-    #TODO: rename to call_action
     def call_action(self):
         if self._mediator is not None:
             self._mediator.mediate_action()

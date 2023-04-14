@@ -27,15 +27,13 @@ class SocialTheoriesMediator(TheoryMediator):
     
     def mediate_action(self):
         # trigger action mechanisms
-        event = self.agent.get_random_event()
-        
-        
-        returned_event = self._theory_list[0].decode_attempt(event)
+        event = self.agent.get_random_event()#get an event from the agents list of events
+        returned_event = self._theory_list[0].decode_attempt(event)# attempt to decode the event given FCT parameters
 
         if returned_event == None:
-            pass
+            pass# if the event is not decoded, do nothing, #TODO: check why it returns null
         elif returned_event[1] == True:
-            self.agent.set_solved_event(returned_event[0])
+            self.agent.set_solved_event(returned_event[0])#set the event as solved
 
         self._theory_list[0].do_action()
         self.agent.move()

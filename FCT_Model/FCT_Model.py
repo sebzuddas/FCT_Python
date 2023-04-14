@@ -165,8 +165,9 @@ class FCT_Model(Model):
         #     event = self.__communicator.generate_event('b')
         
         #Events generated based on a probability:
-
         event = self.__communicator.generate_event('b')
+
+        #TODO: sort the double for loop. 
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):
             agent.interpret_event(event)
@@ -176,10 +177,50 @@ class FCT_Model(Model):
             agent.call_situation()
         
     def do_action_mechanisms(self):
+        
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             agent.call_action()
+            
             #agent.communicate_event()
+        
+        for agent_a in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=False):
+            rng = np.random.default_rng(seed=self.__props["random.seed"])
+            # print(f'agent_a ID: {agent_a.get_agent_id()} and agent_b ID: {agent_b.get_agent_id()} are different agents')
+            agent_a_id = agent_a.get_agent_id()
+            agent_a_connection_array = agent_a.get_target_connections_array()
+            agent_a_solved_events = agent_a.get_agent_solved_events()
+
+            agent_b_id = rng.choice(agent_a_connection_array)
+            
+            print(f'agent a connection array: {agent_a_connection_array}')
+            print(f'agent a solved events: {agent_a_solved_events}')
+            print(f"agent a ID: {agent_a_id} and agent b ID: {agent_b_id} are connected agents \n")
+
+
+            agent_b = self.__context.agent(agent_b_id)
+            print(f"agent_b: {agent_b}, agent_b_id: {agent_b_id}, agent_a_id: {agent_a_id}")
+            
+            agent_b_solved_events = agent_b.get_agent_solved_events()
+            
+            if agent_a_solved_events != []:# only the first agent needs solved events
+                
+                agent_a_random_event = rng.choice(agent_a_solved_events)
+                print(f'agent a random event: {agent_a_random_event}')
+
+                if agent_b_solved_events == []:
+                    print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
+
+                elif agent_a_random_event not in agent_b_solved_events:
+                    print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
+
+                    # agent_a_solved_events = agent_a.get_agent_solved_events()
+                else:
+                    pass
+            else:
+                pass
+
+        
         
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
@@ -201,8 +242,7 @@ class FCT_Model(Model):
         # Only a single rank outputs the board
         
         if self.__rank == 0:
-            print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
-		
+
             # print board at the end (tick=mStopAt) or when all agents are satisfied (100% satisfaction)
             if current_tick == self.__stop_at:#or self.__board.get_avg_satisfaction() == 1
                 self.__board.print_board_to_screen()
@@ -402,6 +442,9 @@ class FCT_Model(Model):
         self.__theory_attributes
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
+            #TODO: add sum of edges to theory
+            # edge = g.graph.edges[agents[5], agents[6]]
+            # self.assertEqual(12, edge['weight'])
             id = agent.get_agent_id()
             #print(self.__network.num_edges(agent), agent.get_target_connections())
             #def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
