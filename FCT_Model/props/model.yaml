@@ -1,6 +1,6 @@
 # Model-related Parameters
 random.seed: 1
-stop.at: 5
+stop.at: 10
 count.of.agents: 1000
 board.size: 50
 threshold: 0.5

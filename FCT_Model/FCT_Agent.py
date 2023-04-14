@@ -69,8 +69,15 @@ class FCT_Agent(MicroAgent):
         return self.space
     
     def get_random_event(self):
-        if len(self.unsolved_events) != 0:
-            return random.choice(self.unsolved_events)
+
+        if len(self.unsolved_events) != 0:# ensure theres a list of events
+            i=0
+            while i<len(self.unsolved_events):
+                chosen_event = random.choice(self.unsolved_events)# choose a random event
+                if not chosen_event[1]: # check again that the event hasn't been solved. 
+                    return chosen_event[0] # return the event
+                else: 
+                    chosen_event = random.choice(self.unsolved_events)# choose a random event
         
     ##################################################################
     #Agent Setters
@@ -92,6 +99,15 @@ class FCT_Agent(MicroAgent):
 
     def set_space(self, space):
         self.space = space
+
+    def set_solved_event(self, event):
+        self.solved_events.append(event)
+        self.unsolved_events.remove([event, False])
+        self.received_events.remove([event, False])
+        self.received_events.append([event, True])
+        print('Solved:', self.solved_events)
+        print('Unsolved:', self.unsolved_events)
+        print('All received Events: ', self.received_events)
 
 
     ####################################################################
@@ -140,9 +156,8 @@ class FCT_Agent(MicroAgent):
         self.space.move(self, random_location)
  
     def interpret_event(self, event):
-        self.unsolved_events.append(event)
-        self.received_events.append(event)
-        
+        self.unsolved_events.append([event, False])
+        self.received_events.append([event, False])
         #print(self.received_events, self.get_id())
 
     # def decode_event(self):

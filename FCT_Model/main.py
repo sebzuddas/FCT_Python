@@ -25,6 +25,8 @@ import FCT_Model
 import SocialNetwork as sn
 
 def main():
+
+
     # Command line argument parsing
     parser = repast4py.parameters.create_args_parser()
     args = parser.parse_args()
@@ -53,7 +55,7 @@ def main():
             bar()
     
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Initialisation Complete! :smile: \n"))
-    time.sleep(0.5)
+    time.sleep(0.25)
     print(Style.RESET_ALL)
 
     
@@ -64,7 +66,7 @@ def main():
             time.sleep(0.0005)
             bar()
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Network Generated! :smile: \n"))
-    time.sleep(0.5)
+    time.sleep(0.25)
     print(Style.RESET_ALL)
 
     #############################################
@@ -75,7 +77,7 @@ def main():
             bar()
 
     print(emojis.encode(colorama.Fore.MAGENTA+"Agent Network Linked With Theory! :smile: \n"))
-    time.sleep(0.5)
+    time.sleep(0.25)
     print(Style.RESET_ALL)
 
     print(Back.LIGHTWHITE_EX)
@@ -91,19 +93,18 @@ def main():
     # Run the model
     print(Fore.LIGHTCYAN_EX + "Running Model")
     time.sleep(1)
+    
     model.run()
     
-    
-    with alive_bar(params.get("stop.at"), title="Running Model", bar='filling') as bar:
-        for current_tick in model.do_per_tick():
-
-            # year = tick / 52
-            # month = tick % 52
-            # if tick and tick % 52 == 0:
-            #     print("Year: ", year)
-            #     print("Month: ", month)
-            #     print("Week: ", tick)
-            bar()
+    # with alive_bar(params.get("stop.at"), title="Running Model", bar='filling') as bar:
+    #     for current_tick in model.do_per_tick():
+    #         # year = tick / 52
+    #         # month = tick % 52
+    #         # if tick and tick % 52 == 0:
+    #         #     print("Year: ", year)
+    #         #     print("Month: ", month)
+    #         #     print("Week: ", tick)
+    #         bar()
         
     
     

@@ -30,9 +30,14 @@ class SocialTheoriesMediator(TheoryMediator):
         event = self.agent.get_random_event()
         
         
-        self._theory_list[0].decode_attempt(event)
-        self._theory_list[0].do_action()
+        returned_event = self._theory_list[0].decode_attempt(event)
 
+        if returned_event == None:
+            pass
+        elif returned_event[1] == True:
+            self.agent.set_solved_event(returned_event[0])
+
+        self._theory_list[0].do_action()
         self.agent.move()
 
 

@@ -156,12 +156,6 @@ class FCT_Model(Model):
 
     def do_situational_mechanisms(self):
 
-        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
-            # TODO: call doSituation for each agent
-            agent.call_situation()
-        
-    def do_action_mechanisms(self):
-
         #TODO: for implementing different types of events
         # rng = np.random.default_rng()
         # event_type = rng.choice([0, 1], p=[1/2, 1/2])
@@ -172,11 +166,16 @@ class FCT_Model(Model):
         
         #Events generated based on a probability:
 
-
         event = self.__communicator.generate_event('b')
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):
             agent.interpret_event(event)
+
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
+            # TODO: call doSituation for each agent
+            agent.call_situation()
+        
+    def do_action_mechanisms(self):
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
             agent.call_action()
@@ -189,9 +188,7 @@ class FCT_Model(Model):
     def run(self):
 
         self._runner.execute()
-
-        
-    
+  
     ############################
     #Schedules to do per different time rates.
     def do_per_tick(self):# do these things every week. 
@@ -202,7 +199,7 @@ class FCT_Model(Model):
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
         # Only a single rank outputs the board
-        yield current_tick
+        
         if self.__rank == 0:
             print(f"Tick: {current_tick:.1f}\tSatisfaction: {self.__board.get_avg_satisfaction():.3f}\tSegregation index: {self.__board.get_segregation_index():.3f}")
 		
@@ -214,7 +211,6 @@ class FCT_Model(Model):
             # if self.__board.get_avg_satisfaction() == 1:
             #     self._runner.stop()
         
-
     def do_per_month(self):
         print('Do this per month')
 
