@@ -25,7 +25,7 @@ communicator.min.reach: 50
 
 #############
 #File locations
-tabular.logger: "outputs/tabular_logger_out.csv"
+tabular.logger: "FCT_Model/outputs/tabular_logger_out.csv"
 #reduce.type.logger: "outputs/reduce_type_logger.csv"
 network.file: "FCT_Model/props/network/graph.txt"
 network.file.updated: "FCT_Model/props/network/graph_updated.txt"

@@ -126,7 +126,7 @@ class FCT_Model(Model):
         #Predefined output method - records the parameters at the beginning of each run
         if self.__rank == 0:
             # Repast4py does not include a clear repast::properties::writeToSVFile, so this code block is equivalent
-            output_record_csv_path = pathlib.Path("outputs/record.csv")
+            output_record_csv_path = pathlib.Path("FCT_Model/outputs/record.csv")
             csv_row = ",".join([str(self.__props[key]) for key in sorted(self.__props.keys())]) + "\n"
             if output_record_csv_path.exists():
                 if output_record_csv_path.is_file():
@@ -223,7 +223,6 @@ class FCT_Model(Model):
             else:
                 pass
 
-        
         
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
@@ -458,8 +457,6 @@ class FCT_Model(Model):
             mediator.set_agent(agent)
             yield
 
-
-    
     ############################
     #Loggers
     
@@ -490,8 +487,6 @@ def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_st
 def restore_FCT_agent(agent_data):
     uid = agent_data[0]
     return FCT_Agent(uid[0], uid[1], uid[2], agent_data[1])
-
-
 
 #############################################################################
 #Network Generation
@@ -571,7 +566,6 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
     if get_data:
         return agent_data
     
-
 def generate_agent_distributions(type):
 
     dict = {"age": [], "drinking_status": []}

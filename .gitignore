@@ -3,5 +3,6 @@ FCT_Model/outputs/*
 outputs/*
 .venv/*
 .python-version
-.vscode/setting.json
+.vscode/*
+
 FCT_Model/props/model/model-*
