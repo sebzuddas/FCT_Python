@@ -199,20 +199,23 @@ class FCT_Model(Model):
 
             agent_b = self.__context.agent((agent_b_id, 1, 0))#Has to be entered in this format, gets agent b object
             agent_b_solved_events = agent_b.get_agent_solved_events()
+            # print(f'agent b solved events: {agent_b_solved_events}, agent a solved events: {agent_a_solved_events}')
             # print(agent_b.get_agent_id())
             # print(f"agent_b: {agent_b}, agent_b_id: {agent_b_id}, agent_a_id: {agent_a_id}")
             
             if agent_a_solved_events != []:# only the first agent needs solved events
                 
                 agent_a_random_event = rng.choice(agent_a_solved_events)
-                print(f'agent a random event: {agent_a_random_event}')
+                # print(f'agent a random event: {agent_a_random_event}')
 
                 if agent_b_solved_events == []:
-                    print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
+                    pass
+                    # print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
 
-                elif agent_a_random_event not in agent_b_solved_events.any():
+                elif not np.isin(agent_a_random_event, agent_b_solved_events).any():
                     print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
                     print(agent_b_solved_events)
+                    agent_a.set_solved_event(agent_a_random_event)
 
                     # agent_a_solved_events = agent_a.get_agent_solved_events()
                 else:

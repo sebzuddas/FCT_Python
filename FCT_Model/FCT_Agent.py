@@ -98,10 +98,15 @@ class FCT_Agent(MicroAgent):
         self.space = space
 
     def set_solved_event(self, event):
+        # print(f'\n {self.get_id()}')
+        # print('Solved:', self.solved_events)
+        # print('Unsolved:', self.unsolved_events)
+        # print('All received Events: ', self.received_events)
         self.solved_events.append(event)
         self.unsolved_events.remove([event, False])
         self.received_events.remove([event, False])
         self.received_events.append([event, True])
+        # print(f'\n {self.get_id()}')
         # print('Solved:', self.solved_events)
         # print('Unsolved:', self.unsolved_events)
         # print('All received Events: ', self.received_events)
