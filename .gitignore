@@ -6,3 +6,4 @@ outputs/*
 .vscode/setting.json
 
 
+FCT_Model/props/model/model-*

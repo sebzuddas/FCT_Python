@@ -16,24 +16,68 @@ import sys
 import os
 import click
 import colorama
+from colorama import Fore, Back, Style
 import emojis
 import subprocess
+import yaml
+from datetime import datetime
 
-colorama.init()
 
+
+
+
+####################  Functions  ####################
+
+def update_parameter(parameter_name, new_value, yaml_file):
+    with open('FCT_Model/props/model/model.yaml', 'r') as file:
+        params = yaml.safe_load(file)
+
+    params[parameter_name] = new_value
+
+    with open(yaml_file, 'w') as file:
+        yaml.safe_dump(params, file)
+
+
+# def main():
+#     #  while True:
+#     #     print(colorama.Fore.BLACK, colorama.Back.WHITE)
+#     #     print(emojis.encode("Welcome to the Fundamental Cause Theory Agent Based Model!🥳 \n"))
+#     #     # print(colorama.Style.RESET_ALL)
+#     #     command = input("Enter command (type 'exit' to quit): ")
+#     #     if command.lower() == 'exit':
+#     #         break
+    
 @click.group()
 def model():
     pass
 
 @model.command()
-#@click.argument('-r')
-@click.option('-r', default=False, help='Run the model in its default state')
-def run(**kwargs):
+@click.option('--param', default=None, help='Parameter to change, default is number of iterations (weeks)')
+@click.option('--value', default=None, help='New value for the parameter, if no given parameter this is the number of iterations')
+def run(param, value):
     print(emojis.encode(colorama.Fore.BLUE+"Attempting to run the model :confused: \n"))
     colorama.Fore.RESET  
- 
+
+    if param is not None and value is not None:
+        now = datetime.now()
+        dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
+        dynamic_props = props_file_location+"/model-"+str(param)+'-'+str(value)+'-'+dt_string+".yaml"
+        update_parameter(param+":", value, dynamic_props)
+        yaml_location = dynamic_props
+
+    elif value is not None:
+        now = datetime.now()
+        dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
+        dynamic_props = props_file_location+"/model-"+str(value)+'-'+dt_string+".yaml"
+        update_parameter("stop.at:", value, dynamic_props)
+        yaml_location = dynamic_props
+
+    else:
+        yaml_location = props_file_location+'/model.yaml'
+
+
     try:
-        subprocess.run(["python3" ,"FCT_Model/main.py", "FCT_Model/props/model.yaml"], check=True)
+        subprocess.run(["python3" ,"FCT_Model/main.py", yaml_location], check=True)
         print(emojis.encode(colorama.Fore.GREEN+"Model run successfully! :smirk: \n"))
         
     except(KeyboardInterrupt):
@@ -53,7 +97,6 @@ def data(**kwargs):
     print(emojis.encode(colorama.Fore.YELLOW+"Attempting to run data processing script:confused: \n"))
     colorama.Fore.RESET  
 
-
     try:
         subprocess.run(["python3" ,"Data_Processing/main.py"], check=True)    
         print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
@@ -63,7 +106,6 @@ def data(**kwargs):
     
     except subprocess.CalledProcessError as e:
         print(emojis.encode(colorama.Fore.RED+"Error: unable to display the graphs! :flushed: \n"))
-    
 
 @model.command()
 @click.option('-p', default=False, help='Run the model with the specified properties file')
@@ -71,17 +113,9 @@ def props(**kwargs):
     print(emojis.encode(colorama.Fore.BLUE+"Running the model with the specified properties file {0} :cow: ".format(kwargs['p'])))
     pass
 
-
-
-# @greet.command()
-# def hello(**kwargs):
-#     pass
-
-# @greet.command()
-# @click.argument('name')
-# @click.option('--count', default=1, help='Number of greetings.')
-# def goodbye(**kwargs):
-#     print("Goodbye, {0}".format(kwargs['name']))
-
 if __name__ == "__main__":
+    props_file_location = 'FCT_Model/props/model'
+    colorama.init()
     model()
+
+

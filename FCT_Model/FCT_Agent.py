@@ -103,8 +103,9 @@ class FCT_Agent(MicroAgent):
         # print('Unsolved:', self.unsolved_events)
         # print('All received Events: ', self.received_events)
         self.solved_events.append(event)
-        self.unsolved_events.remove([event, False])
-        self.received_events.remove([event, False])
+        if np.isin([event, False], self.received_events).any():#TODO: sort out this if statement
+            self.received_events.remove([event, False])
+            self.unsolved_events.remove([event, False])
         self.received_events.append([event, True])
         # print(f'\n {self.get_id()}')
         # print('Solved:', self.solved_events)
