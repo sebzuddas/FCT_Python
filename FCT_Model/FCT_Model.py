@@ -192,16 +192,15 @@ class FCT_Model(Model):
             agent_a_solved_events = agent_a.get_agent_solved_events()
 
             agent_b_id = rng.choice(agent_a_connection_array)
-            
-            print(f'agent a connection array: {agent_a_connection_array}')
-            print(f'agent a solved events: {agent_a_solved_events}')
-            print(f"agent a ID: {agent_a_id} and agent b ID: {agent_b_id} are connected agents \n")
+            # print(agent_a_connection_array)            
+            # print(f'agent a connection array: {agent_a_connection_array}')
+            # print(f'agent a solved events: {agent_a_solved_events}')
+            # print(f"agent a ID: {agent_a_id} and agent b ID: {agent_b_id} are connected agents \n")
 
-
-            agent_b = self.__context.agent(agent_b_id)
-            print(f"agent_b: {agent_b}, agent_b_id: {agent_b_id}, agent_a_id: {agent_a_id}")
-            
+            agent_b = self.__context.agent((agent_b_id, 1, 0))#Has to be entered in this format, gets agent b object
             agent_b_solved_events = agent_b.get_agent_solved_events()
+            # print(agent_b.get_agent_id())
+            # print(f"agent_b: {agent_b}, agent_b_id: {agent_b_id}, agent_a_id: {agent_a_id}")
             
             if agent_a_solved_events != []:# only the first agent needs solved events
                 
@@ -211,8 +210,9 @@ class FCT_Model(Model):
                 if agent_b_solved_events == []:
                     print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
 
-                elif agent_a_random_event not in agent_b_solved_events:
+                elif agent_a_random_event not in agent_b_solved_events.any():
                     print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
+                    print(agent_b_solved_events)
 
                     # agent_a_solved_events = agent_a.get_agent_solved_events()
                 else:
@@ -413,7 +413,7 @@ class FCT_Model(Model):
                         # if dq_test_pass == age_test_pass == sex_test_pass == education_test_pass == drinking_status_test_pass == True:#TODO: amend
                         if dq_test_pass or age_test_pass or sex_test_pass or drinking_status_test_pass or education_test_pass == True:#TODO: amend
                             # print(iteration_count)
-                            agent_b.append_connections_array(agent_a.get_id())
+                            agent_b.append_connections_array(agent_a.get_id())#####SORT OUT THIS CONNECTIONS ARRAY
                             agent_a.append_connections_array(agent_b.get_id())
                             self.__network.add_edge(agent_a, agent_b, weight= rng.integers(1, 10)/10)
                             # print('AgentA', agent_a.get_id(), ' connections: ', self.__network.num_edges(agent_a),  '/', agent_a_target_connections)
