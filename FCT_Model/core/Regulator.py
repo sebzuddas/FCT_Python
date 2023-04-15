@@ -1,5 +1,3 @@
-
-
 from __future__ import annotations
 from typing import Dict, Tuple, List
 from abc import abstractmethod, ABCMeta

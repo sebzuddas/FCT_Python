@@ -27,7 +27,7 @@ def model():
 
 @model.command()
 #@click.argument('-r')
-@click.option('-r/--run', default=False, help='Run the model in its default state')
+@click.option('-r', default=False, help='Run the model in its default state')
 def run(**kwargs):
     print(emojis.encode(colorama.Fore.BLUE+"Attempting to run the model :confused: \n"))
     colorama.Fore.RESET  
@@ -48,7 +48,7 @@ def run(**kwargs):
 
 #for data processing, add something to choose which data processing script to run
 @model.command()
-@click.option('-d/--data', default=False, help='Run the data processing script')
+@click.option('-d', default=False, help='Run the data processing script')
 def data(**kwargs):
     print(emojis.encode(colorama.Fore.YELLOW+"Attempting to run data processing script:confused: \n"))
     colorama.Fore.RESET  
@@ -66,7 +66,7 @@ def data(**kwargs):
     
 
 @model.command()
-@click.option('-p/--props', default=False, help='Run the model with the specified properties file')
+@click.option('-p', default=False, help='Run the model with the specified properties file')
 def props(**kwargs):
     print(emojis.encode(colorama.Fore.BLUE+"Running the model with the specified properties file {0} :cow: ".format(kwargs['p'])))
     pass
