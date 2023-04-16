@@ -1,6 +1,5 @@
 #ignore all outputs 
-FCT_Model/outputs/*
-outputs/*
+FCT_Model/outputs/tabular_*
 .venv/*
 .python-version
 .vscode/*

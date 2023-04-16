@@ -117,5 +117,3 @@ if __name__ == "__main__":
     props_file_location = 'FCT_Model/props/model'
     colorama.init()
     model()
-
-

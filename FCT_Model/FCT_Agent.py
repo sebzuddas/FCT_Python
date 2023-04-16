@@ -66,6 +66,7 @@ class FCT_Agent(MicroAgent):
         return self.space
     
     def get_random_event(self):
+        # rng = np.random.default_rng(seed=1)
 
         if len(self.unsolved_events) != 0:# ensure theres a list of events
             i=0
@@ -99,14 +100,22 @@ class FCT_Agent(MicroAgent):
 
     def set_solved_event(self, event):
         # print(f'\n {self.get_id()}')
-        # print('Solved:', self.solved_events)
+        # print('Solved:', self.solved_events) 
         # print('Unsolved:', self.unsolved_events)
         # print('All received Events: ', self.received_events)
+        event = tuple(event)  # Convert event to a tuple
         self.solved_events.append(event)
-        if np.isin([event, False], self.received_events).any():#TODO: sort out this if statement
-            self.received_events.remove([event, False])
-            self.unsolved_events.remove([event, False])
+
+        # Remove [event, False] from received_events
+        self.received_events = [entry for entry in self.received_events if entry != [event, False]]
+
+        # Remove [event, False] from unsolved_events
+        self.unsolved_events = [entry for entry in self.unsolved_events if entry != [event, False]]
+
+        # Add [event, True] to received_events
         self.received_events.append([event, True])
+        # print(self.received_events)
+
         # print(f'\n {self.get_id()}')
         # print('Solved:', self.solved_events)
         # print('Unsolved:', self.unsolved_events)
@@ -122,6 +131,14 @@ class FCT_Agent(MicroAgent):
         return amount
     
     def absolute_risk(self, consumption):
+
+        solved_events_count = sum(1 for event in self.received_events if event[1] == True)
+        unsolved_events_count = sum(1 for event in self.received_events if event[1] == False)
+        total_events_count = solved_events_count + unsolved_events_count
+
+        # Calculate the ratio, with a maximum of 1
+        ratio = min(unsolved_events_count / total_events_count, 1) if total_events_count > 0 else 0
+
         if self.sex == 0:
             beta = 0.00101
         else:
@@ -132,8 +149,8 @@ class FCT_Agent(MicroAgent):
             #print(consumption)
             return 0
         else:
-            #print(beta*consumption)
-            return beta * consumption
+            
+            return beta * ratio
     
     def kill(self):
         

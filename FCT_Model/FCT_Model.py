@@ -178,12 +178,6 @@ class FCT_Model(Model):
         
     def do_action_mechanisms(self):
         
-
-        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
-            agent.call_action()
-            
-            #agent.communicate_event()
-        
         for agent_a in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=False):
             rng = np.random.default_rng(seed=self.__props["random.seed"])
             # print(f'agent_a ID: {agent_a.get_agent_id()} and agent_b ID: {agent_b.get_agent_id()} are different agents')
@@ -195,7 +189,7 @@ class FCT_Model(Model):
             # print(agent_a_connection_array)            
             # print(f'agent a connection array: {agent_a_connection_array}')
             # print(f'agent a solved events: {agent_a_solved_events}')
-            # print(f"agent a ID: {agent_a_id} and agent b ID: {agent_b_id} are connected agents \n")
+            # print(f"agent a ID: {agent_a_id} and agent b ID:  {agent_b_id} are connected agents \n")
 
             agent_b = self.__context.agent((agent_b_id, 1, 0))#Has to be entered in this format, gets agent b object
             agent_b_solved_events = agent_b.get_agent_solved_events()
@@ -213,16 +207,18 @@ class FCT_Model(Model):
                     # print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
 
                 elif not np.isin(agent_a_random_event, agent_b_solved_events).any():
-                    print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
-                    print(agent_b_solved_events)
-                    agent_a.set_solved_event(agent_a_random_event)
+                    # print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
+                    # print(agent_b_solved_events)
+                    agent_b.set_solved_event(agent_a_random_event)
+                    # print(agent_b.get_agent_solved_events())
 
-                    # agent_a_solved_events = agent_a.get_agent_solved_events()
                 else:
                     pass
             else:
                 pass
-
+        
+        for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
+            agent.call_action()
         
     def do_transformational_mechanisms(self):
         # TODO: call doTransformation of the Board structural entity
@@ -327,7 +323,6 @@ class FCT_Model(Model):
             
             agent_a_connections = len(agent_a_connection_array)
             iteration_count = 0
-            break_while = False
 
             while agent_a_connections < agent_a_target_connections:
                 
@@ -335,9 +330,7 @@ class FCT_Model(Model):
                 #     print('test')
                 #     break
 
-                
-                
-                if iteration_count > 10*self.__count_of_agents:#can't find a suitable agent to connect to
+                if iteration_count > 100*self.__count_of_agents:#can't find a suitable agent to connect to
                     break
 
                 agent_b_search_count = 0# to count over searched agents
@@ -445,12 +438,32 @@ class FCT_Model(Model):
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
             #TODO: add sum of edges to theory
-            # edge = g.graph.edges[agents[5], agents[6]]
-            # self.assertEqual(12, edge['weight'])
+            
             id = agent.get_agent_id()
+            
+            target_connections = agent.get_target_connections_array()
+            total_weight = 0
+
+            for agent_id in target_connections:
+
+                agent_b = self.__context.agent((agent_id, 1, 0))
+                # print(agent_id)
+                # print(agent.get_target_connections_array(), agent_b.get_target_connections_array())
+                if self.__network.graph.has_edge(agent, agent_b):
+                    edge = self.__network.graph.edges[agent, agent_b]
+                    # print(edge['weight'])
+                    total_weight += edge['weight']
+                # else:
+                #     print("No edge between", agent, "and", agent_b)
+            
+            social_influence = round(total_weight/len(target_connections), 3)
+            # print(f'total weight: {total_weight}, social influence: {social_influence}')
+            if social_influence > 1:
+                raise ValueError('Social influence cannot be greater than 1')
+            
             #print(self.__network.num_edges(agent), agent.get_target_connections())
             #def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
-            theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__network.num_edges(agent), self.__theory_attributes[id]["social_influence"], self.__discrete_space)
+            theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__network.num_edges(agent), social_influence, self.__discrete_space)
             mediator = SocialTheoriesMediator([theory])
             agent.set_mediator(mediator)
             
