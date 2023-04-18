@@ -31,6 +31,7 @@ class FCT_Agent(MicroAgent):
         self.received_events = []
         self.solved_events = []
         self.unsolved_events = []
+        self.theory_array = []
         
     ##################################################################
     #Agent Getters
@@ -121,6 +122,8 @@ class FCT_Agent(MicroAgent):
         # print('Unsolved:', self.unsolved_events)
         # print('All received Events: ', self.received_events)
 
+    def set_theory_array(self, theory):
+        self.theory_array.append(theory)
 
     ####################################################################
     #Agent Methods
@@ -149,7 +152,7 @@ class FCT_Agent(MicroAgent):
             #print(consumption)
             return 0
         else:
-            
+
             return beta * ratio
     
     def kill(self):
@@ -175,6 +178,13 @@ class FCT_Agent(MicroAgent):
             # Move to the new location
         self.space.move(self, random_location)
  
+    def get_agent_location(self):
+        location_object = self.space.get_location(self)
+        coords = location_object.coordinates
+        return (coords[0], coords[1])
+
+        # return self.space.get_location(self)
+    
     def interpret_event(self, event):
         self.unsolved_events.append([event, False])
         self.received_events.append([event, False])

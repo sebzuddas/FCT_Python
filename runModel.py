@@ -21,6 +21,10 @@ import emojis
 import subprocess
 import yaml
 from datetime import datetime
+import re
+import subprocess
+from alive_progress import alive_bar
+from repast4py import parameters
 
 
 
@@ -62,14 +66,14 @@ def run(param, value):
         now = datetime.now()
         dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
         dynamic_props = props_file_location+"/model-"+str(param)+'-'+str(value)+'-'+dt_string+".yaml"
-        update_parameter(param+":", value, dynamic_props)
+        update_parameter(param, int(value), dynamic_props)
         yaml_location = dynamic_props
 
     elif value is not None:
         now = datetime.now()
         dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
         dynamic_props = props_file_location+"/model-"+str(value)+'-'+dt_string+".yaml"
-        update_parameter("stop.at:", value, dynamic_props)
+        update_parameter('stop.at', int(value), dynamic_props)
         yaml_location = dynamic_props
 
     else:
@@ -77,6 +81,30 @@ def run(param, value):
 
 
     try:
+        # print(yaml_location)
+        # if value == None:
+        #     value = 10
+
+        # with alive_bar(int(value), title="Running the model", bar="notes") as bar:
+        #     # Start running the model in a subprocess and capture the output
+        #     process = subprocess.Popen(["python3", "FCT_Model/main.py", yaml_location], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+
+        #     # Parse the output for tick information and update the progress bar
+        #     for line in process.stdout:
+        #         print(line, end="")  # Print the line to the terminal
+        #         match = re.search(r'Tick: (\d+)', line)
+        #         if match:
+        #             tick = int(match.group(1))
+        #             bar(tick)  # Update the progress bar
+
+        #     # Wait for the subprocess to finish and check the return code
+        #     process.wait()
+        
+        #     if process.returncode == 0:
+        #         print(emojis.encode(colorama.Fore.GREEN + "Model run successfully! :smirk: \n"))
+        #     else:
+        #         print(emojis.encode(colorama.Fore.RED + "Model run failed! :disappointed: \n"))
+
         subprocess.run(["python3" ,"FCT_Model/main.py", yaml_location], check=True)
         print(emojis.encode(colorama.Fore.GREEN+"Model run successfully! :smirk: \n"))
         
@@ -87,7 +115,7 @@ def run(param, value):
         print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :flushed: \n"))
     
     except(FileNotFoundError):
-        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model :unamused: \n"))
+        print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model - file not found :unamused: \n"))
 
 
 #for data processing, add something to choose which data processing script to run
@@ -98,7 +126,7 @@ def data(**kwargs):
     colorama.Fore.RESET  
 
     try:
-        subprocess.run(["python3" ,"Data_Processing/main.py"], check=True)    
+        subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml'], check=True)    
         print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
     
     except(KeyboardInterrupt):

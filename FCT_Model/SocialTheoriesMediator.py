@@ -41,13 +41,17 @@ class SocialTheoriesMediator(TheoryMediator):
 
         #TODO: make death a yearly thing
         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
-        if consumption > 490:
-            ld_50 = np.random.choice([0, 1])
-            if ld_50 == 1:
-                self.agent.kill()
-        elif(self.agent.get_agent_age()>100):
+        risk = self.agent.absolute_risk(consumption)
+        
+        # if consumption > 490:
+        #     ld_50 = np.random.choice([0, 1])
+        #     if ld_50 == 1:
+        #         self.agent.kill()
+        if(self.agent.get_agent_age()>100):
             self.agent.kill()
-        self.agent.absolute_risk(consumption)
+        elif risk > 0.5:
+            self.agent.kill()
+
 
 
 

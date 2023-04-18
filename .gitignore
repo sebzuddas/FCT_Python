@@ -5,3 +5,4 @@ FCT_Model/outputs/tabular_*
 .vscode/*
 
 FCT_Model/props/model/model-*
+*.txt

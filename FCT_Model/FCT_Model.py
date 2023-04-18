@@ -107,13 +107,18 @@ class FCT_Model(Model):
 
         ############
         #OUTPUTS
-        #TODO: include tabular logging
-        #TODO: include reduce-type logging
-        #TODO: look into the given logging method
-        
+
         # initialize the logging
         ## Tabular Logging
-        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile'])
+        #TODO: pass theory array into the tabular logger
+        # self.theory_logger = logging.TabularLogger(comm, params['theory.logger'])
+        # self.log_theory()
+
+        #TODO: pass board array into the tabular logger
+        # self.board_logger = logging.TabularLogger(comm, params['board.logger'])
+        # self.log_board()
+
+        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile', 'location_x', 'location_y'])
         self.log_agents()
         ## Reduce-type Logging
         # self.individual_agent_info = IndividualAgentInfo()
@@ -237,6 +242,7 @@ class FCT_Model(Model):
 
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
+        print("Tick: ", int(current_tick))
         # Only a single rank outputs the board
         
         if self.__rank == 0:
@@ -253,6 +259,7 @@ class FCT_Model(Model):
         print('Do this per month')
 
     def do_per_year(self):
+        print('Do this per year')
         self.do_transformational_mechanisms()
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
@@ -312,7 +319,7 @@ class FCT_Model(Model):
         self._runner.schedule_stop(self.__stop_at)
         
         #Datalogging
-        self._runner.schedule_repeating_event(1, 4, self.log_agents)
+        self._runner.schedule_repeating_event(1, 1, self.log_agents)
     
     def init_network(self):
         for agent_a in self.__context.agents(count=self.__count_of_agents, shuffle=False):
@@ -355,7 +362,6 @@ class FCT_Model(Model):
                     # if agent_b_search_count == self.__count_of_agents:#can't find a suitable agent to connect to
                     #     break
                     
-
                     dq_test = rng.integers(0, 100)
                     dq_test_pass = False
                     age_test = rng.integers(0, 100)
@@ -422,15 +428,11 @@ class FCT_Model(Model):
                         else:
                             pass
 
-                        # else:
-                        #     pass
                     else:
                         pass
                     agent_a_connections = len(agent_a.get_target_connections_array())
                     iteration_count += 1
             
-            
-      
             yield #for loading bar
 
     def assign_theory(self):
@@ -472,12 +474,12 @@ class FCT_Model(Model):
 
     ############################
     #Loggers
-    
+
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():
-            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile())
+            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile(), agent.get_agent_location()[0], agent.get_agent_location()[1])
         self.agent_logger.write()
 
 #WITH discrete_space

@@ -15,17 +15,12 @@ import repast4py
 import sys
 import colorama
 from colorama import Fore, Back, Style
-
 import emojis
-
 from alive_progress import alive_bar
-
 import FCT_Model
-
 import SocialNetwork as sn
 
 def main():
-
 
     # Command line argument parsing
     parser = repast4py.parameters.create_args_parser()
