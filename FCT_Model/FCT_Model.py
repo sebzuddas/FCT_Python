@@ -252,7 +252,7 @@ class FCT_Model(Model):
 
         # print to screen: satisfaction (every tick) & board (at start and end)
         current_tick = self._runner.schedule.tick
-        print("Tick: ", int(current_tick))
+        print(f"Tick: {current_tick} / {self.__props['stop.at']}")
         # Only a single rank outputs the board
         
         if self.__rank == 0:
