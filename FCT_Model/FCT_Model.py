@@ -109,16 +109,26 @@ class FCT_Model(Model):
         #OUTPUTS
 
         # initialize the logging
-        ## Tabular Logging
-        #TODO: pass theory array into the tabular logger
-        # self.theory_logger = logging.TabularLogger(comm, params['theory.logger'])
-        # self.log_theory()
+        # return {
+        #     "mean_weekly_units": self.__mean_weekly_units,
+        #     "education": self.__education,
+        #     "personal_wealth": self.__personal_wealth,
+        #     "social_connections": self.__social_connections,
+        #     "social_influence": self.__social_influence,
+        #     "knowledge": self.knowledge,
+        #     "strategy_multiplier": self.strategy_multiplier,
+        #     "total_resources": self.__total_resources,
+        #     "successful_adaptiation": self.successful_adaptiation,
+        #     "unsuccessful_adaptiation": self.unsuccessful_adaptiation
+        # }
+        self.theory_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth', 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
+        self.log_theory()
 
         #TODO: pass board array into the tabular logger
         # self.board_logger = logging.TabularLogger(comm, params['board.logger'])
         # self.log_board()
 
-        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile', 'location_x', 'location_y'])
+        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile', 'death_count','location_x', 'location_y'])
         self.log_agents()
         ## Reduce-type Logging
         # self.individual_agent_info = IndividualAgentInfo()
@@ -259,8 +269,10 @@ class FCT_Model(Model):
         print('Do this per month')
 
     def do_per_year(self):
-        print('Do this per year')
         self.do_transformational_mechanisms()
+
+        #calculate agents risk
+
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
             # age the agents yearly
@@ -320,6 +332,7 @@ class FCT_Model(Model):
         
         #Datalogging
         self._runner.schedule_repeating_event(1, 1, self.log_agents)
+        self._runner.schedule_repeating_event(1, 1, self.log_theory)
     
     def init_network(self):
         for agent_a in self.__context.agents(count=self.__count_of_agents, shuffle=False):
@@ -465,10 +478,13 @@ class FCT_Model(Model):
             
             #print(self.__network.num_edges(agent), agent.get_target_connections())
             #def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
+            
             theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__network.num_edges(agent), social_influence, self.__discrete_space)
+            
             mediator = SocialTheoriesMediator([theory])
             agent.set_mediator(mediator)
-            
+            agent.set_params(self.__props)
+            theory.set_params(self.__props)
             mediator.set_agent(agent)
             yield
 
@@ -478,9 +494,21 @@ class FCT_Model(Model):
     def log_agents(self):
         #TODO: get theory level parameters for each agent to be logged. 
         tick = self._runner.schedule.tick
-        for agent in self.__context.agents():
-            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile(), agent.get_agent_location()[0], agent.get_agent_location()[1])
+        for agent in self.__context.agents():#get agent starting deprivation quintile
+            self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile()+1, agent.death_count, agent.get_agent_location()[1], agent.get_agent_location()[0])
         self.agent_logger.write()
+
+
+
+# ['mean_weekly_units', 'education', 'personal_wealth', 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
+
+    def log_theory(self):
+        tick = self._runner.schedule.tick
+        for agent in self.__context.agents():
+            self.theory_logger.log_row(tick, agent.id,  agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['strategy_multiplier'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
+        self.theory_logger.write()
+
+
 
 #WITH discrete_space
 """def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space):

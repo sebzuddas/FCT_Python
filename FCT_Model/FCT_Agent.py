@@ -6,6 +6,8 @@ import repast4py
 import numpy as np
 import random
 import csv
+from typing import Any, Dict
+
 
 
 
@@ -26,12 +28,14 @@ class FCT_Agent(MicroAgent):
         self.target_connections = target_connections
         self.space = space
         self.death_count = 0
-
+        
+        
         self.connections_array = []
         self.received_events = []
         self.solved_events = []
         self.unsolved_events = []
-        self.theory_array = []
+        self.theory_dict = {}
+
         
     ##################################################################
     #Agent Getters
@@ -65,6 +69,10 @@ class FCT_Agent(MicroAgent):
     
     def get_space(self):
         return self.space
+    
+    def get_theory_dict(self) -> Dict[str, int]:
+        return self.theory_dict
+    
     
     def get_random_event(self):
         # rng = np.random.default_rng(seed=1)
@@ -123,7 +131,11 @@ class FCT_Agent(MicroAgent):
         # print('All received Events: ', self.received_events)
 
     def set_theory_array(self, theory):
-        self.theory_array.append(theory)
+        self.theory_dict.update(theory)
+
+    def set_params(self, params):
+        self.params = params
+
 
     ####################################################################
     #Agent Methods

@@ -26,6 +26,7 @@ class SocialTheoriesMediator(TheoryMediator):
         
     
     def mediate_action(self):
+        self.agent.set_theory_array(self._theory_list[0].get_all_theory())
         # trigger action mechanisms
         event = self.agent.get_random_event()#get an event from the agents list of events
         returned_event = self._theory_list[0].decode_attempt(event)# attempt to decode the event given FCT parameters
@@ -49,7 +50,7 @@ class SocialTheoriesMediator(TheoryMediator):
         #         self.agent.kill()
         if(self.agent.get_agent_age()>100):
             self.agent.kill()
-        elif risk > 0.5:
+        elif risk > 0.5:#what parameter should be used here?
             self.agent.kill()
 
 

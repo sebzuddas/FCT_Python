@@ -13,7 +13,6 @@ class FundamentalCauseTheory(Theory):
         self.context = context
         self.space = space
         self.__social_influence: int = social_influence
-        #self.__event_list = []
         
 
         ## FCT level parameters/attributes
@@ -23,7 +22,6 @@ class FundamentalCauseTheory(Theory):
         self.__personal_wealth: int = personal_wealth# money in the bank
         self.__total_resources: int
 
-        #TODO: implement social influence
         #TODO: implement power 
         #TODO: implement prestige
 
@@ -56,9 +54,13 @@ class FundamentalCauseTheory(Theory):
                 total_resources = self.calculate_resources()
                 strategy_multiplier = self.calculate_strategy_multiplier()
                 if event_value<=total_resources*strategy_multiplier:
+                    self.successful_adaptiation += 1
                     return [event, True]
+                    
                 else:
+                    self.unsuccessful_adaptiation += 1
                     return [event, False]
+                    
             except:
                 return [event, False]
 
@@ -93,6 +95,46 @@ class FundamentalCauseTheory(Theory):
     
     def get_education(self) -> int:
         return self.__education
+    
+    def get_personal_wealth(self) -> int:
+        return self.__personal_wealth
+    
+    def get_social_connections(self) -> int:
+        return self.__social_connections
+    
+    def get_social_influence(self) -> int:
+        return self.__social_influence
+    
+    def get_knowledge(self) -> int:
+        return self.knowledge
+    
+    def get_strategy_multiplier(self) -> float:
+        return self.strategy_multiplier
+    
+    def get_total_resources(self) -> int:
+        return self.__total_resources
+    
+    def get_successful_adaptiation(self) -> int:
+        return self.successful_adaptiation
+    
+    def get_unsuccessful_adaptiation(self) -> int:
+        return self.unsuccessful_adaptiation
+    
+
+    def get_all_theory(self) -> Dict:
+        return {
+            "mean_weekly_units": self.__mean_weekly_units,
+            "education": self.__education,
+            "personal_wealth": self.__personal_wealth,
+            "social_connections": self.__social_connections,
+            "social_influence": self.__social_influence,
+            "knowledge": self.knowledge,
+            "strategy_multiplier": self.calculate_strategy_multiplier(),
+            "total_resources": self.calculate_resources(),
+            "successful_adaptiation": self.successful_adaptiation,
+            "unsuccessful_adaptiation": self.unsuccessful_adaptiation
+        }
+    
 
     #########################################################
     #Theory Setters
@@ -111,6 +153,9 @@ class FundamentalCauseTheory(Theory):
 
     def set_social_influence(self, social_influence: int):
         self.__social_influence = social_influence
+
+    def set_params(self, params):
+        self.params = params
 
 
 def return_decimal(value):
