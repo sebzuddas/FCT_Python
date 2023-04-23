@@ -271,22 +271,24 @@ class FCT_Model(Model):
     def do_per_year(self):
         self.do_transformational_mechanisms()
 
+
         #calculate agents risk
-
-
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
+
             # age the agents yearly
             age = agent.get_agent_age()
             age += 1
             agent.set_agent_age(age)
+            risk = agent.abs_risk
+            if(agent.get_agent_age()>100):
+                agent.kill()
+            elif risk > 0.5:#what parameter should be used here?
+                agent.kill()
     
     ############################
     #Initialisers
     def init_agents(self):
         #TODO: add a correlation coefficients
-        # network = read_network(self.__props["network.file.updated"], self.__context, create_FCT_agent, restore_FCT_agent) 
-        # theory_vector = []
-        # rng_agents = np.random.default_rng(seed=self.__random_seed)  # create a default Generator instance
         
         generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
         read_network(self.__props["network.file.updated"], self.__context, create_FCT_agent, restore_FCT_agent) 
@@ -295,7 +297,10 @@ class FCT_Model(Model):
             
             agent.set_space(self.__discrete_space)# place the agent on the discrete space
 
+            
+
             dq = agent.get_deprivation_quintile()
+            agent.original_dq = dq
             # print(repast4py.network.DirectedSharedNetwork.num_edges(self.__network, agent))
             # print(agent)
             # print(self.__network.num_edges(agent))
@@ -449,13 +454,13 @@ class FCT_Model(Model):
             yield #for loading bar
 
     def assign_theory(self):
+
+        #TODO: add a correlation coefficients
         self.__theory_attributes
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
-            #TODO: add sum of edges to theory
             
             id = agent.get_agent_id()
-            
             target_connections = agent.get_target_connections_array()
             total_weight = 0
 
@@ -498,10 +503,7 @@ class FCT_Model(Model):
             self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile()+1, agent.death_count, agent.get_agent_location()[1], agent.get_agent_location()[0])
         self.agent_logger.write()
 
-
-
 # ['mean_weekly_units', 'education', 'personal_wealth', 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
-
     def log_theory(self):
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():

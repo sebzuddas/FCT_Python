@@ -19,12 +19,10 @@ class SocialTheoriesMediator(TheoryMediator):
         if len(self._theory_list) == 0: 
             raise Exception(f"{__class__.__name__} require a theory_list with length > 0")
 
-    
     def mediate_situation(self):
         # trigger situation mechanisms
         self._theory_list[0].do_situation()
         
-    
     def mediate_action(self):
         self.agent.set_theory_array(self._theory_list[0].get_all_theory())
         # trigger action mechanisms
@@ -40,20 +38,20 @@ class SocialTheoriesMediator(TheoryMediator):
         self.agent.move()
 
 
-        #TODO: make death a yearly thing
         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
-        risk = self.agent.absolute_risk(consumption)
-        
-        # if consumption > 490:
-        #     ld_50 = np.random.choice([0, 1])
-        #     if ld_50 == 1:
-        #         self.agent.kill()
-        if(self.agent.get_agent_age()>100):
-            self.agent.kill()
-        elif risk > 0.5:#what parameter should be used here?
-            self.agent.kill()
+        self.agent.absolute_risk(consumption)
 
 
 
-
-
+# #TODO: make death a yearly thing
+#     def yearly_mechanisms(self):
+#         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
+#         risk = self.agent.absolute_risk(consumption)
+#         # if consumption > 490:
+#         #     ld_50 = np.random.choice([0, 1])
+#         #     if ld_50 == 1:
+#         #         self.agent.kill()
+#         if(self.agent.get_agent_age()>100):
+#             self.agent.kill()
+#         elif risk > 0.5:#what parameter should be used here?
+#             self.agent.kill()

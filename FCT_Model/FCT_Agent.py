@@ -27,9 +27,17 @@ class FCT_Agent(MicroAgent):
         self.drinking_status = drinking_status
         self.target_connections = target_connections
         self.space = space
+        
+
+        #Tracking Variables
         self.death_count = 0
-        
-        
+        self.original_dq = None
+        # self.current_dq = None
+        # self.moved_down_dq = None
+        # self.moved_up_dq = None
+        self.abs_risk = 0
+
+        # Arrays and dictionaries
         self.connections_array = []
         self.received_events = []
         self.solved_events = []
@@ -162,9 +170,11 @@ class FCT_Agent(MicroAgent):
         # consumption = self.get_agent_drinking_status()
         if consumption == 0:
             #print(consumption)
+            self.abs_risk = 0
             return 0
         else:
 
+            self.abs_risk = beta * consumption
             return beta * ratio
     
     def kill(self):

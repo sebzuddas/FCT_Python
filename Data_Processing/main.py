@@ -53,7 +53,7 @@ def main():
     graph_extent_y = parameters["board.size"]
 
     tabular_animated = px.scatter(tabular_df, x="location_x", y="location_y", animation_frame="tick", animation_group="agent_id",
-           size='age', color="deprivation_quintile", hover_name="deprivation_quintile",
+           size='age', color="deprivation_quintile", hover_name="agent_id",
            log_x=False, range_x=[0,graph_extent_x], range_y=[0,graph_extent_y])
 
     tabular_animated.show()

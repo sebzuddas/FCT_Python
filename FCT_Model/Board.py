@@ -23,8 +23,6 @@ class Board(StructuralEntity):
         self.__avg_satisfaction: float = 0.0
         self.__segregation_index: float = 0.0
         self.__deprivation_quiltile: int = 0
-        # self.__deprivation_move_up_probability: float = [0.0, 0.0, 0.0, 0.0, 0.0]
-        # self.__deprivation_move_down_probability: float = [0.0, 0.0, 0.0, 0.0, 0.0]
         # # self.deprivation_probability_list: float [[0.02, 0.012, 0.01, 0.008, 0.005], [0.013, 0.011, 0.009, 0.008, 0.008],[0.01, 0.009, 0.009, 0.009, 0.007], [0.01, 0.01, 0.009, 0.009, 0.009],[0.007, 0.011, 0.008, 0.01, 0.016]]
         # self.deprivation_probability_list: float [[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]]
 
