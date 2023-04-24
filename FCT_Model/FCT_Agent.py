@@ -81,7 +81,6 @@ class FCT_Agent(MicroAgent):
     def get_theory_dict(self) -> Dict[str, int]:
         return self.theory_dict
     
-    
     def get_random_event(self):
         # rng = np.random.default_rng(seed=1)
 
