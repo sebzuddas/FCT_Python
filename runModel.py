@@ -58,11 +58,21 @@ def model():
 @model.command()
 @click.option('--param', default=None, help='Parameter to change, default is number of iterations (weeks)')
 @click.option('--value', default=None, help='New value for the parameter, if no given parameter this is the number of iterations')
-def run(param, value):
+@click.option('--years', default=None, help='Number of years to run the model for')
+def run(param, value, years):
     print(emojis.encode(colorama.Fore.BLUE+"Attempting to run the model :confused: \n"))
     colorama.Fore.RESET  
 
-    if param is not None and value is not None:
+    if years is not None:
+        iterations = int(years)*52
+        now = datetime.now()
+        dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
+        dynamic_props = props_file_location+"/model-"+str(iterations)+'-'+dt_string+".yaml"
+        update_parameter('stop.at', int(iterations), dynamic_props)
+        yaml_location = dynamic_props
+
+
+    elif param is not None and value is not None:
         now = datetime.now()
         dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
         dynamic_props = props_file_location+"/model-"+str(param)+'-'+str(value)+'-'+dt_string+".yaml"

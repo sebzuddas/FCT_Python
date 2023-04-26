@@ -40,7 +40,7 @@ def load_params(yaml_file):
 
 def main():
     ###############
-    tabular_data_path = 'FCT_Model/outputs/tabular_logger_out_25.csv'
+    tabular_data_path = 'FCT_Model/outputs/tabular_logger_out_'+ file_number +'.csv'
     tabular_df = pd.read_csv(user_path+tabular_data_path)
     #print(tabular_df.dtypes)
     #tabular_df['sex'] = tabular_df['sex'].astype(int)
@@ -88,5 +88,9 @@ if __name__ == "__main__":
     parameters = load_params(yaml_file)
     # parameter_value = parameters['parameter_key']
 
-
+    try:
+        file_number = input("Enter the file number: ")
+    except:
+        raise ValueError("Please enter a valid file number")
+    
     main()

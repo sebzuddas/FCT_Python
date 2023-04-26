@@ -21,7 +21,6 @@ class Model(metaclass=ABCMeta):
         # Repast4py lacks some of the singletons available in repastHPC, so the runner is a member of the Model class.
         self.__runner: repast4py.schedule.SharedScheduleRunner = repast4py.schedule.init_schedule_runner(comm)
 
-
     @abstractmethod
     def init_agents(self):
         pass

@@ -57,6 +57,8 @@ class FCT_Model(Model):
         
 
         self.__network = repast4py.network.DirectedSharedNetwork('fct_network', self.__comm)
+
+        
         g = nx.connected_watts_strogatz_graph(self.__count_of_agents, 2, 0.25)# generate the network
         fname = "FCT_Model/props/network/graph.txt"
         write_network(g, 'FCT_network', fname, 1)# write the network to a file
