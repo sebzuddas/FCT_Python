@@ -27,6 +27,7 @@ class FCT_Agent(MicroAgent):
         self.drinking_status = drinking_status
         self.target_connections = target_connections
         self.space = space
+        self.params = None
         
 
         #Tracking Variables
@@ -82,6 +83,7 @@ class FCT_Agent(MicroAgent):
         return self.theory_dict
     
     def get_random_event(self):
+
         # rng = np.random.default_rng(seed=1)
 
         if len(self.unsolved_events) != 0:# ensure theres a list of events
@@ -93,8 +95,16 @@ class FCT_Agent(MicroAgent):
                 else: 
                     chosen_event = random.choice(self.unsolved_events)# choose a random event
         
+    
+
+    
+
+
+    
     ##################################################################
     #Agent Setters
+    def set_params(self, params):
+        self.params = params
 
     def set_deprivation_quintile(self, deprivation_quintile: int):
         self.__deprivation_quintile = deprivation_quintile
@@ -114,28 +124,27 @@ class FCT_Agent(MicroAgent):
     def set_space(self, space):
         self.space = space
 
-    def set_solved_event(self, event):
-        # print(f'\n {self.get_id()}')
-        # print('Solved:', self.solved_events) 
-        # print('Unsolved:', self.unsolved_events)
-        # print('All received Events: ', self.received_events)
+    def handle_event(self, event, is_solved):
         event = tuple(event)  # Convert event to a tuple
-        self.solved_events.append(event)
 
-        # Remove [event, False] from received_events
-        self.received_events = [entry for entry in self.received_events if entry != [event, False]]
+        if not is_solved:
+            # Add the event to received_events and unsolved_events
+            self.received_events.append([event, is_solved])
+            self.unsolved_events.append([event, not is_solved])
 
-        # Remove [event, False] from unsolved_events
-        self.unsolved_events = [entry for entry in self.unsolved_events if entry != [event, False]]
+        if is_solved:
+            # If the event is solved, update the lists accordingly
+            self.solved_events.append(event)
 
-        # Add [event, True] to received_events
-        self.received_events.append([event, True])
-        # print(self.received_events)
+            # Remove [event, False] from received_events
+            self.received_events = [entry for entry in self.received_events if entry != [event, False]]
 
-        # print(f'\n {self.get_id()}')
-        # print('Solved:', self.solved_events)
-        # print('Unsolved:', self.unsolved_events)
-        # print('All received Events: ', self.received_events)
+            # Remove all instances of [event, False] from unsolved_events
+            self.unsolved_events = [entry for entry in self.unsolved_events if entry != [event, False]]
+
+            # Add [event, True] to received_events
+            self.received_events.append([event, True])
+
 
     def set_theory_array(self, theory):
         self.theory_dict.update(theory)

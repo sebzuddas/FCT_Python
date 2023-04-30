@@ -6,6 +6,7 @@ Main file for processing the outputted data from the FCT_Model
 import pandas as pd
 import plotly.express as px
 import yaml
+import kaleido
 
 #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/tabular_logger_out.csv
 user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/' # set path to your repo
@@ -58,8 +59,16 @@ def main():
 
     tabular_animated.show()
 
-    # tabular_scatter = px.scatter(tabular_df)
-    # tabular_scatter.show()
+    # tabular_animated.write_image("Data_Processing/outputs/Animated_agents.png")
+
+    
+
+
+    tabular_scatter = px.scatter(tabular_df, x="location_x", y="location_y", 
+           size='age', color="deprivation_quintile", hover_name="agent_id",
+           log_x=False, range_x=[0,graph_extent_x], range_y=[0,graph_extent_y])
+    tabular_scatter.write_image("Data_Processing/outputs/Scatter_agents.png", 'png', width=1920/2, height=1080/2, scale=5)
+
 
     
 

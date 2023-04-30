@@ -9,7 +9,7 @@ import re
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
+    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, power:float, prestige:float, social_connections:int, social_influence:int, space):
         self.context = context
         self.space = space
         self.__social_influence: int = social_influence
@@ -22,9 +22,11 @@ class FundamentalCauseTheory(Theory):
         self.__personal_wealth: int = personal_wealth# money in the bank
         self.__total_resources: int
 
-        #TODO: implement power 
-        #TODO: implement prestige
+        self.__power: float = power
+        self.__prestige: float = prestige
 
+
+        
         self.knowledge = self.__education/3
 
         self.__social_connections: int = social_connections
@@ -52,10 +54,12 @@ class FundamentalCauseTheory(Theory):
             try :
                 event_value = return_decimal(event[0])
                 total_resources = self.calculate_resources()
-                strategy_multiplier = self.calculate_strategy_multiplier()
-                if event_value<=total_resources*strategy_multiplier:
+                # strategy_multiplier = self.params['strategy.multiplier.lower']
+                if event_value<=total_resources:
                     self.successful_adaptiation += 1
+                    print("decode_attempt_test")
                     return [event, True]
+                    
                     
                 else:
                     self.unsuccessful_adaptiation += 1
@@ -75,7 +79,7 @@ class FundamentalCauseTheory(Theory):
     #individual agent-level action mechanism methods
 
     def calculate_resources(self):
-        return self.__education + self.__personal_wealth + self.__social_connections#TODO: edit to ensure all FCT parameters are included
+        return self.knowledge + self.__personal_wealth + self.__prestige +self.__power#TODO: edit to ensure all FCT parameters are included
         # print("calculate resources test")
 
     def calculate_strategy_multiplier(self):    

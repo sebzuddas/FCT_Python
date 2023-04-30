@@ -3,7 +3,9 @@ random.seed: 1
 stop.at: 10
 count.of.agents: 1000
 board.size: 50
-threshold: 0.5
+threshold: 0.5 #
+
+
 
 #Agent-related Parameters
 correlation.parameter: 1
@@ -15,6 +17,13 @@ strategy.multiplier: 1
 knowledge.gain: 1
 communication.probability: 1
 resource.depletion: 1
+
+strategy.multiplier.lower: 1
+strategy.multiplier.higher: 3
+
+communication.success: 2
+
+theory.distribution.type: 1 #1 - uniform 2- normal 3- pareto
 
 
 #Communicator Parameters

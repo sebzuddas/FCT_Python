@@ -51,14 +51,14 @@ class FCT_Model(Model):
         self.__max_age: int = self.__props["max.age"] if "max.age" in params else 0
         self.__random_seed:int = self.__props["random.seed"] if "random.seed" in params else 0
 
-        self.__theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), True, seed_input=self.__random_seed)
+        self.__theory_attributes = None
 
         repast4py.random.init(rng_seed=self.__random_seed)# initialise pseudo-random number generator with the random seed from the props
         
 
         self.__network = repast4py.network.DirectedSharedNetwork('fct_network', self.__comm)
 
-        
+
         g = nx.connected_watts_strogatz_graph(self.__count_of_agents, 2, 0.25)# generate the network
         fname = "FCT_Model/props/network/graph.txt"
         write_network(g, 'FCT_network', fname, 1)# write the network to a file
@@ -97,6 +97,7 @@ class FCT_Model(Model):
         local_bounds = self.__discrete_space.get_local_bounds()
         print(f"RANK: {self.__rank} \nBOUNDS: from[{local_bounds.xmin}, {local_bounds.ymin}] to[{local_bounds.xextent}, {local_bounds.yextent}]")
         self.__context.add_projection(self.__discrete_space)
+        self.__context.add_projection(self.__network)
 
         # Define the board
         self.__board:Board = Board(self.__context, self.__discrete_space)
@@ -226,8 +227,18 @@ class FCT_Model(Model):
                 elif not np.isin(agent_a_random_event, agent_b_solved_events).any():
                     # print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
                     # print(agent_b_solved_events)
-                    agent_b.set_solved_event(agent_a_random_event)
-                    # print(agent_b.get_agent_solved_events())
+
+                    
+                    st_lower = self.__props["strategy.multiplier.lower"]
+                    st_higher = self.__props["strategy.multiplier.higher"]
+
+                    st = rng.uniform(0, 1)
+
+                    if st >= st/self.__props["communication.success"]:
+                        agent_b.handle_event(agent_a_random_event, True)
+                        # print(agent_b.get_agent_solved_events())
+                    else:
+                        agent_b.handle_event(agent_a_random_event, False)
 
                 else:
                     pass
@@ -248,6 +259,8 @@ class FCT_Model(Model):
     ############################
     #Schedules to do per different time rates.
     def do_per_tick(self):# do these things every week. 
+        #print(self.__context)
+
         self.do_situational_mechanisms()
         self.do_action_mechanisms()
         # self.__board.print_board_to_screen()
@@ -292,14 +305,12 @@ class FCT_Model(Model):
     def init_agents(self):
         #TODO: add a correlation coefficients
         
-        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
+        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), self.__props, True, seed_input=self.__random_seed )
         read_network(self.__props["network.file.updated"], self.__context, create_FCT_agent, restore_FCT_agent) 
 
         for agent in self.__context.agents(count=self.__count_of_agents):
             
             agent.set_space(self.__discrete_space)# place the agent on the discrete space
-
-            
 
             dq = agent.get_deprivation_quintile()
             agent.original_dq = dq
@@ -413,15 +424,15 @@ class FCT_Model(Model):
                                     sex_test_pass = True
                                 else:
                                     pass
-                        if education_test <= 75:#75% of connections to be made wrt education
-                            if self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]:
-                                education_test_pass = True
-                            elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]+1:
-                                education_test_pass = True
-                            elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]-1:
-                                education_test_pass = True
-                            else: 
-                                pass
+                        # if education_test <= 75:#75% of connections to be made wrt education
+                        #     if self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]:
+                        #         education_test_pass = True
+                        #     elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]+1:
+                        #         education_test_pass = True
+                        #     elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]-1:
+                        #         education_test_pass = True
+                        #     else: 
+                        #         pass
                         if drinking_status_test <= 15:#15% of connections to be made wrt drinking status
                             if agent_a.get_agent_drinking_status() == agent_b.get_agent_drinking_status():
                                 drinking_status_test_pass = True
@@ -458,11 +469,12 @@ class FCT_Model(Model):
     def assign_theory(self):
 
         #TODO: add a correlation coefficients
-        self.__theory_attributes
+        # self.__theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), self.__props, True, seed_input=self.__random_seed)
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
             
             id = agent.get_agent_id()
+            dq = agent.get_deprivation_quintile()
             target_connections = agent.get_target_connections_array()
             total_weight = 0
 
@@ -484,13 +496,19 @@ class FCT_Model(Model):
                 raise ValueError('Social influence cannot be greater than 1')
             
             #print(self.__network.num_edges(agent), agent.get_target_connections())
-            #def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, social_connections:int, social_influence:int, space):
             
-            theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__network.num_edges(agent), social_influence, self.__discrete_space)
+            #def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, target_connections: int, space):
+            # theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__theory_attributes[id]["power"], self.__theory_attributes[id]["prestige"], self.__network.num_edges(agent), social_influence, self.__discrete_space)
+            rng = np.random.default_rng(self.__random_seed)
+            mean_weekly_units = rng.uniform(0, 130)
+            
+            FCT_attributes = generate_theory_vector(dq+1, self.__props["theory.distribution.type"])
+
+            theory = FundamentalCauseTheory(self.__context, mean_weekly_units, FCT_attributes[0], FCT_attributes[1], FCT_attributes[2], FCT_attributes[3], self.__network.num_edges(agent), social_influence, self.__discrete_space)
             
             mediator = SocialTheoriesMediator([theory])
-            agent.set_mediator(mediator)
             agent.set_params(self.__props)
+            agent.set_mediator(mediator)
             theory.set_params(self.__props)
             mediator.set_agent(agent)
             yield
@@ -538,7 +556,7 @@ def restore_FCT_agent(agent_data):
 #############################################################################
 #Network Generation
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], params, get_data = False, seed_input=1):
     rng = np.random.default_rng(seed=seed_input)
     agent_data = []
     agent_age_lowest = attributes["age"][0]
@@ -668,66 +686,120 @@ def generate_agent_distributions(type):
 #############################################################################
 #Theory Parameter Generation
 
-def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], get_data = False, seed_input=1):
-    rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
-    theory_data = []
-    theory_wealth_distribution_type = attributes["personal_wealth"][0]
-    theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
-    theory_weekly_units_highest = attributes["mean_weekly_units"][1]
-    theory_education_lowest = attributes["education"][0]
-    theory_education_highest = attributes["education"][1]
-
-    #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
-
-    for i in range(num_agents):
-        
-        ##### random numbers #####
-        if theory_wealth_distribution_type == "n":
-            # set the wealth to a normal distribution
-            mu, sigma = 2.5, 1 # mean and standard deviation
-            # wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
-            rand = abs(rng.normal(mu, sigma, num_agents))
-            wealth_distribution_rand = round(rand[i], 2)
-
-        elif theory_wealth_distribution_type == "p":
-            # set the wealth to a pareto distribution
-            a,m  = 1, 2 # shape and mode
-            rand = (rng.pareto(a, num_agents) + 1) * m
-            wealth_distribution_rand = round(rand[i], 2)
-            
-        elif theory_wealth_distribution_type == "u":
-            # set the wealth to a uniform distribution
-            low, high = 0, 5 # lower and upper bounds
-            rand = rng.uniform(low, high, num_agents)
-            wealth_distribution_rand = round(rand[i], 2)
-
-        
-            
-        weekly_units_rand = int(rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
-        education_rand = int(rng.integers(theory_education_lowest, theory_education_highest))
-        
-
-        theory = {
-            "mean_weekly_units": weekly_units_rand/10,
-            "education": education_rand, 
-            "personal_wealth": wealth_distribution_rand,# agents are all in the same rank
-            "social_connections": None,
-            "social_influence": None,
-            "space": None
-        }
-
-        theory_data.append(theory)
-
-    with open(filename, 'w') as outfile:
-        json.dump(theory_data, outfile, indent=4)
+# def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], params, get_data = False, seed_input=1):
+#     params = params
     
-    with open(filename, 'r') as infile: 
-        theory_data = json.load(infile)
-    if get_data:
-        return theory_data
+#     rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
+#     theory_data = []
+#     theory_wealth_distribution_type = attributes["personal_wealth"][0]
+#     theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
+#     theory_weekly_units_highest = attributes["mean_weekly_units"][1]
+#     theory_education_lowest = attributes["education"][0]
+#     theory_education_highest = attributes["education"][1]
 
-def generate_theory_vector(quintile):
-    pass
+#     #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
+
+#     for i in range(num_agents):
+        
+#         ##### random numbers #####
+#         if theory_wealth_distribution_type == "n":
+#             # set the wealth to a normal distribution
+#             mu, sigma = 2.5, 1 # mean and standard deviation
+#             # wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
+#             rand = abs(rng.normal(mu, sigma, num_agents))
+#             wealth_distribution_rand = round(rand[i], 2)
+
+#         elif theory_wealth_distribution_type == "p":
+#             # set the wealth to a pareto distribution
+#             a,m  = 1, 2 # shape and mode
+#             rand = (rng.pareto(a, num_agents) + 1) * m
+#             wealth_distribution_rand = round(rand[i], 2)
+            
+#         elif theory_wealth_distribution_type == "u":
+#             # set the wealth to a uniform distribution
+#             low, high = 0, 5 # lower and upper bounds
+#             rand = rng.uniform(low, high, num_agents)
+#             wealth_distribution_rand = round(rand[i], 2)
+
+        
+#         weekly_units_rand = int(rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
+#         education_rand = int(rng.integers(theory_education_lowest, theory_education_highest))
+        
+
+#         theory = {
+#             "mean_weekly_units": weekly_units_rand/10,
+#             "education": education_rand, 
+#             "personal_wealth": wealth_distribution_rand,# agents are all in the same rank
+#             "prestige": None,
+#             "power": None,
+#             "social_connections": None,
+#             "social_influence": None,
+#             "space": None
+#         }
+
+#         theory_data.append(theory)
+
+#     with open(filename, 'w') as outfile:
+#         json.dump(theory_data, outfile, indent=4)
+    
+#     with open(filename, 'r') as infile: 
+#         theory_data = json.load(infile)
+#     if get_data:
+#         return theory_data
+
+
+import numpy as np
+
+def generate_theory_vector(quintile, distribution_type, pareto_shape=2, normal_std=0.15):
+    if not 1 <= quintile <= 5:
+        raise ValueError("Quintile must be between 1 and 5")
+    if not 1 <= distribution_type <= 3:
+        raise ValueError("Distribution type must be between 1 and 3")
+
+    rng = np.random.default_rng()
+
+    # Distribution parameters
+    pareto_shape = pareto_shape
+    normal_std = normal_std
+
+    base_means = {
+        1: (1, 1, 0, 0),
+        2: (2, 2, 0.25, 0.25),
+        3: (2.5, 3, 0.5, 0.5),
+        4: (3, 4, 0.75, 0.75),
+        5: (3, 5, 1, 1)
+    }
+
+    mean_education, mean_wealth, mean_power, mean_prestige = base_means[quintile]
+
+    # Define probability distributions
+    if distribution_type == 1:  # Uniform
+        education = rng.uniform(mean_education, 4)
+        wealth = rng.uniform(mean_wealth, 6)
+        power = rng.uniform(mean_power, 2)
+        prestige = rng.uniform(mean_prestige, 2)
+
+    elif distribution_type == 2:  # Normal
+        education = rng.normal(loc=mean_education, scale=normal_std)
+        wealth = rng.normal(loc=mean_wealth, scale=normal_std)
+        power = rng.normal(loc=mean_power, scale=normal_std)
+        prestige = rng.normal(loc=mean_prestige, scale=normal_std)
+
+    elif distribution_type == 3:  # Pareto
+        education = rng.pareto(pareto_shape) / pareto_shape + mean_education
+        wealth = rng.pareto(pareto_shape) / pareto_shape + mean_wealth
+        power = rng.pareto(pareto_shape) / pareto_shape + mean_power
+        prestige = rng.pareto(pareto_shape) / pareto_shape + mean_prestige
+
+    # Clip values to their respective valid ranges
+    education = np.clip(education, 1, 3)
+    wealth = np.clip(wealth, 1, 5)
+    power = np.clip(power, 0, 1)
+    prestige = np.clip(prestige, 0, 1)
+
+    return [education, wealth/5, power, prestige]
+
+
 
 def generate_theory_distributions(type):
 
