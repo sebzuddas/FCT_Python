@@ -57,7 +57,6 @@ class FundamentalCauseTheory(Theory):
                 # strategy_multiplier = self.params['strategy.multiplier.lower']
                 if event_value<=total_resources:
                     self.successful_adaptiation += 1
-                    print("decode_attempt_test")
                     return [event, True]
                     
                     
