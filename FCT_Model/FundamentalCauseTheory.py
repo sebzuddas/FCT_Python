@@ -12,29 +12,18 @@ class FundamentalCauseTheory(Theory):
     def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, power:float, prestige:float, social_connections:int, social_influence:int, space):
         self.context = context
         self.space = space
-        self.__social_influence: int = social_influence
-        
-
         ## FCT level parameters/attributes
-        
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth# money in the bank
         self.__total_resources: int
-
         self.__power: float = power
         self.__prestige: float = prestige
-
-
-        
         self.knowledge = self.__education/3
-
         self.__social_connections: int = social_connections
         self.__social_influence: int = social_influence
-        
         self.successful_adaptiation = 0
         self.unsuccessful_adaptiation = 0
-
         self.strategy_multiplier: float
         
         #IMD 1 to move down between 16-30 = 0.3 ; IMD 1 to move up between 30+ = 0

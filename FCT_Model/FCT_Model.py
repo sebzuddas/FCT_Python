@@ -216,16 +216,11 @@ class FCT_Model(Model):
                 elif not np.isin(agent_a_random_event, agent_b_solved_events).any():
                     # print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
                     # print(agent_b_solved_events)
-
                     
-                    st_lower = self.__props["strategy.multiplier.lower"]
-                    st_higher = self.__props["strategy.multiplier.higher"]
-
                     st = rng.uniform(0, 1)
 
                     if st >= st/self.__props["communication.success"]:
                         agent_b.handle_event(agent_a_random_event, True)
-                        # print(agent_b.get_agent_solved_events())
                     else:
                         agent_b.handle_event(agent_a_random_event, False)
 
@@ -528,7 +523,6 @@ class FCT_Model(Model):
 
     ############################
     #Loggers
-
     def log_agents(self): 
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():#get agent starting deprivation quintile
@@ -542,17 +536,8 @@ class FCT_Model(Model):
             self.theory_logger.log_row(tick, agent.id, agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['power'], agent.get_theory_dict()['prestige'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
         self.theory_logger.write()
 
-#WITH discrete_space
-"""def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space):
-        # TODO: add theory level parameters, mediator, etc
-        # theory = create_Theory
-        # mediator = SocialTheoriesMediator([FundamentalCauseTheory])
-        return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space)
-"""
-
 ############################################
-#Functions outside the class
-
+#Functions outside the object
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, target_connections, space):
     return FCT_Agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, target_connections, space)
 

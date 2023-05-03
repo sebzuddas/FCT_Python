@@ -38,21 +38,5 @@ class SocialTheoriesMediator(TheoryMediator):
         self.agent.set_theory_array(self._theory_list[0].get_all_theory())
         self.agent.move()
 
-
         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
         self.agent.absolute_risk(consumption)
-
-
-
-# #TODO: make death a yearly thing
-#     def yearly_mechanisms(self):
-#         consumption = round(self.agent.drink(self._theory_list[0].get_mean_weekly_units()), 2)
-#         risk = self.agent.absolute_risk(consumption)
-#         # if consumption > 490:
-#         #     ld_50 = np.random.choice([0, 1])
-#         #     if ld_50 == 1:
-#         #         self.agent.kill()
-#         if(self.agent.get_agent_age()>100):
-#             self.agent.kill()
-#         elif risk > 0.5:#what parameter should be used here?
-#             self.agent.kill()
