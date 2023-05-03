@@ -24,7 +24,6 @@ class FundamentalCauseTheory(Theory):
         self.__social_influence: int = social_influence
         self.successful_adaptiation = 0
         self.unsuccessful_adaptiation = 0
-        self.strategy_multiplier: float
         
         #IMD 1 to move down between 16-30 = 0.3 ; IMD 1 to move up between 30+ = 0
         #self.deprivation_probability_dict: dict {'1': [0.02, 0.012, 0.01, 0.008, 0.005], '2': [0.013, 0.011, 0.009, 0.008, 0.008], '3': [0.01, 0.009, 0.009, 0.009, 0.007], '4': [0.01, 0.01, 0.009, 0.009, 0.009], '5': [0.007, 0.011, 0.008, 0.01, 0.016]}
@@ -43,7 +42,6 @@ class FundamentalCauseTheory(Theory):
             try :
                 event_value = return_decimal(event[0])
                 total_resources = self.calculate_resources()
-                # strategy_multiplier = self.params['strategy.multiplier.lower']
                 if event_value/4<=total_resources:
                     self.successful_adaptiation += 1
                     return [event, True]

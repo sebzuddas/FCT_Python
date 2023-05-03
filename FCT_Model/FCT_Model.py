@@ -216,7 +216,7 @@ class FCT_Model(Model):
                 elif not np.isin(agent_a_random_event, agent_b_solved_events).any():
                     # print(f"Agent {agent_a_id} has solved event {agent_a_random_event} and agent {agent_b_id} hasnt solved it")
                     # print(agent_b_solved_events)
-                    
+
                     st = rng.uniform(0, 1)
 
                     if st >= st/self.__props["communication.success"]:
@@ -280,11 +280,11 @@ class FCT_Model(Model):
             failed_attempts = len(agent.unsolved_events)
             successful_attempts = len(agent.solved_events)
 
-            if successful_attempts or failed_attempts == 0:
-                risk = agent.abs_risk * expit((agent.age-45)/9.5)
+            if successful_attempts != 0 or failed_attempts != 0:
+                risk = agent.abs_risk * expit((agent.age-45)/9.5) * (failed_attempts/(successful_attempts+failed_attempts))
         
             else:
-                risk = agent.abs_risk * expit((agent.age-45)/9.5) * (failed_attempts/successful_attempts+failed_attempts)
+                risk = agent.abs_risk * expit((agent.age-45)/9.5)
             # print(risk)
 
             # print(f'risk: {risk}')
@@ -559,18 +559,26 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
     agent_drinking_lowest = attributes["drinking_status"][0]
     agent_drinking_highest = attributes["drinking_status"][1]
 
-    agents_per_quintile = num_agents // quintiles
+    base_count = num_agents // quintiles
+    remaining_agents = num_agents % quintiles
 
-    quintile_labels = np.repeat(np.arange(quintiles), agents_per_quintile)
+    quintile_labels = np.repeat(np.arange(quintiles), base_count)
+    if num_agents % quintiles != 0:
+        remaining_labels = rng.choice(np.arange(quintiles), size=num_agents % quintiles, replace=False)
+        quintile_labels = np.concatenate((quintile_labels, remaining_labels))
 
+
+    rng.shuffle(quintile_labels)
 
     for i in range(num_agents):
         ##### random numbers #####
-
         sex_rand = int(rng.choice([0, 1], p=[0.5, 0.5]))
         age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
         agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
+
         deprivation_quintile_rand = int(quintile_labels[i])
+
+
         target_connections_rand = int(rng.integers(3, 4))
 
         agent = {

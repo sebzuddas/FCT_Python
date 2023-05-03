@@ -8,7 +8,7 @@ import plotly.express as px
 import yaml
 import kaleido
 
-#/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/tabular_logger_out.csv
+#/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
 user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/' # set path to your repo
 
 
@@ -41,33 +41,55 @@ def load_params(yaml_file):
 
 def main():
     ###############
-    tabular_data_path = 'FCT_Model/outputs/tabular_logger_out_'+ file_number +'.csv'
-    tabular_df = pd.read_csv(user_path+tabular_data_path)
-    #print(tabular_df.dtypes)
-    #tabular_df['sex'] = tabular_df['sex'].astype(int)
-    agent_location_x  = tabular_df['location_x']
-    agent_location_y = tabular_df['location_y']
-    # tabular_df = tabular_df.drop(columns=['agent_id', 'sex'])
-    tabular_df = tabular_df.drop(columns=['sex'])
+    agent_data_path = 'FCT_Model/outputs/agent_logger_out_'+ file_number +'.csv'
+    theory_data_path = 'FCT_Model/outputs/theory_logger_out_'+ file_number +'.csv'
+
+
+
+    agent_df = pd.read_csv(user_path+agent_data_path)
+
+    theory_df = pd.read_csv(user_path+theory_data_path)
+
+    total_df = pd.merge(agent_df, theory_df, left_on=('tick', 'agent_id'), right_on=('tick', 'id'), how='inner')
+
+    total_df = total_df.drop(columns=['id'])
+
+    total_df = total_df.groupby(['tick', 'deprivation_quintile'])
+
+    total_df = total_df.count()
+
+    print(total_df)
+
+    
+
+    exit()
+
+
+    #print(agent_df.dtypes)
+    #agent_df['sex'] = agent_df['sex'].astype(int)
+    agent_location_x  = agent_df['location_x']
+    agent_location_y = agent_df['location_y']
+    # agent_df = agent_df.drop(columns=['agent_id', 'sex'])
+    agent_df = agent_df.drop(columns=['sex'])
 
     graph_extent_x = parameters["board.size"]
     graph_extent_y = parameters["board.size"]
 
-    tabular_animated = px.scatter(tabular_df, x="location_x", y="location_y", animation_frame="tick", animation_group="agent_id",
+    agent_animated = px.scatter(agent_df, x="location_x", y="location_y", animation_frame="tick", animation_group="agent_id",
            size='age', color="deprivation_quintile", hover_name="agent_id",
            log_x=False, range_x=[0,graph_extent_x], range_y=[0,graph_extent_y])
 
-    tabular_animated.show()
+    agent_animated.show()
 
-    # tabular_animated.write_image("Data_Processing/outputs/Animated_agents.png")
+    # agent_animated.write_image("Data_Processing/outputs/Animated_agents.png")
 
     
 
 
-    tabular_scatter = px.scatter(tabular_df, x="location_x", y="location_y", 
+    agent_scatter = px.scatter(agent_df, x="location_x", y="location_y", 
            size='age', color="deprivation_quintile", hover_name="agent_id",
            log_x=False, range_x=[0,graph_extent_x], range_y=[0,graph_extent_y])
-    tabular_scatter.write_image("Data_Processing/outputs/Scatter_agents.png", 'png', width=1920/2, height=1080/2, scale=5)
+    agent_scatter.write_image("Data_Processing/outputs/Scatter_agents.png", 'png', width=1920/2, height=1080/2, scale=5)
 
 
     

@@ -3,6 +3,8 @@ FCT_Model/outputs/*.csv
 .venv/*
 .python-version
 .vscode/*
-Data_Processing/outputs/*
+Data_Processing/outputs/*.csv
+Data_Processing/outputs/*.png
 FCT_Model/props/model/model-*
 *.txt
+/Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs
