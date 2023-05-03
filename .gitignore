@@ -1,5 +1,5 @@
 #ignore all outputs 
-FCT_Model/outputs/tabular_*
+FCT_Model/outputs/*.csv
 .venv/*
 .python-version
 .vscode/*
@@ -7,4 +7,4 @@ FCT_Model/outputs/tabular_*
 FCT_Model/props/model/model-*
 *.txt
 
-Data_Processing/outputs/*
+Data_Processing/outputs
