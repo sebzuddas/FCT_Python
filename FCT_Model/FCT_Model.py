@@ -12,6 +12,9 @@ import repast4py
 import numpy as np
 from numpy import *
 
+from scipy.special import expit
+
+
 from alive_progress import alive_bar
 
 import networkx as nx
@@ -111,28 +114,14 @@ class FCT_Model(Model):
         ############
         #OUTPUTS
 
-        # initialize the logging
-        # return {
-        #     "mean_weekly_units": self.__mean_weekly_units,
-        #     "education": self.__education,
-        #     "personal_wealth": self.__personal_wealth,
-        #     "social_connections": self.__social_connections,
-        #     "social_influence": self.__social_influence,
-        #     "knowledge": self.knowledge,
-        #     "strategy_multiplier": self.strategy_multiplier,
-        #     "total_resources": self.__total_resources,
-        #     "successful_adaptiation": self.successful_adaptiation,
-        #     "unsuccessful_adaptiation": self.unsuccessful_adaptiation
-        # }
-        self.theory_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth', 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
-        self.log_theory()
-
+        self.theory_logger = logging.TabularLogger(comm, params['theory.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth','power', 'prestige' 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
         #TODO: pass board array into the tabular logger
         # self.board_logger = logging.TabularLogger(comm, params['board.logger'])
         # self.log_board()
 
         self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile', 'death_count','location_x', 'location_y'])
         self.log_agents()
+        self.log_theory()
         ## Reduce-type Logging
         # self.individual_agent_info = IndividualAgentInfo()
         # loggers = logging.create_loggers(self.__, op=MPI.SUM, names={'total_meets': 'total'}, rank=rank)
@@ -286,7 +275,6 @@ class FCT_Model(Model):
     def do_per_year(self):
         self.do_transformational_mechanisms()
 
-
         #calculate agents risk
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents):
 
@@ -294,8 +282,18 @@ class FCT_Model(Model):
             age = agent.get_agent_age()
             age += 1
             agent.set_agent_age(age)
-            risk = agent.abs_risk
-            if(agent.get_agent_age()>100):
+            failed_attempts = agent.get_failed_attempts()
+            successful_attempts = agent.get_successful_attempts()
+
+            if successful_attempts or failed_attempts == 0:
+                risk = agent.abs_risk * expit((agent.age-45)/9.5)
+        
+            else:
+                risk = agent.abs_risk * expit((agent.age-45)/9.5) * (failed_attempts/successful_attempts)
+            # print(risk)
+
+            # print(f'risk: {risk}')
+            if(agent.get_agent_age()>95):
                 agent.kill()
             elif risk > 0.5:#what parameter should be used here?
                 agent.kill()
@@ -507,6 +505,22 @@ class FCT_Model(Model):
             theory = FundamentalCauseTheory(self.__context, mean_weekly_units, FCT_attributes[0], FCT_attributes[1], FCT_attributes[2], FCT_attributes[3], self.__network.num_edges(agent), social_influence, self.__discrete_space)
             
             mediator = SocialTheoriesMediator([theory])
+
+            theory_dict = {
+                    "mean_weekly_units": mean_weekly_units,
+                    "education": FCT_attributes[0],
+                    "personal_wealth": FCT_attributes[1],
+                    "knowledge": FCT_attributes[0]/3,
+                    "power": FCT_attributes[2],
+                    "prestige": FCT_attributes[3],
+                    "social_connections":self.__network.num_edges(agent),
+                    "social_influence": social_influence,
+                    "total_resources": 0,
+                    "successful_adaptiation": 0,
+                    "unsuccessful_adaptiation": 0
+                }
+            
+            agent.set_theory_array(theory_dict)
             agent.set_params(self.__props)
             agent.set_mediator(mediator)
             theory.set_params(self.__props)
@@ -527,7 +541,7 @@ class FCT_Model(Model):
     def log_theory(self):
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():
-            self.theory_logger.log_row(tick, agent.id,  agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['strategy_multiplier'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
+            self.theory_logger.log_row(tick, agent.id, agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['power'], agent.get_theory_dict()['prestige'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
         self.theory_logger.write()
 
 
@@ -556,7 +570,7 @@ def restore_FCT_agent(agent_data):
 #############################################################################
 #Network Generation
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], params, get_data = False, seed_input=1):
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], params, quintiles=5, get_data = False, seed_input=1):
     rng = np.random.default_rng(seed=seed_input)
     agent_data = []
     agent_age_lowest = attributes["age"][0]
@@ -564,12 +578,25 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
     agent_drinking_lowest = attributes["drinking_status"][0]
     agent_drinking_highest = attributes["drinking_status"][1]
 
+
+    base_count = num_agents // quintiles
+    remaining_agents = num_agents % quintiles
+
+    quintile_labels = np.repeat(np.arange(quintiles), base_count)
+    if remaining_agents > 0:
+        additional_labels = np.arange(remaining_agents)
+        quintile_labels = np.concatenate((quintile_labels, additional_labels))
+
+    rng.shuffle(quintile_labels)
+
+
     for i in range(num_agents):
         ##### random numbers #####
+
         sex_rand = int(rng.choice([0, 1], p=[0.5, 0.5]))
         age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
         agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
-        deprivation_quintile_rand = int(rng.integers(0, 5))# has to stay constant
+        deprivation_quintile_rand = int(quintile_labels[i])
         target_connections_rand = int(rng.integers(10, 20))
 
         agent = {
@@ -684,71 +711,6 @@ def generate_agent_distributions(type):
             return dict
     
 #############################################################################
-#Theory Parameter Generation
-
-# def generate_theory_json_file(num_agents, filename, attributes: Dict[str, list], params, get_data = False, seed_input=1):
-#     params = params
-    
-#     rng = np.random.default_rng(seed=seed_input)  # create a default Generator instance
-#     theory_data = []
-#     theory_wealth_distribution_type = attributes["personal_wealth"][0]
-#     theory_weekly_units_lowest = attributes["mean_weekly_units"][0]
-#     theory_weekly_units_highest = attributes["mean_weekly_units"][1]
-#     theory_education_lowest = attributes["education"][0]
-#     theory_education_highest = attributes["education"][1]
-
-#     #def __init__(self, id:int, rank:int, deprivation_quintile:int, agent_type:int, threshold:float, sex: bool, age: int, drinking_status: int,  space):
-
-#     for i in range(num_agents):
-        
-#         ##### random numbers #####
-#         if theory_wealth_distribution_type == "n":
-#             # set the wealth to a normal distribution
-#             mu, sigma = 2.5, 1 # mean and standard deviation
-#             # wealth_distribution_rand = float(np.random.default_rng().normal(mu, sigma, num_agents))
-#             rand = abs(rng.normal(mu, sigma, num_agents))
-#             wealth_distribution_rand = round(rand[i], 2)
-
-#         elif theory_wealth_distribution_type == "p":
-#             # set the wealth to a pareto distribution
-#             a,m  = 1, 2 # shape and mode
-#             rand = (rng.pareto(a, num_agents) + 1) * m
-#             wealth_distribution_rand = round(rand[i], 2)
-            
-#         elif theory_wealth_distribution_type == "u":
-#             # set the wealth to a uniform distribution
-#             low, high = 0, 5 # lower and upper bounds
-#             rand = rng.uniform(low, high, num_agents)
-#             wealth_distribution_rand = round(rand[i], 2)
-
-        
-#         weekly_units_rand = int(rng.integers(theory_weekly_units_lowest, theory_weekly_units_highest))
-#         education_rand = int(rng.integers(theory_education_lowest, theory_education_highest))
-        
-
-#         theory = {
-#             "mean_weekly_units": weekly_units_rand/10,
-#             "education": education_rand, 
-#             "personal_wealth": wealth_distribution_rand,# agents are all in the same rank
-#             "prestige": None,
-#             "power": None,
-#             "social_connections": None,
-#             "social_influence": None,
-#             "space": None
-#         }
-
-#         theory_data.append(theory)
-
-#     with open(filename, 'w') as outfile:
-#         json.dump(theory_data, outfile, indent=4)
-    
-#     with open(filename, 'r') as infile: 
-#         theory_data = json.load(infile)
-#     if get_data:
-#         return theory_data
-
-
-import numpy as np
 
 def generate_theory_vector(quintile, distribution_type, pareto_shape=2, normal_std=0.15):
     if not 1 <= quintile <= 5:
@@ -763,11 +725,11 @@ def generate_theory_vector(quintile, distribution_type, pareto_shape=2, normal_s
     normal_std = normal_std
 
     base_means = {
-        1: (1, 1, 0, 0),
-        2: (2, 2, 0.25, 0.25),
-        3: (2.5, 3, 0.5, 0.5),
-        4: (3, 4, 0.75, 0.75),
-        5: (3, 5, 1, 1)
+        5: (0.5, 1, 0, 0),
+        4: (1, 2, 0.25, 0.25),
+        3: (1.5, 3, 0.5, 0.5),
+        2: (2, 4, 0.75, 0.75),
+        1: (2.5, 5, 1, 1)
     }
 
     mean_education, mean_wealth, mean_power, mean_prestige = base_means[quintile]
@@ -798,8 +760,6 @@ def generate_theory_vector(quintile, distribution_type, pareto_shape=2, normal_s
     prestige = np.clip(prestige, 0, 1)
 
     return [education, wealth/5, power, prestige]
-
-
 
 def generate_theory_distributions(type):
 

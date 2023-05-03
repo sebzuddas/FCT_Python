@@ -7,4 +7,4 @@ FCT_Model/outputs/*.csv
 FCT_Model/props/model/model-*
 *.txt
 
-Data_Processing/outputs
+Data_Processing/outputs/*.csv

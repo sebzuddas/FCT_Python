@@ -129,10 +129,11 @@ class FundamentalCauseTheory(Theory):
             "mean_weekly_units": self.__mean_weekly_units,
             "education": self.__education,
             "personal_wealth": self.__personal_wealth,
+            "knowledge": self.knowledge,
+            "power": self.__power,
+            "prestige": self.__prestige,
             "social_connections": self.__social_connections,
             "social_influence": self.__social_influence,
-            "knowledge": self.knowledge,
-            "strategy_multiplier": self.calculate_strategy_multiplier(),
             "total_resources": self.calculate_resources(),
             "successful_adaptiation": self.successful_adaptiation,
             "unsuccessful_adaptiation": self.unsuccessful_adaptiation
