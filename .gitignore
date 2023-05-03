@@ -3,8 +3,6 @@ FCT_Model/outputs/*.csv
 .venv/*
 .python-version
 .vscode/*
-
+Data_Processing/outputs/*
 FCT_Model/props/model/model-*
 *.txt
-
-Data_Processing/outputs/*.csv
