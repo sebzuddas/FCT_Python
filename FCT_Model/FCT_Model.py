@@ -119,7 +119,7 @@ class FCT_Model(Model):
         # self.board_logger = logging.TabularLogger(comm, params['board.logger'])
         # self.log_board()
 
-        self.agent_logger = logging.TabularLogger(comm, params['tabular.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile', 'death_count','location_x', 'location_y'])
+        self.agent_logger = logging.TabularLogger(comm, params['agent.logger'], ['tick', 'agent_id', 'sex', 'age', 'deprivation_quintile', 'death_count','location_x', 'location_y'])
         self.log_agents()
         self.log_theory()
         ## Reduce-type Logging
@@ -282,14 +282,14 @@ class FCT_Model(Model):
             age = agent.get_agent_age()
             age += 1
             agent.set_agent_age(age)
-            failed_attempts = agent.get_failed_attempts()
-            successful_attempts = agent.get_successful_attempts()
+            failed_attempts = len(agent.unsolved_events)
+            successful_attempts = len(agent.solved_events)
 
             if successful_attempts or failed_attempts == 0:
                 risk = agent.abs_risk * expit((agent.age-45)/9.5)
         
             else:
-                risk = agent.abs_risk * expit((agent.age-45)/9.5) * (failed_attempts/successful_attempts)
+                risk = agent.abs_risk * expit((agent.age-45)/9.5) * (failed_attempts/successful_attempts+failed_attempts)
             # print(risk)
 
             # print(f'risk: {risk}')
@@ -301,9 +301,8 @@ class FCT_Model(Model):
     ############################
     #Initialisers
     def init_agents(self):
-        #TODO: add a correlation coefficients
-        
-        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), self.__props, True, seed_input=self.__random_seed )
+
+        generate_agent_json_file(self.__props.get("count.of.agents"), self.__props.get("agent.props.file"),  generate_agent_distributions(0), True, seed_input=self.__random_seed )
         read_network(self.__props["network.file.updated"], self.__context, create_FCT_agent, restore_FCT_agent) 
 
         for agent in self.__context.agents(count=self.__count_of_agents):
@@ -544,8 +543,6 @@ class FCT_Model(Model):
             self.theory_logger.log_row(tick, agent.id, agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['power'], agent.get_theory_dict()['prestige'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
         self.theory_logger.write()
 
-
-
 #WITH discrete_space
 """def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, discrete_space):
         # TODO: add theory level parameters, mediator, etc
@@ -570,7 +567,7 @@ def restore_FCT_agent(agent_data):
 #############################################################################
 #Network Generation
 
-def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], params, quintiles=5, get_data = False, seed_input=1):
+def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], params, get_data=False, seed_input=1, quintiles=5):
     rng = np.random.default_rng(seed=seed_input)
     agent_data = []
     agent_age_lowest = attributes["age"][0]
@@ -579,15 +576,9 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
     agent_drinking_highest = attributes["drinking_status"][1]
 
 
-    base_count = num_agents // quintiles
-    remaining_agents = num_agents % quintiles
+    agents_per_quintile = num_agents // quintiles
 
-    quintile_labels = np.repeat(np.arange(quintiles), base_count)
-    if remaining_agents > 0:
-        additional_labels = np.arange(remaining_agents)
-        quintile_labels = np.concatenate((quintile_labels, additional_labels))
-
-    rng.shuffle(quintile_labels)
+    quintile_labels = np.repeat(np.arange(quintiles), agents_per_quintile)
 
 
     for i in range(num_agents):
@@ -597,7 +588,7 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
         age_rand = int(rng.integers(agent_age_lowest, agent_age_highest))
         agent_drinking_status = int(rng.integers(agent_drinking_lowest, agent_drinking_highest))
         deprivation_quintile_rand = int(quintile_labels[i])
-        target_connections_rand = int(rng.integers(10, 20))
+        target_connections_rand = int(rng.integers(3, 4))
 
         agent = {
             "agent_id": i,
