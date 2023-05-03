@@ -529,8 +529,7 @@ class FCT_Model(Model):
     ############################
     #Loggers
 
-    def log_agents(self):
-        #TODO: get theory level parameters for each agent to be logged. 
+    def log_agents(self): 
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():#get agent starting deprivation quintile
             self.agent_logger.log_row(tick, agent.id, agent.sex, agent.age, agent.get_deprivation_quintile()+1, agent.death_count, agent.get_agent_location()[1], agent.get_agent_location()[0])
@@ -574,7 +573,6 @@ def generate_agent_json_file(num_agents, filename, attributes: Dict[str, list], 
     agent_age_highest = attributes["age"][1]
     agent_drinking_lowest = attributes["drinking_status"][0]
     agent_drinking_highest = attributes["drinking_status"][1]
-
 
     agents_per_quintile = num_agents // quintiles
 

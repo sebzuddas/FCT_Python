@@ -29,7 +29,7 @@ class FCT_Communicator(Communicator):
     def generate_event(self, type:str):
         match type:
             case "b":
-                event = self.rand_binary(3)
+                event = self.rand_binary(5)
                 self.total_event_number += 1
                 self.total_event_list[self.total_event_number] = event
                 event_and_number = (event, self.total_event_number)

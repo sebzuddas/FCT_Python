@@ -55,10 +55,9 @@ class FundamentalCauseTheory(Theory):
                 event_value = return_decimal(event[0])
                 total_resources = self.calculate_resources()
                 # strategy_multiplier = self.params['strategy.multiplier.lower']
-                if event_value<=total_resources:
+                if event_value/4<=total_resources:
                     self.successful_adaptiation += 1
                     return [event, True]
-                    
                     
                 else:
                     self.unsuccessful_adaptiation += 1
