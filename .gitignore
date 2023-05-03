@@ -6,3 +6,5 @@ FCT_Model/outputs/tabular_*
 
 FCT_Model/props/model/model-*
 *.txt
+
+Data_Processing/outputs/*
