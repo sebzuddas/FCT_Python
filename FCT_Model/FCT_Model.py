@@ -114,7 +114,7 @@ class FCT_Model(Model):
         ############
         #OUTPUTS
 
-        self.theory_logger = logging.TabularLogger(comm, params['theory.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth','power', 'prestige' 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
+        self.theory_logger = logging.TabularLogger(comm, params['theory.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth','power', 'prestige', 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
         #TODO: pass board array into the tabular logger
         # self.board_logger = logging.TabularLogger(comm, params['board.logger'])
         # self.log_board()

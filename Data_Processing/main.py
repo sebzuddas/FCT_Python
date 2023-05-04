@@ -52,15 +52,43 @@ def main():
 
     total_df = pd.merge(agent_df, theory_df, left_on=('tick', 'agent_id'), right_on=('tick', 'id'), how='inner')
 
-    total_df = total_df.drop(columns=['id'])
+    # total_df = total_df.drop(columns=['id'])
 
-    total_df = total_df.groupby(['tick', 'deprivation_quintile'])
+    # total_df = total_df.groupby(['tick', 'deprivation_quintile'])
 
-    total_df = total_df.count()
+    # total_df = total_df.count()
 
-    print(total_df)
+    # total_df = total_df.reset_index()
 
+
+
+    avg_harm_per_quintile = total_df.groupby('deprivation_quintile')['death_count'].mean().reset_index()
+    avg_consumption_per_quintile = total_df.groupby('deprivation_quintile')['mean_weekly_units'].mean().reset_index()
+
+
+    fig1 = px.scatter(avg_harm_per_quintile, x='deprivation_quintile', y='death_count', title='Deprivation Quintile vs Alcohol Harm',
+                 labels={'deprivation_quintile': 'Deprivation Quintile', 'death_count': 'Average Alcohol Harm'})
+
+    fig1.show()
     
+    # fig2 = px.scatter(avg_consumption_per_quintile, x='deprivation_quintile', y='mean_weekly_units', title='Deprivation Quintile vs Alcohol Consumption',
+    #              labels={'deprivation_quintile': 'Deprivation Quintile', 'mean_weekly_units': 'Average Alcohol Consumption'})
+
+    # fig2.show()
+
+
+
+
+
+    #output total df to csv
+    total_df.to_csv(user_path+'Data_Processing/outputs/total_'+file_number+'_df.csv')
+
+
+
+    # print(total_df)
+
+    # animated_deprivation_quintile = px.scatter(total_df, x="deprivation_quintile", y="agent_id", animation_frame="tick", animation_group="agent_id", range_x=[1,5], range_y=[0,300])
+    # animated_deprivation_quintile.show()
 
     exit()
 
