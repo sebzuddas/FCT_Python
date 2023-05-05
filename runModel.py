@@ -130,13 +130,16 @@ def run(param, value, years):
 
 #for data processing, add something to choose which data processing script to run
 @model.command()
-@click.option('-d', default=False, help='Run the data processing script')
-def data(**kwargs):
+@click.option('--sim', default=None, help='Simulation Number to run the data processing script on')
+@click.option('--send', default=False, help='Send the data from the data processing script to the API: True or False')
+
+
+def data(sim, send):
     print(emojis.encode(colorama.Fore.YELLOW+"Attempting to run data processing script:confused: \n"))
     colorama.Fore.RESET  
 
     try:
-        subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml'], check=True)    
+        subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, send], check=True)    
         print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
     
     except(KeyboardInterrupt):

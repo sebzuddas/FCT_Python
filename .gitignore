@@ -5,6 +5,7 @@ FCT_Model/outputs/*.csv
 .vscode/*
 Data_Processing/outputs/*.csv
 Data_Processing/outputs/*.png
+Data_Processing/outputs/*.db
 FCT_Model/props/model/model-*
 *.txt
 /Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs
