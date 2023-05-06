@@ -19,49 +19,44 @@ import requests
 import os
 
 
-
-########## Graphics Handling ##########
-app = dash.Dash(__name__)
-
-app.layout = html.Div([
-    html.H1("Simulation Data Visualization"),
-    dcc.Dropdown(
-        id='agent-dropdown',
-        options=[{'label': f"Agent {i}", 'value': i} for i in range(1000)],
-        value=0,
-        multi=False,
-        clearable=False,
-        searchable=True
-    ),
-    dcc.Graph(id='simulation-graph')
-])
+host_var='127.0.0.1'
+user_var = str(os.environ['MYSQL_USER'])
+password_var = str(os.environ['MYSQL_PASSWORD'])
+database_var='simulation_data'
 
 
-@app.callback(
-    Output('simulation-graph', 'figure'),
-    [Input('agent-dropdown', 'value')]
-)
-def update_graph(agent_id):
-    total_df = load_all_data()
-    filtered_df = total_df[total_df['agent_id'] == agent_id]
 
-    fig = px.line(filtered_df, x='tick', y='your_value_column', title=f"Agent {agent_id} Data")
-    fig.update_xaxes(title="Tick")
-    fig.update_yaxes(title="Value")
 
-    return fig
-
-def load_all_data():
+def load_agent_data(simulation_id, agent_id):# reads individual agent data based on an agent ID
     connection = mysql.connector.connect(
         host=host_var,
         user=user_var,
         password=password_var,
         database=database_var
     )
-    query = "SELECT * FROM your_table"
+    query = f"SELECT * FROM PC_{simulation_id} WHERE agent_id = {agent_id}"
+    df = pd.read_sql(query, connection)
+    print(df.head(10))
+    connection.close()
+    return df
+
+def load_simulation_data(simulation_id):
+    connection = mysql.connector.connect(
+        host=host_var,
+        user=user_var,
+        password=password_var,
+        database=database_var
+    )
+    table_name = f"PC_{simulation_id}"
+    query = f"SELECT * FROM {table_name}"
     df = pd.read_sql(query, connection)
     connection.close()
     return df
+    # query = f"SELECT * FROM your_table WHERE simulation_id = {simulation_id}"
+    # df = pd.read_sql(query, connection)
+    # connection.close()
+    # return df
+
 
 
 ########## Database Handling ##########
@@ -146,8 +141,67 @@ def add_file_to_db(file_number):
     conn.commit()
     conn.close()
 
+def get_total_simulations():
+    connection = mysql.connector.connect(
+        host=host_var,
+        user=user_var,
+        password=password_var,
+        database=database_var
+    )
+
+    query = "SELECT COUNT(TABLE_NAME) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'simulation_data' AND TABLE_NAME LIKE 'PC_%'"
+    cursor = connection.cursor()
+    cursor.execute(query)
+    total_simulations = cursor.fetchone()[0]
+    connection.close()
+    return total_simulations
 
 
+
+########## Graphics Handling ##########
+app = dash.Dash(__name__)
+
+app.layout = html.Div([
+    html.H1("Simulation Data Visualization"),
+    dcc.Dropdown(
+        id='simulation-dropdown',
+        options=[{'label': f"Simulation {i}", 'value': i} for i in range(1, get_total_simulations() + 1)],
+        value=1,
+        multi=False,
+        clearable=False,
+        searchable=True
+    ),
+    dcc.Dropdown(
+        id='agent-dropdown',
+        options=[{'label': f"Agent {i}", 'value': i} for i in range(1000)],
+        value=0,
+        multi=False,
+        clearable=False,
+        searchable=True
+    ),
+    dcc.Graph(id='simulation-graph')
+])
+
+
+@app.callback(
+    Output('simulation-graph', 'figure'),
+    [Input('simulation-dropdown', 'value'),
+     Input('agent-dropdown', 'value')]
+)
+def update_graph(simulation_number, agent_id):
+    df = load_simulation_data(simulation_number)
+    filtered_df = df[df['agent_id'] == agent_id]
+
+    fig = px.line(filtered_df, x='tick', y='your_value_column', title=f"Agent {agent_id} Data")
+    fig.update_xaxes(title="Tick")
+    fig.update_yaxes(title="Value")
+
+    return fig
+
+
+
+
+########## Main ##########
 if __name__ == "__main__":
 
     yaml_file = sys.argv[1]
@@ -156,61 +210,34 @@ if __name__ == "__main__":
     #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
     user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/' # set path to your repo
     
-    host_var='127.0.0.1'
-    user_var = str(os.environ['MYSQL_USER'])
-    password_var = str(os.environ['MYSQL_PASSWORD'])
-    database_var='simulation_data'
-
-    # print(f"User: {user_var}")
-    # print(f"Password: {password_var}")
-
-
 
 
     if not all([user_var, password_var]):
         print("Please set the required environment variables: MYSQL_USER, MYSQL_PASSWORD.")
+        print(f"User: {user_var}")
+        print(f"Password: {password_var}")
         sys.exit(1)
-    
-    try:
-        file_number = sys.argv[2]
-
-        add_file_to_db(file_number)
-    except ValueError:
-        print('File number doesn\'t exist, please enter a valid file number\n')
-        file_number = input("Enter the file number: ")
-        print(f'File number: {file_number}\n')
-    except:
-        print('Unexpected error:', sys.exc_info()[0])
-        raise
-
-
-
 
     
-    # data_type = int(sys.argv[3])
-    # match data_type:
-    #     case 0:
-    #         print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
-    #         send_database_to_server(file_number)
-    #     case 1:
-    #         print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
-    #         send_csv_to_server(file_number)
-    #     case 2:
-    #         print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
-    #         make_remote_database(file_number)
-    #     case _:
-    #         raise ValueError(f'Invalid data type: {data_type}. Valid data types are 0, 1, or 2 for .db, .csv, or .json, respectively.')
-        
+    visualize = bool(sys.argv[3])
 
-    # try:
-    #     print(f'Send: {send}! Sending simulation {file_number} database to server...\n')
+    if not visualize:
+        try:
+            file_number = sys.argv[2]
+            add_file_to_db(file_number)
 
-    #     table_name = 'my_table'
-    #     headers = list(total_df.columns)
-    #     data = [row.to_dict() for _, row in total_df.iterrows()]
+        except ValueError:
+            print('File number doesn\'t exist, please enter a valid file number\n')
+            file_number = input("Enter the file number: ")
+            print(f'File number: {file_number}\n')
+        except:
+            print('Unexpected error:', sys.exc_info()[0])
+            raise
 
-
-
-
-    # except IndexError:
-    #     send = False
+    else:
+        #visualize the data using the appropriate functions
+        match visualize:
+            case True:
+                print('Visualizing data...\n')
+                # visualize_data()
+                app.run_server(debug=True)

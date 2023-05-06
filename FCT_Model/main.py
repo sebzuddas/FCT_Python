@@ -100,13 +100,12 @@ def main():
     #         #     print("Month: ", month)
     #         #     print("Week: ", tick)
     #         bar()
-        
     
-    
+
 
 
 # If this file is launched, run the model. 
 if __name__ == "__main__":
     main()
-    print("Model run complete")
+    print("Model run complete\n")
     exit()

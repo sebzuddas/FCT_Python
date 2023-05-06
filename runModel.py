@@ -25,6 +25,7 @@ import re
 import subprocess
 from alive_progress import alive_bar
 from repast4py import parameters
+import traceback
 
 
 
@@ -127,15 +128,20 @@ def data(sim, vis):
     print(emojis.encode(colorama.Fore.YELLOW+"Attempting to run data processing script:confused: \n"))
     colorama.Fore.RESET
 
+    vis = str(vis)
+
     try:
         if sim != None and vis != None:
             
-            print(f"visualising simulation:{sim} and placing into simulation_data as PC_{sim}\n")
+            print(f"Visualising simulation number: {sim}, placing into simulation_data as PC_{sim}\n")
             try:
                 subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, vis], check=True)  
                 print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
-            except:
-                print(emojis.encode(colorama.Fore.RED+"Error: unable to run the data processing script :flushed: \n"))
+            except subprocess.CalledProcessError as e:
+                print(emojis.encode(colorama.Fore.RED+f"Error: unable to run the data processing script: {e}\n"))
+            except Exception:
+                print(emojis.encode(colorama.Fore.RED+"Unknown error occurred:"))
+                traceback.print_exc(file=sys.stdout)
 
         elif sim != None:
             print(f"placing simulation:{sim} into simulation_data as PC_{sim}\n")
