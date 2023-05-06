@@ -145,13 +145,13 @@ def data(sim, vis):
         elif sim != None:
             print(f"placing simulation:{sim} into simulation_data as PC_{sim}\n")
             try:
-                subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, 'False'], check=True)
+                subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, False], check=True)
                 print(emojis.encode(colorama.Fore.GREEN+"The simulation data should be in the simulation_data folder! :smirk: \n"))
             except:
                 print(emojis.encode(colorama.Fore.RED+"Error: unable to run the data processing script :flushed: \n"))
 
         else:
-            subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml'], check=True)
+            subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim], check=True)
 
         
     except(KeyboardInterrupt):
@@ -223,12 +223,10 @@ def experiments(all, lhs, delete):
 
         if run_all == 'y':
             
-            
             model_outputs = 'FCT_Model/outputs/'
             data_processing_outputs = '/Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs'
-
             print('Deleting all the csv files in the FCT_Model/outputs folder!\n')
-            
+
             for file_name in os.listdir(model_outputs):
                 if re.match(r'(agent|theory)_logger_out(_\d+)?\.csv$', file_name) and file_name != 'agent_logger_out.csv' and file_name != 'theory_logger_out.csv':
                     file_path = os.path.join(model_outputs, file_name)
@@ -248,12 +246,14 @@ def experiments(all, lhs, delete):
 
             print('All the csv files have been deleted!\n')
 
-            print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {number_existing_yaml_files} the yaml files! 🥳 "))
-            with alive_bar(number_existing_yaml_files, title=colorama.Fore.GREEN+"Running LHS Experiments", bar='classic') as bar:
+            database_override = input(colorama.Fore.RED+'Do you want to automatically ovewrite data in the database? (y/n): ')
+
+            print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {colorama.Fore.YELLOW}{number_existing_yaml_files}{colorama.Fore.BLUE} yaml files! 🥳 "))
+            with alive_bar(number_existing_yaml_files, title=colorama.Fore.GREEN+"Running LHS Experiments"+colorama.Fore.RESET, bar='classic') as bar:
                 for i, _ in enumerate(range(1, number_existing_yaml_files + 1), 1):
-                    print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {i} the yaml file! 🥳 "))
+                    print(emojis.encode(colorama.Fore.BLUE+f"\nRunning the model with yaml file {colorama.Fore.YELLOW}{i}{colorama.Fore.BLUE}! 🥳 \n"))
                     run_model(i)
-                    put_csv_to_database(i)
+                    put_csv_to_database(i, database_override)
                     bar()
 
             print(emojis.encode(colorama.Fore.GREEN+"The experiments should be completed, well done! :smirk: \n"))
@@ -271,14 +271,18 @@ def experiments(all, lhs, delete):
         #run the model with the yaml files
 
 
-def put_csv_to_database(experiment_number):
+def put_csv_to_database(experiment_number, user_input):
+
+    user_input = str(user_input)
+
     try:
-        ctx = click.Context(data)
-        ctx.params = {'sim': experiment_number}
-        dataobj = data.make_context('data', [])
-        data.invoke(dataobj)
-    except Exception:
-        print("Unknown error occurred:")
+        subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', str(experiment_number)],input=user_input, text=True, check=True)  
+        # ctx = click.Context(data)
+        # ctx.params = {'sim': experiment_number}
+        # dataobj = data.make_context('data', [])
+        # data.invoke(dataobj)
+    except Exception as e:
+        print(f"Unknown error occurred: {e}")
 
 def run_model(experiment_number):
     try:

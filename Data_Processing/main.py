@@ -8,7 +8,6 @@ import plotly.express as px
 import yaml
 import kaleido
 import plotly.graph_objects as go
-
 import dash 
 from dash import dcc
 from dash import html
@@ -17,15 +16,15 @@ import numpy as np
 import mysql.connector
 import requests
 import os
+import colorama
+import emojis
+from colorama import Fore, Back, Style
 
 
 host_var='127.0.0.1'
 user_var = str(os.environ['MYSQL_USER'])
 password_var = str(os.environ['MYSQL_PASSWORD'])
 database_var='simulation_data'
-
-
-
 
 def load_agent_data(simulation_id, agent_id):# reads individual agent data based on an agent ID
     connection = mysql.connector.connect(
@@ -56,7 +55,6 @@ def load_simulation_data(simulation_id):
     # df = pd.read_sql(query, connection)
     # connection.close()
     # return df
-
 
 
 ########## Database Handling ##########
@@ -125,21 +123,42 @@ def add_file_to_db(file_number):
         cursor.execute(create_table_query)
 
     # Check if the simulation already exists in the database
-    if table_exists(conn, f'PC_{file_number}'):  # You're now calling the table_exists function
+    if table_exists(conn, f'PC_{file_number}'):  # checking if table exists
         user_input = input(f'Simulation with ID "PC_{file_number}" already exists. Do you want to add a new run anyway? (y/n): ')
         if user_input.lower() != 'y':
             print('Exiting without adding a new run.')
             conn.close()
             sys.exit()
+        else:
+            print('Deleting old table and adding new run.')
 
-    # Insert the data from the dataframe into the MySQL database, ignoring duplicate rows
-    for index, row in total_df.iterrows():
-        values = [str(row[header]) for header in headers]
-        insert_query = f"INSERT IGNORE INTO PC_{file_number} ({', '.join(headers)}) VALUES ({', '.join(['%s' for i in range(len(headers))])})"
-        cursor.execute(insert_query, values)
+            # Drop the old table
+            drop_table(conn, f'PC_{file_number}')
 
+            # Create a new table with the same structure as the old one
+            create_table_query = f"CREATE TABLE PC_{file_number} ({', '.join([f'{header} TEXT' for header in headers])})"
+            cursor.execute(create_table_query)
+            conn.commit()
+
+            # Insert the data from the dataframe into the MySQL database, ignoring duplicate rows
+            for index, row in total_df.iterrows():
+                values = [str(row[header]) for header in headers]
+                insert_query = f"INSERT IGNORE INTO PC_{file_number} ({', '.join(headers)}) VALUES ({', '.join(['%s' for i in range(len(headers))])})"
+                cursor.execute(insert_query, values)
+        # Save changes and close the connection
+        conn.commit()
+        conn.close()
+        print(f"{colorama.Fore.GREEN}\nSimulation with ID {colorama.Fore.YELLOW}'PC_{file_number}'{colorama.Fore.GREEN} has been added to the database!\n{colorama.Fore.RESET}")
+
+
+def drop_table(conn, table):
+    cursor = conn.cursor()
+    drop_query = f"DROP TABLE IF EXISTS {table}"
+    print(f"Executing drop query: {drop_query}")
+    cursor.execute(drop_query)
     conn.commit()
-    conn.close()
+    print(f"Table {table} has been dropped, a new one awaits!")
+
 
 def get_total_simulations():
     connection = mysql.connector.connect(
@@ -218,9 +237,13 @@ if __name__ == "__main__":
         print(f"Password: {password_var}")
         sys.exit(1)
 
-    
-    visualize = sys.argv[3]
-    print(visualize)
+    try:
+        visualize = sys.argv[3]
+    except IndexError as e:
+        visualize = None
+        print(f'No visualization argument provided, error: {e}\n')
+
+
 
     if not visualize:
         try:
