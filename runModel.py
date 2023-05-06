@@ -145,7 +145,7 @@ def data(sim, vis):
         elif sim != None:
             print(f"placing simulation:{sim} into simulation_data as PC_{sim}\n")
             try:
-                subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim], check=True)
+                subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, 'False'], check=True)
                 print(emojis.encode(colorama.Fore.GREEN+"The simulation data should be in the simulation_data folder! :smirk: \n"))
             except:
                 print(emojis.encode(colorama.Fore.RED+"Error: unable to run the data processing script :flushed: \n"))
@@ -160,11 +160,7 @@ def data(sim, vis):
     except subprocess.CalledProcessError as e:
         print(emojis.encode(colorama.Fore.RED+"Error: unable to display the graphs! :flushed: \n"))
 
-@model.command()
-@click.option('-p', default=None, help='Run the model with the specified properties file')
-def props(**kwargs):
-    print(emojis.encode(colorama.Fore.BLUE+"Running the model with the specified properties file {0} :cow: ".format(kwargs['p'])))
-    pass
+
 
 
 @model.command()
@@ -222,13 +218,43 @@ def experiments(all, lhs, delete):
             print('There are no yaml files in the test_parameters folder!\nexiting...')
             exit()
 
-        run_all = input(f'Are you sure you want to run the model with {number_existing_yaml_files} the yaml files in the test_parameters folder? (y/n): ')
+        print(colorama.Fore.RED+"WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, as well as in FCT_Model/outputs")
+        run_all = input(colorama.Fore.CYAN+f'Are you sure you want to run the model with {number_existing_yaml_files} the yaml files in the test_parameters folder? (y/n): ')
+
         if run_all == 'y':
+            
+            
+            model_outputs = 'FCT_Model/outputs/'
+            data_processing_outputs = '/Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs'
+
+            print('Deleting all the csv files in the FCT_Model/outputs folder!\n')
+            
+            for file_name in os.listdir(model_outputs):
+                if re.match(r'(agent|theory)_logger_out(_\d+)?\.csv$', file_name) and file_name != 'agent_logger_out.csv' and file_name != 'theory_logger_out.csv':
+                    file_path = os.path.join(model_outputs, file_name)
+                    os.remove(file_path)
+
+            for file_name in os.listdir(model_outputs):
+                print(file_name)
+
+            # for file_name in os.listdir(data_processing_outputs):
+            #     print(file_name)
+
+            print('Deleting all the csv files in the Data_Processing/outputs folder!\n')
+            for file_name in os.listdir(data_processing_outputs):
+                if file_name.endswith('.csv'):
+                    file_path = os.path.join(data_processing_outputs, file_name)
+                    os.remove(file_path)
+
+            print('All the csv files have been deleted!\n')
+
             print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {number_existing_yaml_files} the yaml files! 🥳 "))
-            for i in range(number_existing_yaml_files):
-                print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {i} the yaml file! 🥳 "))
-                run_model(i)
-                put_csv_to_database(i)
+            with alive_bar(number_existing_yaml_files, title=colorama.Fore.GREEN+"Running LHS Experiments", bar='classic') as bar:
+                for i, _ in enumerate(range(1, number_existing_yaml_files + 1), 1):
+                    print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {i} the yaml file! 🥳 "))
+                    run_model(i)
+                    put_csv_to_database(i)
+                    bar()
 
             print(emojis.encode(colorama.Fore.GREEN+"The experiments should be completed, well done! :smirk: \n"))
         else:
@@ -246,12 +272,25 @@ def experiments(all, lhs, delete):
 
 
 def put_csv_to_database(experiment_number):
-    print(f"you need to implement this method x {experiment_number}")
-    pass
-
+    try:
+        ctx = click.Context(data)
+        ctx.params = {'sim': experiment_number}
+        dataobj = data.make_context('data', [])
+        data.invoke(dataobj)
+    except Exception:
+        print("Unknown error occurred:")
 
 def run_model(experiment_number):
-    pass
+    try:
+        with open('/dev/null', 'w') as devnull:
+            subprocess.run(["python3", "FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True, stdout=devnull, stderr=devnull)
+        # subprocess.run(["python3" ,"FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(emojis.encode(colorama.Fore.RED+f"Error: unable to run the model: {e}\n"))
+    except Exception:
+        print(emojis.encode(colorama.Fore.RED+"Unknown error occurred:"))
+        traceback.print_exc(file=sys.stdout)
+        
 
 if __name__ == "__main__":
     props_file_location = 'FCT_Model/props/model'

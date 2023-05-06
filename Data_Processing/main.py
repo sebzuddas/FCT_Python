@@ -219,7 +219,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     
-    visualize = bool(sys.argv[3])
+    visualize = sys.argv[3]
+    print(visualize)
 
     if not visualize:
         try:
@@ -237,7 +238,14 @@ if __name__ == "__main__":
     else:
         #visualize the data using the appropriate functions
         match visualize:
-            case True:
+            case 'True':
                 print('Visualizing data...\n')
                 # visualize_data()
                 app.run_server(debug=True)
+
+            case 'False':
+                pass
+
+            case 'None':
+                pass
+                

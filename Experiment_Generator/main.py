@@ -48,10 +48,10 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
         props_file = yaml.safe_load(f)
     
     # Define keys of the parameters you want to modify
-    keys_to_modify = ['param1', 'param2', 'param3']
+    keys_to_modify = ['successful.adaptation.cost', 'unsuccessful.adaptation.cost', 'successful.adaptation.knowlege.benefit']
 
     # Define the bounds for each parameter you want to modify
-    bounds = [(1, 3), (2, 5), (10, 20)]
+    bounds = [(1, 30), (1, 30), (10, 20)]
 
     engine = LatinHypercube(len(keys_to_modify))
     sample = engine.random(sample_number)
@@ -67,7 +67,7 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
             # Update the parameter with the modified value
             props_file[key] = value
         
-        with open(os.path.join(target_folder, f'test_{i}.yaml'), 'w') as f:
+        with open(os.path.join(target_folder, f'test_{i+1}.yaml'), 'w') as f:
             yaml.dump(props_file, f)
 
 

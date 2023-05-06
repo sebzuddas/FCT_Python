@@ -16,7 +16,7 @@ class FundamentalCauseTheory(Theory):
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
         self.__personal_wealth: int = personal_wealth# money in the bank
-        self.__total_resources: int
+        self.__total_resources: int = 0
         self.__power: float = power
         self.__prestige: float = prestige
         self.knowledge = self.__education/3
