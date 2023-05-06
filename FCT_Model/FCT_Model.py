@@ -290,7 +290,7 @@ class FCT_Model(Model):
             # print(f'risk: {risk}')
             if(agent.get_agent_age()>95):
                 agent.kill()
-            elif risk > 0.5:#what parameter should be used here?
+            elif risk > self.__props['risk.threshold']:#what parameter should be used here?
                 agent.kill()
     
     ############################

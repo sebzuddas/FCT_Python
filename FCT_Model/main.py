@@ -102,8 +102,6 @@ def main():
     #         bar()
     
 
-
-
 # If this file is launched, run the model. 
 if __name__ == "__main__":
     main()

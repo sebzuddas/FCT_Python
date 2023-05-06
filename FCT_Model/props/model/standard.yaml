@@ -16,13 +16,18 @@ min.age: 18
 knowledge.gain: 1 #needs to be used
 communication.probability: 1 #can only range from 1 -> 20 - increasing
 resource.depletion: 1 #how many resources agents lose per adaptation
-
-communication.success: 2 
+communication.success: 2
 theory.distribution.type: 1 #1 - uniform 2- normal 3- pareto -> how to keep them within bounds
-
+risk.threshold: 0.5 # the threshold for how much risk an agent has to die, I put it at 50% for now
 #Communicator Parameters
-communicator.max.reach: 200
+communicator.max.reach: 200 # the amount of agents a communicator can reach every tick
 communicator.min.reach: 50
+
+beta.modifier.male: 0.00389
+beta.modifier.female: 0.00101
+
+successful.adapatation.cost: 1 #a multiplier for the cost of a successful adaptation
+unsuccessful.adapatation.cost: 1 #a multiplier for the cost of an unsuccessful adaptation
 
 
 

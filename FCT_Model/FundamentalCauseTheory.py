@@ -41,13 +41,15 @@ class FundamentalCauseTheory(Theory):
         else:
             try :
                 event_value = return_decimal(event[0])
-                total_resources = self.calculate_resources()
+                total_resources = self.__total_resources
                 if event_value/4<=total_resources:
                     self.successful_adaptiation += 1
+                    self.__total_resources -= event_value/4*self.params['successful.adaptation.cost']
                     return [event, True]
                     
                 else:
                     self.unsuccessful_adaptiation += 1
+                    self.__total_resources -= event_value/4*self.params['unsuccessful.adaptation.cost']
                     return [event, False]
                     
             except:
@@ -67,12 +69,7 @@ class FundamentalCauseTheory(Theory):
         return self.knowledge + self.__personal_wealth + self.__prestige +self.__power#TODO: edit to ensure all FCT parameters are included
         # print("calculate resources test")
 
-    def calculate_strategy_multiplier(self):    
-        return random.uniform(1.0, 3.0)
-
-    # TODO: override do_action()
     def do_action(self):
-        self.calculate_strategy_multiplier()
         self.calculate_resources()
         #print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
 

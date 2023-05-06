@@ -79,7 +79,7 @@ def run(param, value, years):
         yaml_location = dynamic_props
 
     else:
-        yaml_location = props_file_location+'/model.yaml'
+        yaml_location = props_file_location+'/standard.yaml'
 
 
     try:
@@ -228,6 +228,9 @@ def experiments(all, lhs, delete):
             for i in range(number_existing_yaml_files):
                 print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {i} the yaml file! 🥳 "))
                 run_model(i)
+                put_csv_to_database(i)
+
+            print(emojis.encode(colorama.Fore.GREEN+"The experiments should be completed, well done! :smirk: \n"))
         else:
             print('No yaml files have been run!\nexiting...')
             exit()
@@ -242,6 +245,9 @@ def experiments(all, lhs, delete):
         #run the model with the yaml files
 
 
+def put_csv_to_database(experiment_number):
+    print(f"you need to implement this method x {experiment_number}")
+    pass
 
 
 def run_model(experiment_number):

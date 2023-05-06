@@ -145,7 +145,6 @@ class FCT_Agent(MicroAgent):
             # Add [event, True] to received_events
             self.received_events.append([event, True])
 
-
     def set_theory_array(self, theory):
         self.theory_dict.update(theory)
 
@@ -171,9 +170,9 @@ class FCT_Agent(MicroAgent):
         ratio = min(unsolved_events_count / total_events_count, 1) if total_events_count > 0 else 0
 
         if self.sex == 0:
-            beta = 0.00101
+            beta = self.params['beta.modifier.female']
         else:
-            beta = 0.00398
+            beta = self.params['beta.modifier.male']
 
         # consumption = self.get_agent_drinking_status()
         if consumption == 0:
