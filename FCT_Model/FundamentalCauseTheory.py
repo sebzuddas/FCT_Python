@@ -45,8 +45,12 @@ class FundamentalCauseTheory(Theory):
                 if event_value/4<=total_resources:
                     self.successful_adaptiation += 1
                     self.__total_resources -= event_value/4*self.params['successful.adaptation.cost']
-                    return [event, True]
-                    
+
+                    if self.knowledge < 1:
+                        self.knowledge += self.params['successful.adaptation.knowlege.benefit']
+                        return [event, True]
+                    else:
+                        return [event, True]
                 else:
                     self.unsuccessful_adaptiation += 1
                     self.__total_resources -= event_value/4*self.params['unsuccessful.adaptation.cost']
@@ -66,7 +70,7 @@ class FundamentalCauseTheory(Theory):
     #individual agent-level action mechanism methods
 
     def calculate_resources(self):
-        return self.knowledge + self.__personal_wealth + self.__prestige +self.__power#TODO: edit to ensure all FCT parameters are included
+        return self.knowledge + self.__personal_wealth + self.__prestige + self.__power#TODO: edit to ensure all FCT parameters are included
         # print("calculate resources test")
 
     def do_action(self):
@@ -94,9 +98,6 @@ class FundamentalCauseTheory(Theory):
     def get_knowledge(self) -> int:
         return self.knowledge
     
-    def get_strategy_multiplier(self) -> float:
-        return self.strategy_multiplier
-    
     def get_total_resources(self) -> int:
         return self.__total_resources
     
@@ -117,7 +118,7 @@ class FundamentalCauseTheory(Theory):
             "prestige": self.__prestige,
             "social_connections": self.__social_connections,
             "social_influence": self.__social_influence,
-            "total_resources": self.calculate_resources(),
+            "total_resources": self.__total_resources,
             "successful_adaptiation": self.successful_adaptiation,
             "unsuccessful_adaptiation": self.unsuccessful_adaptiation
         }
