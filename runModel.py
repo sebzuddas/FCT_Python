@@ -119,7 +119,6 @@ def run(param, value, years):
     except(FileNotFoundError):
         print(emojis.encode(colorama.Fore.RED+"Error: unable to run the model - file not found :unamused: \n"))
 
-
 #for data processing, add something to choose which data processing script to run
 @model.command()
 @click.option('--sim', default=None, help='Simulation Number to run the data processing script on')
@@ -165,6 +164,87 @@ def data(sim, vis):
 @click.option('-p', default=None, help='Run the model with the specified properties file')
 def props(**kwargs):
     print(emojis.encode(colorama.Fore.BLUE+"Running the model with the specified properties file {0} :cow: ".format(kwargs['p'])))
+    pass
+
+
+@model.command()
+@click.option('--all', is_flag=True, help='Run the model with all the different parameter settings outlined by the .YAML files')
+@click.option('--lhs', default=None, help='Generate a Latin Hypercube Sample of the parameter space')
+@click.option('--delete', is_flag=True, help='Delete all the .yaml files in the test_parameters folder')
+def experiments(all, lhs, delete):
+    
+    test_folder_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/model/test_parameters'
+    number_existing_yaml_files = len([f for f in os.listdir(test_folder_path) if os.path.isfile(os.path.join(test_folder_path, f))])
+    ### check for input ###
+    #get_existing_number of yaml files. 
+    print(f'Currently, there exist {number_existing_yaml_files} yaml files in the experiment folder.\n')
+    if not all and not lhs and not delete:
+        print("please specify either --all, --lhs, or --delete\n")  
+
+    if number_existing_yaml_files == 0 and lhs == None:
+        print('There are no yaml files in the experiment folder.\nPlease generate some yaml files using the --lhs flag, followed by the number of desired yaml files.\n')
+        exit()
+        
+    if delete == True:
+        prompt = input('Are you sure you want to delete all the yaml files in the test_parameters folder? (y/n): ')
+        if prompt == 'y':
+            print('Deleting all the yaml files in the test_parameters folder!\n')
+            for f in os.listdir(test_folder_path):
+                os.remove(os.path.join(test_folder_path, f))
+            print('All the yaml files have been deleted!\n')
+        else:
+            print('No yaml files have been deleted!\nexiting...')
+            exit()
+
+    if all == False and lhs != None:
+        #Generate the number of yaml files specified by lhs
+        if number_existing_yaml_files > 0:
+            delete_all_files = input(f'There are already {number_existing_yaml_files} files in the test_parameters folder, would you like to delete them? (y/n): ')
+            if delete_all_files == 'y':
+                for f in os.listdir(test_folder_path):
+                    os.remove(os.path.join(test_folder_path, f))
+                print('All the yaml files have been deleted!\n')
+
+        print(emojis.encode(colorama.Fore.BLUE+f"Generating: {lhs} .yaml files 🥳 "))
+        try:
+            subprocess.run(["python3" ,"Experiment_Generator/main.py", lhs], check=True)
+            print(emojis.encode(colorama.Fore.GREEN+"The yaml files should be in the props folder! :smirk: \n"))
+        except subprocess.CalledProcessError as e:
+            print(emojis.encode(colorama.Fore.RED+f"Error: unable to generate the yaml files: {e}\n"))
+        except Exception:
+            print(emojis.encode(colorama.Fore.RED+"Unknown error occurred:"))
+            traceback.print_exc(file=sys.stdout)
+
+    elif all == True and lhs == None:   
+        #check that there are enough yaml files
+        #run through the number of yaml files that exist
+        if number_existing_yaml_files == 0:
+            print('There are no yaml files in the test_parameters folder!\nexiting...')
+            exit()
+
+        run_all = input(f'Are you sure you want to run the model with {number_existing_yaml_files} the yaml files in the test_parameters folder? (y/n): ')
+        if run_all == 'y':
+            print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {number_existing_yaml_files} the yaml files! 🥳 "))
+            for i in range(number_existing_yaml_files):
+                print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {i} the yaml file! 🥳 "))
+                run_model(i)
+        else:
+            print('No yaml files have been run!\nexiting...')
+            exit()
+
+
+    
+
+    if all == True and lhs != None:
+        pass
+        #generate the yaml files
+        
+        #run the model with the yaml files
+
+
+
+
+def run_model(experiment_number):
     pass
 
 if __name__ == "__main__":

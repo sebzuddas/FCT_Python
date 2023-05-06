@@ -7,5 +7,6 @@ Data_Processing/outputs/*.csv
 Data_Processing/outputs/*.png
 Data_Processing/outputs/*.db
 FCT_Model/props/model/model-*
+FCT_Model/props/model/test_parameters/*.yaml
 *.txt
 /Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs
