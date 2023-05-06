@@ -41,15 +41,6 @@ def update_parameter(parameter_name, new_value, yaml_file):
     with open(yaml_file, 'w') as file:
         yaml.safe_dump(params, file)
 
-
-# def main():
-#     #  while True:
-#     #     print(colorama.Fore.BLACK, colorama.Back.WHITE)
-#     #     print(emojis.encode("Welcome to the Fundamental Cause Theory Agent Based Model!🥳 \n"))
-#     #     # print(colorama.Style.RESET_ALL)
-#     #     command = input("Enter command (type 'exit' to quit): ")
-#     #     if command.lower() == 'exit':
-#     #         break
     
 @click.group()
 def model():
@@ -131,16 +122,33 @@ def run(param, value, years):
 #for data processing, add something to choose which data processing script to run
 @model.command()
 @click.option('--sim', default=None, help='Simulation Number to run the data processing script on')
-@click.option('--send', default=None, help='Send the data from the data processing script to the API: True or False')
-
-def data(sim, send):
+@click.option('--vis', is_flag=True, help='Visualise the data from the data processing script: True or False')
+def data(sim, vis):
     print(emojis.encode(colorama.Fore.YELLOW+"Attempting to run data processing script:confused: \n"))
-    colorama.Fore.RESET  
+    colorama.Fore.RESET
 
     try:
-        subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, str(send)], check=True)    
-        print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
-    
+        if sim != None and vis != None:
+            
+            print(f"visualising simulation:{sim} and placing into simulation_data as PC_{sim}\n")
+            try:
+                subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim, vis], check=True)  
+                print(emojis.encode(colorama.Fore.GREEN+"The graphs should be in your browser! :smirk: \n"))
+            except:
+                print(emojis.encode(colorama.Fore.RED+"Error: unable to run the data processing script :flushed: \n"))
+
+        elif sim != None:
+            print(f"placing simulation:{sim} into simulation_data as PC_{sim}\n")
+            try:
+                subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml', sim], check=True)
+                print(emojis.encode(colorama.Fore.GREEN+"The simulation data should be in the simulation_data folder! :smirk: \n"))
+            except:
+                print(emojis.encode(colorama.Fore.RED+"Error: unable to run the data processing script :flushed: \n"))
+
+        else:
+            subprocess.run(["python3" ,"Data_Processing/main.py", props_file_location+'/model.yaml'], check=True)
+
+        
     except(KeyboardInterrupt):
         print(emojis.encode(colorama.Fore.RED+"You stopped the script running! :unamused: \n"))
     

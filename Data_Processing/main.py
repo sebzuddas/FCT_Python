@@ -14,63 +14,74 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 import numpy as np
-import sqlite3
+import mysql.connector
 import requests
-
-#/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
-user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/' # set path to your repo
+import os
 
 
+
+########## Graphics Handling ##########
+app = dash.Dash(__name__)
+
+app.layout = html.Div([
+    html.H1("Simulation Data Visualization"),
+    dcc.Dropdown(
+        id='agent-dropdown',
+        options=[{'label': f"Agent {i}", 'value': i} for i in range(1000)],
+        value=0,
+        multi=False,
+        clearable=False,
+        searchable=True
+    ),
+    dcc.Graph(id='simulation-graph')
+])
+
+
+@app.callback(
+    Output('simulation-graph', 'figure'),
+    [Input('agent-dropdown', 'value')]
+)
+def update_graph(agent_id):
+    total_df = load_all_data()
+    filtered_df = total_df[total_df['agent_id'] == agent_id]
+
+    fig = px.line(filtered_df, x='tick', y='your_value_column', title=f"Agent {agent_id} Data")
+    fig.update_xaxes(title="Tick")
+    fig.update_yaxes(title="Value")
+
+    return fig
+
+def load_all_data():
+    connection = mysql.connector.connect(
+        host=host_var,
+        user=user_var,
+        password=password_var,
+        database=database_var
+    )
+    query = "SELECT * FROM your_table"
+    df = pd.read_sql(query, connection)
+    connection.close()
+    return df
+
+
+########## Database Handling ##########
 def load_params(yaml_file):
     with open(yaml_file, 'r') as file:
         params = yaml.safe_load(file)
     return params
 
-
-def simulation_exists(conn, simulation_id):
-    cursor = conn.execute(f"SELECT COUNT(*) FROM my_table WHERE simulation_id='{simulation_id}'")
-    count = cursor.fetchone()[0]
-    return count > 0
-
-def send_database_to_server(file_number, server_url='http://178.79.134.28:5000/upload_simulation'):
-    simulation_data_path = 'Data_Processing/outputs/simulations.db'
-    conn = sqlite3.connect(user_path+simulation_data_path)
-
-
-    if file_number == 0:#send everything
-        pass
-
-def send_csv_to_server(file_number, server_url='http://178.79.134.28:5000/upload_simulation'):
-    summarised_data_path = 'Data_Processing/outputs/total_'+ file_number +'_df.csv'
-    summarised_df = pd.read_csv(user_path+summarised_data_path)
-
+def table_exists(conn, table_name):
+    cursor = conn.cursor()
     
-    if file_number == 0:#send everything
-        pass
-
-    pass
-
-def send_json_to_server(file_number, server_url='http://178.79.134.28:5000/upload_simulation'):
-    summarised_data_path = 'Data_Processing/outputs/total_'+ file_number +'_df.csv'
-    summarised_df = pd.read_csv(user_path+summarised_data_path)
-
+    # Check if the table exists
+    query = "SHOW TABLES LIKE %s"
     
-    json_data = {
-        "table_name": table_name,
-        "headers": headers,
-        "data": data
-    }
-
-    # Send the JSON data to the server using the API
-    response = requests.post(server_url, json=json_data)
-
-    if response.status_code == 200:
-        print('Simulation data sent successfully.')
-    else:
-        print(f'Error sending simulation data. Status code: {response.status_code}')
+    cursor.execute(query, (table_name,))
+    exists = cursor.fetchone()
     
-    if file_number == 0:#send everything
-        pass
+    cursor.close()
+    
+    return exists is not None
 
 def add_file_to_db(file_number):
     ###############
@@ -89,49 +100,81 @@ def add_file_to_db(file_number):
     total_df['simulation_id'] = 'PC_'+file_number
 
     headers = list(total_df.columns)
-    conn = sqlite3.connect('Data_Processing/outputs/simulations.db')
+
+    ## Database Connection ##
+    total_df['simulation_id'] = 'PC_'+file_number
+
+    headers = list(total_df.columns)
+    
+    # Connect to the MySQL server
+    conn = mysql.connector.connect(
+        host=host_var,
+        user=user_var,
+        password=password_var,
+        database=database_var
+    )
+
+    cursor = conn.cursor()
 
     # Check if table already exists
-    cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='my_table'")
-    table_exists = cursor.fetchone()
+    cursor.execute(f"SHOW TABLES LIKE 'PC_{file_number}'")
+    table_found = cursor.fetchone()
+
+    print("conn:", conn)
+    print("table_name:", f'PC_{file_number}')
+
 
     # If table does not exist, create it
-    if not table_exists:
-        create_table_query = f"CREATE TABLE my_table ({','.join(headers)})"
-        conn.execute(create_table_query)
+    if not table_found:
+        create_table_query = f"CREATE TABLE PC_{file_number} ({', '.join([f'{header} TEXT' for header in headers])})"
+        cursor.execute(create_table_query)
 
-
-        # Check if the simulation already exists in the database
-    if simulation_exists(conn, 'PC_'+file_number):
+    # Check if the simulation already exists in the database
+    if table_exists(conn, f'PC_{file_number}'):  # You're now calling the table_exists function
         user_input = input(f'Simulation with ID "PC_{file_number}" already exists. Do you want to add a new run anyway? (y/n): ')
         if user_input.lower() != 'y':
             print('Exiting without adding a new run.')
             conn.close()
             sys.exit()
 
-    # Insert the data from the dataframe into the SQLite database, ignoring duplicate rows
+    # Insert the data from the dataframe into the MySQL database, ignoring duplicate rows
     for index, row in total_df.iterrows():
         values = [str(row[header]) for header in headers]
-        insert_query = f"INSERT OR IGNORE INTO my_table ({','.join(headers)}) VALUES ({','.join(['?' for i in range(len(headers))])})"
-        conn.execute(insert_query, values)
+        insert_query = f"INSERT IGNORE INTO PC_{file_number} ({', '.join(headers)}) VALUES ({', '.join(['%s' for i in range(len(headers))])})"
+        cursor.execute(insert_query, values)
 
     conn.commit()
     conn.close()
 
 
 
-
-
 if __name__ == "__main__":
-    
-    
 
     yaml_file = sys.argv[1]
     parameters = load_params(yaml_file)
-    
 
+    #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
+    user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/' # set path to your repo
+    
+    host_var='127.0.0.1'
+    user_var = str(os.environ['MYSQL_USER'])
+    password_var = str(os.environ['MYSQL_PASSWORD'])
+    database_var='simulation_data'
+
+    # print(f"User: {user_var}")
+    # print(f"Password: {password_var}")
+
+
+
+
+    if not all([user_var, password_var]):
+        print("Please set the required environment variables: MYSQL_USER, MYSQL_PASSWORD.")
+        sys.exit(1)
+    
     try:
         file_number = sys.argv[2]
+
+        add_file_to_db(file_number)
     except ValueError:
         print('File number doesn\'t exist, please enter a valid file number\n')
         file_number = input("Enter the file number: ")
@@ -140,21 +183,23 @@ if __name__ == "__main__":
         print('Unexpected error:', sys.exc_info()[0])
         raise
 
-    data_type = sys.argv[3]
 
 
-    match data_type:
-        case 0:
-            print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
-            send_database_to_server(file_number)
-        case 1:
-            print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
-            send_csv_to_server(file_number)
-        case 2:
-            print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
-            send_json_to_server(file_number)
-        case _:
-            raise ValueError(f'Invalid data type: {data_type}. Valid data types are 0, 1, or 2 for database, csv, or json, respectively.')
+
+    
+    # data_type = int(sys.argv[3])
+    # match data_type:
+    #     case 0:
+    #         print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
+    #         send_database_to_server(file_number)
+    #     case 1:
+    #         print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
+    #         send_csv_to_server(file_number)
+    #     case 2:
+    #         print(f'Send: {file_number}! Sending simulation {file_number} database to server...\n')
+    #         make_remote_database(file_number)
+    #     case _:
+    #         raise ValueError(f'Invalid data type: {data_type}. Valid data types are 0, 1, or 2 for .db, .csv, or .json, respectively.')
         
 
     # try:
@@ -169,16 +214,3 @@ if __name__ == "__main__":
 
     # except IndexError:
     #     send = False
-
-
-        
-
-
-    add_file_to_db(file_number, parameters)
-
-
-
-
-
-
-
