@@ -28,6 +28,7 @@ beta.modifier.female: 0.00101
 
 successful.adapatation.cost: 1 #a multiplier for the cost of a successful adaptation
 unsuccessful.adapatation.cost: 1 #a multiplier for the cost of an unsuccessful adaptation
+successful.adaptation.knowlege.benefit: 1 #a multiplier for the benefit of a successful adaptation
 
 
 
