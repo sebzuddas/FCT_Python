@@ -52,7 +52,7 @@ def model():
 @click.option('--value', default=None, help='New value for the parameter, if no given parameter this is the number of iterations')
 @click.option('--years', default=None, help='Number of years to run the model for')
 def run(param, value, years):
-    print(emojis.encode(colorama.Fore.BLUE+"Attempting to run the model :confused: \n"))
+    print(emojis.encode(f"{colorama.Fore.BLUE}Attempting to run the model :confused: \n"))
     colorama.Fore.RESET  
 
     if years is not None:
@@ -207,9 +207,9 @@ def experiments(all, lhs, delete):
             subprocess.run(["python3" ,"Experiment_Generator/main.py", lhs], check=True)
             print(emojis.encode(colorama.Fore.GREEN+"The yaml files should be in the props folder! :smirk: \n"))
         except subprocess.CalledProcessError as e:
-            print(emojis.encode(f"{colorama.Fore.RED}Error: unable to generate the yaml files: {colorama.Fore.RESET}{e}\n"))
+            print(emojis.encode(colorama.Fore.RED+"Error: unable to generate the yaml files: {colorama.Fore.RESET}{e}\n"))
         except Exception:
-            print(emojis.encode(f"{colorama.Fore.RED}Unknown error occurred:{colorama.Fore.RESET}}"))
+            print(emojis.encode(colorama.Fore.RED+"Unknown error occurred:{colorama.Fore.RESET}}"))
             traceback.print_exc(file=sys.stdout)
 
     elif all == True and lhs == None:   
