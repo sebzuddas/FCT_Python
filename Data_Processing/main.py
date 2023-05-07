@@ -227,7 +227,7 @@ if __name__ == "__main__":
     parameters = load_params(yaml_file)
 
     #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
-    user_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/' # set path to your repo
+    user_path = os.environ.get("FCT_PROJECT_PATH") # set path to your repo
     
 
 

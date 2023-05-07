@@ -168,8 +168,9 @@ def data(sim, vis):
 @click.option('--lhs', default=None, help='Generate a Latin Hypercube Sample of the parameter space')
 @click.option('--delete', is_flag=True, help='Delete all the .yaml files in the test_parameters folder')
 def experiments(all, lhs, delete):
+
     
-    test_folder_path = '/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/model/test_parameters'
+    test_folder_path = project_folder+'FCT_Model/props/model/test_parameters'
     number_existing_yaml_files = len([f for f in os.listdir(test_folder_path) if os.path.isfile(os.path.join(test_folder_path, f))])
     ### check for input ###
     #get_existing_number of yaml files. 
@@ -224,7 +225,7 @@ def experiments(all, lhs, delete):
         if run_all == 'y':
             
             model_outputs = 'FCT_Model/outputs/'
-            data_processing_outputs = '/Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs'
+            data_processing_outputs = project_folder+'Data_Processing/outputs/'
             print('Deleting all the csv files in the FCT_Model/outputs folder!\n')
 
             for file_name in os.listdir(model_outputs):
@@ -297,6 +298,7 @@ def run_model(experiment_number):
         
 
 if __name__ == "__main__":
+    project_folder = os.environ.get('FCT_PROJECT_FOLDER')
     props_file_location = 'FCT_Model/props/model'
     colorama.init()
     model()
