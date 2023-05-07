@@ -1,6 +1,6 @@
 # Model-related Parameters
 random.seed: 1
-stop.at: 1040
+stop.at: 5
 count.of.agents: 1000
 board.size: 50
 threshold: 0.5 #threshold for what?
@@ -9,7 +9,7 @@ threshold: 0.5 #threshold for what?
 
 #Agent-related Parameters
 correlation.parameter: 1
-max.age: 60
+max.age: 95
 min.age: 18
 
 #FCT-related Parameters

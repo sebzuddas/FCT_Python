@@ -174,7 +174,7 @@ def experiments(all, lhs, delete):
     number_existing_yaml_files = len([f for f in os.listdir(test_folder_path) if os.path.isfile(os.path.join(test_folder_path, f))])
     ### check for input ###
     #get_existing_number of yaml files. 
-    print(f'Currently, there exist {number_existing_yaml_files} yaml files in the experiment folder.\n')
+    print(f'{colorama.Fore.GREEN}Currently, there exist {colorama.Fore.YELLOW}{number_existing_yaml_files}{colorama.Fore.GREEN} yaml files in the experiment folder.\n')
     if not all and not lhs and not delete:
         print("please specify either --all, --lhs, or --delete\n")  
 
@@ -183,14 +183,14 @@ def experiments(all, lhs, delete):
         exit()
         
     if delete == True:
-        prompt = input('Are you sure you want to delete all the yaml files in the test_parameters folder? (y/n): ')
+        prompt = input(f'{colorama.Fore.RED}Are you sure you want to delete {colorama.Fore.YELLOW}all{colorama.Fore.RED} the yaml files in the test_parameters folder? (y/n): ')
         if prompt == 'y':
             print('Deleting all the yaml files in the test_parameters folder!\n')
             for f in os.listdir(test_folder_path):
                 os.remove(os.path.join(test_folder_path, f))
             print('All the yaml files have been deleted!\n')
         else:
-            print('No yaml files have been deleted!\nexiting...')
+            print(f'{colorama.Fore.YELLOW}No yaml files have been deleted!\nexiting...{colorama.Fore.RESET}')
             exit()
 
     if all == False and lhs != None:
@@ -200,33 +200,33 @@ def experiments(all, lhs, delete):
             if delete_all_files == 'y':
                 for f in os.listdir(test_folder_path):
                     os.remove(os.path.join(test_folder_path, f))
-                print('All the yaml files have been deleted!\n')
+                print(f'{colorama.Fore.RED}All the yaml files have been deleted!\n{colorama.Fore.RESET}')
 
-        print(emojis.encode(colorama.Fore.BLUE+f"Generating: {lhs} .yaml files 🥳 "))
+        print(emojis.encode(colorama.Fore.BLUE+f"Generating: {colorama.Fore.YELLOW}{lhs}{colorama.Fore.BLUE} .yaml files 🥳 "))
         try:
             subprocess.run(["python3" ,"Experiment_Generator/main.py", lhs], check=True)
             print(emojis.encode(colorama.Fore.GREEN+"The yaml files should be in the props folder! :smirk: \n"))
         except subprocess.CalledProcessError as e:
-            print(emojis.encode(colorama.Fore.RED+f"Error: unable to generate the yaml files: {e}\n"))
+            print(emojis.encode(f"{colorama.Fore.RED}Error: unable to generate the yaml files: {colorama.Fore.RESET}{e}\n"))
         except Exception:
-            print(emojis.encode(colorama.Fore.RED+"Unknown error occurred:"))
+            print(emojis.encode(f"{colorama.Fore.RED}Unknown error occurred:{colorama.Fore.RESET}}"))
             traceback.print_exc(file=sys.stdout)
 
     elif all == True and lhs == None:   
         #check that there are enough yaml files
         #run through the number of yaml files that exist
         if number_existing_yaml_files == 0:
-            print('There are no yaml files in the test_parameters folder!\nexiting...')
+            print(f'{colorama.Fore.RED}There are no yaml files in the test_parameters folder!\nexiting...{colorama.Fore.RESET}')
             exit()
 
         print(colorama.Fore.RED+"WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, as well as in FCT_Model/outputs")
-        run_all = input(colorama.Fore.CYAN+f'Are you sure you want to run the model with {number_existing_yaml_files} the yaml files in the test_parameters folder? (y/n): ')
+        run_all = input(colorama.Fore.CYAN+f'Are you sure you want to run the model with {colorama.Fore.YELLOW}{number_existing_yaml_files}{colorama.Fore.CYAN} the yaml files in the test_parameters folder? (y/n): ')
 
         if run_all == 'y':
             
             model_outputs = 'FCT_Model/outputs/'
             data_processing_outputs = project_folder+'Data_Processing/outputs/'
-            print('Deleting all the csv files in the FCT_Model/outputs folder!\n')
+            print(f'{colorama.Fore.RED}Deleting all the csv files in the FCT_Model/outputs folder!\n{colorama.Fore.BLUE}')
 
             for file_name in os.listdir(model_outputs):
                 if re.match(r'(agent|theory)_logger_out(_\d+)?\.csv$', file_name) and file_name != 'agent_logger_out.csv' and file_name != 'theory_logger_out.csv':
@@ -239,15 +239,15 @@ def experiments(all, lhs, delete):
             # for file_name in os.listdir(data_processing_outputs):
             #     print(file_name)
 
-            print('Deleting all the csv files in the Data_Processing/outputs folder!\n')
+            print(f'{colorama.Fore.RED}Deleting all the csv files in the Data_Processing/outputs folder!\n{colorama.Fore.RESET}')
             for file_name in os.listdir(data_processing_outputs):
                 if file_name.endswith('.csv'):
                     file_path = os.path.join(data_processing_outputs, file_name)
                     os.remove(file_path)
 
-            print('All the csv files have been deleted!\n')
+            print(f'{colorama.Fore.GREEN}All the csv files have been deleted!\n{colorama.Fore.RESET}')
 
-            database_override = input(colorama.Fore.RED+'Do you want to automatically ovewrite data in the database? (y/n): ')
+            database_override = input(f'{colorama.Fore.RED}Do you want to automatically ovewrite data in the database? (y/n):{colorama.Fore.RESET} ')
 
             print(emojis.encode(colorama.Fore.BLUE+f"Running the model with {colorama.Fore.YELLOW}{number_existing_yaml_files}{colorama.Fore.BLUE} yaml files! 🥳 "))
             with alive_bar(number_existing_yaml_files, title=colorama.Fore.GREEN+"Running LHS Experiments"+colorama.Fore.RESET, bar='classic') as bar:
@@ -257,13 +257,10 @@ def experiments(all, lhs, delete):
                     put_csv_to_database(i, database_override)
                     bar()
 
-            print(emojis.encode(colorama.Fore.GREEN+"The experiments should be completed, well done! :smirk: \n"))
+            print(emojis.encode(f"{colorama.Fore.GREEN}The experiments should be completed, well done! :smirk: \n{colorama.Fore.RESET}"))
         else:
             print('No yaml files have been run!\nexiting...')
             exit()
-
-
-    
 
     if all == True and lhs != None:
         pass
