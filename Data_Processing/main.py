@@ -124,27 +124,27 @@ def add_file_to_db(file_number):
 
     # Check if the simulation already exists in the database
     if table_exists(conn, f'PC_{file_number}'):  # checking if table exists
-        user_input = input(f'Simulation with ID "PC_{file_number}" already exists. Do you want to add a new run anyway? (y/n): ')
-        if user_input.lower() != 'y':
-            print('Exiting without adding a new run.')
-            conn.close()
-            sys.exit()
-        else:
-            print('Deleting old table and adding new run.')
+        # user_input = input(f'Simulation with ID "PC_{file_number}" already exists. Do you want to add a new run anyway? (y/n): ')
+        # if user_input.lower() != 'y':
+        #     print('Exiting without adding a new run.')
+        #     conn.close()
+        #     sys.exit()
+        # else:
+        print('Deleting old table and adding new run.')
 
-            # Drop the old table
-            drop_table(conn, f'PC_{file_number}')
+        # Drop the old table
+        drop_table(conn, f'PC_{file_number}')
 
-            # Create a new table with the same structure as the old one
-            create_table_query = f"CREATE TABLE PC_{file_number} ({', '.join([f'{header} TEXT' for header in headers])})"
-            cursor.execute(create_table_query)
-            conn.commit()
+        # Create a new table with the same structure as the old one
+        create_table_query = f"CREATE TABLE PC_{file_number} ({', '.join([f'{header} TEXT' for header in headers])})"
+        cursor.execute(create_table_query)
+        conn.commit()
 
-            # Insert the data from the dataframe into the MySQL database, ignoring duplicate rows
-            for index, row in total_df.iterrows():
-                values = [str(row[header]) for header in headers]
-                insert_query = f"INSERT IGNORE INTO PC_{file_number} ({', '.join(headers)}) VALUES ({', '.join(['%s' for i in range(len(headers))])})"
-                cursor.execute(insert_query, values)
+        # Insert the data from the dataframe into the MySQL database, ignoring duplicate rows
+        for index, row in total_df.iterrows():
+            values = [str(row[header]) for header in headers]
+            insert_query = f"INSERT IGNORE INTO PC_{file_number} ({', '.join(headers)}) VALUES ({', '.join(['%s' for i in range(len(headers))])})"
+            cursor.execute(insert_query, values)
         # Save changes and close the connection
         conn.commit()
         conn.close()

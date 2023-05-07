@@ -1,0 +1,85 @@
+Currently, there exist 10000 yaml files in the experiment folder.
+
+WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, as well as in FCT_Model/outputs
+Are you sure you want to run the model with 10000 the yaml files in the test_parameters folder? (y/n): Deleting all the csv files in the FCT_Model/outputs folder!
+
+theory_logger_out.csv
+record.csv
+agent_logger_out.csv
+Deleting all the csv files in the Data_Processing/outputs folder!
+
+All the csv files have been deleted!
+
+Do you want to automatically ovewrite data in the database? (y/n): Running the model with 10000 yaml files! 🥳 
+
+Running the model with yaml file 1! 🥳 
+on 0: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12eb06710>
+table_name: PC_1
+Simulation with ID "PC_1" already exists. Do you want to add a new run anyway? (y/n): Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_1
+Table PC_1 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_1'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 2! 🥳 
+on 1: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11a15a710>
+table_name: PC_2
+Simulation with ID "PC_2" already exists. Do you want to add a new run anyway? (y/n): Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_2
+Table PC_2 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_2'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 3! 🥳 
+on 2: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1251aa6e0>
+table_name: PC_3
+Simulation with ID "PC_3" already exists. Do you want to add a new run anyway? (y/n): Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_3
+Table PC_3 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_3'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 4! 🥳 
+on 3: 
+Error: unable to run the model: Command '['python3', 'FCT_Model/main.py', 'FCT_Model/props/model/test_parameters/test_4.yaml']' returned non-zero exit status 143.
+on 3: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x122cea710>
+table_name: PC_4
+Simulation with ID "PC_4" already exists. Do you want to add a new run anyway? (y/n): Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_4
+Table PC_4 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_4'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 5! 🥳 
+on 4: 
+Error: unable to run the model: Command '['python3', 'FCT_Model/main.py', 'FCT_Model/props/model/test_parameters/test_5.yaml']' died with <Signals.SIGTERM: 15>.
+on 4: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12265a710>
+table_name: PC_5
+Simulation with ID "PC_5" already exists. Do you want to add a new run anyway? (y/n): Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_5
+Table PC_5 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_5'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 6! 🥳 
+on 5: 
