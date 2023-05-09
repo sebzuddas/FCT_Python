@@ -68,16 +68,26 @@ def find_ahp(simulation_id, db_config):
     ######### Consumption by Deprivation Quintile #######
 
     total_consumption = data.groupby(['deprivation_quintile', 'tick']).agg({'mean_weekly_units': 'sum'}).reset_index()
-    # total_consumption['cumulative_consumption'] = total_consumption.groupby('deprivation_quintile')['mean_weekly_units'].cumsum()
     total_consumption = total_consumption.pivot(index='deprivation_quintile', columns='tick', values='mean_weekly_units')
-    mean_consumption = total_consumption.div(200)
+    mean_consumption_tick = total_consumption.div(200)
+
+    print(mean_consumption_tick)
+
+    # mean consumption simulation
+    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 1040
+    print(mean_consumption_sim)
+    
+    # total_consumption['cumulative_consumption'] = total_consumption.groupby('deprivation_quintile')['mean_weekly_units'].cumsum()
+
+
+
 
 
 
 
     
-    print(total_consumption.columns.max())
-    print(total_consumption.columns.mean())
+    # print(total_consumption.columns.max())
+
     exit()
 
     fig3 = px.bar(total_consumption, x=total_consumption.index, y=total_consumption.columns.max())
