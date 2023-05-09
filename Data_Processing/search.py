@@ -58,8 +58,8 @@ def find_ahp(simulation_id, db_config):
     total_deaths = total_deaths.pivot(index='deprivation_quintile', columns='tick', values='death_count')
     mean_deaths_tick = total_deaths.div(200)
     mean_deaths_sim = mean_deaths_tick.mean(axis=1)/1040
-    print(mean_consumption_tick)
-    print(mean_consumption_sim)
+    print(mean_deaths_tick)
+    print(mean_deaths_sim)
 
     # fig2 = px.bar(total_deaths, x=total_deaths.index, y=total_deaths.columns.max())
     # fig2.update_layout(yaxis_title='Total Deaths', xaxis_title='Deprivation Quintile', title='Total Deaths per Deprivation Quintile', font=dict(
