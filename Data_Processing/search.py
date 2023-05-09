@@ -40,8 +40,8 @@ def find_ahp(simulation_id, db_config):
     data['death_count'] = pd.to_numeric(data['death_count'])
     data['mean_weekly_units'] = pd.to_numeric(data['mean_weekly_units'])
     data['successful_adaptiation'] = pd.to_numeric(data['successful_adaptiation'])
-    # data['unsuccessful_adaptiation'] = pd.to_numeric(data['unsuccessful_adaptiation'])
-    predictions = pd.DataFrame(columns=['deprivation_quintile', 'tick', 'predicted_death_count'])
+
+    ####### Harms by Deprivation Quintile #######
 
     grouped_data = data.drop(['agent_id', 'successful_adaptiation', 'unsuccessful_adaptiation'], axis=1)
     # grouped_data = grouped_data.groupby(['deprivation_quintile', 'tick']).mean().reset_index()
@@ -49,13 +49,50 @@ def find_ahp(simulation_id, db_config):
     grouped_data['cumulative_death_count'] = grouped_data.groupby('deprivation_quintile')['death_count'].cumsum()
     grouped_data = grouped_data.pivot(index='tick', columns='deprivation_quintile', values='cumulative_death_count')
 
-    
+    # fig = px.line(grouped_data, x=grouped_data.index, y=grouped_data.columns)
+    # fig.show()
+    # print(grouped_data)
 
-    fig = px.line(grouped_data, x=grouped_data.index, y=grouped_data.columns)
-    fig.show()
+    total_deaths = data.groupby(['deprivation_quintile', 'tick']).agg({'death_count': 'sum'}).reset_index()
+    total_deaths['cumulative_death_count'] = total_deaths.groupby('deprivation_quintile')['death_count'].cumsum()
+    total_deaths = total_deaths.pivot(index='deprivation_quintile', columns='tick', values='death_count')
+
+    # fig2 = px.bar(total_deaths, x=total_deaths.index, y=total_deaths.columns.max())
+    # fig2.update_layout(yaxis_title='Total Deaths', xaxis_title='Deprivation Quintile', title='Total Deaths per Deprivation Quintile', font=dict(
+    #     family='serif',
+    #     size=18,
+    #     color='black'
+    # ))
+    # fig2.show()
+
+    ######### Consumption by Deprivation Quintile #######
+
+    total_consumption = data.groupby(['deprivation_quintile', 'tick']).agg({'mean_weekly_units': 'sum'}).reset_index()
+    # total_consumption['cumulative_consumption'] = total_consumption.groupby('deprivation_quintile')['mean_weekly_units'].cumsum()
+    total_consumption = total_consumption.pivot(index='deprivation_quintile', columns='tick', values='mean_weekly_units')
+    mean_consumption = total_consumption.div(200)
+
+
+
 
     
-    print(grouped_data)
+    print(total_consumption.columns.max())
+    print(total_consumption.columns.mean())
+    exit()
+
+    fig3 = px.bar(total_consumption, x=total_consumption.index, y=total_consumption.columns.max())
+
+    fig3.update_layout(yaxis_title='Consumption', xaxis_title='Deprivation Quintile', title='Total Consumption per Deprivation Quintile', font=dict(
+        family='serif',
+        size=18,
+        color='black'
+    ))
+
+    fig3.show()
+
+
+
+    # print(total_deaths)
     exit()
     
     #starting with finding averages per year:
