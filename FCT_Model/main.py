@@ -64,6 +64,8 @@ def main():
     time.sleep(0.25)
     print(Style.RESET_ALL)
 
+    
+
     #############################################
     # Link Theory
     with alive_bar(params.get("count.of.agents"), title="Linking Agents With Theory", bar='notes') as bar:
@@ -77,7 +79,7 @@ def main():
 
     print(Back.LIGHTWHITE_EX)
     print(emojis.encode(colorama.Fore.BLACK+"Model Fully Initialised! 🥰")+Style.RESET_ALL)
-    
+    model.log_network('start')
 
     
     
@@ -100,6 +102,7 @@ def main():
     #         #     print("Month: ", month)
     #         #     print("Week: ", tick)
     #         bar()
+    model.log_network('finish')
     
 
 # If this file is launched, run the model. 

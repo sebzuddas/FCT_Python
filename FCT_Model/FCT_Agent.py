@@ -18,7 +18,6 @@ class FCT_Agent(MicroAgent):
     def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, target_connections: int, space):
         super().__init__(id=id, type=FCT_Agent.TYPE, rank=rank)
 
-        self.__is_satisfied: bool = False
         self.__type: int = type
         self.__rank: int = rank
         self.__deprivation_quintile: int = deprivation_quintile

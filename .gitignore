@@ -6,7 +6,7 @@ FCT_Model/outputs/*.csv
 Data_Processing/outputs/*.csv
 Data_Processing/outputs/*.png
 Data_Processing/outputs/*.db
-Data_Processing/outputs/network/*.graphml
+Data_Processing/outputs/network/*
 FCT_Model/props/model/model-*
 FCT_Model/props/model/test_parameters/*.yaml
 *.txt

@@ -3,11 +3,13 @@ from typing import Dict, Tuple, List
 import pathlib
 from dataclasses import dataclass
 import csv
+import sys
 
 import json
 from repast4py import context, schedule, random, logging
 from repast4py.network import write_network, read_network
 import repast4py
+import re
 
 import numpy as np
 from numpy import *
@@ -536,6 +538,65 @@ class FCT_Model(Model):
             self.theory_logger.log_row(tick, agent.id, agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['power'], agent.get_theory_dict()['prestige'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
         self.theory_logger.write()
 
+
+    def log_network(self, time):
+
+        new_network = nx.DiGraph()
+
+        # Copy nodes and edges from the existing network object
+        # Copy nodes and edges from the existing network object
+        for agent in self.__context.agents():
+            
+            node_attrs = {
+                "id": agent.id,  # add a unique ID for each node
+                "label": agent.sex,    # add a label for each node based on its type
+                "age": agent.age,       # add an age attribute for each node
+                "deprivation_quintile": agent.get_deprivation_quintile(),
+                "mean_weekly_units": agent.get_theory_dict()['mean_weekly_units'],
+                "education": agent.get_theory_dict()['education'],
+                "personal_wealth": agent.get_theory_dict()['personal_wealth'],
+                "power": agent.get_theory_dict()['power'],
+                "prestige": agent.get_theory_dict()['prestige'],
+                "social_connections": agent.get_theory_dict()['social_connections'],
+                "social_influence": agent.get_theory_dict()['social_influence'],
+                "knowledge": agent.get_theory_dict()['knowledge'],
+                "total_resources": agent.get_theory_dict()['total_resources'],
+                "successful_adaptiation": agent.get_theory_dict()['successful_adaptiation'],
+                "unsuccessful_adaptiation": agent.get_theory_dict()['unsuccessful_adaptiation']
+                # add more attributes here as needed
+            }
+
+            new_network.add_node(agent, **node_attrs)
+
+            for connected_agent_id in agent.get_target_connections_array():
+                connected_agent = self.__context.agent((connected_agent_id, 1, 0))
+                if connected_agent is not None:
+                    new_network.add_edge(agent, connected_agent)
+
+
+        for agent in self.__context.agents():
+            new_network.add_node(agent)
+            for connected_agent_id in agent.get_target_connections_array():
+                connected_agent = self.__context.agent((connected_agent_id, 1, 0))
+                if connected_agent is not None:
+                    new_network.add_edge(agent, connected_agent)
+        
+
+        yaml = sys.argv[1]
+        pattern = r"test_(\d+)\.yaml"
+
+        # Find the match and extract the number
+        match = re.search(pattern, yaml)
+
+        if match is None:
+            match_num = 0
+        else:
+            match_num = int(match.group(1)) + 1
+
+        output_file = f"FCT_Model/outputs/network/network"+str(match)+'_'+time+".graphml"
+        nx.write_graphml(new_network, output_file)
+
+
 ############################################
 #Functions outside the object
 def create_FCT_agent(id, type, rank, deprivation_quintile, sex, age, drinking_status, target_connections, space):
@@ -936,3 +997,5 @@ def get_unique_random_coordinate(coordinates, used_coordinates):
     random_coordinate = random.choice(available_coordinates)
     used_coordinates.add(random_coordinate)
     return random_coordinate
+
+

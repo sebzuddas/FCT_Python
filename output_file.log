@@ -1,8 +1,9 @@
-Currently, there exist 10000 yaml files in the experiment folder.
+Currently, there exist 1000 yaml files in the experiment folder.
 
-WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, as well as in FCT_Model/outputs
-Are you sure you want to run the model with 10000 the yaml files in the test_parameters folder? (y/n): Deleting all the csv files in the FCT_Model/outputs folder!
+WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, FCT_Model/outputs, and all previously generated networks
+Are you sure you want to run the model with 1000 the yaml files in the test_parameters folder? (y/n): Deleting all the csv files in the FCT_Model/outputs folder!
 
+network
 theory_logger_out.csv
 record.csv
 agent_logger_out.csv
@@ -10,13 +11,13 @@ Deleting all the csv files in the Data_Processing/outputs folder!
 
 All the csv files have been deleted!
 
-Do you want to automatically ovewrite data in the database? (y/n): Running the model with 10000 yaml files! 🥳 
+Do you want to automatically ovewrite data in the database? (y/n): Running the model with 1000 yaml files! 🥳 
 
 Running the model with yaml file 1! 🥳 
 on 0: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1190b24a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x119a9a530>
 table_name: PC_1
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_1
@@ -29,7 +30,7 @@ Running the model with yaml file 2! 🥳
 on 1: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1291324a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x119282530>
 table_name: PC_2
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_2
@@ -42,7 +43,7 @@ Running the model with yaml file 3! 🥳
 on 2: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x120c324a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x122102530>
 table_name: PC_3
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_3
@@ -55,7 +56,7 @@ Running the model with yaml file 4! 🥳
 on 3: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1376724a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x134682530>
 table_name: PC_4
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_4
@@ -68,7 +69,7 @@ Running the model with yaml file 5! 🥳
 on 4: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x117df64a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x126702530>
 table_name: PC_5
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_5
@@ -81,7 +82,7 @@ Running the model with yaml file 6! 🥳
 on 5: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12425e470>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11f402500>
 table_name: PC_6
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_6
@@ -94,7 +95,7 @@ Running the model with yaml file 7! 🥳
 on 6: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1239324a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x121502530>
 table_name: PC_7
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_7
@@ -107,7 +108,7 @@ Running the model with yaml file 8! 🥳
 on 7: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1232c64a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x116f3e500>
 table_name: PC_8
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_8
@@ -120,7 +121,7 @@ Running the model with yaml file 9! 🥳
 on 8: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x125a86470>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x125782530>
 table_name: PC_9
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_9
@@ -133,7 +134,7 @@ Running the model with yaml file 10! 🥳
 on 9: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11a2b2470>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x121a02530>
 table_name: PC_10
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_10
@@ -146,7 +147,7 @@ Running the model with yaml file 11! 🥳
 on 10: 
 No visualization argument provided, error: list index out of range
 
-conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11c6324a0>
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x121b02530>
 table_name: PC_11
 Deleting old table and adding new run.
 Executing drop query: DROP TABLE IF EXISTS PC_11
@@ -157,3 +158,448 @@ Simulation with ID [33m'PC_11'[32m has been added to the database!
 
 Running the model with yaml file 12! 🥳 
 on 11: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12c802530>
+table_name: PC_12
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_12
+Table PC_12 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_12'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 13! 🥳 
+on 12: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x119a82530>
+table_name: PC_13
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_13
+Table PC_13 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_13'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 14! 🥳 
+on 13: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x121802530>
+table_name: PC_14
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_14
+Table PC_14 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_14'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 15! 🥳 
+on 14: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x120b02500>
+table_name: PC_15
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_15
+Table PC_15 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_15'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 16! 🥳 
+on 15: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x117176530>
+table_name: PC_16
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_16
+Table PC_16 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_16'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 17! 🥳 
+on 16: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x124602530>
+table_name: PC_17
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_17
+Table PC_17 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_17'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 18! 🥳 
+on 17: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x125602530>
+table_name: PC_18
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_18
+Table PC_18 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_18'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 19! 🥳 
+on 18: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11e0ae530>
+table_name: PC_19
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_19
+Table PC_19 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_19'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 20! 🥳 
+on 19: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11d402530>
+table_name: PC_20
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_20
+Table PC_20 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_20'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 21! 🥳 
+on 20: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1211fe530>
+table_name: PC_21
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_21
+Table PC_21 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_21'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 22! 🥳 
+on 21: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x118502530>
+table_name: PC_22
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_22
+Table PC_22 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_22'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 23! 🥳 
+on 22: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11de42530>
+table_name: PC_23
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_23
+Table PC_23 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_23'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 24! 🥳 
+on 23: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x143c02530>
+table_name: PC_24
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_24
+Table PC_24 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_24'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 25! 🥳 
+on 24: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x122682530>
+table_name: PC_25
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_25
+Table PC_25 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_25'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 26! 🥳 
+on 25: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x126482530>
+table_name: PC_26
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_26
+Table PC_26 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_26'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 27! 🥳 
+on 26: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12529a530>
+table_name: PC_27
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_27
+Table PC_27 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_27'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 28! 🥳 
+on 27: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x123252530>
+table_name: PC_28
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_28
+Table PC_28 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_28'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 29! 🥳 
+on 28: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x119fae530>
+table_name: PC_29
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_29
+Table PC_29 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_29'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 30! 🥳 
+on 29: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x133582530>
+table_name: PC_30
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_30
+Table PC_30 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_30'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 31! 🥳 
+on 30: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x122682530>
+table_name: PC_31
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_31
+Table PC_31 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_31'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 32! 🥳 
+on 31: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x123e02530>
+table_name: PC_32
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_32
+Table PC_32 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_32'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 33! 🥳 
+on 32: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x129f92530>
+table_name: PC_33
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_33
+Table PC_33 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_33'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 34! 🥳 
+on 33: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x123192530>
+table_name: PC_34
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_34
+Table PC_34 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_34'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 35! 🥳 
+on 34: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x123d82530>
+table_name: PC_35
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_35
+Table PC_35 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_35'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 36! 🥳 
+on 35: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11e602530>
+table_name: PC_36
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_36
+Table PC_36 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_36'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 37! 🥳 
+on 36: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x125402500>
+table_name: PC_37
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_37
+Table PC_37 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_37'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 38! 🥳 
+on 37: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1221ae530>
+table_name: PC_38
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_38
+Table PC_38 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_38'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 39! 🥳 
+on 38: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12c802530>
+table_name: PC_39
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_39
+Table PC_39 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_39'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 40! 🥳 
+on 39: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11ad72530>
+table_name: PC_40
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_40
+Table PC_40 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_40'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 41! 🥳 
+on 40: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x118c86500>
+table_name: PC_41
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_41
+Table PC_41 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_41'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 42! 🥳 
+on 41: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11be82530>
+table_name: PC_42
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_42
+Table PC_42 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_42'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 43! 🥳 
+on 42: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x11c692530>
+table_name: PC_43
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_43
+Table PC_43 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_43'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 44! 🥳 
+on 43: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x131c8e530>
+table_name: PC_44
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_44
+Table PC_44 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_44'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 45! 🥳 
+on 44: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x12fb02530>
+table_name: PC_45
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_45
+Table PC_45 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_45'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 46! 🥳 
+on 45: 
+Error: unable to run the model: Command '['python3', 'FCT_Model/main.py', 'FCT_Model/props/model/test_parameters/test_46.yaml']' returned non-zero exit status 143.
+on 45: 
+Running LHS Experiments [=>!                                     ] (!) 45/1000 [4%] in 8:06:47.0 (0.00/s) 

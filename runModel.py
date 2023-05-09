@@ -219,7 +219,7 @@ def experiments(all, lhs, delete):
             print(f'{colorama.Fore.RED}There are no yaml files in the test_parameters folder!\nexiting...{colorama.Fore.RESET}')
             exit()
 
-        print(colorama.Fore.RED+"WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, as well as in FCT_Model/outputs")
+        print(colorama.Fore.RED+"WARNING: The following code will delete all previous simulation csv data in Data_Procsiing/outputs, FCT_Model/outputs, and all previously generated networks")
         run_all = input(colorama.Fore.CYAN+f'Are you sure you want to run the model with {colorama.Fore.YELLOW}{number_existing_yaml_files}{colorama.Fore.CYAN} the yaml files in the test_parameters folder? (y/n): ')
 
         if run_all == 'y':
@@ -231,6 +231,12 @@ def experiments(all, lhs, delete):
             for file_name in os.listdir(model_outputs):
                 if re.match(r'(agent|theory)_logger_out(_\d+)?\.csv$', file_name) and file_name != 'agent_logger_out.csv' and file_name != 'theory_logger_out.csv':
                     file_path = os.path.join(model_outputs, file_name)
+                    os.remove(file_path)
+
+            network_outputs = 'FCT_Model/outputs/network/'
+            for file_name in os.listdir(network_outputs):
+                if re.match(r'network.*\.graphml$', file_name):
+                    file_path = os.path.join(network_outputs, file_name)
                     os.remove(file_path)
 
             for file_name in os.listdir(model_outputs):
@@ -268,6 +274,21 @@ def experiments(all, lhs, delete):
         
         #run the model with the yaml files
 
+@model.command()
+@click.option("--ahp", is_flag=True, help="Find the AHP from the data")
+@click.option("--fct", is_flag=True, help="Find the FCT from the data")
+def find (ahp, fct):
+    if ahp == True:
+        print("Finding the AHP")
+        try:
+            subprocess.run(["python3" ,"Data_Processing/search.py", 'ahp'], check=True)
+        except Exception as e:
+            print(f"Unknown error occurred: {e}")
+
+    if fct == True:
+        print('This function is not yet implemented')
+
+
 
 def put_csv_to_database(experiment_number, user_input):
 
@@ -286,13 +307,17 @@ def run_model(experiment_number):
     try:
         with open('/dev/null', 'w') as devnull:
             subprocess.run(["python3", "FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True, stdout=devnull, stderr=devnull)
-        # subprocess.run(["python3" ,"FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True)
+        
+        # for troubleshooting why the model may not be working
+        # subprocess.run(["python3" ,"FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True) - 
     except subprocess.CalledProcessError as e:
         print(emojis.encode(colorama.Fore.RED+f"Error: unable to run the model: {e}\n"))
+        exit()
     except Exception:
         print(emojis.encode(colorama.Fore.RED+"Unknown error occurred:"))
         traceback.print_exc(file=sys.stdout)
-        
+
+
 
 if __name__ == "__main__":
     project_folder = os.environ.get('FCT_PROJECT_FOLDER')
