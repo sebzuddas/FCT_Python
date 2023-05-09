@@ -305,11 +305,11 @@ def put_csv_to_database(experiment_number, user_input):
 
 def run_model(experiment_number):
     try:
-        # with open('/dev/null', 'w') as devnull:
-        #     subprocess.run(["python3", "FCT_Model/main.py", props_file_location+f"/test_parameters/model/test_{experiment_number}.yaml"], check=True, stdout=devnull, stderr=devnull)
+        with open('/dev/null', 'w') as devnull:
+            subprocess.run(["python3", "FCT_Model/main.py", props_file_location+f"/test_parameters/model/test_{experiment_number}.yaml"], check=True, stdout=devnull, stderr=devnull)
         
         # for troubleshooting why the model may not be working
-        subprocess.run(["python3" ,"FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True)
+        # subprocess.run(["python3" ,"FCT_Model/main.py", props_file_location+f"/test_parameters/test_{experiment_number}.yaml"], check=True)
     except subprocess.CalledProcessError as e:
         print(emojis.encode(colorama.Fore.RED+f"Error: unable to run the model: {e}\n"))
         exit()
