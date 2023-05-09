@@ -18,6 +18,10 @@ database_var='simulation_data'
 
 def find_ahp(simulation_id, db_config):
     # Replace these with your database credentials
+
+    ahp_info = []
+    harms_dict = {}
+    consumption_dict = {}
     
 
     # Connect to the MySQL database
@@ -40,132 +44,82 @@ def find_ahp(simulation_id, db_config):
     data['death_count'] = pd.to_numeric(data['death_count'])
     data['mean_weekly_units'] = pd.to_numeric(data['mean_weekly_units'])
     data['successful_adaptiation'] = pd.to_numeric(data['successful_adaptiation'])
+    # data['unsuccessful_adaptiation'] = pd.to_numeric(data['unsuccessful_adaptiation'])#Currently NAN
 
     ####### Harms by Deprivation Quintile #######
 
-    grouped_data = data.drop(['agent_id', 'successful_adaptiation', 'unsuccessful_adaptiation'], axis=1)
-    # grouped_data = grouped_data.groupby(['deprivation_quintile', 'tick']).mean().reset_index()
-    grouped_data = data.groupby(['deprivation_quintile', 'tick']).agg({'death_count': 'sum'}).reset_index()
-    grouped_data['cumulative_death_count'] = grouped_data.groupby('deprivation_quintile')['death_count'].cumsum()
-    grouped_data = grouped_data.pivot(index='tick', columns='deprivation_quintile', values='cumulative_death_count')
-
-    # fig = px.line(grouped_data, x=grouped_data.index, y=grouped_data.columns)
-    # fig.show()
-    # print(grouped_data)
-
     total_deaths = data.groupby(['deprivation_quintile', 'tick']).agg({'death_count': 'sum'}).reset_index()
-    # total_deaths['cumulative_death_count'] = total_deaths.groupby('deprivation_quintile')['death_count'].cumsum()
-    total_deaths = total_deaths.pivot(index='deprivation_quintile', columns='tick', values='death_count')
-    mean_deaths_tick = total_deaths.div(200)
-    mean_deaths_sim = mean_deaths_tick.mean(axis=1)/1040
-    print(mean_deaths_tick)
-    print(mean_deaths_sim)
+    total_deaths = total_deaths.pivot(index='deprivation_quintile', columns='tick', values='death_count')#total deaths by deprivation quintile every tick
+    tot_deaths_sim = total_deaths.iloc[:, -1]#Total deaths by deprivation quintile by the end of the simulation
 
-    # fig2 = px.bar(total_deaths, x=total_deaths.index, y=total_deaths.columns.max())
-    # fig2.update_layout(yaxis_title='Total Deaths', xaxis_title='Deprivation Quintile', title='Total Deaths per Deprivation Quintile', font=dict(
-    #     family='serif',
-    #     size=18,
-    #     color='black'
-    # ))
-    # fig2.show()
+    harms_dict['death_final'] = tot_deaths_sim
+    harms_dict['death_full'] = total_deaths
+    
+    ####### Adaptation Ratios by Deprivation Quintile #######
+
+    
+    # adaptation_data = data.groupby(['deprivation_quintile', 'tick']).agg({'successful_adaptiation': 'sum', 'unsuccessful_adaptiation': 'sum'}).reset_index()
+    # adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
+    # adaptation_data = adaptation_data.pivot(index='tick', columns='deprivation_quintile', values='adaptation_ratio')
+    # adaptation_total = adaptation_data.iloc[:, -1]#Total adaptation ratio by deprivation quintile by the end of the simulation
+
+    # harms_dict['adaptation_final'] = adaptation_total
+    # harms_dict['adaptation_full'] = adaptation_data
+
 
     ######### Consumption by Deprivation Quintile #######
 
     total_consumption = data.groupby(['deprivation_quintile', 'tick']).agg({'mean_weekly_units': 'sum'}).reset_index()
     total_consumption = total_consumption.pivot(index='deprivation_quintile', columns='tick', values='mean_weekly_units')
-    mean_consumption_tick = total_consumption.div(200)
-    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 1040
-
-    print(mean_consumption_tick)
-    print(mean_consumption_sim)
+    mean_consumption_tick = total_consumption.div(200)# average consumption every tick by deprivation quintiles
+    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 1040# average consumption throughout the simulation by deprivation quintiles
     
-    # total_consumption['cumulative_consumption'] = total_consumption.groupby('deprivation_quintile')['mean_weekly_units'].cumsum()
+    consumption_dict['consumption_final'] = mean_consumption_sim
+    consumption_dict['consumption_full'] = mean_consumption_tick
 
+    ######### Finding the Gradient for Harms ####### (should be positive)
+    ### Deaths ###
 
-
-
-
-
-
+    X1 = np.array(tot_deaths_sim.index).reshape(-1, 1)
+    y1 = np.array(tot_deaths_sim.values).reshape(-1, 1)
     
-    # print(total_consumption.columns.max())
+    deaths_gradient = get_gradient(X1, y1)
+    harms_dict['death_gradient'] = deaths_gradient
 
-    exit()
-
-    fig3 = px.bar(total_consumption, x=total_consumption.index, y=total_consumption.columns.max())
-
-    fig3.update_layout(yaxis_title='Consumption', xaxis_title='Deprivation Quintile', title='Total Consumption per Deprivation Quintile', font=dict(
-        family='serif',
-        size=18,
-        color='black'
-    ))
-
-    fig3.show()
-
-
-
-    # print(total_deaths)
-    exit()
+    ### Successful Adaptations Ratio ###
     
-    #starting with finding averages per year:
-
-    yearly_data = pd.DataFrame(result, columns=columns)
-    yearly_data = yearly_data.groupby(['deprivation_quintile', 'tick'])
-
-
-    print(yearly_data.head(10))
-    exit()  
+    # X2 = np.array(adaptation_total.index).reshape(-1, 1)
+    # y2 = np.array(adaptation_total.values).reshape(-1, 1)
+    # adaptation_gradient = get_gradient(X2, y2)
+    # harms_dict['adaptation_gradient'] = adaptation_gradient
 
 
 
+    ######### Finding the Gradient for Consumption ####### (should be negative)
+    X3 = np.array(mean_consumption_sim.index).reshape(-1, 1)
+    y3 = np.array(mean_consumption_sim.values).reshape(-1, 1)
+    consumption_gradient = get_gradient(X3, y3)
+    consumption_dict['consumption_gradient'] = consumption_gradient
 
-
-
-
-
-
-
-
-    # Group the data by deprivation_quintile and tick
-    grouped_data = data.groupby(['deprivation_quintile', 'tick']).sum().reset_index()
-
-    for quintile in grouped_data['deprivation_quintile'].unique():
-        quintile_data = grouped_data[grouped_data['deprivation_quintile'] == quintile]
-        X = quintile_data['tick'].values.reshape(-1, 1)
-        y = quintile_data['death_count'].values
-
-        model = LinearRegression()
-        model.fit(X, y)
-
-        gradient = model.coef_[0]
-
-
-
-
-        ticks = np.linspace(grouped_data['tick'].min(), grouped_data['tick'].max(), num=100)
-        predicted_counts = model.predict(ticks.reshape(-1, 1))
-
-        # # add the predicted values to the DataFrame
-        predictions = predictions.append(pd.DataFrame({'deprivation_quintile': [quintile]*len(ticks),
-                                                        'tick': ticks,
-                                                        'predicted_death_count': predicted_counts}))
-
-
-        # create a line plot using Plotly Express
-    fig = px.line(predictions, x='tick', y='predicted_death_count', color='deprivation_quintile')
-
-    
-    # Close the database connection
+    ahp_info.append(harms_dict)
+    ahp_info.append(consumption_dict)
     cursor.close()
     cnx.close()
-    fig.show()
-    exit()
+
+    return ahp_info
 
 
-    return gradient
+def get_data_by_dq(df, variable):
+    pass
+
+def get_gradient(x, y):
+    reg = LinearRegression()
+    reg.fit(x, y)
+    return reg.coef_[0]
 
 
 def find_number_of_tables(db_config):
+
     # create a cursor object to execute the query
 
     cnx = mysql.connector.connect(**db_config)
@@ -188,9 +142,6 @@ def find_fct():
     pass
 
 
-
-
-
 if __name__ == "__main__":
 
     db_config = {
@@ -208,25 +159,32 @@ if __name__ == "__main__":
 
     for simulation_id in range(1, num_tables + 1): 
     
-        test = find_ahp(simulation_id, db_config)
-        print(f"Simulation:{simulation_id}\nHarm Gradient:{test}")
+        data_dict = find_ahp(simulation_id, db_config)
+        harms_dict = data_dict[0]
+        consumption_dict = data_dict[1]
+        death_gradient = harms_dict['death_gradient']
+        consumption_gradient = consumption_dict['consumption_gradient']
+        print(f"Simulation:{simulation_id}\nDeath Gradient:{death_gradient}\nConsumption Gradient:{consumption_gradient}")
+    
+
+    
+    
+    # Sort the gradients list based on the criteria
+    sorted_gradients = sorted(gradients, key=lambda x: (x[1], -x[2]), reverse=True)
+    # Print the sorted list of gradients
+    print("Simulation\tDeath Gradient\tConsumption Gradient")
+    for simulation_id, death_gradient, consumption_gradient in sorted_gradients:
+        print(f"{simulation_id}\t\t{death_gradient}\t\t{consumption_gradient}")
 
 
+    
+    
 
-    # Calculate the gradient of harms/deprivation_quintile for each simulation
+    column_names = ['Simulation', 'Death Gradient', 'Consumption Gradient']
+    sorted_results = pd.DataFrame(sorted_gradients, columns=column_names)
+    print(sorted_results)
+
+    # Save the DataFrame to a CSV file
+    sorted_results.to_csv('outputs/gradients/sorted_gradients.csv', index=False)
+
     exit()
-    
-    
-
-
-
-    gradients.append((quintile, gradient))
-    # Filter simulations with a negative gradient and sort by the largest negative gradient
-    negative_gradients = sorted([(q, g) for q, g in gradients if g < 0], key=lambda x: x[1])
-
-    print("Quintile\tGradient")
-    for quintile, gradient in negative_gradients:
-        print(f"{quintile}\t\t{gradient}")
-    
-    print(f"{gradients}")
-    exit(0)
