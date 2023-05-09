@@ -227,7 +227,7 @@ if __name__ == "__main__":
     parameters = load_params(yaml_file)
 
     #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
-    user_path = os.environ.get("FCT_PROJECT_PATH") # set path to your repo
+    user_path = os.environ.get("FCT_PROJECT_PATH") # set path to your repository
 
     if not all([user_var, password_var]):
         print("Please set the required environment variables: MYSQL_USER, MYSQL_PASSWORD.")

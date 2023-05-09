@@ -29,16 +29,7 @@ class Board(StructuralEntity):
 
     def __update_deprivation_quintile(self, deprivation_probability_list):
         swap_total = []
-        #print("number of on rank 0:", self.__context.size("FCT_Agent",0))
-        #go through all agents and get their porobability for swapping up or down
         for agent in self.__context.agents(FCT_Agent.TYPE, shuffle=True):
-            
-            #TODO: why does this return false?
-
-            #print(agent.get_age() <=30 and pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][0]) == True)
-            #print(agent.get_age()<=30)
-            #print(agent.get_age() > 30 and pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][1]) == True)
-            #TODO: implement age?
 
             if pr.prob(deprivation_probability_list[agent.get_deprivation_quintile()][0]) == True:# get agents that can swap and are less than 30
                 swap_total.append([agent.get_deprivation_quintile(), agent.id, "UP"])
@@ -98,7 +89,6 @@ class Board(StructuralEntity):
         pass
 
     def call_transformation(self):
-        # TODO: transformational mechanisms: update avg satisfaction and segregation index
         self.__update_deprivation_quintile(deprivation_probability_list=[[0.3, 0], [0.3, 0], [0.4, 0], [0, 0.4], [0, 0.6]])
 
     def get_avg_satisfaction(self) -> float:

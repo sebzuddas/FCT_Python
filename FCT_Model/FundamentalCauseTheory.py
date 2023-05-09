@@ -40,11 +40,11 @@ class FundamentalCauseTheory(Theory):
             pass
         else:
             try :
-                event_value = return_decimal(event[0])
+                event_value = return_decimal(event[0])/4
                 total_resources = self.__total_resources
-                if event_value/4<=total_resources:
+                if event_value<=total_resources:
                     self.successful_adaptiation += 1
-                    self.__total_resources -= event_value/4*self.params['successful.adaptation.cost']
+                    self.__total_resources -= event_value*self.params['successful.adaptation.cost']
 
                     if self.knowledge < 1:
                         self.knowledge += self.params['successful.adaptation.knowlege.benefit']
@@ -53,7 +53,7 @@ class FundamentalCauseTheory(Theory):
                         return [event, True]
                 else:
                     self.unsuccessful_adaptiation += 1
-                    self.__total_resources -= event_value/4*self.params['unsuccessful.adaptation.cost']
+                    self.__total_resources -= event_value*self.params['unsuccessful.adaptation.cost']
                     return [event, False]
                     
             except:
@@ -70,12 +70,11 @@ class FundamentalCauseTheory(Theory):
     #individual agent-level action mechanism methods
 
     def calculate_resources(self):
-        return self.knowledge + self.__personal_wealth + self.__prestige + self.__power#TODO: edit to ensure all FCT parameters are included
-        # print("calculate resources test")
+        return self.knowledge + self.__personal_wealth + self.__prestige + self.__power
 
     def do_action(self):
         self.calculate_resources()
-        #print(" strategy multiplier test: %d" % self.calculate_strategy_multiplier())
+
 
     #########################################################
     #Theory Getters

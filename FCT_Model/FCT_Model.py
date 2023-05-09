@@ -68,19 +68,7 @@ class FCT_Model(Model):
         fname = "FCT_Model/props/network/graph.txt"
         write_network(g, 'FCT_network', fname, 1)# write the network to a file
         
-        
-
-        #read_network(params["network.file"], self.__context, create_FCT_agent(i, self.__rank, deprivation_quintile_rand, agent_type, sex_rand, age_rand, drinking_status_rand, self.__discrete_space), FCT_Agent.restore_agent)
-        """
-        #TODO Include other model parameters including 
-            #TODO Distribution of agents that are wealthy
-            #TODO Distribution of agents that are well connected 
-                #TODO Then make this influence social network
-            #TODO Distribution of agents that are well educated
-            #TODO Distribution of agents that are have a strong social infuence
-                #TODO How to include this in the network?
-            #TODO Distribution of agents that have easy access to healthcare
-        """
+            
     	# Validate that the board size contains at least one more cell than the count of agents, so that movement can occur.
         if self.__count_of_agents >= (self.__board_size * self.__board_size):
             raise Exception(f"Invalid Configuration: count.of.agents ({self.__count_of_agents}) must be less than board.size * board.size ({self.__board_size * self.__board_size})")
@@ -165,24 +153,24 @@ class FCT_Model(Model):
 
     def do_situational_mechanisms(self):
 
-        #TODO: for implementing different types of events
-        # rng = np.random.default_rng()
-        # event_type = rng.choice([0, 1], p=[1/2, 1/2])
-        # if event_type == 0:
-        #     event = self.__communicator.generate_event('h')
-        # elif event_type == 1:
-        #     event = self.__communicator.generate_event('b')
+        different_events = self.__props["communicator.different.events"]
         
+        if different_events:
+            rng = np.random.default_rng()
+            event_type = rng.choice([0, 1], p=[1/2, 1/2])
+            if event_type == 0:
+                event = self.__communicator.generate_event('h')
+            elif event_type == 1:
+                event = self.__communicator.generate_event('b')
+        else:
         #Events generated based on a probability:
-        event = self.__communicator.generate_event('b')
+            event = self.__communicator.generate_event('b')
 
-        #TODO: sort the double for loop. 
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):
             agent.interpret_event(event)
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__count_of_agents, shuffle=True):
-            # TODO: call doSituation for each agent
             agent.call_situation()
         
     def do_action_mechanisms(self):
@@ -235,7 +223,6 @@ class FCT_Model(Model):
             agent.call_action()
         
     def do_transformational_mechanisms(self):
-        # TODO: call doTransformation of the Board structural entity
         self.__board.call_transformation()
 
     def run(self):
@@ -461,9 +448,6 @@ class FCT_Model(Model):
             yield #for loading bar
 
     def assign_theory(self):
-
-        #TODO: add a correlation coefficients
-        # self.__theory_attributes = generate_theory_json_file(self.__props.get("count.of.agents"), self.__props.get("theory.props.file"), generate_theory_distributions(0), self.__props, True, seed_input=self.__random_seed)
         
         for agent in self.__context.agents(count=self.__count_of_agents, shuffle=False):
             

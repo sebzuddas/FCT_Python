@@ -164,6 +164,7 @@ if __name__ == "__main__":
         consumption_dict = data_dict[1]
         death_gradient = harms_dict['death_gradient']
         consumption_gradient = consumption_dict['consumption_gradient']
+        gradients.append((simulation_id, death_gradient, consumption_gradient))
         print(f"Simulation:{simulation_id}\nDeath Gradient:{death_gradient}\nConsumption Gradient:{consumption_gradient}")
     
 
@@ -185,6 +186,6 @@ if __name__ == "__main__":
     print(sorted_results)
 
     # Save the DataFrame to a CSV file
-    sorted_results.to_csv('outputs/gradients/sorted_gradients.csv', index=False)
+    sorted_results.to_csv('Data_Processing/outputs/gradients/sorted_gradients.csv', index=False)
 
     exit()
