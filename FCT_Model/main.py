@@ -19,12 +19,17 @@ import emojis
 from alive_progress import alive_bar
 import FCT_Model
 import SocialNetwork as sn
+import yaml
 
 def main():
 
     # Command line argument parsing
     parser = repast4py.parameters.create_args_parser()
     args = parser.parse_args()
+
+    # custom_params = CustomParameterWrapper(args.parameters_file)
+    # params = custom_params.init_repast_parameters(args)
+
     params = repast4py.parameters.init_params(args.parameters_file, args.parameters)
 
     print(Style.RESET_ALL)
@@ -101,7 +106,22 @@ def main():
     #         #     print("Week: ", tick)
     #         bar()
     model.log_network('finish')
-    
+
+class CustomParameterWrapper:
+    def __init__(self, yaml_file_path):
+        self.params_dict = self.read_parameters(yaml_file_path)
+
+    def read_parameters(self, yaml_file_path):
+        with open(yaml_file_path, 'r') as f:
+            content = yaml.safe_load(f)
+        return content
+
+    def init_repast_parameters(self, args):
+        repast_params = repast4py.parameters.init_params(args.parameters_file, args.parameters)
+        for key, value in self.params_dict.items():
+            repast_params.set_value(key, value)
+        return repast_params
+
 
 # If this file is launched, run the model. 
 if __name__ == "__main__":

@@ -2,7 +2,6 @@
 Main file for managing the different experiments that will be run on the FCT_Model
 
 Types of experiments:
-#TODO: create some experiments
 1. LHS
 2. Different social networks 
 3. Inclusion of another social theory with the mediator class?
@@ -13,7 +12,6 @@ Types of experiments:
 #TODO counts.of.agents must be less than board.size
 #TODO extend the LatinHypercube to further params
 #TODO Make LHS output reasonable bounds
-
 
 Sebastiano Zuddas
 """
@@ -29,9 +27,7 @@ import numpy as np
 
 ### Variable Declaration
 sample_number = 100 # number of experiments
-
 standard_props_file_location = "/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/model/standard.yaml"
-
 
 # make a python main function for the experiment generator
 def main():
@@ -53,7 +49,25 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
 
     with open(example_file) as f:
         props_file = yaml.safe_load(f)
-    
+
+    # agent_logger: FCT_Model/outputs/agent_logger_out.csv
+    # agent_props_file: FCT_Model/props/agents/agent_props.json
+    # area_file: FCT_Model/props/area/DQ_areas.csv
+    # board_props_file: FCT_Model/props/area/DQ_areas.csv
+    # network_file: FCT_Model/props/network/graph.txt
+    # network_file_updated: FCT_Model/props/network/graph_updated.txt
+    # theory_logger: FCT_Model/outputs/theory_logger_out.csv
+    # theory_props_file: FCT_Model/props/agents/theory_props.json
+
+    keys_with_string_values = ['agent.logger',
+                               'agent.props.file', 
+                               'area.file', 
+                               'board.props.file', 
+                               'network.file', 
+                               'network.file.updated', 
+                               'theory.logger', 
+                               'theory.props.file']
+
     # Define keys of the parameters you want to modify
     keys_to_modify = ['min.age', 
                       'max.age', 
@@ -101,17 +115,28 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
 
     for i in range(len(sample)):
         for j, key in enumerate(keys_to_modify):
-            # Scale and shift the LHS sample according to the parameter bounds
-            value = sample[i][j] * (bounds[j][1] - bounds[j][0]) + bounds[j][0]
-            
-            # Update the parameter with the converted value
-            props_file[key] = convert_value(value, key)
-        
+            if key not in keys_with_string_values:
+                # Scale and shift the LHS sample according to the parameter bounds
+                value = sample[i][j] * (bounds[j][1] - bounds[j][0]) + bounds[j][0]
+
+                # Update the parameter with the converted value
+                props_file[key] = convert_value(value, key)
+                # print(f'Updating {key}: {value}')  # Debug print
+
         # Convert numpy values to native Python data types
         cleaned_props_file = numpy_to_python(props_file)
-        
+        # print(f'Cleaned props file: {cleaned_props_file}')  # Debug print
+
         # Save the cleaned YAML file without numpy tags
-        yaml_dump(cleaned_props_file, os.path.join(target_folder, f'test_{i+1}.yaml'))
+        yaml_filename = os.path.join(target_folder, f'test_{i+1}.yaml')
+        yaml_dump(cleaned_props_file, yaml_filename)
+        # print(f'Saved YAML file: {yaml_filename}')  # Debug print
+
+        # Read the saved YAML file to check the contents
+        with open(yaml_filename, 'r') as yaml_file:
+            yaml_contents = yaml.safe_load(yaml_file)
+            print(f'YAML contents: {yaml_contents}')  # Debug print
+
 
 
 def numpy_float_representer(dumper, value):
@@ -123,54 +148,22 @@ def yaml_dump(data, file_name):
         yaml.dump(data, outfile, default_flow_style=False)
 
 
-
 def numpy_to_python(data):
     if isinstance(data, dict):
-        return {k: numpy_to_python(v) for k, v in data.items()}
-    elif isinstance(data, (list, tuple)):
+        cleaned_data = {}
+        for k, v in data.items():
+            cleaned_key = k.rstrip(' :')
+            cleaned_data[cleaned_key] = numpy_to_python(v)
+        return cleaned_data
+    elif isinstance(data, list):
         return [numpy_to_python(v) for v in data]
-    elif isinstance(data, np.ndarray) and data.size == 1:
-        return data.item()
-    elif isinstance(data, (np.number, np.bool_)):
+    elif isinstance(data, np.generic):
         return data.item()
     else:
         return data
 
 
 
-
-
-
-
-
-def generate_probability(probability_type):
-    #create a function that takes in a probability type and returns a random probability based on the type requested
-    if probability_type == 'uniform':
-        return random.uniform(0,1)
-    elif probability_type == 'normal':
-        return random.normal(0,1)
-    elif probability_type == 'lognormal':
-        return random.lognormal(0,1)
-    elif probability_type == 'exponential':
-        return random.exponential(1)
-    elif probability_type == 'gamma':
-        return random.gamma(1,1)
-    elif probability_type == 'beta':
-        return random.beta(1,1)
-    elif probability_type == 'binomial':
-        return random.binomial(1,0.5)
-    elif probability_type == 'poisson':
-        return random.poisson(1)
-    elif probability_type == 'geometric':
-        return random.geometric(0.5)
-    elif probability_type == 'negative_binomial':
-        return random.negative_binomial(1,0.5)
-    elif probability_type == 'logistic':
-        return random.logistic(0,1)
-    elif probability_type == 'logseries':
-        return random.logseries(0.5)
-    elif probability_type == 'chisquare':
-        return random.chisquare(1)
 
 def generate_agent_distributions(type):
 
