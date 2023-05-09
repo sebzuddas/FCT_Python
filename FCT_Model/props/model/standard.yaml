@@ -20,9 +20,10 @@ risk.threshold: 0.5 # the threshold for how much risk an agent has to die, I put
 #Communicator Parameters
 communicator.max.reach: 200 # the amount of agents a communicator can reach every tick
 communicator.min.reach: 50
+communicator.different.events: 0 #0 - only binary events 1 - all events (inc hex)
 
-beta.modifier.male: 0.00389
-beta.modifier.female: 0.00101
+beta.modifier.male: 0.00389 #risk modifier for men
+beta.modifier.female: 0.00101 #risk modifier for women
 
 successful.adapatation.cost: 1 #a multiplier for the cost of a successful adaptation
 unsuccessful.adapatation.cost: 1 #a multiplier for the cost of an unsuccessful adaptation

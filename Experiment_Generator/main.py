@@ -25,6 +25,7 @@ import experiments
 import random
 import sys
 import os
+import numpy as np
 
 ### Variable Declaration
 sample_number = 100 # number of experiments
@@ -41,6 +42,12 @@ def main():
 #create a function for the previous loop to create a new yaml file for each sample.
 def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/model/test_parameters'):
     
+
+    def convert_value(value, key):
+        if key in decimal_keys:
+            return round(value, 6)  # You can change the number of decimals as needed
+        return int(round(value))
+    
     # Create the target folder if it does not exist
     os.makedirs(target_folder, exist_ok=True)
 
@@ -48,10 +55,46 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
         props_file = yaml.safe_load(f)
     
     # Define keys of the parameters you want to modify
-    keys_to_modify = ['successful.adaptation.cost', 'unsuccessful.adaptation.cost', 'successful.adaptation.knowlege.benefit']
+    keys_to_modify = ['min.age', 
+                      'max.age', 
+                      'risk.threshold', 
+                      'successful.adaptation.cost', 
+                      'unsuccessful.adaptation.cost', 
+                      'successful.adaptation.knowlege.benefit', 
+                      'communicator.max.reach', 
+                      'beta.modifier.male', 
+                      'beta.modifier.female', 
+                      'knowledge.gain',
+                      'resource.depletion',
+                      'theory.distribution.type', 
+                      'communication.success']
 
     # Define the bounds for each parameter you want to modify
-    bounds = [(1, 30), (1, 30), (10, 20)]
+    bounds = [(18, 56), 
+              (56, 95), 
+              (0, 1), 
+              (1, 3), 
+              (1, 3), 
+              (1, 2), 
+              (1, 1000), 
+              (0.001, 0.005),
+              (0.0005, 0.0015), 
+              (0.5, 1),
+              (0, 1),
+              (1, 3), 
+              (0, 1)
+              ]
+
+    # Define the keys you want to have as decimals
+    decimal_keys = ['risk.threshold', 
+                    'successful.adaptation.cost', 
+                    'unsuccessful.adaptation.cost', 
+                    'successful.adaptation.knowlege.benefit', 
+                    'beta.modifier.male', 
+                    'beta.modifier.female', 
+                    'knowledge.gain', 
+                    'resource.depletion', 
+                    'communication.success']
 
     engine = LatinHypercube(len(keys_to_modify))
     sample = engine.random(sample_number)
@@ -61,14 +104,40 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
             # Scale and shift the LHS sample according to the parameter bounds
             value = sample[i][j] * (bounds[j][1] - bounds[j][0]) + bounds[j][0]
             
-            # Round the value to the nearest integer
-            value = round(value)
-
-            # Update the parameter with the modified value
-            props_file[key] = value
+            # Update the parameter with the converted value
+            props_file[key] = convert_value(value, key)
         
-        with open(os.path.join(target_folder, f'test_{i+1}.yaml'), 'w') as f:
-            yaml.dump(props_file, f)
+        # Convert numpy values to native Python data types
+        cleaned_props_file = numpy_to_python(props_file)
+        
+        # Save the cleaned YAML file without numpy tags
+        yaml_dump(cleaned_props_file, os.path.join(target_folder, f'test_{i+1}.yaml'))
+
+
+def numpy_float_representer(dumper, value):
+    return dumper.represent_float(value)
+
+
+def yaml_dump(data, file_name):
+    with open(file_name, 'w') as outfile:
+        yaml.dump(data, outfile, default_flow_style=False)
+
+
+
+def numpy_to_python(data):
+    if isinstance(data, dict):
+        return {k: numpy_to_python(v) for k, v in data.items()}
+    elif isinstance(data, (list, tuple)):
+        return [numpy_to_python(v) for v in data]
+    elif isinstance(data, np.ndarray) and data.size == 1:
+        return data.item()
+    elif isinstance(data, (np.number, np.bool_)):
+        return data.item()
+    else:
+        return data
+
+
+
 
 
 

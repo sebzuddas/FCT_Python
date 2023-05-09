@@ -154,7 +154,7 @@ class FCT_Model(Model):
     def do_situational_mechanisms(self):
 
         different_events = self.__props["communicator.different.events"]
-        
+
         if different_events:
             rng = np.random.default_rng()
             event_type = rng.choice([0, 1], p=[1/2, 1/2])
@@ -209,7 +209,7 @@ class FCT_Model(Model):
 
                     st = rng.uniform(0, 1)
 
-                    if st >= st/self.__props["communication.success"]:
+                    if st <= self.__props["communication.success"]:
                         agent_b.handle_event(agent_a_random_event, True)
                     else:
                         agent_b.handle_event(agent_a_random_event, False)

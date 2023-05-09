@@ -64,8 +64,6 @@ def main():
     time.sleep(0.25)
     print(Style.RESET_ALL)
 
-    
-
     #############################################
     # Link Theory
     with alive_bar(params.get("count.of.agents"), title="Linking Agents With Theory", bar='notes') as bar:
