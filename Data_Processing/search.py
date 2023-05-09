@@ -54,8 +54,12 @@ def find_ahp(simulation_id, db_config):
     # print(grouped_data)
 
     total_deaths = data.groupby(['deprivation_quintile', 'tick']).agg({'death_count': 'sum'}).reset_index()
-    total_deaths['cumulative_death_count'] = total_deaths.groupby('deprivation_quintile')['death_count'].cumsum()
+    # total_deaths['cumulative_death_count'] = total_deaths.groupby('deprivation_quintile')['death_count'].cumsum()
     total_deaths = total_deaths.pivot(index='deprivation_quintile', columns='tick', values='death_count')
+    mean_deaths_tick = total_deaths.div(200)
+    mean_deaths_sim = mean_deaths_tick.mean(axis=1)/1040
+    print(mean_consumption_tick)
+    print(mean_consumption_sim)
 
     # fig2 = px.bar(total_deaths, x=total_deaths.index, y=total_deaths.columns.max())
     # fig2.update_layout(yaxis_title='Total Deaths', xaxis_title='Deprivation Quintile', title='Total Deaths per Deprivation Quintile', font=dict(
@@ -70,11 +74,9 @@ def find_ahp(simulation_id, db_config):
     total_consumption = data.groupby(['deprivation_quintile', 'tick']).agg({'mean_weekly_units': 'sum'}).reset_index()
     total_consumption = total_consumption.pivot(index='deprivation_quintile', columns='tick', values='mean_weekly_units')
     mean_consumption_tick = total_consumption.div(200)
+    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 1040
 
     print(mean_consumption_tick)
-
-    # mean consumption simulation
-    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 1040
     print(mean_consumption_sim)
     
     # total_consumption['cumulative_consumption'] = total_consumption.groupby('deprivation_quintile')['mean_weekly_units'].cumsum()
