@@ -289,6 +289,14 @@ def find (ahp, fct):
         print('This function is not yet implemented')
 
 
+@model.command()
+@click.option("--exp",default=0, type=int, help="The experiment number to run")
+def show(exp):
+    print(f"Showing experiment number {exp}!")
+    try:
+        subprocess.run(["python3" ,"Data_Processing/Data_Visualisation.py", str(exp)], check=True)
+    except Exception as e:
+        print(f"Unknown error occurred: {e}")
 
 def put_csv_to_database(experiment_number, user_input):
 
