@@ -126,10 +126,10 @@ class FCT_Agent(MicroAgent):
     def handle_event(self, event, is_solved):
         event = tuple(event)  # Convert event to a tuple
 
-        if not is_solved:
+        if not is_solved:#if the returned event is deemed unsolved
             # Add the event to received_events and unsolved_events
             self.received_events.append([event, is_solved])
-            self.unsolved_events.append([event, not is_solved])
+            self.unsolved_events.append([event, is_solved])# add the event to the unsolved events list TODO: fix
 
         if is_solved:
             # If the event is solved, update the lists accordingly

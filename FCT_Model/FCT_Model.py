@@ -107,7 +107,7 @@ class FCT_Model(Model):
         print(params["agent.logger"])
         print(params["theory.logger"])
 
-        self.theory_logger = logging.TabularLogger(comm, params['theory.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth','power', 'prestige', 'social_connections', 'social_influence', 'knowledge', 'strategy_multiplier', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
+        self.theory_logger = logging.TabularLogger(comm, params['theory.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth','power', 'prestige', 'social_connections', 'social_influence', 'knowledge', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
         #TODO: pass board array into the tabular logger
         # self.board_logger = logging.TabularLogger(comm, params['board.logger'])
         # self.log_board()
@@ -522,6 +522,7 @@ class FCT_Model(Model):
     def log_theory(self):
         tick = self._runner.schedule.tick
         for agent in self.__context.agents():
+            #self.theory_logger = logging.TabularLogger(comm, params['theory.logger'], ['tick', 'id', 'mean_weekly_units', 'education', 'personal_wealth','power', 'prestige', 'social_connections', 'social_influence', 'knowledge', 'total_resources', 'successful_adaptiation', 'unsuccessful_adaptiation'])
             self.theory_logger.log_row(tick, agent.id, agent.get_theory_dict()['mean_weekly_units'], agent.get_theory_dict()['education'], agent.get_theory_dict()['personal_wealth'], agent.get_theory_dict()['power'], agent.get_theory_dict()['prestige'], agent.get_theory_dict()['social_connections'], agent.get_theory_dict()['social_influence'], agent.get_theory_dict()['knowledge'], agent.get_theory_dict()['total_resources'], agent.get_theory_dict()['successful_adaptiation'], agent.get_theory_dict()['unsuccessful_adaptiation'])
         self.theory_logger.write()
 
