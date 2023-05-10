@@ -116,12 +116,14 @@ def get_database_tables(table_number, db_config):
     # Convert the result to a pandas DataFrame
     return pd.DataFrame(result, columns=column_names), column_names
 
-def get_data_by_dq(df,variables: List[str], pivot_on:int = 0):
+def get_data_by_dq(df,variables: List[str],pivot=False, pivot_on:int = 0):
     
     agg_dict = {variable: 'sum' for variable in variables}
     # group by 'deprivation_quintile' and 'tick', and aggregate using the variable-aggregation function pairs
     df = df.groupby(['deprivation_quintile', 'tick']).agg(agg_dict).reset_index()
-    df = df.pivot(index='deprivation_quintile', columns='tick', values=variables[pivot_on])#total deaths by deprivation quintile every tick
+
+    if pivot:
+        df = df.pivot(index='deprivation_quintile', columns='tick', values=variables[pivot_on])#total deaths by deprivation quintile every tick
     
     return df
 
@@ -156,10 +158,8 @@ def find_number_of_tables(db_config):
     # return the result
     return result
 
-
 def find_fct():
     pass
-
 
 def find_ahp(db_config):
     num_tables = find_number_of_tables(db_config)
@@ -200,9 +200,6 @@ def find_ahp(db_config):
     # Save the DataFrame to a CSV file
     sorted_results.to_csv('Data_Processing/outputs/gradients/sorted_gradients.csv', index=False)
     return sorted_results
-
-    
-
 
 
 if __name__ == "__main__":

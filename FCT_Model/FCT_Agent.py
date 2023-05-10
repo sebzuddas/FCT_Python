@@ -130,7 +130,7 @@ class FCT_Agent(MicroAgent):
             # Add the event to received_events and unsolved_events
             self.received_events.append([event, is_solved])
             self.unsolved_events.append([event, is_solved])# add the event to the unsolved events list TODO: fix
-
+            
         if is_solved:
             # If the event is solved, update the lists accordingly
             self.solved_events.append(event)
