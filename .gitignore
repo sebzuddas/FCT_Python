@@ -12,3 +12,5 @@ FCT_Model/props/model/model-*
 FCT_Model/props/model/test_parameters/*.yaml
 *.txt
 /Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs
+Data_Processing/Data_visualisation.py
+FCT_Model/outputs/network/*

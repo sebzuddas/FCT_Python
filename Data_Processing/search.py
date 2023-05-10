@@ -44,7 +44,7 @@ def find_ahp(simulation_id, db_config):
     data['death_count'] = pd.to_numeric(data['death_count'])
     data['mean_weekly_units'] = pd.to_numeric(data['mean_weekly_units'])
     data['successful_adaptiation'] = pd.to_numeric(data['successful_adaptiation'])
-    # data['unsuccessful_adaptiation'] = pd.to_numeric(data['unsuccessful_adaptiation'])#Currently NAN
+    data['unsuccessful_adaptiation'] = pd.to_numeric(data['unsuccessful_adaptiation'])#Currently NAN
 
     ####### Harms by Deprivation Quintile #######
 
@@ -58,13 +58,13 @@ def find_ahp(simulation_id, db_config):
     ####### Adaptation Ratios by Deprivation Quintile #######
 
     
-    # adaptation_data = data.groupby(['deprivation_quintile', 'tick']).agg({'successful_adaptiation': 'sum', 'unsuccessful_adaptiation': 'sum'}).reset_index()
-    # adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
-    # adaptation_data = adaptation_data.pivot(index='tick', columns='deprivation_quintile', values='adaptation_ratio')
-    # adaptation_total = adaptation_data.iloc[:, -1]#Total adaptation ratio by deprivation quintile by the end of the simulation
+    adaptation_data = data.groupby(['deprivation_quintile', 'tick']).agg({'successful_adaptiation': 'sum', 'unsuccessful_adaptiation': 'sum'}).reset_index()
+    adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
+    adaptation_data = adaptation_data.pivot(index='tick', columns='deprivation_quintile', values='adaptation_ratio')
+    adaptation_total = adaptation_data.iloc[:, -1]#Total adaptation ratio by deprivation quintile by the end of the simulation
 
-    # harms_dict['adaptation_final'] = adaptation_total
-    # harms_dict['adaptation_full'] = adaptation_data
+    harms_dict['adaptation_final'] = adaptation_total
+    harms_dict['adaptation_full'] = adaptation_data
 
 
     ######### Consumption by Deprivation Quintile #######
@@ -88,10 +88,10 @@ def find_ahp(simulation_id, db_config):
 
     ### Successful Adaptations Ratio ###
     
-    # X2 = np.array(adaptation_total.index).reshape(-1, 1)
-    # y2 = np.array(adaptation_total.values).reshape(-1, 1)
-    # adaptation_gradient = get_gradient(X2, y2)
-    # harms_dict['adaptation_gradient'] = adaptation_gradient
+    X2 = np.array(adaptation_total.index).reshape(-1, 1)
+    y2 = np.array(adaptation_total.values).reshape(-1, 1)
+    adaptation_gradient = get_gradient(X2, y2)
+    harms_dict['adaptation_gradient'] = adaptation_gradient
 
 
 
@@ -164,8 +164,9 @@ if __name__ == "__main__":
         consumption_dict = data_dict[1]
         death_gradient = harms_dict['death_gradient']
         consumption_gradient = consumption_dict['consumption_gradient']
-        gradients.append((simulation_id, death_gradient, consumption_gradient))
-        print(f"Simulation:{simulation_id}\nDeath Gradient:{death_gradient}\nConsumption Gradient:{consumption_gradient}")
+        adaptation_gradient = harms_dict['adaptation_gradient']
+        gradients.append((simulation_id, death_gradient, adaptation_gradient, consumption_gradient))
+        print(f"Simulation:{simulation_id}\nDeath Gradient:{death_gradient}\nAdaptation Gradient:{adaptation_gradient}\nConsumption Gradient:{consumption_gradient}")
     
 
     
@@ -173,15 +174,13 @@ if __name__ == "__main__":
     # Sort the gradients list based on the criteria
     sorted_gradients = sorted(gradients, key=lambda x: (x[1], -x[2]), reverse=True)
     # Print the sorted list of gradients
-    print("Simulation\tDeath Gradient\tConsumption Gradient")
+    print("Simulation\tDeath Gradient\tAdaptation Gradient\tConsumption Gradient")
     for simulation_id, death_gradient, consumption_gradient in sorted_gradients:
-        print(f"{simulation_id}\t\t{death_gradient}\t\t{consumption_gradient}")
-
+        print(f"{simulation_id}\t\t{death_gradient}\t\t{adaptation_gradient}\t\t{consumption_gradient}")
 
     
-    
 
-    column_names = ['Simulation', 'Death Gradient', 'Consumption Gradient']
+    column_names = ['Simulation', 'Death Gradient', 'Adaptation Gradient', 'Consumption Gradient']
     sorted_results = pd.DataFrame(sorted_gradients, columns=column_names)
     print(sorted_results)
 
