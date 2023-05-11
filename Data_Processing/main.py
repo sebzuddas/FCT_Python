@@ -19,6 +19,7 @@ import os
 import colorama
 import emojis
 from colorama import Fore, Back, Style
+import Data_Visualisation
 
 
 host_var='127.0.0.1'
@@ -58,10 +59,6 @@ def load_simulation_data(simulation_id):
 
 
 ########## Database Handling ##########
-def load_params(yaml_file):
-    with open(yaml_file, 'r') as file:
-        params = yaml.safe_load(file)
-    return params
 
 def table_exists(conn, table_name):
     cursor = conn.cursor()
@@ -150,7 +147,6 @@ def add_file_to_db(file_number):
         conn.close()
         print(f"{colorama.Fore.GREEN}\nSimulation with ID {colorama.Fore.YELLOW}'PC_{file_number}'{colorama.Fore.GREEN} has been added to the database!\n{colorama.Fore.RESET}")
 
-
 def drop_table(conn, table):
     cursor = conn.cursor()
     drop_query = f"DROP TABLE IF EXISTS {table}"
@@ -158,7 +154,6 @@ def drop_table(conn, table):
     cursor.execute(drop_query)
     conn.commit()
     print(f"Table {table} has been dropped, a new one awaits!")
-
 
 def get_total_simulations():
     connection = mysql.connector.connect(
@@ -177,45 +172,45 @@ def get_total_simulations():
 
 
 
-########## Graphics Handling ##########
-app = dash.Dash(__name__)
+# ########## Graphics Handling ##########
+# app = dash.Dash(__name__)
 
-app.layout = html.Div([
-    html.H1("Simulation Data Visualization"),
-    dcc.Dropdown(
-        id='simulation-dropdown',
-        options=[{'label': f"Simulation {i}", 'value': i} for i in range(1, get_total_simulations() + 1)],
-        value=1,
-        multi=False,
-        clearable=False,
-        searchable=True
-    ),
-    dcc.Dropdown(
-        id='agent-dropdown',
-        options=[{'label': f"Agent {i}", 'value': i} for i in range(1000)],
-        value=0,
-        multi=False,
-        clearable=False,
-        searchable=True
-    ),
-    dcc.Graph(id='simulation-graph')
-])
+# app.layout = html.Div([
+#     html.H1("Simulation Data Visualization"),
+#     dcc.Dropdown(
+#         id='simulation-dropdown',
+#         options=[{'label': f"Simulation {i}", 'value': i} for i in range(1, get_total_simulations() + 1)],
+#         value=1,
+#         multi=False,
+#         clearable=False,
+#         searchable=True
+#     ),
+#     dcc.Dropdown(
+#         id='agent-dropdown',
+#         options=[{'label': f"Agent {i}", 'value': i} for i in range(1000)],
+#         value=0,
+#         multi=False,
+#         clearable=False,
+#         searchable=True
+#     ),
+#     dcc.Graph(id='simulation-graph')
+# ])
 
 
-@app.callback(
-    Output('simulation-graph', 'figure'),
-    [Input('simulation-dropdown', 'value'),
-     Input('agent-dropdown', 'value')]
-)
-def update_graph(simulation_number, agent_id):
-    df = load_simulation_data(simulation_number)
-    filtered_df = df[df['agent_id'] == agent_id]
+# @app.callback(
+#     Output('simulation-graph', 'figure'),
+#     [Input('simulation-dropdown', 'value'),
+#      Input('agent-dropdown', 'value')]
+# )
+# def update_graph(simulation_number, agent_id):
+#     df = load_simulation_data(simulation_number)
+#     filtered_df = df[df['agent_id'] == agent_id]
 
-    fig = px.line(filtered_df, x='tick', y='your_value_column', title=f"Agent {agent_id} Data")
-    fig.update_xaxes(title="Tick")
-    fig.update_yaxes(title="Value")
+#     fig = px.line(filtered_df, x='tick', y='your_value_column', title=f"Agent {agent_id} Data")
+#     fig.update_xaxes(title="Tick")
+#     fig.update_yaxes(title="Value")
 
-    return fig
+#     return fig
 
 
 
@@ -224,7 +219,6 @@ def update_graph(simulation_number, agent_id):
 if __name__ == "__main__":
 
     yaml_file = sys.argv[1]
-    parameters = load_params(yaml_file)
 
     #/Users/sebastianozuddas/Programming/Python/FCT_Python/outputs/agent_logger_out.csv
     user_path = os.environ.get("FCT_PROJECT_PATH") # set path to your repository
@@ -262,7 +256,7 @@ if __name__ == "__main__":
             case 'True':
                 print('Visualizing data...\n')
                 # visualize_data()
-                app.run_server(debug=True)
+                Data_Visualisation.main()
 
             case 'False':
                 pass

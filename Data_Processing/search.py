@@ -56,7 +56,8 @@ def find_ahp_gradients(simulation_id, db_config):
     total_consumption = data.groupby(['deprivation_quintile', 'tick']).agg({'mean_weekly_units': 'sum'}).reset_index()
     total_consumption = total_consumption.pivot(index='deprivation_quintile', columns='tick', values='mean_weekly_units')
     mean_consumption_tick = total_consumption.div(200)# average consumption every tick by deprivation quintiles
-    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 1040# average consumption throughout the simulation by deprivation quintiles
+    mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 520# average consumption throughout the simulation by deprivation quintiles TODO: make dynamic
+    
     
     consumption_dict['consumption_final'] = mean_consumption_sim
     consumption_dict['consumption_full'] = mean_consumption_tick

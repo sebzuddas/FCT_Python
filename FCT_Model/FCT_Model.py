@@ -427,7 +427,7 @@ class FCT_Model(Model):
                             else:
                                 pass
                         # if dq_test_pass == age_test_pass == sex_test_pass == education_test_pass == drinking_status_test_pass == True:#TODO: amend
-                        if dq_test_pass or age_test_pass or sex_test_pass or drinking_status_test_pass or education_test_pass == True:#TODO: amend
+                        if dq_test_pass and age_test_pass or sex_test_pass and drinking_status_test_pass == True:#TODO: amend
                             # print(iteration_count)
                             agent_b.append_connections_array(agent_a.get_id())#####SORT OUT THIS CONNECTIONS ARRAY
                             agent_a.append_connections_array(agent_b.get_id())
