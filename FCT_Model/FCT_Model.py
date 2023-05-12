@@ -156,18 +156,19 @@ class FCT_Model(Model):
 
     def do_situational_mechanisms(self):
 
-        different_events = self.__props["communicator.different.events"]
+        # different_events = self.__props["communicator.different.events"]
 
-        if different_events:
-            rng = np.random.default_rng()
-            event_type = rng.choice([0, 1], p=[1/2, 1/2])
-            if event_type == 0:
-                event = self.__communicator.generate_event('h')
-            elif event_type == 1:
-                event = self.__communicator.generate_event('b')
-        else:
-        #Events generated based on a probability:
-            event = self.__communicator.generate_event('b')
+        # if different_events:
+        #     rng = np.random.default_rng()
+        #     event_type = rng.choice([0, 1], p=[1/2, 1/2])
+        #     if event_type == 0:
+        #         event = self.__communicator.generate_event('h')
+        #     elif event_type == 1:
+        #         event = self.__communicator.generate_event('b')
+        # else:
+        # #Events generated based on a probability:
+            
+        event = self.__communicator.generate_event('b')
 
 
         for agent in self.__context.agents(FCT_Agent.TYPE, count=self.__props["communicator.max.reach"], shuffle=True):

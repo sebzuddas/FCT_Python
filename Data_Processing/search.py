@@ -31,7 +31,8 @@ def find_ahp_gradients(simulation_id, db_config):
 
     ####### Harms by Deprivation Quintile #######
 
-    total_deaths = get_data_by_dq(data,['death_count'])
+    total_deaths = get_data_by_dq(data,['death_count'], pivot=True)
+    # print(total_deaths)
     total_deaths_melted = total_deaths.reset_index().melt(id_vars='deprivation_quintile', var_name='tick', value_name='value')
     total_deaths_melted = total_deaths_melted.sort_values(['deprivation_quintile', 'tick'])
     # Create a new DataFrame that only includes the rows where 'value' changes within each 'deprivation_quintile'
@@ -40,13 +41,34 @@ def find_ahp_gradients(simulation_id, db_config):
     total_deaths_changed = total_deaths_changed[total_deaths_changed['deprivation_quintile'].eq(total_deaths_changed['deprivation_quintile'].shift())]
     total_deaths_changed['cumulative_value'] = total_deaths_changed.groupby('deprivation_quintile')['value'].cumsum()
     #get the last cumulative sum of deaths over the simulation
-    tot_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
+    # print(total_deaths_changed)
+    total_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
+    # print(total_deaths_sim)
 
-    harms_dict['death_final'] = tot_deaths_sim
+    if not total_deaths_sim.empty:
+        death_gradient = get_gradient(total_deaths_sim.index, total_deaths_sim.values)
+    else:
+        # print('total_deaths_sim is empty, cannot calculate gradient')
+        death_gradient = 0  # or some other value indicating that the gradient could not be calculated
+
+    # death_gradient = get_gradient(total_deaths_sim.index, total_deaths_sim.values)# death_gradient = filtered_gradients['Death Gradient'].iloc[0]
+    # print('death gradient', death_gradient)
+    harms_dict['death_final'] = total_deaths_sim
     harms_dict['death_full'] = total_deaths
     
     ####### Adaptation Ratios by Deprivation Quintile #######
 
+
+
+    successful_adaptation_data = get_data_by_dq(data, ['successful_adaptiation'], pivot=False)
+    unsuccessful_adaptation_data = get_data_by_dq(data, ['unsuccessful_adaptiation'], pivot=False)
+    adaptation_data = pd.merge(successful_adaptation_data, unsuccessful_adaptation_data, on=['deprivation_quintile', 'tick'])
+    adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
+    adaptation_data['successful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['successful_adaptiation'].cumsum()
+    adaptation_data['unsuccessful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['unsuccessful_adaptiation'].cumsum()
+    adaptation_data['adaptation_ratio_cumsum'] = adaptation_data['successful_cumsum'] / (adaptation_data['successful_cumsum'] + adaptation_data['unsuccessful_cumsum'])
+    end_simulation_data = adaptation_data.groupby('deprivation_quintile').last().reset_index()
+    adaptation_gradient = get_gradient(end_simulation_data['deprivation_quintile'], end_simulation_data['adaptation_ratio_cumsum'])
     
     adaptation_data = data.groupby(['deprivation_quintile', 'tick']).agg({'successful_adaptiation': 'sum', 'unsuccessful_adaptiation': 'sum'}).reset_index()
     adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
@@ -70,10 +92,10 @@ def find_ahp_gradients(simulation_id, db_config):
 
     ######### Finding the Gradient for Harms ####### (should be positive)
     ### Deaths ###
-    harms_dict['death_gradient'] = get_gradient(tot_deaths_sim.index, tot_deaths_sim.values)
+    harms_dict['death_gradient'] = death_gradient
 
     ### Successful Adaptations Ratio ###
-    harms_dict['adaptation_gradient'] = get_gradient(adaptation_total.index, adaptation_total.values)
+    harms_dict['adaptation_gradient'] = adaptation_gradient
 
     ######### Finding the Gradient for Consumption ####### (should be negative)
     consumption_dict['consumption_gradient'] = get_gradient(mean_consumption_sim.index, mean_consumption_sim.values)
@@ -81,7 +103,6 @@ def find_ahp_gradients(simulation_id, db_config):
     ahp_info.append(harms_dict)
     ahp_info.append(consumption_dict)
     return ahp_info
-
 
 def get_database_tables(table_number, db_config):
     # Connect to the MySQL database
@@ -173,7 +194,7 @@ def find_ahp(db_config):
     # Find the gradient for each simulation
     gradients = []
 
-    # print(f"Number of Tables: {num_tables}")
+    print(f"Number of Tables: {num_tables}")
 
 
 
@@ -186,10 +207,10 @@ def find_ahp(db_config):
             consumption_gradient = consumption_dict['consumption_gradient']
             adaptation_gradient = harms_dict['adaptation_gradient']
             gradients.append((simulation_id, death_gradient, adaptation_gradient, consumption_gradient))
-            # print(f"Simulation:{simulation_id}\nDeath Gradient:{death_gradient}\nAdaptation Gradient:{adaptation_gradient}\nConsumption Gradient:{consumption_gradient}")
+            print(f"Simulation:{simulation_id}\nDeath Gradient:{death_gradient}\nAdaptation Gradient:{adaptation_gradient}\nConsumption Gradient:{consumption_gradient}")
         except ValueError as v:
-            # print(f"Simulation {simulation_id} failed with error: {v}, likey due to a nan value in the data")
-            break
+            print(f"Simulation {simulation_id} failed with error: {v}")
+            continue
 
         
     # Sort the gradients list based on the criteria

@@ -348,18 +348,6 @@ def update_graphs(selected_simulation):
     # total_consumption_changed['cumulative_value'] = total_consumption_changed.groupby('deprivation_quintile')['value'].cumsum()
     # total_consumption_sim = total_consumption_changed.groupby('deprivation_quintile')['cumulative_value'].last()
 
-
-
-
-
-
-
-
-
-
-
-
-
     mean_consumption_tick = total_consumption.div(200)# average consumption every tick by deprivation quintiles
     mean_consumption_tot = mean_consumption_tick.sum(axis=1) / 520# average consumption throughout the simulation by deprivation quintiles
     
@@ -388,7 +376,7 @@ def update_graphs(selected_simulation):
 
 
 @app.callback(
-    Output("network", "figure"),
+    [Output("network", "figure"),Output('network-stats', 'children')],
     Input("simulation-dropdown", "value")
     )
 def update_network_graph(selected_simulation):
@@ -423,11 +411,19 @@ def update_network_graph(selected_simulation):
         
     #Graph statistics
     # Calculate network statistics
-    graph_stats.append(G.number_of_nodes())
-    graph_stats.append(G.number_of_edges())
-    graph_stats.append(nx.density(G))
-    graph_stats.append(nx.diameter(G))
-    graph_stats.append(nx.average_clustering(G))
+    num_nodes = G.number_of_nodes()
+    num_edges = G.number_of_edges()
+    density = nx.density(G)
+    diameter = nx.diameter(G)
+    average_clustering = nx.average_clustering(G)
+    print(num_nodes)
+
+    graph_stats = [html.P(f"Number of nodes: {num_nodes}"),
+                   html.P(f"Number of edges: {num_edges}"),
+                   html.P(f"Density: {density:.4f}"),
+                   html.P(f"Diameter: {diameter}"),
+                   html.P(f"Average clustering: {average_clustering:.4f}")]
+
 
     edge_trace = go.Scatter(
     x=[],
@@ -484,8 +480,7 @@ def update_network_graph(selected_simulation):
                     xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
                     yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
                     )
-
-    return fig
+    return fig, graph_stats
 
 
 def main():
@@ -518,7 +513,8 @@ def main():
             ),
             html.H2("Network"),
             dcc.Graph(id="network"),
-
+            html.Div(id='network-stats',
+            style={"margin-bottom": "20px", "width": "80%"}),
             html.Div(
             children=[
                 html.H3("Death Data"),
