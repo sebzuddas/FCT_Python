@@ -26,6 +26,15 @@ project_path = str(os.environ['FCT_PROJECT_FOLDER'])
 color_scale = ['#398278', '#97af87', '#d3c668', '#db9e63', '#bf5b32']
 #398278, #a0bb9c, #d3c668, #eaaa7a, #bf5b32
 #00d700, #00ffca, yellow, #ff7f00, red
+
+#398278, #97af87, #d3c668, #db9e63, #bf5b32
+
+bar_colours_good = ['#24dcc1', '#2fc4ae', '#36ae9c', '#38988a', '#398278']
+bar_colours_bad = ['#d79840', '#d1883f', '#cb793e', '#c56a3d', '#bf5b32']
+
+#bf5b32, #c56a3d, #cb793e, #d1883f, #d79840
+
+
 font_dict = dict(
         family='serif',
         size=18,
@@ -166,6 +175,7 @@ def animate_simulation(sim_number):
     [Output("graph-1", "figure"),
      Output("graph-1_1", "figure"),
      Output("graph-2", "figure"),
+     Output("graph-2_1", "figure"),
      Output("graph-3", "figure")],
     [Input("simulation-dropdown", "value")],
 )
@@ -206,8 +216,6 @@ def update_graphs(selected_simulation):
     total_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
 
 
-    
-    
 
     total_deaths_figure = px.bar(x=total_deaths_sim.index, y=total_deaths_sim.values, title=f"Total Deaths from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
     x_death_tot = np.sort(total_deaths_sim.index)
@@ -227,42 +235,91 @@ def update_graphs(selected_simulation):
         xaxis_title='Ticks',
         title='Deaths per Deprivation Quintile over Time',
         legend=legend_dict,
-        font=font_dict)
+        font=font_dict, 
+        )
 
 
 
 
     ##### Adaptation Graph #####
-    #adaptation_data = data.groupby(['deprivation_quintile', 'tick']).agg({'successful_adaptiation': 'sum', 'unsuccessful_adaptiation': 'sum'}).reset_index()
-    # adaptation_data = data.groupby(['deprivation_quintile', 'tick']).agg({'successful_adaptiation': 'sum', 'unsuccessful_adaptiation': 'sum'}).reset_index()
-    adaptation_data = search.get_data_by_dq(data,['successful_adaptiation', 'unsuccessful_adaptiation'], pivot=False)
-    # print(adaptation_data)
+
+
+    # 1. Get successful and unsuccessful adaptation data
+    successful_adaptation_data = search.get_data_by_dq(data, ['successful_adaptiation'], pivot=False)
+    unsuccessful_adaptation_data = search.get_data_by_dq(data, ['unsuccessful_adaptiation'], pivot=False)
+
+    # 2. Merge the successful and unsuccessful adaptation data
+    adaptation_data = pd.merge(successful_adaptation_data, unsuccessful_adaptation_data, on=['deprivation_quintile', 'tick'])
+
+    # 3. Calculate the adaptation ratio
     adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
-    adaptation_data = adaptation_data.pivot(index='tick', columns='deprivation_quintile', values='adaptation_ratio')
+
+    # Calculate the cumulative sum of successful and unsuccessful adaptations for each deprivation quintile
+    adaptation_data['successful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['successful_adaptiation'].cumsum()
+    adaptation_data['unsuccessful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['unsuccessful_adaptiation'].cumsum()
+    adaptation_data['adaptation_ratio_cumsum'] = adaptation_data['successful_cumsum'] / (adaptation_data['successful_cumsum'] + adaptation_data['unsuccessful_cumsum'])
+
+    # Use groupby to group by deprivation_quintile and get the last entry of each group
+    end_simulation_data = adaptation_data.groupby('deprivation_quintile').last().reset_index()
+
     # print(adaptation_data)
-    adaptation_total = adaptation_data.iloc[-1, :]#Total adaptation ratio by deprivation quintile by the end of the simulation
-    # print(adaptation_total)
+    # Print the new DataFrame
+    print(end_simulation_data)
 
     # adaptation_gradient = filtered_gradients['Adaptation Gradient'].iloc[0]
-    adaptation_gradient = search.get_gradient(adaptation_total.index, adaptation_total.values)
+    # Calculate the gradient
+    adaptation_gradient = search.get_gradient(end_simulation_data['deprivation_quintile'], end_simulation_data['adaptation_ratio_cumsum'])
 
-    adaptation_total_figure = px.bar(x=adaptation_total.index, y=adaptation_total.values, title=f"Total Adaptations from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
-    # Sort the x-axis values for the Death Gradient line
-    x_adapt_tot = np.sort(adaptation_total.index)
+    # Create the scatter plot
+    adaptation_total_figure = px.scatter(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['adaptation_ratio_cumsum'], title=f"Total Adaptations from Simulation {selected_simulation}", color=end_simulation_data['deprivation_quintile'], color_continuous_scale=color_scale)
+
+    # Sort the x-axis values for the gradient line
+    x_adapt_tot = np.sort(end_simulation_data['deprivation_quintile'])
 
     # Calculate the y values for the fitted line
-    y_adapt_tot = adaptation_gradient * (x_adapt_tot - x_adapt_tot[0]) + adaptation_total.values[np.argsort(total_deaths_sim.index)][0]
+    y_adapt_tot = adaptation_gradient * (x_adapt_tot - x_adapt_tot[0]) + end_simulation_data['adaptation_ratio_cumsum'].values[np.argsort(end_simulation_data['deprivation_quintile'])][0]
 
-    # Add a trace for the Death Gradient line
+    # Add a trace for the Gradient line
     adaptation_total_figure.add_trace(go.Scatter(x=x_adapt_tot, y=y_adapt_tot, mode='lines', name='Adaptation Gradient Line'))
-    # adaptation_total_figure.add_bar(go.bar(x=)) # add the unsuccessful ones to the bar
+    adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['successful_adaptiation'], name='Successful Adaptations', marker=dict(color=bar_colours_good))
+    adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=-end_simulation_data['unsuccessful_adaptiation'], name='Unsuccessful Adaptations', marker=dict(color=bar_colours_bad))
+
     # Update the figure layout to include a legend
     adaptation_total_figure.update_layout(yaxis_title='Total Adaptations per Deprivation Quintile',
         xaxis_title='Deprivation Quintile',
         title='Total Adaptations per Deprivation Quintile',
         legend=legend_dict,
-        font=font_dict)
+        font=font_dict,
+        coloraxis_colorbar=None
+        )
+    
+    adaptation_over_time_figure = px.line(adaptation_data, x='tick', y='successful_adaptiation', color='deprivation_quintile', color_discrete_sequence=bar_colours_good, title=f"Adaptations over Time from Simulation {selected_simulation}")
+    adaptation_over_time_figure.add_trace(px.line(adaptation_data, x='tick', y='unsuccessful_adaptiation', color='deprivation_quintile', color_discrete_sequence=bar_colours_bad).data[0])
+    adaptation_over_time_figure.update_layout(yaxis_title='Total Adaptations over Time per Deprivation Quintile',
+        xaxis_title='Ticks',
+        title='Total Adaptations over Time per Deprivation Quintile',
+        legend=legend_dict,
+        font=font_dict,
+        coloraxis_colorbar=None
+        )
 
+    
+    
+    adaptation_melted = adaptation_data.reset_index().melt(id_vars='deprivation_quintile', var_name='tick', value_name='value')
+    adaptation_melted = adaptation_melted.sort_values(['deprivation_quintile', 'tick'])
+    # Create a new DataFrame that only includes the rows where 'value' changes within each 'deprivation_quintile'
+    adaptation_changed = adaptation_melted[adaptation_melted['value'].diff() != 0]
+    # The first row for each 'deprivation_quintile' is removed because it's not a real change
+    adaptation_changed = adaptation_changed[adaptation_changed['deprivation_quintile'].eq(adaptation_changed['deprivation_quintile'].shift())]
+    adaptation_changed['cumulative_value'] = adaptation_changed.groupby('deprivation_quintile')['value'].cumsum()
+    #get the last cumulative sum of deaths over the simulation
+    adaptation_total = adaptation_changed.groupby('deprivation_quintile')['cumulative_value'].last()
+
+
+    # adaptation_total = adaptation_data.iloc[-1, :]#Total adaptation ratio by deprivation quintile by the end of the simulation
+    
+
+    
 
     ##### Consumption Graph #####
 
@@ -291,7 +348,7 @@ def update_graphs(selected_simulation):
         font=font_dict)
 
 
-    return total_deaths_figure, deaths_over_time_figure, adaptation_total_figure, consumption_total_figure
+    return total_deaths_figure, deaths_over_time_figure, adaptation_total_figure, adaptation_over_time_figure, consumption_total_figure
 
 
 @app.callback(
@@ -436,7 +493,10 @@ def main():
 
 
                 html.H3("Adaptation Data"),
+                html.H4("Adaptation by Deprivation Quintile"),
                 dcc.Graph(id="graph-2"),
+                html.H4("Adaptation Over Time"),
+                dcc.Graph(id="graph-2_1"),
                 html.H3("Consumption Data"),
                 dcc.Graph(id="graph-3"),
                 # Add more graphs as needed

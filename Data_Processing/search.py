@@ -32,9 +32,15 @@ def find_ahp_gradients(simulation_id, db_config):
     ####### Harms by Deprivation Quintile #######
 
     total_deaths = get_data_by_dq(data,['death_count'])
-    # total_deaths = data.groupby(['deprivation_quintile', 'tick']).agg({'death_count': 'sum'}).reset_index()
-    # total_deaths = total_deaths.pivot(index='deprivation_quintile', columns='tick', values='death_count')#total deaths by deprivation quintile every tick
-    tot_deaths_sim = total_deaths.iloc[:, -1]#Total deaths by deprivation quintile by the end of the simulation
+    total_deaths_melted = total_deaths.reset_index().melt(id_vars='deprivation_quintile', var_name='tick', value_name='value')
+    total_deaths_melted = total_deaths_melted.sort_values(['deprivation_quintile', 'tick'])
+    # Create a new DataFrame that only includes the rows where 'value' changes within each 'deprivation_quintile'
+    total_deaths_changed = total_deaths_melted[total_deaths_melted['value'].diff() != 0]
+    # The first row for each 'deprivation_quintile' is removed because it's not a real change
+    total_deaths_changed = total_deaths_changed[total_deaths_changed['deprivation_quintile'].eq(total_deaths_changed['deprivation_quintile'].shift())]
+    total_deaths_changed['cumulative_value'] = total_deaths_changed.groupby('deprivation_quintile')['value'].cumsum()
+    #get the last cumulative sum of deaths over the simulation
+    tot_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
 
     harms_dict['death_final'] = tot_deaths_sim
     harms_dict['death_full'] = total_deaths
@@ -57,7 +63,7 @@ def find_ahp_gradients(simulation_id, db_config):
     total_consumption = total_consumption.pivot(index='deprivation_quintile', columns='tick', values='mean_weekly_units')
     mean_consumption_tick = total_consumption.div(200)# average consumption every tick by deprivation quintiles
     mean_consumption_sim = mean_consumption_tick.sum(axis=1) / 520# average consumption throughout the simulation by deprivation quintiles TODO: make dynamic
-    
+
     
     consumption_dict['consumption_final'] = mean_consumption_sim
     consumption_dict['consumption_full'] = mean_consumption_tick
