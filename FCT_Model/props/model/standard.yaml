@@ -9,6 +9,7 @@ threshold: 0.5 #threshold for what?
 correlation.parameter: 1
 max.age: 95
 min.age: 18
+drink.distribution.type: 1 #1 - uniform 2- normal
 
 #FCT-related Parameters
 knowledge.gain: 1 #needs to be used

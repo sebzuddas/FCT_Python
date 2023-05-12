@@ -81,7 +81,8 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
                       'knowledge.gain',
                       'resource.depletion',
                       'theory.distribution.type', 
-                      'communication.success']
+                      'communication.success', 
+                      'drink.distribution.type']
 
     # Define the bounds for each parameter you want to modify
     bounds = [(18, 56), 
@@ -96,7 +97,8 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
               (0.5, 1),
               (0, 1),
               (1, 3), 
-              (0, 1)
+              (0, 1), 
+              (1, 2)
               ]
 
     # Define the keys you want to have as decimals

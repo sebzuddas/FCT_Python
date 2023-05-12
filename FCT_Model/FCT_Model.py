@@ -481,7 +481,11 @@ class FCT_Model(Model):
             #def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, target_connections: int, space):
             # theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__theory_attributes[id]["power"], self.__theory_attributes[id]["prestige"], self.__network.num_edges(agent), social_influence, self.__discrete_space)
             rng = np.random.default_rng(self.__random_seed+id)
-            mean_weekly_units = rng.uniform(0, 130)
+            if self.__props["theory.distribution.type"] == 1:
+                mean_weekly_units = rng.uniform(0, 130)
+
+            elif self.__props["theory.distribution.type"] == 2:
+                mean_weekly_units = rng.normal(0, 130)
             
             FCT_attributes = generate_theory_vector(dq+1, self.__props["theory.distribution.type"])
 
