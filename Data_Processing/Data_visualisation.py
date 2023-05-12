@@ -23,7 +23,21 @@ password_var = str(os.environ['MYSQL_PASSWORD'])
 database_var='simulation_data'
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 project_path = str(os.environ['FCT_PROJECT_FOLDER'])
-color_scale = ['#00FF00', '#7FFF00', '#FFFF00', '#FF7F00', '#FF0000']
+color_scale = ['#398278', '#97af87', '#d3c668', '#db9e63', '#bf5b32']
+#398278, #a0bb9c, #d3c668, #eaaa7a, #bf5b32
+#00d700, #00ffca, yellow, #ff7f00, red
+font_dict = dict(
+        family='serif',
+        size=18,
+        color='black'
+    )
+legend_dict = dict(
+        orientation="h",
+        yanchor="bottom",
+        y=1,
+        xanchor="right",
+        x=1
+    )
 
 
 
@@ -87,6 +101,7 @@ def circular_coordinates(intermediate_nodes, radius=300):
     
 def get_nodes_edges_from_graphml(file_path):
     # Read the GraphML file
+    str(file_path)
     G = nx.read_graphml(file_path)
     # Extract nodes and edges
     intermediate_nodes = [
@@ -149,6 +164,7 @@ def animate_simulation(sim_number):
 
 @app.callback(
     [Output("graph-1", "figure"),
+     Output("graph-1_1", "figure"),
      Output("graph-2", "figure"),
      Output("graph-3", "figure")],
     [Input("simulation-dropdown", "value")],
@@ -158,12 +174,16 @@ def update_graphs(selected_simulation):
     # Load the data for the selected_simulation
     # Modify the following lines to load the correct data
     # You can replace these example figures with the figures you want to display for each simulation
+    # print("selected simulation: ", selected_simulation)
+    # print(sorted_simulations)
     filtered_gradients = pd.DataFrame(sorted_simulations[sorted_simulations['Simulation'] == selected_simulation])
+    # print(filtered_gradients)
     filtered_gradients['Death Gradient'] = [float(x.strip('[]')) for x in filtered_gradients['Death Gradient']]
     filtered_gradients['Consumption Gradient'] = [float(x.strip('[]')) for x in filtered_gradients['Consumption Gradient']]
     filtered_gradients['Adaptation Gradient'] = [float(x.strip('[]')) for x in filtered_gradients['Adaptation Gradient']]
     filtered_gradients = filtered_gradients.astype(float)
     filtered_gradients = filtered_gradients.round(4)
+
 
     data, headers = search.get_database_tables(selected_simulation, db_config)
     
@@ -173,49 +193,41 @@ def update_graphs(selected_simulation):
     
     ##### Death Graph #####
     total_deaths = search.get_data_by_dq(data,['death_count'], pivot=True)
-    total_deaths_sim = total_deaths.iloc[:, -1]#Total deaths by deprivation quintile by the end of the simulation
-    death_gradient = filtered_gradients['Death Gradient'].iloc[0]
+    # print(total_deaths)
+    
+    total_deaths_melted = total_deaths.reset_index().melt(id_vars='deprivation_quintile', var_name='tick', value_name='value')
+    total_deaths_melted = total_deaths_melted.sort_values(['deprivation_quintile', 'tick'])
+    # Create a new DataFrame that only includes the rows where 'value' changes within each 'deprivation_quintile'
+    total_deaths_changed = total_deaths_melted[total_deaths_melted['value'].diff() != 0]
+    # The first row for each 'deprivation_quintile' is removed because it's not a real change
+    total_deaths_changed = total_deaths_changed[total_deaths_changed['deprivation_quintile'].eq(total_deaths_changed['deprivation_quintile'].shift())]
+    total_deaths_changed['cumulative_value'] = total_deaths_changed.groupby('deprivation_quintile')['value'].cumsum()
+    #get the last cumulative sum of deaths over the simulation
+    total_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
+
+
+    
+    
 
     total_deaths_figure = px.bar(x=total_deaths_sim.index, y=total_deaths_sim.values, title=f"Total Deaths from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
-
-
-    # Sort the x-axis values for the Death Gradient line
     x_death_tot = np.sort(total_deaths_sim.index)
-
-    # Calculate the y values for the fitted line
+    death_gradient = search.get_gradient(total_deaths_sim.index, total_deaths_sim.values)# death_gradient = filtered_gradients['Death Gradient'].iloc[0]
     y_death_tot = death_gradient * (x_death_tot - x_death_tot[0]) + total_deaths_sim.values[np.argsort(total_deaths_sim.index)][0]
-
-    # Add a trace for the Death Gradient line
     total_deaths_figure.add_trace(go.Scatter(x=x_death_tot, y=y_death_tot, mode='lines', name='Death Gradient Line'))
-
-
-    # fig3.update_layout(yaxis_title='Consumption', xaxis_title='Deprivation Quintile', title='Total Consumption per Deprivation Quintile', font=dict(
-    #     family='serif',
-    #     size=18,
-    #     color='black'
-    # ))
-
-
-
-    # Update the figure layout to include a legend
     total_deaths_figure.update_layout(
         yaxis_title='Deaths per Deprivation Quintile',
         xaxis_title='Deprivation Quintile',
         title='Total Deaths per Deprivation Quintile',
-        
-        legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=1,
-        xanchor="right",
-        x=1
-    ),
-    font=dict(
-        family='serif',
-        size=18,
-        color='black'
-    ))
+        legend=legend_dict,
+        font=font_dict)
 
+    deaths_over_time_figure = px.line(total_deaths_changed, x='tick', y='cumulative_value', color='deprivation_quintile', color_discrete_sequence=color_scale, title=f"Deaths over Time from Simulation {selected_simulation}")
+    deaths_over_time_figure.update_layout(
+        yaxis_title='Deaths per Deprivation Quintile',
+        xaxis_title='Ticks',
+        title='Deaths per Deprivation Quintile over Time',
+        legend=legend_dict,
+        font=font_dict)
 
 
 
@@ -231,10 +243,10 @@ def update_graphs(selected_simulation):
     adaptation_total = adaptation_data.iloc[-1, :]#Total adaptation ratio by deprivation quintile by the end of the simulation
     # print(adaptation_total)
 
-    adaptation_gradient = filtered_gradients['Adaptation Gradient'].iloc[0]
+    # adaptation_gradient = filtered_gradients['Adaptation Gradient'].iloc[0]
+    adaptation_gradient = search.get_gradient(adaptation_total.index, adaptation_total.values)
 
-    adaptation_total_figure = px.bar(x=adaptation_total.index, y=adaptation_total.values, title=f"Total Adaptations from Simulation {selected_simulation}")
-
+    adaptation_total_figure = px.bar(x=adaptation_total.index, y=adaptation_total.values, title=f"Total Adaptations from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
     # Sort the x-axis values for the Death Gradient line
     x_adapt_tot = np.sort(adaptation_total.index)
 
@@ -245,23 +257,24 @@ def update_graphs(selected_simulation):
     adaptation_total_figure.add_trace(go.Scatter(x=x_adapt_tot, y=y_adapt_tot, mode='lines', name='Adaptation Gradient Line'))
     # adaptation_total_figure.add_bar(go.bar(x=)) # add the unsuccessful ones to the bar
     # Update the figure layout to include a legend
-    adaptation_total_figure.update_layout(legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=1,
-        xanchor="right",
-        x=1
-    ))
+    adaptation_total_figure.update_layout(yaxis_title='Total Adaptations per Deprivation Quintile',
+        xaxis_title='Deprivation Quintile',
+        title='Total Adaptations per Deprivation Quintile',
+        legend=legend_dict,
+        font=font_dict)
 
 
     ##### Consumption Graph #####
 
     total_consumption = search.get_data_by_dq(data,['mean_weekly_units'], pivot=True)
     mean_consumption_tick = total_consumption.div(200)# average consumption every tick by deprivation quintiles
-    mean_consumption_tot = mean_consumption_tick.sum(axis=1) / 1040# average consumption throughout the simulation by deprivation quintiles
+    mean_consumption_tot = mean_consumption_tick.sum(axis=1) / 520# average consumption throughout the simulation by deprivation quintiles
+    
     consumption_gradient = filtered_gradients['Consumption Gradient'].iloc[0]
+    
+    consumption_gradient = search.get_gradient(mean_consumption_tot.index, mean_consumption_tot.values)
 
-    consumption_total_figure = px.bar(x=mean_consumption_tot.index, y=mean_consumption_tot.values, title=f"Total Consumption from Simulation {selected_simulation}")
+    consumption_total_figure = px.bar(x=mean_consumption_tot.index, y=mean_consumption_tot.values, title=f"Total Consumption from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
     x_consum_tot = np.sort(mean_consumption_tot.index)
 
     # Calculate the y values for the fitted line
@@ -270,16 +283,15 @@ def update_graphs(selected_simulation):
     # Add a trace for the Death Gradient line
     consumption_total_figure.add_trace(go.Scatter(x=x_consum_tot, y=y_consum_tot, mode='lines', name='Consumption Gradient Line'))
     # Update the figure layout to include a legend
-    consumption_total_figure.update_layout(legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=1,
-        xanchor="right",
-        x=1
-    ))
+    consumption_total_figure.update_layout(        
+        yaxis_title='Consumption per Deprivation Quintile',
+        xaxis_title='Deprivation Quintile',
+        title='Total Consumption per Deprivation Quintile',
+        legend=legend_dict,
+        font=font_dict)
 
 
-    return total_deaths_figure, adaptation_total_figure, consumption_total_figure
+    return total_deaths_figure, deaths_over_time_figure, adaptation_total_figure, consumption_total_figure
 
 
 @app.callback(
@@ -289,7 +301,7 @@ def update_graphs(selected_simulation):
 def update_network_graph(selected_simulation):
     graph_stats = []
 
-    network_location = f"network<re.Match object; span=(38, 49), match='test_{selected_simulation}.yaml'>_start.graphml"
+    network_location = "network"+str(selected_simulation)+"_start.graphml"
     individual_network = project_path+"FCT_Model/outputs/network/"+network_location
 
     intermediate_nodes, edges, G = get_nodes_edges_from_graphml(individual_network)
@@ -354,7 +366,7 @@ def update_network_graph(selected_simulation):
                 xanchor="left",
                 titleside="right"
             ),
-            line=dict(width=2)))
+            line=dict(width=0)))
         
     for node in G.nodes():
         x, y = G.nodes[node]['pos']
@@ -384,21 +396,10 @@ def update_network_graph(selected_simulation):
 
 
 def main():
-    # Load the network data for the selected_simulation
-    
-
-    # Add the color and label properties to the nodes list
-    
-
-
-
-    # degree_centrality = nx.degree_centrality(G)
-    # betweeness_centrality = nx.betweenness_centrality(G)
-    # closeness_centrality = nx.closeness_centrality(G)
-
     app.layout = html.Div(
         [
-            html.H1("Network Visualisation and Data"),
+            html.H1("The Alcohol Harm Paradox Visualised"),
+            html.H2("Please Select a Simulation to View"),
                 dcc.Dropdown(
                     id="simulation-dropdown",
                     options=available_simulations,
@@ -416,35 +417,24 @@ def main():
                     # html.P(f"Degree centrality: {degree_centrality}"),
                     # html.P(f"Betweeness centrality: {betweeness_centrality}"),
                     # html.P(f"Closeness centrality: {closeness_centrality}"),
+                    #TODO: average outdegree per quintile. 
+                    #TODO: For all agents whats the average outdegree for same quintile links vs different quinitle links. 
                     # Add more statistics as needed
                 ],
                 style={"margin-bottom": "20px", "width": "80%"},
             ),
-    #         visdcc.Network(
-    #             id="network",
-    #             options=dict(
-    #                 height="600px",
-    #                 width="100%",
-    #                 physics={
-    #                 "enabled": False
-    #                 },
-    #                 edges={
-    #                     "smooth": {
-    #                         "type": "continuous",
-    #                         "forceDirection": "none",
-    #                         "roundness": 1
-    #                     },
-    #                     "length": 150,
-    #                 },
-    #                 ),
-    #             data=dict(nodes=nodes, edges=edges),
-    # ),
+            html.H2("Network"),
             dcc.Graph(id="network"),
 
             html.Div(
             children=[
                 html.H3("Death Data"),
+                html.H4("Deaths by Deprivation Quintile"),
                 dcc.Graph(id="graph-1"),
+                html.H4("Deaths Over Time"),
+                dcc.Graph(id="graph-1_1"),
+
+
                 html.H3("Adaptation Data"),
                 dcc.Graph(id="graph-2"),
                 html.H3("Consumption Data"),

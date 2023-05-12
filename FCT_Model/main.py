@@ -107,21 +107,6 @@ def main():
     #         bar()
     model.log_network('finish')
 
-class CustomParameterWrapper:
-    def __init__(self, yaml_file_path):
-        self.params_dict = self.read_parameters(yaml_file_path)
-
-    def read_parameters(self, yaml_file_path):
-        with open(yaml_file_path, 'r') as f:
-            content = yaml.safe_load(f)
-        return content
-
-    def init_repast_parameters(self, args):
-        repast_params = repast4py.parameters.init_params(args.parameters_file, args.parameters)
-        for key, value in self.params_dict.items():
-            repast_params.set_value(key, value)
-        return repast_params
-
 
 # If this file is launched, run the model. 
 if __name__ == "__main__":

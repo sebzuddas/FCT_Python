@@ -581,7 +581,7 @@ class FCT_Model(Model):
         else:
             match_num = int(match.group(1)) + 1
 
-        output_file = f"FCT_Model/outputs/network/network"+str(match)+'_'+time+".graphml"
+        output_file = f"FCT_Model/outputs/network/network"+str(match_num)+".graphml"
         nx.write_graphml(new_network, output_file)
 
 
