@@ -11,3 +11,16 @@ Do you want to automatically ovewrite data in the database? (y/n): Running the m
 
 Running the model with yaml file 1! 🥳 
 on 0: 
+No visualization argument provided, error: list index out of range
+
+conn: <mysql.connector.connection_cext.CMySQLConnection object at 0x1452cb070>
+table_name: PC_1
+Deleting old table and adding new run.
+Executing drop query: DROP TABLE IF EXISTS PC_1
+Table PC_1 has been dropped, a new one awaits!
+[32m
+Simulation with ID [33m'PC_1'[32m has been added to the database!
+[39m
+
+Running the model with yaml file 2! 🥳 
+on 1: 

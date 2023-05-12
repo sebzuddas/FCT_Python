@@ -86,7 +86,7 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
 
     # Define the bounds for each parameter you want to modify
     bounds = [(18, 56), 
-              (56, 95), 
+              (82, 115), 
               (0, 1), 
               (1, 3), 
               (1, 3), 
