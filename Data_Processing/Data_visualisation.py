@@ -7,13 +7,18 @@ import mysql.connector
 import sys
 import dash
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 from  dash import dcc
 from dash import html
 import networkx as nx
 import visdcc
 import json
 import math
+from zipfile import ZipFile
+
+import plotly.io as pio
+import flask
+import io
 
 import search
 
@@ -43,14 +48,32 @@ font_dict = dict(
         color='black'
     )
 legend_dict = dict(
-        orientation="h",
-        yanchor="bottom",
-        y=1,
-        xanchor="right",
-        x=1
-    )
+    font=dict(
+        size=11,  # decrease font size
+    ),
+    orientation="h",
+    yanchor="bottom",
+    y=1,  # May need adjustment depending on your specific figure
+    xanchor="left",
+    x=0
+)
 
 
+# legend_dict = dict(
+#     orientation="v",
+#     yanchor="auto",
+#     y=0.5,
+#     xanchor="left",
+#     x=1.02
+# )
+
+
+# legend=dict(
+#         yanchor="top",
+#         y=0.1,   # Bottom of the figure
+#         xanchor="right",
+#         x=1      # Right of the figure
+#     ),
 
 
 #### Dash App ####
@@ -217,27 +240,45 @@ def update_graphs(selected_simulation):
     #get the last cumulative sum of deaths over the simulation
     total_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
 
+    print(total_deaths_changed)
+
+    print(total_deaths_sim)
 
 
-    total_deaths_figure = px.bar(x=total_deaths_sim.index, y=total_deaths_sim.values, title=f"Total Deaths from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
+
+
+    total_deaths_figure = go.Figure()
+
+    total_deaths_figure.add_trace(
+        go.Bar(
+            x=total_deaths_sim.index,
+            y=total_deaths_sim.values,
+            marker=dict(color=total_deaths_sim.index, colorscale=color_scale),
+            name=''
+        )
+    )
+
     x_death_tot = np.sort(total_deaths_sim.index)
-    death_gradient = search.get_gradient(total_deaths_sim.index, total_deaths_sim.values)# death_gradient = filtered_gradients['Death Gradient'].iloc[0]
+    death_gradient = search.get_gradient(total_deaths_sim.index, total_deaths_sim.values)
     y_death_tot = death_gradient * (x_death_tot - x_death_tot[0]) + total_deaths_sim.values[np.argsort(total_deaths_sim.index)][0]
+
     total_deaths_figure.add_trace(go.Scatter(x=x_death_tot, y=y_death_tot, mode='lines', name='Death Gradient Line'))
+
     total_deaths_figure.update_layout(
-        yaxis_title='Deaths per Deprivation Quintile',
+        yaxis_title='Total Deaths',
         xaxis_title='Deprivation Quintile',
-        title='Total Deaths per Deprivation Quintile',
+        title=f'Total Deaths per Deprivation Quintile from Simulation {selected_simulation}',
         legend=legend_dict,
-        font=font_dict)
+        font=font_dict
+    )
 
     deaths_over_time_figure = px.line(total_deaths_changed, x='tick', y='cumulative_value', color='deprivation_quintile', color_discrete_sequence=color_scale, title=f"Deaths over Time from Simulation {selected_simulation}")
     deaths_over_time_figure.update_layout(
-        yaxis_title='Deaths per Deprivation Quintile',
+        yaxis_title='Cumulative Deaths',
         xaxis_title='Ticks',
-        title='Deaths per Deprivation Quintile over Time',
+        title=f'Deaths per Deprivation Quintile over Time from Simulation {selected_simulation}',
         legend=legend_dict,
-        font=font_dict, 
+        font=font_dict,
         )
 
 
@@ -269,29 +310,68 @@ def update_graphs(selected_simulation):
     # adaptation_gradient = filtered_gradients['Adaptation Gradient'].iloc[0]
     # Calculate the gradient
     adaptation_gradient = search.get_gradient(end_simulation_data['deprivation_quintile'], end_simulation_data['adaptation_ratio_cumsum'])
-
-    # Create the scatter plot
-    adaptation_total_figure = px.scatter(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['adaptation_ratio_cumsum'], title=f"Total Adaptations from Simulation {selected_simulation}", color=end_simulation_data['deprivation_quintile'], color_continuous_scale=color_scale)
-
-    # Sort the x-axis values for the gradient line
     x_adapt_tot = np.sort(end_simulation_data['deprivation_quintile'])
 
     # Calculate the y values for the fitted line
     y_adapt_tot = adaptation_gradient * (x_adapt_tot - x_adapt_tot[0]) + end_simulation_data['adaptation_ratio_cumsum'].values[np.argsort(end_simulation_data['deprivation_quintile'])][0]
 
-    # Add a trace for the Gradient line
+    # Create the scatter plot
+
+    adaptation_total_figure = go.Figure()
+
+    # your gradient line
     adaptation_total_figure.add_trace(go.Scatter(x=x_adapt_tot, y=y_adapt_tot, mode='lines', name='Adaptation Gradient Line'))
-    adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['successful_adaptiation'], name='Successful Adaptations', marker=dict(color=bar_colours_good))
-    adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=-end_simulation_data['unsuccessful_adaptiation'], name='Unsuccessful Adaptations', marker=dict(color=bar_colours_bad))
+
+    # Successful adaptations
+    adaptation_total_figure.add_trace(
+        go.Bar(
+            x=end_simulation_data['deprivation_quintile'],
+            y=end_simulation_data['successful_adaptiation'],
+            name='Successful Adaptations',
+            marker=dict(color=bar_colours_good, showscale=False)
+        )
+    )
+
+    # Unsuccessful adaptations
+    adaptation_total_figure.add_trace(
+        go.Bar(
+            x=end_simulation_data['deprivation_quintile'],
+            y=-end_simulation_data['unsuccessful_adaptiation'],
+            name='Unsuccessful Adaptations',
+            marker=dict(color=bar_colours_bad, showscale=False)
+        )
+    )
 
     # Update the figure layout to include a legend
-    adaptation_total_figure.update_layout(yaxis_title='Total Adaptations per Deprivation Quintile',
+    adaptation_total_figure.update_layout(
         xaxis_title='Deprivation Quintile',
-        title='Total Adaptations per Deprivation Quintile',
+        yaxis_title='Total Adaptations',
+        title=f'Total Adaptations per Deprivation Quintile from Simulation {selected_simulation}',
         legend=legend_dict,
         font=font_dict,
-        coloraxis_colorbar=None
-        )
+    )
+
+
+
+    # adaptation_total_figure = px.scatter(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['adaptation_ratio_cumsum'], title=f"Total Adaptations from Simulation {selected_simulation}", color=end_simulation_data['deprivation_quintile'], color_continuous_scale=color_scale)
+
+    # # Sort the x-axis values for the gradient line
+    
+
+    # # Add a trace for the Gradient line
+    # adaptation_total_figure.add_trace(go.Scatter(x=x_adapt_tot, y=y_adapt_tot, mode='lines', name='Adaptation Gradient Line'))
+    # adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['successful_adaptiation'], name='Successful Adaptations', marker=dict(color=bar_colours_good, showscale=False))
+    # adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=-end_simulation_data['unsuccessful_adaptiation'], name='Unsuccessful Adaptations', marker=dict(color=bar_colours_bad, showscale=False))
+
+    # # Update the figure layout to include a legend
+    # adaptation_total_figure.update_layout(
+    #     xaxis_title='Deprivation Quintile',
+    #     yaxis_title='Total Adaptations',
+    #     title=f'Total Adaptations per Deprivation Quintile from Simulation {selected_simulation}',
+    #     legend=legend_dict,
+    #     font=font_dict,
+    #     coloraxis_colorbar=None
+    #     )
     
     adaptation_over_time_figure = go.Figure()
 
@@ -338,16 +418,6 @@ def update_graphs(selected_simulation):
 
     total_consumption = search.get_data_by_dq(data,['mean_weekly_units'], pivot=True)
     total_consumption_reset = total_consumption.reset_index().melt(id_vars='deprivation_quintile', var_name='tick', value_name='value')
-
-    # print(total_deaths)
-    
-    
-    # total_consumption_melted = total_consumption_reset.sort_values(['deprivation_quintile', 'tick'])
-    # total_consumption_changed = total_consumption_melted[total_consumption_melted['value'].diff() != 0]
-    # total_consumption_changed = total_consumption_changed[total_consumption_changed['deprivation_quintile'].eq(total_consumption_changed['deprivation_quintile'].shift())]
-    # total_consumption_changed['cumulative_value'] = total_consumption_changed.groupby('deprivation_quintile')['value'].cumsum()
-    # total_consumption_sim = total_consumption_changed.groupby('deprivation_quintile')['cumulative_value'].last()
-
     mean_consumption_tick = total_consumption.div(200)# average consumption every tick by deprivation quintiles
     mean_consumption_tot = mean_consumption_tick.sum(axis=1) / 520# average consumption throughout the simulation by deprivation quintiles
     
@@ -355,22 +425,29 @@ def update_graphs(selected_simulation):
     
     consumption_gradient = search.get_gradient(mean_consumption_tot.index, mean_consumption_tot.values)
 
-    consumption_total_figure = px.bar(x=mean_consumption_tot.index, y=mean_consumption_tot.values, title=f"Total Consumption from Simulation {selected_simulation}", color=total_deaths_sim.index, color_continuous_scale=color_scale)
-    x_consum_tot = np.sort(mean_consumption_tot.index)
+    consumption_total_figure = go.Figure()
 
-    # Calculate the y values for the fitted line
+    consumption_total_figure.add_trace(
+        go.Bar(
+            x=mean_consumption_tot.index,
+            y=mean_consumption_tot.values,
+            marker=dict(color=total_deaths_sim.index, colorscale=color_scale),
+            name=''
+        )
+    )
+
+    x_consum_tot = np.sort(mean_consumption_tot.index)
     y_consum_tot = consumption_gradient * (x_consum_tot - x_consum_tot[0]) + mean_consumption_tot.values[np.argsort(total_deaths_sim.index)][0]
 
-    # Add a trace for the Death Gradient line
     consumption_total_figure.add_trace(go.Scatter(x=x_consum_tot, y=y_consum_tot, mode='lines', name='Consumption Gradient Line'))
-    # Update the figure layout to include a legend
-    consumption_total_figure.update_layout(        
-        yaxis_title='Consumption per Deprivation Quintile',
-        xaxis_title='Deprivation Quintile',
-        title='Total Consumption per Deprivation Quintile',
-        legend=legend_dict,
-        font=font_dict)
 
+    consumption_total_figure.update_layout(
+        yaxis_title='Total Consumption',
+        xaxis_title='Deprivation Quintile',
+        title=f'Total Consumption per Deprivation Quintile from Simulation {selected_simulation}',
+        legend=legend_dict,
+        font=font_dict
+    )
 
     return total_deaths_figure, deaths_over_time_figure, adaptation_total_figure, adaptation_over_time_figure, consumption_total_figure
 
@@ -382,7 +459,7 @@ def update_graphs(selected_simulation):
 def update_network_graph(selected_simulation):
     graph_stats = []
 
-    network_location = "network"+str(selected_simulation)+"_start.graphml"
+    network_location = "network"+str(selected_simulation)+"start.graphml"
     individual_network = project_path+"FCT_Model/outputs/network/"+network_location
 
     intermediate_nodes, edges, G = get_nodes_edges_from_graphml(individual_network)
@@ -446,7 +523,7 @@ def update_network_graph(selected_simulation):
         mode="markers",
         hoverinfo="text",
         marker=dict(
-            showscale=True,
+            showscale=False,
             color=[],
             size=10,
             colorbar=dict(
@@ -467,18 +544,21 @@ def update_network_graph(selected_simulation):
     
     fig = go.Figure(data=[edge_trace, node_trace],
                     layout=go.Layout(
-                    title=f'Network for simulation {selected_simulation}',
-                    titlefont=dict(size=16),
+                    title=f'Network for Simulation {selected_simulation}',
+                    font= font_dict,
+                    titlefont=dict(size=18),
                     showlegend=False,
                     hovermode='closest',
                     margin=dict(b=20,l=5,r=5,t=40),
-                    annotations=[ dict(
-                        # text="Python code: <a href='https://plotly.com/ipython-notebooks/network-graphs/'> https://plotly.com/ipython-notebooks/network-graphs/</a>",
-                        showarrow=False,
-                        xref="paper", yref="paper",
-                        x=0.005, y=-0.002 ) ],
+                    # marker=dict(showscale=False),
+                    # annotations=[ dict(
+                    #     # text="Python code: <a href='https://plotly.com/ipython-notebooks/network-graphs/'> https://plotly.com/ipython-notebooks/network-graphs/</a>",
+                    #     showarrow=False,
+                    #     xref="paper", yref="paper",
+                    #     x=0.005, y=-0.002 ) ],
                     xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
                     yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
+
                     )
     return fig, graph_stats
 
@@ -529,9 +609,14 @@ def main():
                 dcc.Graph(id="graph-2"),
                 html.H4("Adaptation Over Time"),
                 dcc.Graph(id="graph-2_1"),
+
+
                 html.H3("Consumption Data"),
                 dcc.Graph(id="graph-3"),
                 # Add more graphs as needed
+
+                html.Button('Save as PNG', id='btn'),
+                html.A(id='link')
             ],
             style={"width": "80%"},
         ),
@@ -539,6 +624,39 @@ def main():
 )
 
 
+
+
+@app.callback(
+    Output('link', 'href'),
+    Output('link', 'download'),
+    [Input('btn', 'n_clicks')],
+    [State('network', 'figure'),
+     State('graph-1', 'figure'),
+     State('graph-1_1', 'figure'),
+     State('graph-2', 'figure'), 
+     State('graph-2_1', 'figure'),
+     State('graph-3', 'figure'),],
+    prevent_initial_call=True
+)
+def save_as_png(n_clicks, fig1, fig2, fig3, fig4, fig5, fig6):
+    if n_clicks is not None:
+        # Ensure the 'static' directory exists
+        os.makedirs('static', exist_ok=True)
+        # Save figures to Flask's "static" directory
+        for i, fig in enumerate([fig1, fig2, fig3, fig4, fig5, fig6], start=1):
+            img_bytes = pio.to_image(fig, format='png', scale=4.17)
+            with open(f"static/plot_image_{i}.png", 'wb') as f:
+                f.write(img_bytes)
+        return '/download_image', 'plot_image.zip'
+
+
+@app.server.route('/download_image')
+def serve_image():
+    # Create a ZIP file of all images
+    with ZipFile('static/plot_images.zip', 'w') as zipf:
+        for i in range(1, 7):  # adjust this range to the number of figures
+            zipf.write(f'static/plot_image_{i}.png')
+    return flask.send_file('static/plot_images.zip', mimetype='application/zip')
 
 
 

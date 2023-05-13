@@ -1,18 +1,5 @@
 """
 Main file for managing the different experiments that will be run on the FCT_Model
-
-Types of experiments:
-1. LHS
-2. Different social networks 
-3. Inclusion of another social theory with the mediator class?
-4. Testing and verifying FCT
-    4.1 Include interesting distributions wrt FCT such as power, money, prestige
-
-#TODO Ensure that integers are there when needed. 
-#TODO counts.of.agents must be less than board.size
-#TODO extend the LatinHypercube to further params
-#TODO Make LHS output reasonable bounds
-
 Sebastiano Zuddas
 """
 
@@ -85,20 +72,20 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
                       'drink.distribution.type']
 
     # Define the bounds for each parameter you want to modify
-    bounds = [(18, 56), 
+    bounds = [(16, 21), 
               (82, 115), 
               (0, 1), 
-              (1, 3), 
-              (1, 3), 
-              (1, 2), 
+              (0, 1), 
+              (0, 1), 
+              (0, 0.1), 
               (1, 1000), 
-              (0.001, 0.005),
+              (0.001, 0.005), 
               (0.0005, 0.0015), 
-              (0.5, 1),
-              (0, 1),
+              (0.5, 1), 
+              (0, 1), 
               (1, 3), 
               (0, 1), 
-              (1, 2)
+              (1, 2) 
               ]
 
     # Define the keys you want to have as decimals
@@ -111,7 +98,7 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
                     'knowledge.gain', 
                     'resource.depletion', 
                     'communication.success']
-
+    
     engine = LatinHypercube(len(keys_to_modify))
     sample = engine.random(sample_number)
 
@@ -120,35 +107,27 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
             if key not in keys_with_string_values:
                 # Scale and shift the LHS sample according to the parameter bounds
                 value = sample[i][j] * (bounds[j][1] - bounds[j][0]) + bounds[j][0]
-
                 # Update the parameter with the converted value
                 props_file[key] = convert_value(value, key)
                 # print(f'Updating {key}: {value}')  # Debug print
-
         # Convert numpy values to native Python data types
         cleaned_props_file = numpy_to_python(props_file)
         # print(f'Cleaned props file: {cleaned_props_file}')  # Debug print
-
         # Save the cleaned YAML file without numpy tags
         yaml_filename = os.path.join(target_folder, f'test_{i+1}.yaml')
         yaml_dump(cleaned_props_file, yaml_filename)
         # print(f'Saved YAML file: {yaml_filename}')  # Debug print
-
         # Read the saved YAML file to check the contents
         with open(yaml_filename, 'r') as yaml_file:
             yaml_contents = yaml.safe_load(yaml_file)
-            print(f'YAML contents: {yaml_contents}')  # Debug print
-
-
+            # print(f'YAML contents: {yaml_contents}')  # Debug print
 
 def numpy_float_representer(dumper, value):
     return dumper.represent_float(value)
 
-
 def yaml_dump(data, file_name):
     with open(file_name, 'w') as outfile:
         yaml.dump(data, outfile, default_flow_style=False)
-
 
 def numpy_to_python(data):
     if isinstance(data, dict):
@@ -163,9 +142,6 @@ def numpy_to_python(data):
         return data.item()
     else:
         return data
-
-
-
 
 def generate_agent_distributions(type):
 
@@ -362,7 +338,6 @@ def generate_theory_distributions(type):
             dict["personal_wealth"] = ["n"] #uniform wealth distribution
             return dict
 
-    
 if __name__ == "__main__":
     
     experiment_number = int(sys.argv[1])

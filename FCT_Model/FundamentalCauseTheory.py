@@ -9,19 +9,19 @@ import re
 class FundamentalCauseTheory(Theory):
 
     #init is what to do when an instance is created. Anything in here is unique to each instance of the class. 
-    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:int, power:float, prestige:float, social_connections:int, social_influence:int, space):
+    def __init__(self, context,  mean_weekly_units:float, education:int, personal_wealth:float, power:float, prestige:float, social_connections:int, social_influence:float, space):
         self.context = context
         self.space = space
         ## FCT level parameters/attributes
         self.__mean_weekly_units: float = mean_weekly_units
         self.__education: int = education
-        self.__personal_wealth: int = personal_wealth# money in the bank
+        self.__personal_wealth: float = personal_wealth# money in the bank
         self.__total_resources: int = 0
         self.__power: float = power
         self.__prestige: float = prestige
         self.knowledge = self.__education/3
         self.__social_connections: int = social_connections
-        self.__social_influence: int = social_influence
+        self.__social_influence: float = social_influence
         self.successful_adaptiation = 0
         self.unsuccessful_adaptiation = 0
         
@@ -36,6 +36,7 @@ class FundamentalCauseTheory(Theory):
         print("communicate_event_test")
 
     def decode_attempt(self, event):
+        self.__total_resources = self.calculate_resources()
         if event == None:
             pass
         else:
@@ -44,7 +45,7 @@ class FundamentalCauseTheory(Theory):
                 total_resources = self.__total_resources
                 if event_value<=total_resources:
                     self.successful_adaptiation += 1
-                    self.__total_resources -= event_value*self.params['successful.adaptation.cost']
+                    self.__total_resources -= 1*self.params['successful.adaptation.cost']
 
                     if self.knowledge < 1:
                         self.knowledge += self.params['successful.adaptation.knowlege.benefit']
@@ -53,7 +54,7 @@ class FundamentalCauseTheory(Theory):
                         return [event, True]
                 else:
                     self.unsuccessful_adaptiation += 1
-                    self.__total_resources -= event_value*self.params['unsuccessful.adaptation.cost']
+                    self.__total_resources -= 1*self.params['unsuccessful.adaptation.cost']
                     return [event, False]
                     
             except:

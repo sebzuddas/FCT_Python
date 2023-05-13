@@ -482,11 +482,18 @@ class FCT_Model(Model):
             #def __init__(self, id:int, type:int, rank:int, deprivation_quintile:int, sex: int, age: int, drinking_status: int, target_connections: int, space):
             # theory = FundamentalCauseTheory(self.__context, self.__theory_attributes[id]["mean_weekly_units"], self.__theory_attributes[id]["education"], self.__theory_attributes[id]["personal_wealth"], self.__theory_attributes[id]["power"], self.__theory_attributes[id]["prestige"], self.__network.num_edges(agent), social_influence, self.__discrete_space)
             rng = np.random.default_rng(self.__random_seed+id)
-            if self.__props["theory.distribution.type"] == 1:
-                mean_weekly_units = rng.uniform(0, 130)
+            # print(self.__props["drink.distribution.type"])
 
-            elif self.__props["theory.distribution.type"] == 2:
-                mean_weekly_units = rng.normal(0, 130)
+            if self.__props["drink.distribution.type"] == 1:
+                mean_weekly_units = rng.uniform(0, 130)
+                mean_weekly_units = round(mean_weekly_units, 3)
+
+            elif self.__props["drink.distribution.type"] == 2:
+                mean_weekly_units = rng.normal(25, 10)
+                mean_weekly_units = round(mean_weekly_units, 3)
+                if mean_weekly_units < 0:
+                    mean_weekly_units = -mean_weekly_units
+                 
             
             FCT_attributes = generate_theory_vector(dq+1, self.__props["theory.distribution.type"])
 
@@ -584,9 +591,9 @@ class FCT_Model(Model):
         if match is None:
             match_num = 0
         else:
-            match_num = int(match.group(1)) + 1
+            match_num = int(match.group(1))
 
-        output_file = f"FCT_Model/outputs/network/network"+str(match_num)+".graphml"
+        output_file = f"FCT_Model/outputs/network/network"+str(match_num)+time+".graphml"
         nx.write_graphml(new_network, output_file)
 
 
