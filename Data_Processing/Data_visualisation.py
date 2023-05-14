@@ -240,9 +240,9 @@ def update_graphs(selected_simulation):
     #get the last cumulative sum of deaths over the simulation
     total_deaths_sim = total_deaths_changed.groupby('deprivation_quintile')['cumulative_value'].last()
 
-    print(total_deaths_changed)
+    # print(total_deaths_changed)
 
-    print(total_deaths_sim)
+    # print(total_deaths_sim)
 
 
 
@@ -293,7 +293,7 @@ def update_graphs(selected_simulation):
     adaptation_data = pd.merge(successful_adaptation_data, unsuccessful_adaptation_data, on=['deprivation_quintile', 'tick'])
 
     # 3. Calculate the adaptation ratio
-    adaptation_data['adaptation_ratio'] = adaptation_data['successful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
+    adaptation_data['adaptation_ratio'] = adaptation_data['unsuccessful_adaptiation'] / (adaptation_data['successful_adaptiation'] + adaptation_data['unsuccessful_adaptiation'])
 
     # Calculate the cumulative sum of successful and unsuccessful adaptations for each deprivation quintile
     adaptation_data['successful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['successful_adaptiation'].cumsum()
@@ -493,7 +493,7 @@ def update_network_graph(selected_simulation):
     density = nx.density(G)
     diameter = nx.diameter(G)
     average_clustering = nx.average_clustering(G)
-    print(num_nodes)
+    # print(num_nodes)
 
     graph_stats = [html.P(f"Number of nodes: {num_nodes}"),
                    html.P(f"Number of edges: {num_edges}"),

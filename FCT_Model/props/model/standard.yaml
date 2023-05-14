@@ -1,6 +1,6 @@
 # Model-related Parameters
 random.seed: 1
-stop.at: 530
+stop.at: 540
 count.of.agents: 1000
 board.size: 50
 threshold: 0.5 #threshold for what?
@@ -25,7 +25,7 @@ communicator.different.events: 0 #0 - only binary events 1 - all events (inc hex
 
 beta.modifier.male: 0.00389 #risk modifier for men
 beta.modifier.female: 0.00101 #risk modifier for women
-
+risk.modifier.beta: 0.25
 successful.adapatation.cost: 1 #a multiplier for the cost of a successful adaptation
 unsuccessful.adapatation.cost: 1 #a multiplier for the cost of an unsuccessful adaptation
 successful.adaptation.knowlege.benefit: 1 #a multiplier for the benefit of a successful adaptation

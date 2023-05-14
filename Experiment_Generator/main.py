@@ -69,7 +69,8 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
                       'resource.depletion',
                       'theory.distribution.type', 
                       'communication.success', 
-                      'drink.distribution.type']
+                      'drink.distribution.type', 
+                      'risk.modifier.beta']
 
     # Define the bounds for each parameter you want to modify
     bounds = [(16, 21), 
@@ -85,7 +86,8 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
               (0, 1), 
               (1, 3), 
               (0, 1), 
-              (1, 2) 
+              (1, 2), 
+            (0, 0.5)
               ]
 
     # Define the keys you want to have as decimals
@@ -97,7 +99,8 @@ def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastia
                     'beta.modifier.female', 
                     'knowledge.gain', 
                     'resource.depletion', 
-                    'communication.success']
+                    'communication.success',
+                    'risk.modifier.beta']
     
     engine = LatinHypercube(len(keys_to_modify))
     sample = engine.random(sample_number)

@@ -273,11 +273,15 @@ class FCT_Model(Model):
             failed_attempts = len(agent.unsolved_events)
             successful_attempts = len(agent.solved_events)
 
-            if successful_attempts != 0 or failed_attempts != 0:
-                risk = agent.abs_risk * expit((agent.age-45)/9.5) * (failed_attempts/(successful_attempts+failed_attempts))
+            
+
+            if failed_attempts == 0:
+                risk = agent.abs_risk * expit((agent.age-45)/9.5)
         
             else:
-                risk = agent.abs_risk * expit((agent.age-45)/9.5)
+                ratio = successful_attempts/(successful_attempts+failed_attempts)
+
+                risk = (agent.abs_risk * (1+ratio-0.5)**self.__props['risk.modifier.beta']) * expit((agent.age-45)/9.5)
             # print(risk)
 
             # print(f'risk: {risk}')

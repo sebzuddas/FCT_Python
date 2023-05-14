@@ -161,17 +161,11 @@ class FCT_Agent(MicroAgent):
     
     def absolute_risk(self, consumption):
 
-        solved_events_count = sum(1 for event in self.received_events if event[1] == True)
-        unsolved_events_count = sum(1 for event in self.received_events if event[1] == False)
-        total_events_count = solved_events_count + unsolved_events_count
-
-        # Calculate the ratio, with a maximum of 1
-        ratio = min(unsolved_events_count / total_events_count, 1) if total_events_count > 0 else 0
-
         if self.sex == 0:
             beta = self.params['beta.modifier.female']
         else:
             beta = self.params['beta.modifier.male']
+
 
         # consumption = self.get_agent_drinking_status()
         if consumption == 0:
@@ -180,8 +174,9 @@ class FCT_Agent(MicroAgent):
             return 0
         else:
 
-            self.abs_risk = beta * consumption
-            return beta * ratio
+            self.abs_risk = 100 * beta * (consumption-0.5)
+
+            return self.abs_risk
     
     def kill(self):
         
