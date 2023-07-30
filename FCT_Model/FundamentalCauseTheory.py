@@ -33,7 +33,7 @@ class FundamentalCauseTheory(Theory):
     #individual agent-level situational mechanism methods
 
     def communicate_event(self):
-        print("communicate_event_test")
+        pass
 
     def decode_attempt(self, event):
         self.__total_resources = self.calculate_resources()

@@ -352,21 +352,12 @@ class FCT_Model(Model):
             iteration_count = 0
 
             while agent_a_connections < agent_a_target_connections:
-                
-                # if break_while:
-                #     print('test')
-                #     break
 
                 if iteration_count > 100*self.__count_of_agents:#can't find a suitable agent to connect to
                     break
 
                 agent_b_search_count = 0# to count over searched agents
                 for agent_b in self.__context.agents(count=self.__count_of_agents, shuffle=True):
-
-                    # if iteration_count > self.__count_of_agents:#can't find a suitable agent to connect to
-                    #     break_while = True
-                    #     break
-
                     agent_a_id = agent_a.get_agent_id()
                     agent_b_id = agent_b.get_agent_id()
 
@@ -378,9 +369,6 @@ class FCT_Model(Model):
 
                     if agent_a == agent_b:# agent can't link to itself
                         break
-
-                    # if agent_b_search_count == self.__count_of_agents:#can't find a suitable agent to connect to
-                    #     break
                     
                     dq_test = rng.integers(0, 100)
                     dq_test_pass = False
@@ -395,8 +383,6 @@ class FCT_Model(Model):
 
 
                     if agent_b.get_id() not in agent_a_connection_array and len(agent_b_connection_array) < agent_b_target_connections:#check agent b isn't in agent A's connection array
-                        # print(agent_a_id, agent_b_id)
-                        # if :#check agent b has space for more connections
                             
                         if dq_test <= 25:#25% of connections to be made within deprivation quintile
                             if agent_b.get_deprivation_quintile() == agent_a.get_deprivation_quintile():
@@ -413,24 +399,24 @@ class FCT_Model(Model):
                                     sex_test_pass = True
                                 else:
                                     pass
-                        # if education_test <= 75:#75% of connections to be made wrt education
-                        #     if self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]:
-                        #         education_test_pass = True
-                        #     elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]+1:
-                        #         education_test_pass = True
-                        #     elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]-1:
-                        #         education_test_pass = True
-                        #     else: 
-                        #         pass
-                        if drinking_status_test <= 15:#15% of connections to be made wrt drinking status
-                            if agent_a.get_agent_drinking_status() == agent_b.get_agent_drinking_status():
-                                drinking_status_test_pass = True
-                            elif agent_a.get_agent_drinking_status()-1 == agent_b.get_agent_drinking_status():
-                                drinking_status_test_pass = True
-                            elif agent_a.get_agent_drinking_status()+1 == agent_b.get_agent_drinking_status():
-                                drinking_status_test_pass = True
-                            else:
+                        if education_test <= 75:#75% of connections to be made wrt education
+                            if self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]:
+                                education_test_pass = True
+                            elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]+1:
+                                education_test_pass = True
+                            elif self.__theory_attributes[agent_a_id]["education"] == self.__theory_attributes[agent_b_id]["education"]-1:
+                                education_test_pass = True
+                            else: 
                                 pass
+                        # if drinking_status_test <= 15:#15% of connections to be made wrt drinking status
+                        #     if agent_a.get_agent_drinking_status() == agent_b.get_agent_drinking_status():
+                        #         drinking_status_test_pass = True
+                        #     elif agent_a.get_agent_drinking_status()-1 == agent_b.get_agent_drinking_status():
+                        #         drinking_status_test_pass = True
+                        #     elif agent_a.get_agent_drinking_status()+1 == agent_b.get_agent_drinking_status():
+                        #         drinking_status_test_pass = True
+                        #     else:
+                        #         pass
                         # if dq_test_pass == age_test_pass == sex_test_pass == education_test_pass == drinking_status_test_pass == True:#TODO: amend
                         if dq_test_pass and age_test_pass or sex_test_pass and drinking_status_test_pass == True:#TODO: amend
                             # print(iteration_count)

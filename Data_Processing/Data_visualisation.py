@@ -59,58 +59,6 @@ legend_dict = dict(
 )
 
 
-# legend_dict = dict(
-#     orientation="v",
-#     yanchor="auto",
-#     y=0.5,
-#     xanchor="left",
-#     x=1.02
-# )
-
-
-# legend=dict(
-#         yanchor="top",
-#         y=0.1,   # Bottom of the figure
-#         xanchor="right",
-#         x=1      # Right of the figure
-#     ),
-
-
-#### Dash App ####
-
-
-
-
-#### Data Processing ####
-
-
-
-
-
-# fig2 = px.bar(total_deaths, x=total_deaths.index, y=total_deaths.columns.max())
-    # fig2.update_layout(yaxis_title='Total Deaths', xaxis_title='Deprivation Quintile', title='Total Deaths per Deprivation Quintile', font=dict(
-    #     family='serif',
-    #     size=18,
-    #     color='black'
-    # ))
-
-# fig2.show()
-
-    # fig3 = px.bar(total_consumption, x=total_consumption.index, y=total_consumption.columns.max())
-
-    # fig3.update_layout(yaxis_title='Consumption', xaxis_title='Deprivation Quintile', title='Total Consumption per Deprivation Quintile', font=dict(
-    #     family='serif',
-    #     size=18,
-    #     color='black'
-    # ))
-
-    # fig3.show()
-
-
-#to show regression line, harm wrt deprivation quintile
-    # df = pd.DataFrame({'X': X.flatten(), 'y': y.flatten()})
-    # fig = px.scatter(df, x='X', y='y', trendline='ols')
-    # fig.show()
 
 def circular_coordinates(intermediate_nodes, radius=300):
     num_groups = 5
@@ -279,6 +227,8 @@ def update_graphs(selected_simulation):
         title=f'Deaths per Deprivation Quintile over Time from Simulation {selected_simulation}',
         legend=legend_dict,
         font=font_dict,
+        yaxis_type="log", # log scale for y-axis
+        xaxis_type="log", # log scale for x-axis
         )
 
 
@@ -299,7 +249,6 @@ def update_graphs(selected_simulation):
     adaptation_data['successful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['successful_adaptiation'].cumsum()
     adaptation_data['unsuccessful_cumsum'] = adaptation_data.groupby('deprivation_quintile')['unsuccessful_adaptiation'].cumsum()
     adaptation_data['adaptation_ratio_cumsum'] = adaptation_data['successful_cumsum'] / (adaptation_data['successful_cumsum'] + adaptation_data['unsuccessful_cumsum'])
-
     # Use groupby to group by deprivation_quintile and get the last entry of each group
     end_simulation_data = adaptation_data.groupby('deprivation_quintile').last().reset_index()
 
@@ -350,28 +299,6 @@ def update_graphs(selected_simulation):
         legend=legend_dict,
         font=font_dict,
     )
-
-
-
-    # adaptation_total_figure = px.scatter(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['adaptation_ratio_cumsum'], title=f"Total Adaptations from Simulation {selected_simulation}", color=end_simulation_data['deprivation_quintile'], color_continuous_scale=color_scale)
-
-    # # Sort the x-axis values for the gradient line
-    
-
-    # # Add a trace for the Gradient line
-    # adaptation_total_figure.add_trace(go.Scatter(x=x_adapt_tot, y=y_adapt_tot, mode='lines', name='Adaptation Gradient Line'))
-    # adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=end_simulation_data['successful_adaptiation'], name='Successful Adaptations', marker=dict(color=bar_colours_good, showscale=False))
-    # adaptation_total_figure.add_bar(x=end_simulation_data['deprivation_quintile'], y=-end_simulation_data['unsuccessful_adaptiation'], name='Unsuccessful Adaptations', marker=dict(color=bar_colours_bad, showscale=False))
-
-    # # Update the figure layout to include a legend
-    # adaptation_total_figure.update_layout(
-    #     xaxis_title='Deprivation Quintile',
-    #     yaxis_title='Total Adaptations',
-    #     title=f'Total Adaptations per Deprivation Quintile from Simulation {selected_simulation}',
-    #     legend=legend_dict,
-    #     font=font_dict,
-    #     coloraxis_colorbar=None
-    #     )
     
     adaptation_over_time_figure = go.Figure()
 
@@ -451,7 +378,6 @@ def update_graphs(selected_simulation):
 
     return total_deaths_figure, deaths_over_time_figure, adaptation_total_figure, adaptation_over_time_figure, consumption_total_figure
 
-
 @app.callback(
     [Output("network", "figure"),Output('network-stats', 'children')],
     Input("simulation-dropdown", "value")
@@ -493,7 +419,28 @@ def update_network_graph(selected_simulation):
     density = nx.density(G)
     diameter = nx.diameter(G)
     average_clustering = nx.average_clustering(G)
-    # print(num_nodes)
+    average_degree = sum(dict(G.degree()).values()) / float(len(G))
+    degree_distribution = [degree for (node, degree) in G.degree()]
+    degree_centrality = nx.degree_centrality(G)
+    katz_centrality = nx.katz_centrality(G)
+
+    print(num_nodes)
+    print(num_edges)
+    print(density)
+    print(diameter)
+    print(average_clustering)
+    print(average_degree)
+    print(katz_centrality)
+    # betweenness_centrality = nx.betweenness_centrality(G)
+    # print(betweenness_centrality)
+    # # closeness_centrality = nx.closeness_centrality(G)
+    # print(closeness_centrality)
+
+    # print(degree_distribution)
+    # print(degree_centrality)
+
+
+
 
     graph_stats = [html.P(f"Number of nodes: {num_nodes}"),
                    html.P(f"Number of edges: {num_edges}"),
