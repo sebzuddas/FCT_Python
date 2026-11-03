@@ -11,10 +11,12 @@ import random
 import sys
 import os
 import numpy as np
+from pathlib import Path
 
 ### Variable Declaration
 sample_number = 100 # number of experiments
-standard_props_file_location = "/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/model/standard.yaml"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+standard_props_file_location = str(REPO_ROOT / "FCT_Model/props/model/standard.yaml")
 
 # make a python main function for the experiment generator
 def main():
@@ -23,7 +25,7 @@ def main():
 
 ### Functions
 #create a function for the previous loop to create a new yaml file for each sample.
-def create_yaml_file(sample_number, example_file, target_folder='/Users/sebastianozuddas/Programming/Python/FCT_Python/FCT_Model/props/model/test_parameters'):
+def create_yaml_file(sample_number, example_file, target_folder=str(REPO_ROOT / 'FCT_Model/props/model/test_parameters')):
     
 
     def convert_value(value, key):

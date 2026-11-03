@@ -1,0 +1,23 @@
+# Python 3.10+ (the model uses structural pattern matching)
+# repast4py needs an MPI installation (e.g. `brew install open-mpi`) and is easiest to install with:
+#   CC=mpicc CXX=mpicxx pip install repast4py
+repast4py
+mpi4py
+numpy
+scipy
+networkx
+PyYAML
+pyprobs
+click
+colorama
+emojis
+alive-progress
+
+# Data processing / visualisation (Data_Processing/)
+pandas
+scikit-learn
+plotly
+dash
+kaleido
+mysql-connector-python
+requests

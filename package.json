@@ -1,0 +1,6 @@
+{
+  "name": "fct-web",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test web/test/model.test.mjs" }
+}

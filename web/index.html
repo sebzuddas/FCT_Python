@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FCT Alcohol Harm Paradox Simulator</title>
+<meta name="description" content="An interactive agent-based model of Fundamental Cause Theory and the Alcohol Harm Paradox. It runs entirely in your browser.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Embedded mode (?embed=1): hide the page chrome so the simulator can sit in an iframe on another site.
+  if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embed');
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">MEng project · University of Sheffield, 2023</p>
+    <h1>Can Fundamental Cause Theory explain the Alcohol Harm Paradox?</h1>
+    <p class="lead">
+      People in more deprived areas suffer more alcohol-related harm, even when they drink the same or less.
+      This is a complex-systems model of 1,000 people on a simple town map. Run it, change the assumptions,
+      and see whether that paradox emerges.
+    </p>
+    <nav class="links" aria-label="Project links">
+      <a href="https://github.com/Zuddas-S/FCT_Python">Source code</a>
+      <a href="https://github.com/Zuddas-S/FCT_Python/blob/main/docs/dissertation.pdf">Dissertation (PDF)</a>
+      <a href="https://www.sebzuddas.com/projects">More projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="sim" aria-labelledby="sim-title">
+    <h2 id="sim-title" class="sr-only">Simulator</h2>
+
+    <div class="sim-grid">
+      <!-- Controls -->
+      <aside class="card controls" aria-label="Model controls">
+        <label class="field">
+          <span class="field-label">Scenario</span>
+          <select id="preset"></select>
+        </label>
+        <p class="note" id="preset-note"></p>
+
+        <div class="buttons">
+          <button id="btn-run" class="primary" type="button">Run</button>
+          <button id="btn-step" type="button" title="Advance one week">Step</button>
+          <button id="btn-reset" type="button">Reset</button>
+        </div>
+
+        <label class="field">
+          <span class="field-label">Speed</span>
+          <select id="speed">
+            <option value="1">Slow · 1 week per frame</option>
+            <option value="4" selected>Normal · 4 weeks per frame</option>
+            <option value="13">Fast · 13 weeks per frame</option>
+            <option value="0">Instant</option>
+          </select>
+        </label>
+
+        <details class="params" open>
+          <summary>Parameters</summary>
+          <div id="param-fields"></div>
+          <p class="note">Changing any parameter resets the run. The same seed always gives the same run.</p>
+        </details>
+
+        <div class="sweep">
+          <button id="btn-sweep" type="button">Run 20 seeds</button>
+          <p class="note" id="sweep-out">Runs the current scenario 20 times with different seeds and counts how often each AHP condition holds.</p>
+        </div>
+      </aside>
+
+      <!-- Board -->
+      <div class="board-col">
+        <div class="card board-card">
+          <div class="board-head">
+            <div class="readout" aria-live="off">
+              <span class="readout-big" id="readout-week">Week 0</span>
+              <span class="readout-small" id="readout-year">of 540 · year 0.0</span>
+            </div>
+            <ul class="legend" aria-label="Deprivation quintile legend">
+              <li><i style="background:var(--dq1)"></i>DQ1 least deprived</li>
+              <li><i style="background:var(--dq2)"></i>DQ2</li>
+              <li><i style="background:var(--dq3)"></i>DQ3</li>
+              <li><i style="background:var(--dq4)"></i>DQ4</li>
+              <li><i style="background:var(--dq5)"></i>DQ5 most deprived</li>
+            </ul>
+          </div>
+          <canvas id="board" class="board" role="img" aria-label="Map of agents on the board, coloured by deprivation quintile"></canvas>
+          <p class="note">Each dot is a person, coloured by deprivation quintile (DQ). Larger dots have more resources (knowledge, wealth, power, prestige). People are shuffled around their own area every week, and about once a year some swap quintiles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verdict -->
+    <div class="card verdict" id="verdict" data-state="idle">
+      <div class="verdict-head">
+        <h3 id="verdict-title">Press Run to start the simulation</h3>
+        <p id="verdict-sub" class="note">The Alcohol Harm Paradox needs all three gradients below, measured across DQ1 to DQ5.</p>
+      </div>
+      <div class="chips">
+        <div class="chip" id="chip-deaths"><span class="chip-k">γ₁ · deaths</span><span class="chip-v">–</span><span class="chip-need">needs &gt; 0</span></div>
+        <div class="chip" id="chip-adapt"><span class="chip-k">γ₂ · adaptation</span><span class="chip-v">–</span><span class="chip-need">needs &lt; 0</span></div>
+        <div class="chip" id="chip-cons"><span class="chip-k">γ₃ · consumption</span><span class="chip-v">–</span><span class="chip-need">needs &lt; 0</span></div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+      <figure class="card chart">
+        <figcaption><strong>Deaths by quintile</strong><span>Higher for more deprived areas supports the AHP (γ₁ &gt; 0)</span></figcaption>
+        <canvas id="c-deaths" role="img" aria-label="Bar chart of total deaths in each deprivation quintile"></canvas>
+      </figure>
+      <figure class="card chart">
+        <figcaption><strong>Deaths over time</strong><span>Cumulative deaths in each quintile</span></figcaption>
+        <canvas id="c-history" role="img" aria-label="Line chart of cumulative deaths over time for each quintile"></canvas>
+      </figure>
+      <figure class="card chart">
+        <figcaption><strong>Share of events adapted to</strong><span>Lower for more deprived areas supports FCT (γ₂ &lt; 0)</span></figcaption>
+        <canvas id="c-adapt" role="img" aria-label="Bar chart of the successful adaptation ratio in each deprivation quintile"></canvas>
+      </figure>
+      <figure class="card chart">
+        <figcaption><strong>Average weekly drinking</strong><span>Lower for more deprived areas is the “paradox” part (γ₃ &lt; 0)</span></figcaption>
+        <canvas id="c-cons" role="img" aria-label="Bar chart of mean weekly units of alcohol in each deprivation quintile"></canvas>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-title">
+    <h2 id="about-title">What is going on?</h2>
+
+    <div class="cols">
+      <article>
+        <h3>The paradox</h3>
+        <p>
+          The <strong>Alcohol Harm Paradox (AHP)</strong> is the observation that people with low socioeconomic status
+          suffer more alcohol-related harm across their lives than wealthier people, even when drinking the same
+          amount or less. In Scotland, alcohol-specific deaths in the most deprived fifth of the population run
+          several times higher than in the least deprived fifth.
+        </p>
+      </article>
+      <article>
+        <h3>The theory</h3>
+        <p>
+          <strong>Fundamental Cause Theory (FCT)</strong> proposes that socioeconomic resources such as education,
+          money, power and social prestige are the <em>fundamental</em> cause of health inequality. They are flexible
+          resources that people can use to dodge risks and adopt protections, whatever the specific disease is.
+          The model asks whether that idea alone can reproduce the AHP.
+        </p>
+      </article>
+      <article>
+        <h3>The method</h3>
+        <p>
+          The model is built with <strong>Mechanism-Based Social Systems Modelling</strong>, which links a society-level
+          layer to individual behaviour through three kinds of mechanism. It was written in Python with Repast4Py
+          and explored with 200 Latin-hypercube simulations. This page is a port of that model to JavaScript.
+        </p>
+      </article>
+    </div>
+
+    <h3 class="sub">One week in the model</h3>
+    <ol class="mechs">
+      <li>
+        <span class="mech-tag">Situational</span>
+        <p>A <em>communicator</em> (think health campaign) broadcasts a random 5-bit message to a random subset of people. The message’s value is how many resources it takes to act on it.</p>
+      </li>
+      <li>
+        <span class="mech-tag">Action</span>
+        <p>Each person tries to act on one pending message. They succeed if their resources (knowledge + wealth + prestige + power) cover it. Successful people pass the message to a friend. Everyone drinks according to their own habit, and that carries risk.</p>
+      </li>
+      <li>
+        <span class="mech-tag">Transformational</span>
+        <p>Once a year people age, some swap places with someone from a more (or less) deprived quintile, in equal numbers after Giorgi et al., and “die” if their personal risk crosses the threshold. A death resets the person to age 18.</p>
+      </li>
+    </ol>
+
+    <h3 class="sub">What the dissertation found</h3>
+    <p>
+      Across 200 runs the AHP signature (all three gradients with the expected sign) appeared in just one,
+      Simulation 5. When that run was extended from 520 to 1,200 weeks the signature disappeared. The conclusion was that
+      FCT as implemented here does not reliably produce the AHP. The model is best read as a platform for asking
+      which extra mechanisms would be needed. Try “Run 20 seeds” on each scenario and see how fragile the pattern is.
+    </p>
+
+    <details class="notes">
+      <summary>Implementation notes and differences from the Python model</summary>
+      <ul>
+        <li>This is a re-implementation, not a bit-for-bit replay. It uses its own random-number generator, so a given seed will not match a Python run.</li>
+        <li>Deaths are counted as raw events, attributed to the quintile a person lives in at that moment. The dissertation’s plots summed a cumulative counter, so its totals are larger; only the <em>sign</em> of each gradient is comparable.</li>
+        <li>Gradients are least-squares slopes of each measure against quintile number 1 to 5.</li>
+        <li>The friendship network links people in the same quintile and within five years of age whenever possible, which is the effective rule in the Python code. This port builds it directly rather than by rejection sampling.</li>
+        <li>As in the Python code, adaptation costs do not carry over from week to week, and a friend who has not yet solved any message cannot receive one from a peer.</li>
+        <li>The dissertation describes age-dependent swapping (under-30s tend to move to more deprived quintiles). The Python code, and so this port, swaps by quintile only.</li>
+        <li>“Death” is really a harm event: the person re-enters the population at age 18.</li>
+      </ul>
+    </details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      Sebastiano Zuddas · MEng Intelligent Systems &amp; Control Engineering, supervised by Prof. Robin Purshouse ·
+      <a href="https://www.sebzuddas.com">sebzuddas.com</a>
+    </p>
+    <p class="small">Model design follows Boyd (2023) and Vu et al.’s MBSSM architecture. See the dissertation for references.</p>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

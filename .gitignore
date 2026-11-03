@@ -1,16 +1,19 @@
-#ignore all outputs 
-FCT_Model/outputs/*.csv
-.venv/*
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
 .python-version
-.vscode/*
-Data_Processing/outputs/*.csv
-Data_Processing/outputs/*.png
-Data_Processing/outputs/*.db
-Data_Processing/outputs/network/*.graphml
-Data_Processing/outputs/gradients/*.csv
+
+# Model outputs and generated inputs
+FCT_Model/outputs/*.csv
+FCT_Model/outputs/network/
 FCT_Model/props/model/model-*
 FCT_Model/props/model/test_parameters/*.yaml
-*.txt
-/Users/sebastianozuddas/Programming/Python/FCT_Python/Data_Processing/outputs
-Data_Processing/Data_visualisation.py
-FCT_Model/outputs/network/*
+FCT_Model/props/network/*.txt
+Data_Processing/outputs/
+.gstack/
