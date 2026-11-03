@@ -2,7 +2,7 @@
 
 An agent-based model of whether **Fundamental Cause Theory (FCT)** can explain the **Alcohol Harm Paradox (AHP)**. It started as my MEng final-year project at the University of Sheffield (Automatic Control & Systems Engineering, 2023), supervised by Prof. Robin Purshouse.
 
-**[Try it in your browser](https://zuddas-s.github.io/FCT_Python/)** (no install, runs locally in the page) · [Dissertation (PDF)](docs/dissertation.pdf) · [Slides](docs/presentation.pptx)
+**[Try it in your browser](https://sebzuddas.github.io/FCT_Python/)** (no install, runs locally in the page) · [Dissertation (PDF)](docs/dissertation.pdf) · [Slides](docs/presentation.pptx)
 
 <p align="center">
   <img src="docs/images/plot_image_1.png" alt="Starting social network of the simulation, coloured by deprivation quintile" width="520">
@@ -65,7 +65,7 @@ npm test                               # model tests (Node 20+)
 Add `?embed=1` to the URL to hide the page chrome for embedding, for example on a personal site:
 
 ```html
-<iframe src="https://zuddas-s.github.io/FCT_Python/?embed=1" title="FCT simulator"
+<iframe src="https://sebzuddas.github.io/FCT_Python/?embed=1" title="FCT simulator"
         style="width:100%;height:1500px;border:0" loading="lazy"></iframe>
 ```
 
